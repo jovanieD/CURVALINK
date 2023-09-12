@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/css/auth/login.css',
                 'resources/js/app.js',
+                'resources/js/auth/login.js',
 
             ],
             refresh: true,

@@ -13,10 +13,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Scripts -->
     @vite(['resources/css/auth/login.css'])
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    {{-- JS  --}}
+    @vite(['resources/js/auth/login.js'])
 </head>
 
 <body>
@@ -25,5 +31,23 @@
     </main>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#togglePassword').click(function(){
+            const passwordField = $('#password');
+            const passwordFieldType = passwordField.attr('type');
+            if(passwordFieldType === 'password') {
+                passwordField.attr('type', 'text');
+                $(this).removeClass('fa-eye-slash').addClass('fa-eye');
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).removeClass('fa-eye').addClass('fa-eye-slash');
+            }
+        });
+    });
+</script>
+
+
 
 </html>
