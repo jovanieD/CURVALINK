@@ -28,16 +28,17 @@
 <body>
     <main class="py-4">
         @yield('content')
+        @include('sweetalert::alert')
     </main>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('#togglePassword').click(function(){
+    $(document).ready(function() {
+        $('#togglePassword').click(function() {
             const passwordField = $('#password');
             const passwordFieldType = passwordField.attr('type');
-            if(passwordFieldType === 'password') {
+            if (passwordFieldType === 'password') {
                 passwordField.attr('type', 'text');
                 $(this).removeClass('fa-eye-slash').addClass('fa-eye');
             } else {
@@ -47,7 +48,5 @@
         });
     });
 </script>
-
-
 
 </html>

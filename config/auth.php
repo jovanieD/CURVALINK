@@ -36,9 +36,25 @@ return [
     */
 
     'guards' => [
+        // Default User Guard
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'viaRemember' => true,
+        ],
+    
+        // Teacher Guard
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+            'viaRemember' => true,
+        ],
+    
+        // Admin Guard
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+            'viaRemember' => true,
         ],
     ],
 
@@ -60,15 +76,23 @@ return [
     */
 
     'providers' => [
+        // Default User Provider
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+    
+        // Teacher Provider
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teacher::class,
+        ],
+    
+        // Admin Provider
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
     ],
 
     /*
