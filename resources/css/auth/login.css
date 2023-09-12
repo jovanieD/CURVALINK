@@ -1,0 +1,60 @@
+
+.form-group label {
+    font-size: 15px;
+    color: #c38507;
+    font-weight: 500;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #fff;
+    margin-bottom: 0;
+    padding: 0 5px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    height: 45px;
+
+}
+
+.input-field {
+    box-shadow: none !important;
+    background-color: transparent !important; /* Set to transparent or your desired background color */
+    border-color: #ced4da !important; /* Set to your desired border color */
+  }
+  
+  /* Optional: Remove the border */
+  .input-field:focus {
+    border-color: #e6fb71 !important; /* Set to your desired border color */
+    outline: none !important;
+  }
+
+.btn-grad {
+    background-image: linear-gradient(to right, #F09819 0%, #EDDE5D 51%, #F09819 100%);
+    margin: 10px;
+    padding: 12px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none; /* Remove the border */
+  }
+  
+  .btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+
+  @media screen and (min-width: 600px) {
+    .container{
+        width: 100%;
+    }
+  }
