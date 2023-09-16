@@ -88,13 +88,7 @@ class LoginController extends Controller
 
                 DB::commit(); // Commit the transaction
 
-                $script = "
-                <script>
-                    Swal.fire('This is a SweetAlert message from the controller!');
-                </script>
-            ";
-
-                return redirect('/student');
+                return redirect('/');
 
             } elseif (Auth::guard('teacher')->attempt(['email' => $email, 'password' => $password])) {
                 $teacher = Teacher::where('email', $request->email)->first();
