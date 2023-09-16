@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <main class=" d-flex justify-content-center">
+    <main class="d-flex justify-content-center">
         @yield('content')
     </main>
     </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center mt-5">
-        <div class="login p-4 w-75">
+        <div class="login p-4 w-75 mt-5">
             <div class="d-flex justify-content-center mb-5">
                 <img src="{{ asset('images/curva_logo.png') }}" class="img-fluid w-25" alt="...">
             </div>
