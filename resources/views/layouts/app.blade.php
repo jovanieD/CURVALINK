@@ -88,20 +88,34 @@
                 @guest
                     @if (Route::has('login'))
                         <a class="btn-grad btn-primary py-2 px-4 ms-3" class="nav-link"
+                            style="text-decoration: none;
+                        "
                             href="{{ route('login') }}">{{ __('Login') }}</a>
                     @endif
                 @else
                     <div class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{ Auth::user()->name }} <span class=" m-2"> <img
+                                    style="border-radius:25px; height: 30px; width:30px;" src="images/curva_logo.png"
+                                    alt=""></span>
                         </a>
 
+
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-shrink-1 bd-highlight"><i class=" fa f"></i></div>
+                                <div class="p-2 w-100 bd-highlight">Flex item</div>
+
+                              </div>
+                            {{-- <a class="dropdown-item ml-3" href=""> <i class=" fa fa-user"></i> Profile
+                            </a>
+                            <hr>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
-                            </a>
+                            </a> --}}
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
