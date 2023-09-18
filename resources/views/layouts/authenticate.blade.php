@@ -18,11 +18,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Scripts -->
-    @vite(['resources/css/auth/login.css'])
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="resources/css/auth/login.css">
+    <link rel="stylesheet" href="resources/sass/app.scss">
+    <link rel="stylesheet" href="resources/sass/app.scss">
 
-    {{-- JS  --}}
-    @vite(['resources/js/auth/login.js'])
+    <script src="resources/js/app.js"></script>
+    <script src="resources/js/auth/login.js"></script>
 
 </head>
 
