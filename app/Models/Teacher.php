@@ -44,4 +44,16 @@ class Teacher extends Model implements AuthenticatableContract
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function announcements()
+    {
+        return $this->hasMany(Announcement::class);
+    }
+    
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+    
+
 }
