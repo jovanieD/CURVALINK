@@ -18,11 +18,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Scripts -->
-    @vite(['resources/css/auth/login.css'])
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ secure_asset('css/auth/login.css') }}">
+    <link rel="stylesheet" href="resources/sass/app.scss">
+    <link rel="stylesheet" href="{{secure_asset('css/auth/login.css')}}">
+
+    {{-- @vite(['resources/css/auth/login.css']) --}}
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
     {{-- JS  --}}
-    @vite(['resources/js/auth/login.js'])
+    {{-- @vite(['resources/js/auth/login.js']) --}}
 
 </head>
 
@@ -48,5 +52,7 @@
         });
     });
 </script>
+<script src="{{ secure_asset('js/auth/login.js') }}"></script>
+<script src="resources/js/app.js"></script>
 
 </html>
