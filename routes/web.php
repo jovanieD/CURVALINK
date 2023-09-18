@@ -15,7 +15,6 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    Alert::alert('Title', 'Message', 'Type');
     return view('welcome');
 });
 
