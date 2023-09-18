@@ -33,7 +33,7 @@ class Handler extends ExceptionHandler
             if($this->isHttpException($exception)) {
                 return response()->view('errors.404');
             } else {
-                return response()->view('errors.500');
+                return response()->view('errors.400');
             }
         }
 }
