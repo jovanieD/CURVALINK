@@ -27,14 +27,22 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Scripts -->
-    {{-- <script src="resources/css/auth/login.css"></script> --}}
-    {{-- <script src="resources/sass/app.scss', 'resources/js/app.js"></script> --}}
+    @vite(['resources/css/auth/login.css'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
     {{-- CSS  --}}
-    <link rel="stylesheet" href="resources/css/style.css'">
-    <link rel="stylesheet" href="resources/css/animate/animate.css'">
-    <link rel="stylesheet" href="resources/css/animate/animate.min.css'">
-    <link rel="stylesheet" href="resources/css/animate/owl.carousel.min.css'">
+    @vite(['resources/css/style.css'])
+    @vite(['resources/css/animate/animate.css'])
+    @vite(['resources/css/animate/animate.min.css'])
+    @vite(['resources/css/animate/owl.carousel.min.css'])
+
+    {{-- SCRIPT  --}}
+    @vite(['resources/js/auth/login.js'])
+    @vite(['resources/js/home/waypoints.min.js'])
+    @vite(['resources/js/home/counterup.min.js'])
+    @vite(['resources/js/home/owl.carousel.min.js'])
+    @vite(['resources/js/nav-highlight.js'])
+    @vite(['resources/js/main.js'])
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
@@ -100,7 +108,7 @@
                                 <div class="p-2 flex-shrink-1 bd-highlight"><i class=" fa f"></i></div>
                                 <div class="p-2 w-100 bd-highlight">Flex item</div>
 
-                            </div>
+                              </div>
                             {{-- <a class="dropdown-item ml-3" href=""> <i class=" fa fa-user"></i> Profile
                             </a>
                             <hr>
@@ -128,13 +136,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    {{-- SCRIPT  --}}
-    <script src="resources/js/auth/login.js"></script>
-    <script src="resources/js/home/waypoints.min.js"></script>
-    <script src="resources/js/home/counterup.min.js"></script>
-    <script src="resources/js/home/owl.carousel.min.js"></script>
-    <script src="resources/js/nav-highlight.js"></script>
-    <script src="resources/js/main.js"></script>
 </body>
 
 </html>
