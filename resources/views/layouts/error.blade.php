@@ -13,11 +13,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @vite(['resources/css/errors/error.css'])
-
 </head>
 
-<body class="d-flex align-items-center justify-content-center vh-100">
-    @yield('content')
-</body>
+    <body class="d-flex align-items-center justify-content-center vh-100">
+        @yield('content')
+    </body>
 
 </html>
