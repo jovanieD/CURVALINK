@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/css/auth/login.css',
                 'resources/css/style.css',
+                'resources/css/errors/error.css',
                 'resources/css/animate/animate.css',
                 'resources/css/animate/animate.min.css',
                 'resources/css/animate/owl.carousel.min.css',
