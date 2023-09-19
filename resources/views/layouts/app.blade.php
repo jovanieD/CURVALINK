@@ -102,29 +102,86 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class=" m-2"> <img
-                                    style="border-radius:25px; height: 30px; width:30px;" src="images/curva_logo.png"
+                                    style="border-radius:25px; height: 30px; width:30px;" src="images/panda.jpg"
                                     alt=""></span>
                         </a>
 
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                              <a class="dropdown-item" href="#">
+                                <div class="d-flex">
+                                  <div class="flex-shrink-0 me-3">
+                                    <div class="avatar avatar-online">
+                                      <img src="images/panda.jpg" alt class="rounded-circle"  style="width: 60px"/>
+                                    </div>  
+                                  </div>
+                                  <div class="flex-grow-1">
+                                    <span class="fw-semibold d-block">{{Auth::user()->name}}</span>
+                                    <small class="text-muted">Student</small>
+                                  </div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <div class="dropdown-divider"></div>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#">
+                                <i class="fa fa-user m-2 text-warning"></i>
+                                <span class="align-middle">My Profile</span>
+                              </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                  <i class="fa fa-list-alt m-2 text-warning"></i>
+                                  <span class="align-middle">Request a Document</span>
+                                </a>
+                              </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                  <i class="fa fa-tasks m-2 text-warning"></i>
+                                  <span class="align-middle">View Request</span>
+                                </a>
+                              </li>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <div class="d-flex">
-                                <div class="p-2"> <i class=" fa fa-user"></i></div>
-                                <div class="p-2 flex-grow-1">Profile</div>
-                              </div>
-                              <hr>
-                              <div class="d-flex">
-                                <div class=""><i class=" fa fa-file"></i></div>
-                                <div class="flex-grow-1">Request a Document</div>
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                  <i class="fa fa-server m-2 text-warning"></i>
+                                  <span class="align-middle">Dashboard</span>
+                                </a>
+                              </li>
+
+                              <li>
+                                <a class="dropdown-item" href="#">
+                                  <i class="fa fa-cog m-2 text-warning"></i>
+                                  <span class="align-middle">Settings</span>
+                                </a>
+                              </li>
+                            <li>
+                              <div class="dropdown-divider"></div>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="auth-login-basic.html">
+                                <i class="fa fa-power-off m-2 text-warning"></i>
+                                <span href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" >Log out</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <!--/ User -->
+                      </ul>
+
+
+                        {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            
+
                               </div>
                               <div class="d-flex">
                                 <div class=""><i class="fa fa-power-off" aria-hidden="true"></i></div>
                                 <div class=" flex-grow-1"><a href="" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log out</a></div>
                               </div>
-
-
-{{--    
+   
                             <a class="dropdown-item ml-3" href=""> <i class=" fa fa-user"></i> Profile
                             </a>
                             <hr>
