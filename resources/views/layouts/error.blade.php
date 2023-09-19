@@ -13,7 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- @vite(['resources/css/errors/error.css']) --}}
-    <link rel="stylesheet" href="{{secure_asset('css/errors/error.css')}}">
+    <link rel="stylesheet" href="{{asset('css/errors/error.css')}}">
 </head>
 
     <body class="d-flex align-items-center justify-content-center vh-100">

@@ -27,15 +27,15 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Scripts -->
-    <link rel="stylesheet" href="{{ secure_asset('css/auth/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
     {{-- @vite(['resources/css/auth/login.css']) --}}
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 
     {{-- CSS  --}}
-    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/animate/animate.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/animate/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/animate/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate/owl.carousel.min.css') }}">
 
     {{-- @vite(['resources/css/style.css'])
     @vite(['resources/css/animate/animate.css'])
@@ -114,12 +114,12 @@
                               </div>
                               <hr>
                               <div class="d-flex">
-                                <div class="p-2"><i class=" fa fa-file"></i></div>
-                                <div class="p-2 flex-grow-1">Request a Document</div>
+                                <div class=""><i class=" fa fa-file"></i></div>
+                                <div class="flex-grow-1">Request a Document</div>
                               </div>
                               <div class="d-flex">
-                                <div class="p-2"><i class="fa fa-power-off" aria-hidden="true"></i></div>
-                                <div class="p-2 flex-grow-1"><a href="" href="{{ route('logout') }}"
+                                <div class=""><i class="fa fa-power-off" aria-hidden="true"></i></div>
+                                <div class=" flex-grow-1"><a href="" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log out</a></div>
                               </div>
 
@@ -152,12 +152,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="{{ secure_asset('js/auth/login.js') }}"></script>
-    <script src="{{ secure_asset('js/home/waypoints.min.js') }}"></script>
-    <script src="{{ secure_asset('js/home/counterup.min.js') }}"></script>
-    <script src="{{ secure_asset('js/home/owl.carousel.min.js') }}"></script>
-    <script src="{{ secure_asset('js/nav-highlight.js') }}"></script>
-    <script src="{{ secure_asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/auth/login.js') }}"></script>
+    <script src="{{ asset('js/home/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/home/counterup.min.js') }}"></script>
+    <script src="{{ asset('js/home/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/nav-highlight.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

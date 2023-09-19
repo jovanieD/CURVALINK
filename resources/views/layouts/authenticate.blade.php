@@ -20,7 +20,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Scripts -->
-    <link rel="stylesheet" href="{{ secure_asset('css/auth/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
 
     {{-- @vite(['resources/css/auth/login.css']) --}}
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
@@ -52,7 +52,7 @@
         });
     });
 </script>
-<script src="{{ secure_asset('js/auth/login.js') }}"></script>
+<script src="{{ asset('js/auth/login.js') }}"></script>
 <script src="resources/js/app.js"></script>
 
 </html>
