@@ -108,17 +108,27 @@
 
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="d-flex">
+                                <div class="p-2"> <i class=" fa fa-user"></i></div>
+                                <div class="p-2 flex-grow-1">Profile</div>
+                              </div>
+                              <hr>
+                              <div class="d-flex">
+                                <div class="p-2"><i class=" fa fa-file"></i></div>
+                                <div class="p-2 flex-grow-1">Request a Document</div>
+                              </div>
+                              <div class="d-flex">
+                                <div class="p-2"><i class="fa fa-power-off" aria-hidden="true"></i></div>
+                                <div class="p-2 flex-grow-1"><a href="" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log out</a></div>
+                              </div>
 
-                            <div class="d-flex bd-highlight">
-                                <div class="p-2 flex-shrink-1 bd-highlight"><i class=" fa f"></i></div>
-                                <div class="p-2 w-100 bd-highlight">Flex item</div>
 
-                            </div>
-                            {{-- <a class="dropdown-item ml-3" href=""> <i class=" fa fa-user"></i> Profile
+{{--    
+                            <a class="dropdown-item ml-3" href=""> <i class=" fa fa-user"></i> Profile
                             </a>
                             <hr>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" >
                                 {{ __('Logout') }}
                             </a> --}}
 
