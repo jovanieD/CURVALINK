@@ -75,8 +75,6 @@ class LoginController extends Controller
 
                 if (!$user || !Hash::check($request->password, $user->password)) {
                     DB::rollBack(); // Roll back the transaction
-                    Alert::error('Error Title', 'Error Message');
-
                 }
 
                 $token = $user->createToken('my_app_token')->plainTextToken;
@@ -107,7 +105,8 @@ class LoginController extends Controller
 
                 DB::commit(); // Commit the transaction
 
-                return "teacher";
+                return redirect('/');
+
             } elseif (Auth::guard('admin')->attempt(['email' => $email, 'password' => $password])) {
                 $admin = Admin::where('email', $request->email)->first();
 
@@ -125,7 +124,7 @@ class LoginController extends Controller
 
                 DB::commit(); // Commit the transaction
 
-                return "admin";
+                return redirect('/');
             }
 
             // If no authentication guard is successful, return an error message
