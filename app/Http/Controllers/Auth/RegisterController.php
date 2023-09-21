@@ -5,9 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Admin;
+use App\Models\Teacher;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
+
 
 class RegisterController extends Controller
 {
@@ -39,6 +44,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:admin');
+        $this->middleware('guest:teacher');
     }
 
     /**
@@ -69,5 +76,37 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function showAdminRegisterForm()
+    {
+        return view('auth.register', ['route' => route('admin.register-view'), 'title'=>'Admin']);
+    }
+
+    protected function createAdmin(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $admin = Admin::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('admin');
+    }
+
+    public function showTeacherRegisterForm()
+    {
+        return view('auth.register', ['route' => route('teacher.register-view'), 'title'=>'Teacher']);
+    }
+
+    protected function createTeacher(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $teacher = Teacher::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('teacher');
     }
 }

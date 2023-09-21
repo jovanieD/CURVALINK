@@ -8,8 +8,12 @@
             </div>
             <h4 class="mb-2 section-title">Welcome to CurvaLink! 👋</h4>
             <p class="">Need an account? <a href="{{ route('register') }}">Sign Up</a></p>
-            <h2 class=" mb-4">Sign in</h2>
-            <form action="{{ route('login') }}" method="POST">
+            @isset($url)
+            <form method="POST" action="{{ $url }}">
+            @else
+                <form method="POST" action="Login">
+                @endisset
+
                 @csrf
                 <div class="form-group mb-4">
                     <label>Email<span class="login-danger">*</span></label>
