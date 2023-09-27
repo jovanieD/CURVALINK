@@ -33,7 +33,7 @@
 <body>
     <div id="app">
 
-        @include('navigation.student')
+        @include('navigation.admin')
 
         <!-- Page Content -->
         <main class="py-4">

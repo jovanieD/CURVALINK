@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0 sticky-top shadow-sm">
     <!-- Logo -->
-    <a href="/" class="navbar-brand p-0">
+    <a href="/teacher" class="navbar-brand p-0">
         <h1 class="m-0">
             <img class="img-fluid rounded m-2" src="images/curva_logo.png" style="width: 50px; height: 50px;">
             Curva NHS
@@ -15,7 +15,7 @@
     <!-- Navbar Links -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link">Hometeachsdfd</a>
+            <a href="/" class="nav-item nav-link">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="service.html" class="nav-item nav-link">Offers</a>
             <div class="nav-item dropdown">
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     <span class="fw-semibold d-block"> {{ Auth::user()->name }}</span>
-                                    <small class="text-muted">Student</small>
+                                    <small class="text-muted">Teacher</small>
                                 </div>
                             </div>
                         </a>
@@ -94,7 +94,7 @@
                     </li>
             
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/teacher/dashboard">
                             <i class="fa fa-server m-2 text-warning"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>

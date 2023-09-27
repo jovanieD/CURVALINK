@@ -7,8 +7,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Curva National High School') }}</title>
+    <!-- Title and Favicon -->
+    <title>Curva National High School</title>
+    <link rel="icon" href="images/curva_logo.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">

@@ -15,7 +15,7 @@
     <!-- Navbar Links -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="/" class="nav-item nav-link">Home addmin</a>
+            <a href="/" class="nav-item nav-link">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
             <a href="service.html" class="nav-item nav-link">Offers</a>
             <div class="nav-item dropdown">
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     <span class="fw-semibold d-block"> {{ Auth::user()->name }}</span>
-                                    <small class="text-muted">Student</small>
+                                    <small class="text-muted">Admin</small>
                                 </div>
                             </div>
                         </a>
@@ -94,7 +94,7 @@
                     </li>
             
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/admin/dashboard">
                             <i class="fa fa-server m-2 text-warning"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>

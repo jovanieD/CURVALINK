@@ -94,7 +94,7 @@
                     </li>
             
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/dashboard">
                             <i class="fa fa-server m-2 text-warning"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
