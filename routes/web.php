@@ -43,6 +43,9 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     });
 
     Route::post('/teacher/logout', [TeacherController::class,'logout']);
+    Route::get('/teacher/settings', function () {
+        return view('teacher.account.settings');
+    });
 
     // Route::get('', [ ::class, '']);
 

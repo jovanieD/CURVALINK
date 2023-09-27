@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" >
+<html lang="en" class="light-style layout-menu-fixed">
 
 <head>
     <meta charset="utf-8" />
@@ -12,14 +12,16 @@
     <link rel="icon" href="images/curva_logo.png" type="image/x-icon">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
@@ -47,15 +49,17 @@
                 <!-- Menu -->
                 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                     <div class=" h-25 d-flex flex-col shadow">
-                        <a href="/teacher h-100">
-                            <div class=" h-auto" >
-                                <div class=" d-flex justify-content-center mt-3">
+                        <a href="/teacher ">
+                            <div class="h-100">
+                                <div class=" d-flex justify-content-center mt-3 h-auto">
                                     <img src="../images/curva_logo.png" alt class=" w-25 h-auto rounded-circle" />
                                 </div>
-                                <div class=" d-flex justify-content-center ">
-                                    <span class=""><h1>Curva NHS</h1></span>
+                                <div class=" d-flex justify-content-center  h-auto">
+                                    <span class="">
+                                        <h1 class=" font-bold" >Curva NHS</h1>
+                                    </span>
                                 </div>
-                            </div>  
+                            </div>
                         </a>
                     </div>
 
@@ -69,14 +73,14 @@
                         </li>
 
                         <!-- Layouts -->
-                       
+
                         <li class="menu-header small text-uppercase">
                             <span class="menu-header-text">Documents</span>
                         </li>
                         <li class="menu-item">
-                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle" >
                                 <i class="menu-icon tf-icons bx bx-dock-top text-warning"></i>
-                                <div data-i18n="Account Settings">Requests</div>
+                                <div >Requests</div>
                             </a>
                             <ul class="menu-sub ">
                                 <li class="menu-item">
@@ -98,7 +102,8 @@
                         </li>
 
                         <!-- Schedule -->
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Release of Documents</span>
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Release of
+                                Documents</span>
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -108,7 +113,7 @@
                             <ul class="menu-sub">
                                 <li class="menu-item">
                                     <a href="ui-accordion.html" class="menu-link">
-                                        <div data-i18n="Accordion">Accordion</div>
+                                        <div >Accordion</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -135,7 +140,7 @@
                             <ul class="menu-sub">
                                 <li class="menu-item">
                                     <a href="ui-accordion.html" class="menu-link">
-                                        <div data-i18n="Accordion">Announcement</div>
+                                        <div >Announcement</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -146,41 +151,35 @@
                             </ul>
                         </li>
 
-                         {{-- Account --}}
-                         <li class="menu-header small text-uppercase"><span class="menu-header-text">Account</span>
-                         </li>
-                         <li class="menu-item">
-                             <a href="javascript:void(0)" class="menu-link menu-toggle">
-                                 <i class="menu-icon tf-icons bx bx-box text-warning"></i>
-                                 <div data-i18n="User interface">Account</div>
-                             </a>
-                             <ul class="menu-sub">
-                                 <li class="menu-item">
-                                     <a href="ui-accordion.html" class="menu-link">
-                                         <div data-i18n="Accordion">My Profile</div>
-                                     </a>
-                                 </li>
-                                 <li class="menu-item">
+                        {{-- Account --}}
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Account</span>
+                        </li>
+                        <li class="menu-item">
+                            <a href="javascript:void(0)" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-box text-warning"></i>
+                                <div data-i18n="User interface">Account</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
                                     <a href="ui-accordion.html" class="menu-link">
-                                        <div data-i18n="Accordion">Settings</div>
+                                        <div >My Profile</div>
                                     </a>
                                 </li>
-                             </ul>
-                         </li>
+                                <li class="menu-item">
+                                    <a href="/teacher/settings" class="menu-link">
+                                        <div >Settings</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <div class=" bg-white m-3">
-                        <li class="menu-item bg-warning rounded mb-1">
-                            <a class="menu-link">
-                                <i class="bx bx-cog me-2"></i>
-                                <span class="align-middle">Settings</span>
-                            </a>
-                        </li>
                         <li class="menu-item bg-warning rounded">
-                            <a class="menu-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <a class="menu-link justify-content-center" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 <i class="bx bx-power-off me-2"></i>
-                                <span class="align-middle text-black">Log Out</span>
+                                <span class="align-middle text-black font-bold">Log Out</span>
                             </a>
                         </li>
                     </div>
@@ -200,71 +199,87 @@
                             <ul class="navbar-nav flex-row align-items-center ms-auto">
                                 <!-- Place this tag where you want the button to render. -->
 
-                                <h5 class="m-2"> {{Auth::user()->name}}</h3>
+                                <h5 class="m-2"> {{ Auth::user()->name }}</h3>
 
-                                <!-- User -->
-                                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                        data-bs-toggle="dropdown">
-                                        <div class="avatar avatar-online">
-                                            <img src="../assets/img/avatars/1.png" alt
-                                                class="w-px-40 h-auto rounded-circle" />
-                                        </div>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <div class="d-flex">
-                                                    <div class="flex-shrink-0 me-3">
-                                                        <div class="avatar avatar-online">
-                                                            <img src="../assets/img/avatars/1.png" alt
-                                                                class="w-px-40 h-auto rounded-circle" />
+                                    <!-- User -->
+                                    <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                        <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                            data-bs-toggle="dropdown">
+                                            <div class="avatar avatar-online">
+                                                <img src="../assets/img/avatars/1.png" alt
+                                                    class="w-px-40 h-auto rounded-circle" />
+                                            </div>
+                                        </a>
+                                        <!-- Dropdown Menu Items -->
+                                        <ul class="dropdown-menu dropdown-menu-end">
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <div class="d-flex">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <div class="avatar avatar-online">
+                                                                <img src="images/panda.jpg" alt class="rounded-circle"
+                                                                    style="width: 60px" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <span class="fw-semibold d-block">
+                                                                {{ Auth::user()->name }}</span>
+                                                            <small class="text-muted">Teacher</small>
                                                         </div>
                                                     </div>
-                                                    <div class="flex-grow-1">
-                                                        <span class="fw-semibold d-block"> {{Auth::user()->name}}</span>
-                                                        <small class="text-muted">Teacher</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="dropdown-divider"></div>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bx bx-user me-2"></i>
-                                                <span class="align-middle">My Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bx bx-cog me-2"></i>
-                                                <span class="align-middle">Settings</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <span class="d-flex align-items-center align-middle">
-                                                    <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                                    <span class="flex-grow-1 align-middle">Billing</span>
-                                                    <span
-                                                        class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="dropdown-divider"></div>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="/teacher/logout">
-                                                <i class="bx bx-power-off me-2"></i>
-                                                <span class="align-middle">Log Out</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!--/ User -->
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <div class="dropdown-divider"></div>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa fa-home m-2 text-warning"></i>
+                                                    <span class="align-middle">Homepage</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa fa-tasks m-2 text-warning"></i>
+                                                    <span class="align-middle">View Request</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="/teacher/dashboard">
+                                                    <i class="fa fa-server m-2 text-warning"></i>
+                                                    <span class="align-middle">Dashboard</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa fa-cog m-2 text-warning"></i>
+                                                    <span class="align-middle">Settings</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown-divider"></div>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                    <i class="fa fa-power-off m-2 text-warning"></i>
+                                                    <span>Log out</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Logout Form (Hidden) -->
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                    <!--/ User -->
                             </ul>
                         </div>
                     </nav>
