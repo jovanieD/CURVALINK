@@ -25,7 +25,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <div id="calendar" style="width: 100%;height:100vh"></div>
+                            <div id="calendar" class="w-100 h-100 "></div>
 
                         </div>
                     </div>

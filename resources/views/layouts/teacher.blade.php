@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" class="light-style">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title and Favicon -->
@@ -54,9 +54,14 @@
                                 </div>
                             </div>
                         </a>
+
+                        <a href="javascript:void(0);"
+                        class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
                     </div>
 
-                    <ul class="menu-inner py-1">
+                    <ul class="menu-inner py-1" style="max-height: 400px; overflow-y: auto;">
                         <!-- Dashboard -->
                         <li class="menu-item active mt-3">
                             <a href="/teacher/dashboard" class="menu-link">
