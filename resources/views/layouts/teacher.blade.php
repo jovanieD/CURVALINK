@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="en" class="light-style">
+<html lang="en" class="light-style layout-menu-fixed">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
     <link rel="icon" href="images/curva_logo.png" type="image/x-icon">
@@ -41,27 +41,19 @@
             <div class="layout-container">
                 <!-- Menu -->
                 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                    <div class=" h-25 d-flex flex-col shadow">
-                        <a href="/teacher ">
-                            <div class="h-100">
-                                <div class=" d-flex justify-content-center mt-3 h-auto">
-                                    <img src="../images/curva_logo.png" alt class=" w-25 h-auto rounded-circle" />
-                                </div>
-                                <div class=" d-flex justify-content-center  h-auto">
-                                    <span class="">
-                                        <h1 class=" font-bold">Curva NHS</h1>
-                                    </span>
-                                </div>
-                            </div>
+                    <div class="app-brand demo">
+                        <a href="/" class="app-brand-link">
+                            <img src="../images/curva_logo.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <span class="demo menu-text fw-bolder ms-2">Curva NHS</span>
                         </a>
 
                         <a href="javascript:void(0);"
-                        class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
-                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                    </a>
+                            class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                        </a>
                     </div>
 
-                    <ul class="menu-inner py-1" style="max-height: 400px; overflow-y: auto;">
+                    <ul class="menu-inner py-1">
                         <!-- Dashboard -->
                         <li class="menu-item active mt-3">
                             <a href="/teacher/dashboard" class="menu-link">
