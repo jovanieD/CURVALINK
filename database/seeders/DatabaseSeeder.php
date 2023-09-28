@@ -28,5 +28,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Teacher Vanie',
             'email' => 'teacher@example.com',
         ]);
+
+        \App\Models\Goodmoral::factory(2)->create();
     }
 }

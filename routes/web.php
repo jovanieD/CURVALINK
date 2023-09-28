@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GoodMoralController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
 use App\Http\Controllers\Auth\RegisterController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,6 +37,18 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 
 Route::group(['middleware' => 'auth:teacher'], function () {
+
+    Route::get('/schedule/goodmoral', [GoodMoralController::class,'index']);
+    Route::get('/events', [GoodMoralController::class, 'getEvents']);
+
+    Route::delete('/schedule/{id}', [GoodMoralController::class, 'deleteEvent']);
+
+    Route::put('/schedule/{id}', [GoodMoralController::class, 'update']);
+
+    Route::put('/schedule/{id}/resize', [GoodMoralController::class, 'resize']);
+
+    Route::get('/events/search', [GoodMoralController::class, 'search']);
+
     Route::get('/teacher', function () {
         return view('teacher.home-teacher');
     });
@@ -46,6 +60,8 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher/settings', function () {
         return view('teacher.account.settings');
     });
+
+
 
     // Route::get('', [ ::class, '']);
 

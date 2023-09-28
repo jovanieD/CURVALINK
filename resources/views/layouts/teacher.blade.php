@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
@@ -17,25 +16,18 @@
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    
+
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
-
-    <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
     <script src="../assets/js/config.js"></script>
@@ -43,7 +35,7 @@
     <head>
 
     <body>
-        <!-- Layout wrapper -->
+
         <div class="layout-wrapper layout-content-navbar">
             <div class="layout-container">
                 <!-- Menu -->
@@ -56,7 +48,7 @@
                                 </div>
                                 <div class=" d-flex justify-content-center  h-auto">
                                     <span class="">
-                                        <h1 class=" font-bold" >Curva NHS</h1>
+                                        <h1 class=" font-bold">Curva NHS</h1>
                                     </span>
                                 </div>
                             </div>
@@ -78,14 +70,14 @@
                             <span class="menu-header-text">Documents</span>
                         </li>
                         <li class="menu-item">
-                            <a href="javascript:void(0);" class="menu-link menu-toggle" >
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons bx bx-dock-top text-warning"></i>
-                                <div >Requests</div>
+                                <div>Requests</div>
                             </a>
                             <ul class="menu-sub ">
                                 <li class="menu-item">
-                                    <a href="" class="menu-link">
-                                        <div data-i18n="Account">Document 1</div>
+                                    <a href="/request/goodmoral" class="menu-link">
+                                        <div data-i18n="Account">Good Moral</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -112,8 +104,8 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="ui-accordion.html" class="menu-link">
-                                        <div >Accordion</div>
+                                    <a href="/schedule/goodmoral" class="menu-link">
+                                        <div data-i18n="Account">Good Moral</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -140,7 +132,7 @@
                             <ul class="menu-sub">
                                 <li class="menu-item">
                                     <a href="ui-accordion.html" class="menu-link">
-                                        <div >Announcement</div>
+                                        <div>Announcement</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -162,12 +154,12 @@
                             <ul class="menu-sub">
                                 <li class="menu-item">
                                     <a href="ui-accordion.html" class="menu-link">
-                                        <div >My Profile</div>
+                                        <div>My Profile</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/teacher/settings" class="menu-link">
-                                        <div >Settings</div>
+                                        <div>Settings</div>
                                     </a>
                                 </li>
                             </ul>
@@ -218,7 +210,7 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="images/panda.jpg" alt class="rounded-circle"
+                                                                <img src="{{asset('images/panda.jpg')}}" alt class="rounded-circle"
                                                                     style="width: 60px" />
                                                             </div>
                                                         </div>
@@ -308,6 +300,7 @@
 
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        
     </body>
 
 </html>
