@@ -60,4 +60,19 @@ class GoodMoralController extends Controller
 
         return response()->json($matchingEvents);
     }
+
+
+
+    // -------------------------------------------------------For Student---------------------------------------------
+
+    public function showScheduleForGoodMoral()
+    {
+        return view('student.schedule-goodmoral');
+    }
+
+    public function getScheduleForGooMoral()
+    {
+        $GoodMorals = GoodMoral::all();
+        return response()->json($GoodMorals);
+    }
 }

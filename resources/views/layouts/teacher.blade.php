@@ -42,7 +42,7 @@
                 <!-- Menu -->
                 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                     <div class="app-brand demo">
-                        <a href="/" class="app-brand-link">
+                        <a href="/teacher" class="app-brand-link">
                             <img src="../images/curva_logo.png" alt class="w-px-40 h-auto rounded-circle" />
                             <span class="demo menu-text fw-bolder ms-2">Curva NHS</span>
                         </a>
@@ -102,18 +102,18 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="/schedule/goodmoral" class="menu-link">
+                                    <a href="/schedules/form137" class="menu-link">
+                                        <div data-i18n="Alerts">Form 137</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/schedules/goodmoral" class="menu-link">
                                         <div data-i18n="Account">Good Moral</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="ui-alerts.html" class="menu-link">
-                                        <div data-i18n="Alerts">Alerts</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="ui-badges.html" class="menu-link">
-                                        <div data-i18n="Badges">Badges</div>
+                                    <a href="/schedules/Certificates" class="menu-link">
+                                        <div data-i18n="Account">Certification</div>
                                     </a>
                                 </li>
                             </ul>

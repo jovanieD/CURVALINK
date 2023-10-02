@@ -5,6 +5,8 @@ use Laravel\Sanctum\HasApiTokens;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GoodMoralController;
+use App\Http\Controllers\Form137Controller;
+use App\Http\Controllers\CertificationController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
@@ -31,6 +33,20 @@ Route::group(['middleware' => 'auth:web'], function () {
         return view('student.dashboard');
     });
 
+    Route::get('/request/goodmoral', function () {
+        return view('student.requestform-certificate');
+    });
+
+    
+    Route::get('/schedule/certificate', [CertificationController::class,'showStudentRequestCertification']);
+
+    Route::get('/schedule/form137', [Form137Controller::class,'showform137']);
+
+    Route::get('/schedule/goodmoral', [GoodMoralController::class,'showScheduleForGoodMoral']);
+    Route::get('/events', [GoodMoralController::class, 'getEvents']);
+
+    
+
     // Route::get('', [ ::class, '']);
 
 });
@@ -38,7 +54,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 Route::group(['middleware' => 'auth:teacher'], function () {
 
-    Route::get('/schedule/goodmoral', [GoodMoralController::class,'index']);
+    Route::get('/schedules/goodmoral', [GoodMoralController::class,'index']);
     Route::get('/events', [GoodMoralController::class, 'getEvents']);
 
     Route::delete('/schedule/{id}', [GoodMoralController::class, 'deleteEvent']);
