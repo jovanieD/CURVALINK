@@ -90,56 +90,60 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody class="table-border-bottom-0">
-                                                    <tr>
-                                                        <td>
-                                                            <strong>
-                                                                @if ($request['type'] == 'Certificate')
-                                                                    <i class="fab fa-angular fa-lg text-danger me-3"></i>
-                                                                    <strong>Certificate</strong>
-                                                                @elseif($request['type'] == 'Good Moral')
-                                                                    <i class="fa-solid fa-medal fa-xl"
-                                                                        style="color: #fcff3d;"></i>
-                                                                    <strong>Good Moral</strong>
-                                                                @elseif($request['type'] == 'Form137')
-                                                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i>
-                                                                    <strong>Form 137</strong>
+                                                    @foreach ($documentRequested as $request)
+                                                        <tr>
+                                                            <td>
+                                                                <strong>
+                                                                    @if ($request['type'] == 'Certificate')
+                                                                        <i
+                                                                            class="fab fa-angular fa-lg text-danger me-3"></i>
+                                                                        <strong>Certificate</strong>
+                                                                    @elseif($request['type'] == 'Good Moral')
+                                                                        <i class="fa-solid fa-medal fa-xl"
+                                                                            style="color: #fcff3d;"></i>
+                                                                        <strong>Good Moral</strong>
+                                                                    @elseif($request['type'] == 'Form137')
+                                                                        <i
+                                                                            class="fab fa-bootstrap fa-lg text-primary me-3"></i>
+                                                                        <strong>Form 137</strong>
+                                                                    @endif
+                                                                </strong>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                {{ \Carbon\Carbon::parse($request['created_at'])->format('F j, Y') }}
+                                                            </td>
+                                                            <td class="text-center">
+                                                                @if ($request['status'] == 'Pending')
+                                                                    <span
+                                                                        class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
+                                                                @elseif($request['status'] == 'Process')
+                                                                    <span
+                                                                        class="badge bg-danger me-1">{{ $request['status'] }}</span>
+                                                                @elseif($request['status'] == 'Scheduled')
+                                                                    <span
+                                                                        class="badge bg-primary me-1">{{ $request['status'] }}</span>
+                                                                @elseif($request['status'] == 'Received')
+                                                                    <span
+                                                                        class="badge bg-success me-1">{{ $request['status'] }}</span>
                                                                 @endif
-                                                            </strong>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            {{ \Carbon\Carbon::parse($request['created_at'])->format('F j, Y') }}
-                                                        </td>
-                                                        <td class="text-center">
-                                                            @if ($request['status'] == 'Pending')
-                                                                <span
-                                                                    class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
-                                                            @elseif($request['status'] == 'Process')
-                                                                <span
-                                                                    class="badge bg-danger me-1">{{ $request['status'] }}</span>
-                                                            @elseif($request['status'] == 'Scheduled')
-                                                                <span
-                                                                    class="badge bg-primary me-1">{{ $request['status'] }}</span>
-                                                            @elseif($request['status'] == 'Received')
-                                                                <span
-                                                                    class="badge bg-success me-1">{{ $request['status'] }}</span>
-                                                            @endif
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="d-flex justify-content-center">
-                                                                <button type="button" class="btn btn-success m-1">Edit</button>
-                                                                <button type="button" class="btn btn-danger m-1">Delete</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class="d-flex justify-content-center">
+                                                                    <button type="button"
+                                                                        class="btn btn-success m-1">Edit</button>
+                                                                    <button type="button"
+                                                                        class="btn btn-danger m-1">Delete</button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
-
                                         </div>
                                     @endforeach
                                 @endif
                             </div>
                         </div>
-
 
                         <!--/ List oF User's Request -->
                         <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
@@ -155,7 +159,6 @@
                                             </div>
                                             <h1 class="card-title mb-2">{{ $documentCounts['Scheduled'] }}</h3>
                                                 <span class="fw-semibold d-block mb-1">Scheduled</span>
-
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +173,6 @@
                                             </div>
                                             <h1 class="card-title mb-2">{{ $documentCounts['Received'] }}</h3>
                                                 <span class="fw-semibold d-block mb-1">Received Document</span>
-
                                         </div>
                                     </div>
                                 </div>
@@ -185,8 +187,6 @@
         </div>
         <!-- / Layout page -->
     </div>
-
-    <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
     </div>
 
