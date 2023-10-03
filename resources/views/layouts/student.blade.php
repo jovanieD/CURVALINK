@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
     <link rel="icon" href="images/curva_logo.png" type="image/x-icon">
@@ -15,9 +15,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
@@ -44,7 +44,7 @@
                     <div class="app-brand demo">
                         <a href="/" class="app-brand-link">
                             <img src="../images/curva_logo.png" alt class="w-px-40 h-auto rounded-circle" />
-                            <span class="demo menu-text fw-bolder ms-2">Curva NHS</span>
+                            <span class="demo fw-bolder m-2 fs-3 text-warning">Curva NHS</span>
                         </a>
 
                         <a href="javascript:void(0);"
@@ -58,9 +58,10 @@
                         <li class="menu-item active mt-3">
                             <a href="/dashboard" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-home-circle text-warning"></i>
-                                <div data-i18n="Analytics">Dashboard</div>
+                                <div>Dashboard</div>
                             </a>
                         </li>
+
 
                         <!-- Layouts -->
 
@@ -74,13 +75,13 @@
                             </a>
                             <ul class="menu-sub ">
                                 <li class="menu-item">
-                                    <a href="/request/goodmoral" class="menu-link">
-                                        <div data-i18n="Account">Good Moral</div>
+                                    <a href="/request/certificate" class="menu-link">
+                                        <div data-i18n="Notifications">Certificate</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="" class="menu-link">
-                                        <div data-i18n="Notifications">Certificate</div>
+                                    <a href="/request/goodmoral" class="menu-link">
+                                        <div data-i18n="Account">Good Moral</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -108,7 +109,7 @@
                                 </li>
                                 <li class="menu-item">
                                     <a href="/schedule/goodmoral" class="menu-link">
-                                        <div >Good Moralsdfdf</div>
+                                        <div>Good Moralsdfdf</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
@@ -208,8 +209,8 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{asset('images/panda.jpg')}}" alt class="rounded-circle"
-                                                                    style="width: 60px" />
+                                                                <img src="{{ asset('images/panda.jpg') }}" alt
+                                                                    class="rounded-circle" style="width: 60px" />
                                                             </div>
                                                         </div>
                                                         <div class="flex-grow-1">
@@ -298,7 +299,9 @@
 
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-        
+
+        <script src="/js/nav-highlight.js"></script>
+
     </body>
 
 </html>

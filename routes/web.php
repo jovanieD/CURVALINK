@@ -6,7 +6,10 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GoodMoralController;
 use App\Http\Controllers\Form137Controller;
-use App\Http\Controllers\CertificationController;
+use App\Http\Controllers\CertificationRequestController;
+use App\Http\Controllers\StudentDashboardController;
+
+
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
@@ -29,16 +32,23 @@ Route::get('/Login', [LoginController::class, 'show'])->name('Login');
 Route::post('/Login', [LoginController::class, 'authenticate'])->name('Login');
 
 Route::group(['middleware' => 'auth:web'], function () {
-    Route::get('/dashboard', function () {
-        return view('student.dashboard');
+
+    Route::get('/dashboard', [StudentDashboardController::class,'showStudentDashboard']);
+    Route::get('/edit/certificate{id}', [StudentDashboardController::class,'editCertificate'])->name('edit-certificate');
+
+    Route::get('/request/certificate', function () {
+        return view('student.request-certificate');
     });
 
     Route::get('/request/goodmoral', function () {
-        return view('student.requestform-certificate');
+        return view('student.request-goodmoral');
     });
 
+    Route::post('/request/certificate', [CertificationRequestController::class,'createNewCertificationRequest']);
+
+    // Route::post('/edit-certificate', [StudentDashboardController::class,'editCertificate'])->name('edit-certificate');
     
-    Route::get('/schedule/certificate', [CertificationController::class,'showStudentRequestCertification']);
+    Route::get('/schedule/certificate', [CertificationRequestController::class,'showStudentRequestCertification']);
 
     Route::get('/schedule/form137', [Form137Controller::class,'showform137']);
 

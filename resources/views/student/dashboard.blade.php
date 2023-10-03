@@ -11,20 +11,18 @@
                                 <div class="d-flex align-items-end row">
                                     <div class="col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Welcome to CuravaLink Portal {{Auth::user()->name}}! 🎉</h5>
+                                            <h5 class="card-title text-primary">Welcome to CuravaLink Portal
+                                                {{ Auth::user()->name }}! 🎉</h5>
                                             <p class="mb-4">
                                                 You have done <span class="fw-bold">72%</span> more sales today. Check your
                                                 new badge in
                                                 your profile.
                                             </p>
-
-                                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
                                         </div>
                                     </div>
                                     <div class="col-sm-5 text-center text-sm-left">
                                         <div class="card-body pb-0 px-0 px-md-4">
-                                            <img src="../assets/img/illustrations/man-with-laptop-light.png" height="140"
-                                                alt="View Badge User"
+                                            <img src="/images/svg/welcome.svg" height="140" alt="View Badge User"
                                                 data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                                 data-app-light-img="illustrations/man-with-laptop-light.png" />
                                         </div>
@@ -42,19 +40,8 @@
                                                     <img src="../assets/img/icons/unicons/chart-success.png"
                                                         alt="chart success" class="rounded" />
                                                 </div>
-                                                <div class="dropdown">
-                                                    <button class="btn p-0" type="button" id="cardOpt3"
-                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <h1 class="card-title mb-2">4</h3>
+                                            <h1 class="card-title mb-2">{{ $documentCounts['Pending'] }}</h3>
                                                 <span class="fw-semibold d-block mb-1">Pending Request</span>
 
                                         </div>
@@ -68,20 +55,9 @@
                                                     <img src="../assets/img/icons/unicons/chart-success.png"
                                                         alt="chart success" class="rounded" />
                                                 </div>
-                                                <div class="dropdown">
-                                                    <button class="btn p-0" type="button" id="cardOpt3"
-                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <h1 class="card-title mb-2">20</h3>
-                                                <span class="fw-semibold d-block mb-1">In Process Document</span>
+                                            <h1 class="card-title mb-2">{{ $documentCounts['Process'] }}</h3>
+                                                <span class="fw-semibold d-block mb-1">In Process </span>
 
                                         </div>
                                     </div>
@@ -91,103 +67,80 @@
                         <!-- List of Request  -->
                         <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                             <div class="card">
-                                <h5 class="card-header">All Documents</h5>
-                                <div class="table-responsive text-nowrap">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Document</th>
-                                                <th>Request Date</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="table-border-bottom-0">
-                                            <tr>
-                                                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Good Moral</strong></td>
-                                                <td> January 03, 2023</td>
-                                                <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-1"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>Certificate</strong></td>
-                                                <td>Barry Hunter</td>
-                                                <td><span class="badge bg-label-success me-1">Completed</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-2"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>Form 137</strong></td>
-                                                <td>Trevor Baker</td>
-                                                <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-2"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i>
-                                                    <strong>Good moral</strong>
-                                                </td>
-                                                <td>Jerry Milton</td>
-                                                <td><span class="badge bg-label-danger me-1">Released</span></td>
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                            data-bs-toggle="dropdown">
-                                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                                    class="bx bx-trash me-2"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                @if (empty($documentRequested))
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-auto text-center">
+                                            <p class="mb-3 text-warning fs-4 fw-bold"
+                                                style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 1; ">
+                                                Empty</p>
+                                            <img src="/images/svg/empty.svg" class="w-75 max-img p-5" alt="">
+                                        </div>
+                                    </div>
+                                @else
+                                    @foreach ($documentRequested as $request)
+                                        <h5 class="card-header">All Documents</h5>
+                                        <div class="table-responsive text-nowrap">
+                                            <table class="table fs-5 table-bordered table-striped">
+                                                <thead style="background-color: #FFD700;">
+                                                    <tr>
+                                                        <th class="text-center fw-bold">Document</th>
+                                                        <th class="text-center fw-bold">Request Date</th>
+                                                        <th class="text-center fw-bold">Status</th>
+                                                        <th class="text-center fw-bold">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-border-bottom-0">
+                                                    <tr>
+                                                        <td>
+                                                            <strong>
+                                                                @if ($request['type'] == 'Certificate')
+                                                                    <i class="fab fa-angular fa-lg text-danger me-3"></i>
+                                                                    <strong>Certificate</strong>
+                                                                @elseif($request['type'] == 'Good Moral')
+                                                                    <i class="fa-solid fa-medal fa-xl"
+                                                                        style="color: #fcff3d;"></i>
+                                                                    <strong>Good Moral</strong>
+                                                                @elseif($request['type'] == 'Form137')
+                                                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i>
+                                                                    <strong>Form 137</strong>
+                                                                @endif
+                                                            </strong>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            {{ \Carbon\Carbon::parse($request['created_at'])->format('F j, Y') }}
+                                                        </td>
+                                                        <td class="text-center">
+                                                            @if ($request['status'] == 'Pending')
+                                                                <span
+                                                                    class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Process')
+                                                                <span
+                                                                    class="badge bg-danger me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Scheduled')
+                                                                <span
+                                                                    class="badge bg-primary me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Received')
+                                                                <span
+                                                                    class="badge bg-success me-1">{{ $request['status'] }}</span>
+                                                            @endif
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="d-flex justify-content-center">
+                                                                <button type="button" class="btn btn-success m-1">Edit</button>
+                                                                <button type="button" class="btn btn-danger m-1">Delete</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
+
+
                         <!--/ List oF User's Request -->
                         <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                             <div class="row">
@@ -199,21 +152,9 @@
                                                     <img src="../assets/img/icons/unicons/chart-success.png"
                                                         alt="chart success" class="rounded" />
                                                 </div>
-                                                <div class="dropdown">
-                                                    <button class="btn p-0" type="button" id="cardOpt3"
-                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end"
-                                                        aria-labelledby="cardOpt3">
-                                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <h1 class="card-title mb-2">2</h3>
-                                                <span class="fw-semibold d-block mb-1">Scheduled for Pick Up</span>
+                                            <h1 class="card-title mb-2">{{ $documentCounts['Scheduled'] }}</h3>
+                                                <span class="fw-semibold d-block mb-1">Scheduled</span>
 
                                         </div>
                                     </div>
@@ -226,48 +167,13 @@
                                                     <img src="../assets/img/icons/unicons/chart-success.png"
                                                         alt="chart success" class="rounded" />
                                                 </div>
-                                                <div class="dropdown">
-                                                    <button class="btn p-0" type="button" id="cardOpt3"
-                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-end"
-                                                        aria-labelledby="cardOpt3">
-                                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <h1 class="card-title mb-2">9</h3>
-                                                <span class="fw-semibold d-block mb-1">Recieved Document</span>
+                                            <h1 class="card-title mb-2">{{ $documentCounts['Received'] }}</h3>
+                                                <span class="fw-semibold d-block mb-1">Received Document</span>
 
                                         </div>
                                     </div>
                                 </div>
-                                <!-- </div>
-                                    <div class="row"> -->
-                                {{-- <div class="col-12 mb-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                                <div
-                                                    class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                                    <div class="card-title">
-                                                        <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                                        <span class="badge bg-label-warning rounded-pill">Year 2021</span>
-                                                    </div>
-                                                    <div class="mt-sm-auto">
-                                                        <small class="text-success text-nowrap fw-semibold"><i
-                                                                class="bx bx-chevron-up"></i> 68.2%</small>
-                                                        <h3 class="mb-0">$84,686k</h3>
-                                                    </div>
-                                                </div>
-                                                <div id="profileReportChart"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -283,5 +189,14 @@
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
+
+    <script>
+        document.getElementById('editModal').addEventListener('show.bs.modal', function(event) {
+            var button = event.relatedTarget;
+            var id = button.getAttribute('data-id');
+            var modal = this;
+
+            modal.querySelector('#certificateId').textContent = id;
+        });
+    </script>
 @endsection

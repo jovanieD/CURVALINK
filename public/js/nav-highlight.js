@@ -15,3 +15,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuLinks = document.querySelectorAll(".menu-link");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            // Check if the menu is collapsed
+            const isCollapsed = document.getElementById('layout-menu').classList.contains('menu-collapsed');
+
+            if (isCollapsed) {
+                // Toggle the menu collapse state
+                document.getElementById('layout-menu').classList.toggle('menu-collapsed');
+            }
+
+            // Remove the 'active' class from all menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add the 'active' class to the clicked menu item
+            link.closest('.menu-item').classList.add('active');
+        });
+
+        if (window.location.pathname === link.getAttribute("href")) {
+            link.closest('.menu-item').classList.add("active");
+        }
+    });
+});
+

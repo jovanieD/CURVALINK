@@ -75,7 +75,7 @@
                             <ul class="menu-sub ">
                                 <li class="menu-item">
                                     <a href="/request/goodmoral" class="menu-link">
-                                        <div data-i18n="Account">Good Moral</div>
+                                        <div data-i18n="Account">Good Moralasdf</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">

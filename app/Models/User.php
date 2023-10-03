@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(GoodMoral::class);
     }
+
+    public function certificationRequests()
+{
+    return $this->hasMany(CertificationRequest::class, 'requestor_id');
+}
 }
