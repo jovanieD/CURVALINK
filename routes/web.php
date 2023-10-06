@@ -15,6 +15,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
 use App\Http\Controllers\Auth\RegisterController;
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,10 +34,18 @@ Auth::routes();
 Route::get('/Login', [LoginController::class, 'show'])->name('Login');
 Route::post('/Login', [LoginController::class, 'authenticate'])->name('Login');
 
+
+
 Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/dashboard', [StudentDashboardController::class,'showStudentDashboard']);
-    Route::get('/edit/certificate{id}', [StudentDashboardController::class,'editCertificate'])->name('edit-certificate');
+
+    Route::get('/getrequest/{id}', [StudentDashboardController::class,'getRequest']);
+
+    Route::get('/viewrequest/{id}', [StudentDashboardController::class,'viewRequest']);
+
+    Route::delete('/deleterequest/{id}', [StudentDashboardController::class,'deleteRequest']);
+    
 
     Route::get('/request/certificate', function () {
         return view('student.request-certificate');
@@ -60,6 +71,8 @@ Route::group(['middleware' => 'auth:web'], function () {
     // Route::get('', [ ::class, '']);
 
 });
+
+
 
 
 Route::group(['middleware' => 'auth:teacher'], function () {

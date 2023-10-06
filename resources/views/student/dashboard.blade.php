@@ -11,7 +11,7 @@
                                 <div class="d-flex align-items-end row">
                                     <div class="col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Welcome to CuravaLink Portal
+                                            <h5 class="card-title text-primary fs-3">Welcome to CuravaLink Portal
                                                 {{ Auth::user()->name }}! 🎉</h5>
                                             <p class="mb-4">
                                                 You have done <span class="fw-bold">72%</span> more sales today. Check your
@@ -77,73 +77,99 @@
                                         </div>
                                     </div>
                                 @else
-                                    @foreach ($documentRequested as $request)
-                                        <h5 class="card-header">All Documents</h5>
-                                        <div class="table-responsive text-nowrap">
-                                            <table class="table fs-5 table-bordered table-striped">
-                                                <thead style="background-color: #FFD700;">
+                                    <h5 class="card-header">All Documents</h5>
+                                    <div class="table-responsive text-nowrap">
+                                        <table class="table fs-5 table-bordered table-striped">
+                                            <thead style="background-color: #FFD700;">
+                                                <tr>
+                                                    <th class="text-center fw-bold">Document</th>
+                                                    <th class="text-center fw-bold">Request Date</th>
+                                                    <th class="text-center fw-bold">Status</th>
+                                                    <th class="text-center fw-bold">Remark</th>
+                                                    <th class="text-center fw-bold">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-border-bottom-0">
+                                                @foreach ($documentRequested as $request)
+                                                    @include('modals.delete')
                                                     <tr>
-                                                        <th class="text-center fw-bold">Document</th>
-                                                        <th class="text-center fw-bold">Request Date</th>
-                                                        <th class="text-center fw-bold">Status</th>
-                                                        <th class="text-center fw-bold">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="table-border-bottom-0">
-                                                    @foreach ($documentRequested as $request)
-                                                        <tr>
-                                                            <td>
-                                                                <strong>
-                                                                    @if ($request['type'] == 'Certificate')
-                                                                        <i
-                                                                            class="fab fa-angular fa-lg text-danger me-3"></i>
-                                                                        <strong>Certificate</strong>
-                                                                    @elseif($request['type'] == 'Good Moral')
-                                                                        <i class="fa-solid fa-medal fa-xl"
-                                                                            style="color: #fcff3d;"></i>
-                                                                        <strong>Good Moral</strong>
-                                                                    @elseif($request['type'] == 'Form137')
-                                                                        <i
-                                                                            class="fab fa-bootstrap fa-lg text-primary me-3"></i>
-                                                                        <strong>Form 137</strong>
-                                                                    @endif
-                                                                </strong>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                {{ \Carbon\Carbon::parse($request['created_at'])->format('F j, Y') }}
-                                                            </td>
-                                                            <td class="text-center">
-                                                                @if ($request['status'] == 'Pending')
-                                                                    <span
-                                                                        class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
-                                                                @elseif($request['status'] == 'Process')
-                                                                    <span
-                                                                        class="badge bg-danger me-1">{{ $request['status'] }}</span>
-                                                                @elseif($request['status'] == 'Scheduled')
-                                                                    <span
-                                                                        class="badge bg-primary me-1">{{ $request['status'] }}</span>
-                                                                @elseif($request['status'] == 'Received')
-                                                                    <span
-                                                                        class="badge bg-success me-1">{{ $request['status'] }}</span>
+                                                        <td>
+                                                            <strong>
+                                                                @if ($request['type'] == 'Certificate')
+                                                                    <i class="fa-solid fa-scroll m-2" style="color: #f8e40d;"></i>
+                                                                    <strong>Certificate</strong>
+                                                                @elseif($request['type'] == 'Good Moral')
+                                                                    <i class="fa-solid fa-medal fa-xl"
+                                                                        style="color: #fcff3d;"></i>
+                                                                    <strong>Good Moral</strong>
+                                                                @elseif($request['type'] == 'Form137')
+                                                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i>
+                                                                    <strong>Form 137</strong>
                                                                 @endif
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <div class="d-flex justify-content-center">
-                                                                    <button type="button"
-                                                                        class="btn btn-success m-1">Edit</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger m-1">Delete</button>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    @endforeach
+                                                            </strong>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            {{ \Carbon\Carbon::parse($request['created_at'])->format('F j, Y') }}
+                                                        </td>
+                                                        <td class="text-center">
+                                                            @if ($request['status'] == 'Pending')
+                                                                <span
+                                                                    class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Process')
+                                                                <span
+                                                                    class="badge bg-danger me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Scheduled')
+                                                                <span
+                                                                    class="badge bg-primary me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Received')
+                                                                <span
+                                                                    class="badge bg-success me-1">{{ $request['status'] }}</span>
+                                                            @endif
+                                                        </td>
+                                                        <td class="text-center text-wrap" style="max-width: 10%">
+                                                            <p>asdasdfasdf asdfas</p>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="d-flex justify-content-center">
+                                                                <form method="get"action="/viewrequest/{{ $request['id'] }}">
+                                                                    <button type="submit" class="btn btn-info m-1">
+                                                                        <i class="fas fa-eye" data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top" title="View"></i>
+                                                                    </button>
+                                                                </form>
+
+                                                                <form method="get"
+                                                                    action="/getrequest/{{ $request['id'] }}">
+                                                                    @csrf
+                                                                    <button type="submit" class="btn btn-warning m-1">
+                                                                        <i class="fas fa-edit " data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top" title="Edit"></i>
+                                                                    </button>
+                                                                </form>
+
+                                                                <button type="submit" class="btn btn-danger m-1"
+                                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                    <i class="fas fa-trash" data-bs-toggle="tooltip"
+                                                                        data-bs-placement="top" title="Delete"></i>
+                                                                </button>
+
+                                                            </div>
+
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <nav class=" d-flex justify-content-center m-2">
+                                            <ul class="pagination">
+                                                 {{ $documentRequested->onEachSide(1)->setPath('/dashboard')->appends(request()->query())->links('pagination::bootstrap-4') }}
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 @endif
                             </div>
                         </div>
+                        
 
                         <!--/ List oF User's Request -->
                         <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
@@ -189,14 +215,4 @@
     </div>
     <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-
-    <script>
-        document.getElementById('editModal').addEventListener('show.bs.modal', function(event) {
-            var button = event.relatedTarget;
-            var id = button.getAttribute('data-id');
-            var modal = this;
-
-            modal.querySelector('#certificateId').textContent = id;
-        });
-    </script>
 @endsection

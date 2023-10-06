@@ -22,13 +22,6 @@
 
     <!-- Scripts -->
     <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
-
-    {{-- @vite(['resources/css/auth/login.css']) --}}
-    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
-
-    {{-- JS  --}}
-    {{-- @vite(['resources/js/auth/login.js']) --}}
-
 </head>
 
 <body>

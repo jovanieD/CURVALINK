@@ -19,8 +19,8 @@ return new class extends Migration
                 $table->string('address');
                 $table->string('municipality');
                 $table->string('province')->nullable();
-                $table->string('postal', 6); // Assuming postal code format is valid as a string
-                $table->string('phonenumber', 13); // Assuming phone number format is valid as a string
+                $table->string('postal'); // Assuming postal code format is valid as a string
+                $table->string('phonenumber'); // Assuming phone number format is valid as a string
                 $table->string('email');
                 $table->string('purpose');
                 $table->string('status')->default('Pending');

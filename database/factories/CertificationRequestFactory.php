@@ -17,16 +17,18 @@ class CertificationRequestFactory extends Factory
     public function definition(): array
     {
         return [
-            'requestor' => $faker->name,
-            'firstname' => $faker->firstName,
-            'lastname' => $faker->lastName,
-            'address' => $faker->address,
-            'municipality' => $faker->city,
-            'state_province' => $faker->state,
-            'postal_code' => $faker->postcode,
-            'phone_number' => $faker->phoneNumber,
-            'email' => $faker->unique()->safeEmail,
-            'purpose' => $faker->sentence,
+            'user_id' => 1,
+            'firstname' => fake()->name(),
+            'lastname' => fake()->name(),
+            'address' => fake()->address(),
+            'municipality' => fake()->city(),
+            'province' => fake()->state(),
+            'postal' => fake()->postcode(),
+            'phonenumber' => fake()->phoneNumber(),
+            'email' => fake()->unique()->safeEmail(),
+            'purpose' => fake()->sentence(),
+            'status' => "Process",
         ];
     }
 }
+

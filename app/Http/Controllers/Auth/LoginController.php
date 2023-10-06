@@ -49,77 +49,88 @@ class LoginController extends Controller
         $this->middleware('guest:teacher')->except('logout');
     }
 
-    public function authenticate(Request $request){
 
-        $credentials = $request->only('email', 'password');
-        try {
-            $email = $request->email;
-            $password = $request->password;
+    
+
+    // public function authenticate(Request $request){
+
+    //     $credentials = $request->only('email', 'password');
+
+    //     $request->validate([
+    //         'email' => 'required',
+    //         'password' => 'required',
+    //     ]);
+    
+    //     try {
+    //         $email = $request->email;
+    //         $password = $request->password;
 
 
-            if (Auth::guard('web')->attempt(['email' => $email, 'password' => $password])) {
-                $user = User::where('email', $request->email)->first();
+    //         if (Auth::guard('web')->attempt(['email' => $email, 'password' => $password])) {
+    //             $user = User::where('email', $request->email)->first();
 
-                if (!$user || !Hash::check($request->password, $user->password)) {
-                    DB::rollBack(); // Roll back the transaction
-                }
+    //             if (!$user || !Hash::check($request->password, $user->password)) {
+    //                 return back()->with('error', 'The error message here!');
+    //                 DB::rollBack(); // Roll back the transaction
+    //             }
 
-                $token = $user->createToken('my_app_token')->plainTextToken;
+    //             $token = $user->createToken('my_app_token')->plainTextToken;
 
-                $response = [
-                    'user' => $user,
-                    'token' => $token
-                ];
+    //             $response = [
+    //                 'user' => $user,
+    //                 'token' => $token
+    //             ];
 
-                DB::commit(); // Commit the transaction
+    //             DB::commit(); // Commit the transaction
 
-                return redirect('/');
-            }elseif (Auth::guard('teacher')->attempt(['email' => $email, 'password' => $password])) {
-                $user = Teacher::where('email', $request->email)->first();
+    //             return redirect('/');
+    //         }elseif (Auth::guard('teacher')->attempt(['email' => $email, 'password' => $password])) {
+    //             $user = Teacher::where('email', $request->email)->first();
 
-                if (!$user || !Hash::check($request->password, $user->password)) {
-                    DB::rollBack(); // Roll back the transaction
-                }
+    //             if (!$user || !Hash::check($request->password, $user->password)) {
 
-                $token = $user->createToken('my_app_token')->plainTextToken;
+    //                 DB::rollBack(); // Roll back the transaction
+    //             }
 
-                $response = [
-                    'user' => $user,
-                    'token' => $token
-                ];
+    //             $token = $user->createToken('my_app_token')->plainTextToken;
 
-                DB::commit(); // Commit the transaction
+    //             $response = [
+    //                 'user' => $user,
+    //                 'token' => $token
+    //             ];
 
-                return redirect('/teacher');
-            }elseif (Auth::guard('admin')->attempt(['email' => $email, 'password' => $password])) {
-                $user = Admin::where('email', $request->email)->first();
+    //             DB::commit(); // Commit the transaction
 
-                if (!$user || !Hash::check($request->password, $user->password)) {
-                    DB::rollBack(); // Roll back the transaction
-                }
+    //             return redirect('/teacher');
+    //         }elseif (Auth::guard('admin')->attempt(['email' => $email, 'password' => $password])) {
+    //             $user = Admin::where('email', $request->email)->first();
 
-                $token = $user->createToken('my_app_token')->plainTextToken;
+    //             if (!$user || !Hash::check($request->password, $user->password)) {
+    //                 DB::rollBack(); // Roll back the transaction
+    //             }
 
-                $response = [
-                    'user' => $user,
-                    'token' => $token
-                ];
+    //             $token = $user->createToken('my_app_token')->plainTextToken;
 
-                DB::commit(); // Commit the transaction
+    //             $response = [
+    //                 'user' => $user,
+    //                 'token' => $token
+    //             ];
 
-                return redirect('/admin');
-            }
-            DB::rollBack(); // Roll back the transaction
-            return redirect('/login')->with('error', 'These credentials do not match our records.');
-        } catch (ValidationException $e) {
-            DB::rollBack(); // Roll back the transaction
-            return redirect('/login')->with('message', 'Password should be 8 characters');
-        } catch (Exception $e) {
-            DB::rollBack(); // Roll back the transaction
-            return redirect('/login')->with('error', 'An error occurred while logging in.');
-        }
+    //             DB::commit(); // Commit the transaction
 
-    }
+    //             return redirect('/admin');
+    //         }
+    //         DB::rollBack(); // Roll back the transaction
+    //         return redirect('/login')->with('error', 'These credentials do not match our records.');
+    //     } catch (ValidationException $e) {
+    //         DB::rollBack(); // Roll back the transaction
+    //         return redirect('/login')->with('message', 'Password should be 8 characters');
+    //     } catch (Exception $e) {
+    //         DB::rollBack(); // Roll back the transaction
+    //         return redirect('/login')->with('error', 'An error occurred while logging in.');
+    //     }
+
+    // }
 
 
     // public function showAdminLoginForm()
@@ -185,4 +196,59 @@ class LoginController extends Controller
     //     }
 
     // }
+
+
+
+    public function authenticate(Request $request){
+
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+    
+        try {
+            $email = $request->email;
+            $password = $request->password;
+    
+            if (empty($email) ) {
+                return back()->with('error', 'Please provide both email and password.');
+            }
+    
+            $guards = ['web', 'teacher', 'admin'];
+    
+            foreach ($guards as $guard) {
+                if (Auth::guard($guard)->attempt(['email' => $email, 'password' => $password])) {
+                    $user = $guard === 'web'
+                        ? User::where('email', $request->email)->first()
+                        : ($guard === 'teacher'
+                            ? Teacher::where('email', $request->email)->first()
+                            : Admin::where('email', $request->email)->first());
+    
+                    if (!$user || !Hash::check($request->password, $user->password)) {
+                        DB::rollBack(); // Roll back the transaction
+                        return back()->with('error', 'The error message here!');
+                    }
+    
+                    $token = $user->createToken('my_app_token')->plainTextToken;
+    
+                    $response = [
+                        'user' => $user,
+                        'token' => $token
+                    ];
+    
+                    DB::commit(); // Commit the transaction
+    
+                    return redirect($guard === 'web' ? '/' : '/' . $guard);
+                }
+            }
+    
+            DB::rollBack(); // Roll back the transaction
+            return redirect('/login')->with('error', 'These credentials do not match our records.');
+        } catch (Exception $e) {
+            DB::rollBack(); // Roll back the transaction
+            return redirect('/login')->with('error', 'An error occurred while logging in.');
+        }
+    
+    }
+    
 }

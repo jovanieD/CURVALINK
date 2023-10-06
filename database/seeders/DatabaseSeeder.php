@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'teacher@example.com',
         ]);
 
-        // \App\Models\GoodMoral::factory(2)->create();
+        \App\Models\CertificationRequest::factory(12)->create();
     }
 }
