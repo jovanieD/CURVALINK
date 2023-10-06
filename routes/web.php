@@ -15,8 +15,6 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
 use App\Http\Controllers\Auth\RegisterController;
 
-use Dompdf\Dompdf;
-use Dompdf\Options;
 
 
 Route::get('/', function () {
