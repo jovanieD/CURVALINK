@@ -63,7 +63,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="text-white mb-0">Teachers</h5>
-                                <h1 class="text-white mb-0" data-toggle="counter-up">100</h1>
+                                <h1 class="text-white mb-0" data-toggle="counter-up"></h1>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="text-primary mb-0">Students</h5>
-                                <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+                                <h1 class="mb-0" data-toggle="counter-up">855</h1>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="text-white mb-0">Completers</h5>
-                                <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                                <h1 class="text-white mb-0" data-toggle="counter-up">157</h1>
                             </div>
                         </div>
                     </div>

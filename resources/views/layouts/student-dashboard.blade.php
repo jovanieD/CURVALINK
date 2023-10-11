@@ -209,8 +209,7 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{ asset('images/panda.jpg') }}" alt
-                                                                    class="rounded-circle" style="width: 60px" />
+                                                                <img src="/images/avatar.png" alt class="rounded-circle" style="width: 40px; height:40px; "  />
                                                             </div>
                                                         </div>
                                                         <div class="flex-grow-1">
@@ -226,15 +225,15 @@
                                                 <div class="dropdown-divider"></div>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="/">
                                                     <i class="fa fa-home m-2 text-warning"></i>
                                                     <span class="align-middle">Homepage</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="">
                                                     <i class="fa fa-tasks m-2 text-warning"></i>
-                                                    <span class="align-middle">View Request</span>
+                                                    <span class="align-middle">View Schedule</span>
                                                 </a>
                                             </li>
 

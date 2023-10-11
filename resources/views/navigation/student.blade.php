@@ -36,96 +36,95 @@
             </div>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
             @guest
-            @if (Route::has('login'))
-                <a class="btn-grad btn-primary " style="text-decoration: none;"
-                    href="{{ route('login') }}">{{ __('Login') }}</a>
-            @endif
+                @if (Route::has('login'))
+                    <a class="btn-grad btn-primary " style="text-decoration: none;"
+                        href="{{ route('login') }}">{{ __('Login') }}</a>
+                @endif
             @else
-            <div class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <div class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
-                    <span class="m-2">
-                        <img style="border-radius: 25px; height: 30px; width: 30px;" src="images/panda.jpg"
-                            alt="">
-                    </span>
-                </a>
-            
-                <!-- Dropdown Menu Items -->
-                <ul class="dropdown-menu dropdown-menu-end">
-            
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <div class="avatar avatar-online">
-                                        <img src="images/panda.jpg" alt class="rounded-circle"
-                                            style="width: 60px" />
+                        <span class="m-2">
+                            <img style="border-radius: 25px; height: 30px; width: 30px;" src="/images/avatar.png"
+                                alt="">
+                        </span>
+                    </a>
+
+                    <!-- Dropdown Menu Items -->
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="avatar avatar-online">
+                                            <img src="/images/avatar.png" alt class="rounded-circle" style="width: 50px; height:50px; "  />
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <span class="fw-semibold d-block"> {{ Auth::user()->name }}</span>
+                                        <small class="text-muted">Student</small>
                                     </div>
                                 </div>
-                                <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block"> {{ Auth::user()->name }}</span>
-                                    <small class="text-muted">Student</small>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-            
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa fa-user m-2 text-warning"></i>
-                            <span class="align-middle">My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa fa-list-alt m-2 text-warning"></i>
-                            <span class="align-middle">Request a Document</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa fa-tasks m-2 text-warning"></i>
-                            <span class="align-middle">View Request</span>
-                        </a>
-                    </li>
-            
-                    <li>
-                        <a class="dropdown-item" href="/dashboard">
-                            <i class="fa fa-server m-2 text-warning"></i>
-                            <span class="align-middle">Dashboard</span>
-                        </a>
-                    </li>
-            
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="fa fa-cog m-2 text-warning"></i>
-                            <span class="align-middle">Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="dropdown-divider"></div>
-                    </li>
-             
-                    <li>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <i class="fa fa-power-off m-2 text-warning"></i>
-                            <span>Log out</span>
-                        </a>
-                    </li>
-                </ul>
-            
-                <!-- Logout Form (Hidden) -->
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-user m-2 text-warning"></i>
+                                <span class="align-middle">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-list-alt m-2 text-warning"></i>
+                                <span class="align-middle">Request a Document</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-tasks m-2 text-warning"></i>
+                                <span class="align-middle">View Request</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/dashboard">
+                                <i class="fa fa-server m-2 text-warning"></i>
+                                <span class="align-middle">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-cog m-2 text-warning"></i>
+                                <span class="align-middle">Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                <i class="fa fa-power-off m-2 text-warning"></i>
+                                <span>Log out</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Logout Form (Hidden) -->
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
             @endguest
-            
+
 
         </div>
     </div>

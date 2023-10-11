@@ -73,6 +73,8 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 
 
+
+
 Route::group(['middleware' => 'auth:teacher'], function () {
 
     Route::get('/schedules/goodmoral', [GoodMoralController::class,'index']);
