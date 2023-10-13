@@ -285,7 +285,7 @@
                                             <div class="alert alert-danger">Invalid mobile number</div>
                                         @enderror
                                         <input type="tel" id="input_5_full" name="phonenumber"
-                                            data-type="mask-number"
+                                            data-type="mask-number" maxlength="13"
                                             class="mask-phone-number form-textbox validate[required, Fill Mask]"
                                             data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px"
                                             data-masked="true" value="" placeholder="0000-000-0000"

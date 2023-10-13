@@ -13,10 +13,9 @@
   height: 38px;
 }
 
-.app-brand-text.demo {
-  font-size: 1.75rem;
-  letter-spacing: -0.5px;
-  text-transform: lowercase;
+.demo {
+  font-size: 1.6rem !important;
+  margin-left: 5px !important;
 }
 
 /* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */

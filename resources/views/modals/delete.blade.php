@@ -24,7 +24,7 @@
                     autocomplete="on">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-primary m-2 fs-4">Yes</button>
+                    <button type="submit" class="btn btn-warning m-2 fs-4">Yes</button>
                 </form>
             </div>
         </div>

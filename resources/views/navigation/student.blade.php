@@ -38,7 +38,7 @@
             @guest
                 @if (Route::has('login'))
                     <a class="btn-grad btn-primary " style="text-decoration: none;"
-                        href="{{ route('login') }}">{{ __('Login') }}</a>
+                        href="{{ route('login') }}">Log In</a>
                 @endif
             @else
                 <div class="nav-item dropdown">
@@ -46,7 +46,7 @@
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                         <span class="m-2">
-                            <img style="border-radius: 25px; height: 30px; width: 30px;" src="/images/avatar.png"
+                            <img style="border-radius: 25px; height: 30px; width: 30px;" src="{{Auth::user()->profile_image}}"
                                 alt="">
                         </span>
                     </a>
@@ -59,7 +59,7 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 me-3">
                                         <div class="avatar avatar-online">
-                                            <img src="/images/avatar.png" alt class="rounded-circle" style="width: 50px; height:50px; "  />
+                                            <img src="{{Auth::user()->profile_image}}" alt class="rounded-circle" style="width: 50px; height:50px; "  />
                                         </div>
                                     </div>
                                     <div class="flex-grow-1">
