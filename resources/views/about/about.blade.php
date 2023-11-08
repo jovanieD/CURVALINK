@@ -823,7 +823,128 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid py-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="margin-top: 5px">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6 wow zoomIn"
+                        data-wow-delay="0.3s"
+                        style="background-color: rgb(85, 172, 243)">
+                        <div
+                            class="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center">
+                            <h4 class="mb-3">Vision</h4>
+                            <p class="m-0">We dream of Filipinos who passionately love their country and whose
+                                competencies and values enable them to realize their full potential and contribute
+                                meaningfully to building the nation. <br>
+                                As a learner-centered public institution, the Department of Education continuously improves
+                                itself to better service its stakeholders.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn"
+                        data-wow-delay="0.9s">
+                        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center "
+                            style="width: 100vh">
+                            <h3 class="mb-3">Mission</h3>
+                            <p class="mb-3">To protect and promote the right of every Filipino to quality, equitable,
+                                culture-based, and complete basi education where; <br>
+                                Students learn in a child-friendly, gender sensitive, safe and motivating environment <br>
+                                Teachers facilitate learning and constantly nurture every learner <br>
+                                Administrators and staff, as stewards of the institution ensure an enbaling and supportive
+                                environment for effective learning to happen <br>
+                                Family, community and other stateholders are actively engaged and share responsibility for
+                                developing lifelong learners.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
     {{-- VISION AND MISSION END --}}
-@endsection
+
+    {{-- CURVA HYMN START --}}
+    <div class="container-fluid py-5 wow fadeInUp"
+        data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+                style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Martin M. Salimbangon National High School HYMN</h5>
+            </div>
+
+            <div class="container-fluid py-5 wow fadeInUp"
+                data-wow-delay="0.1s">
+                <div class="container py-5"
+                    style="margin-left: 15vh">
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-6 wow zoomIn"
+                            data-wow-delay="0.9s">
+                            <div class="service-item bg-light h-100 rounded d-flex flex-column align-items-center justify-content-center text-center"
+                                style="width: 100vh">
+                                <h3 class="mb-3"> Martin M. Salimbangon NHS Hymn</h3>
+                                <p class="mb-3">I. From Barangay Curva of Medellin, <br>
+                                    Grows a school that will never go, <br>
+                                    Education is the name it uphold, <br>
+                                    The future of her children she molds. <br>
+                                    <br>
+                                    Chorus <br>
+                                    As children you nurtured us, <br>
+                                    Our love and strength will continue, <br>
+                                    Though our road to life will soon be long, <br>
+                                    We live the portals of this song. <br>
+
+                                    (Repeat chorus 2x)
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- CURVA HYMN END --}}
+
+        {{-- ACHIEVEMENTS START --}}
+        <div class="container-fluid py-5 wow fadeInUp"
+            data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-7">
+                        <div class="section-title position-relative pb-3 mb-5">
+                            <h5 class="fw-bold text-primary text-uppercase">ACHIEVEMENTS</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3"
+                style="max-width: 100vh;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ url('images/sugbusog.jpg') }}"
+                            class="card-img"
+                            alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"> 𝓜𝓪𝓻𝓽𝓲𝓷 𝓝𝓗𝓢 𝓫𝓪𝓰𝓼 3𝓻𝓭 𝓹𝓵𝓪𝓬𝓮 𝓸𝓯 𝓢𝓾𝓰𝓫𝓾𝓼𝓸𝓰
+                                𝓒𝓸𝓷𝓽𝓮𝓼𝓽 𝓡𝓸𝓾𝓷𝓭 4 𝓜𝓾𝓷𝓲𝓬𝓲𝓹𝓪𝓵 𝓛𝓮𝓿𝓮𝓵</h5>
+                            <br>
+                            <p class="card-text">Curva National High School celebrated victory as they triumphed in
+                                Sugbusog Vegetables Gardening Program Contest Round 4 Municipal Level. The Sugbusog contest
+                                held last July 2023 graced with the evaluators.
+                                The Sugbusog of Curva National High School were taken care of and sustained its beauty
+                                through the efforts from Junior and Senior High School teachers most especially to the
+                                Sugbusog coordinator, Ms. Cristy Abayon.
+                                The school were really destined to bag an award because the pictures were planned to be
+                                posted last July but because of the unpredictable schedules, it was postponed. However,
+                                everything has a reason because last September 9, 2023 the school were part of the winners.
+                                Indeed, perfect timing is everything!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- ACHIEVEMENTS END --}}
+    @endsection
