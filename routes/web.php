@@ -27,6 +27,23 @@ Route::get('/about', function () {
     return view('about.about');
 });
 
+Route::get('/offer', function () {
+    return view('offer.offer');
+});
+
+Route::get('/announcement', function () {
+    return view('announcement.announcement');
+});
+
+Route::get('/event', function () {
+    return view('event.event');
+});
+
+Route::get('/contact', function () {
+    return view('contact.contact');
+});
+
+
 Auth::routes();
 
 Route::get('/Login', [LoginController::class, 'show'])->name('Login');
@@ -43,7 +60,7 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/viewrequest/{id}', [StudentDashboardController::class,'viewRequest']);
 
     Route::delete('/deleterequest/{id}', [StudentDashboardController::class,'deleteRequest']);
-    
+
 
     Route::get('/request/certificate', function () {
         return view('student.request-certificate');
@@ -56,7 +73,7 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::post('/request/certificate', [CertificationRequestController::class,'createNewCertificationRequest']);
 
     // Route::post('/edit-certificate', [StudentDashboardController::class,'editCertificate'])->name('edit-certificate');
-    
+
     Route::get('/schedule/certificate', [CertificationRequestController::class,'showStudentRequestCertification']);
 
     Route::get('/schedule/form137', [Form137Controller::class,'showform137']);
@@ -64,7 +81,7 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/schedule/goodmoral', [GoodMoralController::class,'showScheduleForGoodMoral']);
     Route::get('/events', [GoodMoralController::class, 'getEvents']);
 
-    
+
 
     // Route::get('', [ ::class, '']);
 

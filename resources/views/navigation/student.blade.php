@@ -17,12 +17,12 @@
         <div class="navbar-nav ms-auto py-0">
             <a href="/" class="nav-item nav-link">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Offers</a>
+            <a href="/offer" class="nav-item nav-link">Offers</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Updates</a>
                 <div class="dropdown-menu m-0">
-                    <a href="blog.html" class="dropdown-item">Announcements</a>
-                    <a href="detail.html" class="dropdown-item">Events</a>
+                    <a href="/announcement" class="dropdown-item">Announcements</a>
+                    <a href="/event" class="dropdown-item">Events</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
@@ -34,7 +34,7 @@
                     <a href="quote.html" class="dropdown-item">Request Status</a>
                 </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="/contact" class="nav-item nav-link">Contact</a>
             @guest
             @if (Route::has('login'))
                 <a class="btn-grad btn-primary " style="text-decoration: none;"
@@ -50,10 +50,10 @@
                             alt="">
                     </span>
                 </a>
-            
+
                 <!-- Dropdown Menu Items -->
                 <ul class="dropdown-menu dropdown-menu-end">
-            
+
                     <li>
                         <a class="dropdown-item" href="#">
                             <div class="d-flex">
@@ -70,7 +70,7 @@
                             </div>
                         </a>
                     </li>
-            
+
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
@@ -92,14 +92,14 @@
                             <span class="align-middle">View Request</span>
                         </a>
                     </li>
-            
+
                     <li>
                         <a class="dropdown-item" href="/dashboard">
                             <i class="fa fa-server m-2 text-warning"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
                     </li>
-            
+
                     <li>
                         <a class="dropdown-item" href="#">
                             <i class="fa fa-cog m-2 text-warning"></i>
@@ -109,7 +109,7 @@
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
-             
+
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -118,14 +118,14 @@
                         </a>
                     </li>
                 </ul>
-            
+
                 <!-- Logout Form (Hidden) -->
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
             </div>
             @endguest
-            
+
 
         </div>
     </div>
