@@ -25,7 +25,7 @@
                         <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
                         <h1 class="mb-0">Martin M. Salimbangon National High School</h1>
                     </div>
-                    <p class="mb-4">Evovling the learners is what Curva National High School anchoring for. The school to
+                    <p class="mb-4"  style =" text-align: justify;">Evovling the learners is what Curva National High School anchoring for. The school to
                         succor the learners to bag their brimful potential and become sterling Filipino citizens and
                         ptriots, who hav the passion to serve their country and work for its betterment, likewise produce
                         graduates who are unhesitant to do their share in promoting new features of our native land. Imbue
@@ -61,9 +61,6 @@
                                 style="font-size: 20px">curvanationalhighschool@gmail.com</h4>
                         </div>
                     </div>
-                    <a href="quote.html"
-                        class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
-                        data-wow-delay="0.9s">Request</a>
                 </div>
                 <div class="col-lg-5"
                     style="min-height: 500px;">

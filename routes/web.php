@@ -43,6 +43,8 @@ Route::get('/contact', function () {
     return view('contact.contact');
 });
 
+Route::post('/sendemail', [StudentDashboardController::class,'sendEmail']);
+
 
 Auth::routes();
 

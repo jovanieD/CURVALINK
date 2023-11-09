@@ -221,9 +221,6 @@
                             <h4 class="mb-3">Maka-Diyos</h4>
                             <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore
                                 sed</p>
-                            <a class="btn btn-lg btn-primary rounded" href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
@@ -235,9 +232,6 @@
                             <h4 class="mb-3">Maka-tao</h4>
                             <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore
                                 sed</p>
-                            <a class="btn btn-lg btn-primary rounded" href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
@@ -249,9 +243,6 @@
                             <h4 class="mb-3">Makakalikasan</h4>
                             <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore
                                 sed</p>
-                            <a class="btn btn-lg btn-primary rounded" href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
@@ -263,9 +254,6 @@
                             <h4 class="mb-3">Makabansa</h4>
                             <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore
                                 sed</p>
-                            <a class="btn btn-lg btn-primary rounded" href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
@@ -277,11 +265,10 @@
                             <h4 class="mb-3">SEO Optimization</h4>
                             <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore
                                 sed</p>
-                            <a class="btn btn-lg btn-primary rounded" href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
+
+                    
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
                         <div
                             class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">

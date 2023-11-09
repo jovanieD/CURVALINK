@@ -10,7 +10,7 @@
 
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
-    <link rel="icon" href="images/curva_logo.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/curva_logo.png')}}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

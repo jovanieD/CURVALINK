@@ -9,6 +9,9 @@ use App\Models\GoodMoralRequest;
 use App\Models\Form137Request;
 
 
+use Mail;
+
+
 class StudentDashboardController extends Controller
 {
     // public function showStudentDashboard(){
@@ -66,6 +69,29 @@ class StudentDashboardController extends Controller
     //         'documentCounts' => $documentCounts,
     //     ]);
     // }
+
+    public function sendEmail(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ];
+
+        Mail::send('contact.contact', $data, function($message) {
+            $message->to('jovaniedasian@gmail.com', 'Your Name')->subject('Contact Us Form Submission');
+        });
+
+        return redirect('/contact')->with('success', 'Message sent successfully!');
+    
+}
 
     public function showStudentDashboard(){
 
