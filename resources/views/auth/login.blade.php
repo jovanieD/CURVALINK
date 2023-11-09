@@ -54,7 +54,7 @@
                         <a href="forgot-password.html">Forgot Password?</a>
                     </div>
                     <div class="form-group d-flex justify-content-center">
-                        <button class="btn-grad w-75" type="submit">Login</button>
+                        <button class="btn-grad w-100" type="submit">Login</button>
                     </div>
                 </form>
         </div>

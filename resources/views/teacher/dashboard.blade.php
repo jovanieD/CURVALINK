@@ -1,4 +1,4 @@
-@extends('layouts.teacher')
+@extends('layouts.teacher-dashboard')
 
 @section('teacher')
     <div class="layout-wrapper layout-content-navbar">

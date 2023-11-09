@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin-dashboard')
 
 @section('content')
     <div class="layout-wrapper layout-content-navbar">

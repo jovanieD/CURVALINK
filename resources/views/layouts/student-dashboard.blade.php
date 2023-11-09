@@ -44,7 +44,7 @@
                     <div class="app-brand demo">
                         <a href="/" class="app-brand-link">
                             <img src="../images/curva_logo.png" alt class="w-px-40 h-auto rounded-circle" />
-                            <span class="demo fw-bolder m-2 fs-3 text-warning">Curva NHS</span>
+                            <span class="demo fw-bolder text-warning">Curva NHS</span>
                         </a>
 
                         <a href="javascript:void(0);"
@@ -119,29 +119,6 @@
                                 </li>
                             </ul>
                         </li>
-
-                        {{-- Updates --}}
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
-                        </li>
-                        <li class="menu-item">
-                            <a href="javascript:void(0)" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons bx bx-box text-warning"></i>
-                                <div data-i18n="User interface">Post Updates</div>
-                            </a>
-                            <ul class="menu-sub">
-                                <li class="menu-item">
-                                    <a href="ui-accordion.html" class="menu-link">
-                                        <div>Announcement</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="ui-alerts.html" class="menu-link">
-                                        <div data-i18n="Alerts">Events</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
                         {{-- Account --}}
                         <li class="menu-header small text-uppercase"><span class="menu-header-text">Account</span>
                         </li>
@@ -152,7 +129,7 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="ui-accordion.html" class="menu-link">
+                                    <a href="/settings" class="menu-link">
                                         <div>My Profile</div>
                                     </a>
                                 </li>
@@ -197,7 +174,7 @@
                                         <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                             data-bs-toggle="dropdown">
                                             <div class="avatar avatar-online">
-                                                <img src="../assets/img/avatars/1.png" alt
+                                                <img src="{{Auth::user()->profile_image}}" alt
                                                     class="w-px-40 h-auto rounded-circle" />
                                             </div>
                                         </a>
@@ -209,8 +186,7 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{ asset('images/panda.jpg') }}" alt
-                                                                    class="rounded-circle" style="width: 60px" />
+                                                                <img src="{{Auth::user()->profile_image}}" alt class="rounded-circle" style="width: 40px; height:40px; "  />
                                                             </div>
                                                         </div>
                                                         <div class="flex-grow-1">
@@ -226,15 +202,15 @@
                                                 <div class="dropdown-divider"></div>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="/">
                                                     <i class="fa fa-home m-2 text-warning"></i>
                                                     <span class="align-middle">Homepage</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="">
                                                     <i class="fa fa-tasks m-2 text-warning"></i>
-                                                    <span class="align-middle">View Request</span>
+                                                    <span class="align-middle">View Schedule</span>
                                                 </a>
                                             </li>
 

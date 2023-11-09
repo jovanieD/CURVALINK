@@ -15764,7 +15764,7 @@ html:not(.layout-footer-fixed) .content-wrapper {
   content: "";
   position: absolute;
   bottom: 0;
-  right: 3px;
+  right: 1px;
   width: 8px;
   height: 8px;
   border-radius: 100%;

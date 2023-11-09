@@ -238,7 +238,7 @@ class LoginController extends Controller
     
                     DB::commit(); // Commit the transaction
     
-                    return redirect($guard === 'web' ? '/' : '/' . $guard);
+                    return redirect($guard === 'web' ? '/dashboard' : '/' . $guard . '/dashboard');
                 }
             }
     
