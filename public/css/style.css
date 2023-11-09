@@ -177,7 +177,7 @@ h6,
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
     }
-    
+
     .sticky-top.navbar-dark {
         position: fixed;
         background: #FFFFFF;
@@ -350,6 +350,7 @@ h6,
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    opacity: .0;
 }
 
 .testimonial-carousel .owl-dot {
@@ -358,7 +359,7 @@ h6,
     margin: 0 5px;
     width: 15px;
     height: 15px;
-    background: #DDDDDD;
+    background: #dddddd;
     border-radius: 2px;
     transition: .5s;
 }
@@ -470,6 +471,7 @@ h6,
 .bg-header {
     background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../images/aboutus.png) center center no-repeat;
     background-size: cover;
+    height: 70vh;
 }
 
 .link-animated a {
@@ -507,3 +509,17 @@ h6,
         border-image: linear-gradient(to right, blue, lightblue); /* Gradient border */
         background: linear-gradient(to right, #f0ad4e, #b6f87d); /* More gradient background */
     }
+
+.card{
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+
+}
+.col{
+    width: 13rem;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+ }

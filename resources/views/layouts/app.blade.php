@@ -41,7 +41,7 @@
         </main>
 
         <!-- Footer -->
-        {{-- <x-footer></x-footer> --}}
+        <x-footer></x-footer>
     </div>
 
     <!-- JavaScript Dependencies -->
