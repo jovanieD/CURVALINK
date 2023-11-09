@@ -27,7 +27,7 @@ Route::get('/about', function () {
     return view('about.about');
 });
 
-Route::get('/offer', function () {
+Route::get('/offers', function () {
     return view('offer.offer');
 });
 

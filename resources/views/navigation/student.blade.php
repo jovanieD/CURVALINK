@@ -17,7 +17,7 @@
         <div class="navbar-nav ms-auto py-0">
             <a href="/" class="nav-item nav-link">Home</a>
             <a href="/about" class="nav-item nav-link">About</a>
-            <a href="/offer" class="nav-item nav-link">Offers</a>
+            <a href="/offers" class="nav-item nav-link">Offers</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Updates</a>
                 <div class="dropdown-menu m-0">

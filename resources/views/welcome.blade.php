@@ -12,8 +12,7 @@
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
-                                <h2 class="display-1 text-white mb-md-4 animated zoomIn" style="font-family: cursive">MARTIN M. SALIMBANGON NATIONAL HIGH SCHOOL</h2>
-                                <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Request</a>
+                                <h1 class="display-1 text-white mb-md-4 animated zoomIn">Martin M. Salimbangon Natioanl High School</h1>
                                 <a href=""
                                     class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                             </div>
@@ -21,14 +20,11 @@
                     </div>
 
                     <div class="carousel-item ">
-                        <img class="w-100 img-fluid" style="height: 100vh" type="image/jpg" src="{{ url('images/cruvanians.jpg') }}"
-                            alt="Image">
+                        <img class="w-100 img-fluid" type="image/jpg" src="{{ url('images/bg_resize.jpg') }}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Frondose Peak</h5>
-                                <h3 class="display-1 text-white mb-md-4 animated zoomIn" style="font-family: cursive" >"In MARTIN M. SALIMBANGON NHS, we nurture nature; we plant future"</h3>
-                                <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
-                                    Quote</a>
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">In Martin M. Salimbangon Natioanl High School</h5>
+                                <h1 class="display-1 text-white mb-md-4 animated zoomIn">We nurture nature; We plant future</h1>
                                 <a href=""
                                     class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                             </div>
@@ -105,7 +101,7 @@
                             <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
                             <h1 class="mb-0">MARTIN M. SALIMBANGON NATIONAL HIGH SCHOOL</h1>
                         </div>
-                        <p class="mb-4">Evovling the learners is what Martin M. Salimbangon National High School anchoring for. The school to succor the learners to bag their brimful potential and become sterling Filipino citizens and ptriots, who hav the passion to serve their country and work for its betterment, likewise produce graduates who are unhesitant to do their share in promoting new features of our native land. Imbue values that are essential and desirable, and train students to ascertain that they have indispensable competencies by honing their skills and talents that will enable them to discover their capabilities and usefulness. Thereby, they can sustantially contribute to building a prolific nation.
+                        <p class="mb-4" style =" text-align: justify;">Evovling the learners is what Martin M. Salimbangon National High School anchoring for. The school to succor the learners to bag their brimful potential and become sterling Filipino citizens and ptriots, who hav the passion to serve their country and work for its betterment, likewise produce graduates who are unhesitant to do their share in promoting new features of our native land. Imbue values that are essential and desirable, and train students to ascertain that they have indispensable competencies by honing their skills and talents that will enable them to discover their capabilities and usefulness. Thereby, they can sustantially contribute to building a prolific nation.
                         </p>
                         <div class="row g-0 mb-3">
                             <h5 class="fw-bold text-primary text-uppercase">Awards winning of the school and the students
@@ -131,8 +127,6 @@
                                 <h6 class="text-primary mb-0">curvanationalhighschool@gmail.com / 303026@deped.gov.ph</h6>
                             </div>
                         </div>
-                        <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
-                            data-wow-delay="0.9s">Request</a>
                     </div>
                     <div class="col-lg-5" style="min-height: 500px;">
                         <div class="position-relative h-100">
@@ -385,13 +379,13 @@
                             <h1 class="mb-0">You need to Request a Document? Please feel free to Contact Us </h1>
                         </div>
                         <div class="row gx-3">
-                            <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            {{-- <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                                 <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
                             </div>
                             <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
                                 <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone
                                     support</h5>
-                            </div>
+                            </div> --}}
                         </div>
                         <p class="mb-4">If you need to request a document feel free to send us a request and fill in your information in the form for our basis. You can request this following document: Form 137, Good Moral and Certificate of Enrollment.</p>
                         <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
