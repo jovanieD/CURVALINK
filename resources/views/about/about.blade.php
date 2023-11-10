@@ -92,7 +92,7 @@
             </div>
 
             <div class="card text-center"
-                style="width: 12rem;">
+                style="width: 18rem;">
                 <img class="card-img-top"
                     type="image/jpg"
                     src="{{ url('images/merceditha.jpg') }}"
@@ -114,7 +114,7 @@
             </div>
             <br><br><br>
             <div class="card text-center"
-                style="width: 12rem;">
+                style="width: 18rem;">
                 <img class="card-img-top"
                     type="image/jpg"
                     src="{{ url('images/cherry.jpg') }}"
@@ -141,8 +141,8 @@
                 <h5 class="fw-bold text-primary text-uppercase">Junior High School Department</h5>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
+            <div class="row">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -220,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -240,7 +240,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -260,7 +260,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -282,7 +282,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -302,7 +302,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -322,7 +322,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -341,7 +341,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -360,7 +360,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -380,7 +380,7 @@
                     </div>
                 </div>
 
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -399,7 +399,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -418,7 +418,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -437,7 +437,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -458,7 +458,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -478,7 +478,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -497,7 +497,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -516,7 +516,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -537,7 +537,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -557,7 +557,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -584,7 +584,7 @@
                 <h5 class="fw-bold text-primary text-uppercase">Senior High School Department</h5>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -604,7 +604,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -623,7 +623,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -643,7 +643,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -662,7 +662,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -682,7 +682,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -702,7 +702,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -723,7 +723,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -744,7 +744,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -764,7 +764,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
@@ -783,7 +783,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-3 mb-3">
                     <div class="card h-100">
                         <img class="card-img-top"
                             type="image/jpg"
