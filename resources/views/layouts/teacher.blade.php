@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
     <link rel="icon" href="images/curva_logo.png" type="image/x-icon">
@@ -298,7 +298,7 @@
 
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-        
+
     </body>
 
 </html>

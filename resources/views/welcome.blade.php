@@ -196,6 +196,7 @@
         <!-- About End -->
 
 
+
         <!-- Features Start -->
         <div class="container-fluid py-5 wow fadeInUp"
             data-wow-delay="0.1s">
@@ -294,62 +295,54 @@
                     <h1 class="mb-0">Core Values </h1>
                 </div>
                 <div class="row g-5">
-                    <div class="col-lg-4 col-md-6 wow zoomIn"
+                    <div class="col-lg-6  wow zoomIn"
                         data-wow-delay="0.3s">
                         <div
-                            class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                            class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                            style="z-index: 1;" >
 
                             <h4 class="mb-3">Maka-Diyos</h4>
                             <p class="m-0">Expresses one’s spiritual beliefs while respecting the spiritual beliefs of
                                 others <br>
-                                Shows adherence to ethical principles by upholding truth</p>
-                            <a class="btn btn-lg btn-primary rounded"
-                                href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
+                                Shows adherence to ethical principles by upholding truth
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn"
+                    <div class="col-lg-6  wow zoomIn"
                         data-wow-delay="0.6s">
                         <div
-                            class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                            class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                            style="z-index: 1;">
                             <h4 class="mb-3">Maka-tao</h4>
                             <p class="m-0">Is sensitive to individual, social, and cultural differences <br>
-                                Demonstrates contributions toward solidarity</p>
-                            <a class="btn btn-lg btn-primary rounded"
-                                href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
+                                Demonstrates contributions toward solidarity
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn"
+                    <div class="col-lg-6  wow zoomIn"
                         data-wow-delay="0.9s">
                         <div
-                            class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                            class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                            style="z-index: 1;">
 
                             <h4 class="mb-3">Makakalikasan</h4>
                             <p class="m-0">Cares for the environment and utilizes resources wisely, judiciously, and
-                                economically <br></p>
-                            <a class="btn btn-lg btn-primary rounded"
-                                href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
+                                economically <br>
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn"
+                    <div class="col-lg-6 wow zoomIn"
                         data-wow-delay="0.3s">
                         <div
-                            class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                            class="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                            style="z-index: 1;">
 
                             <h4 class="mb-3">Makabansa</h4>
                             <p class="m-0">Demonstrates pride in being a Filipino; exercises the rights and
                                 responsibilities of a Filipino citizen <br>
                                 Demonstrates appropriate behavior in carrying out activities in the school, community, and
-                                country</p>
-                            <a class="btn btn-lg btn-primary rounded"
-                                href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
+                                country
+                            </p>
                         </div>
                     </div>
 
@@ -368,10 +361,11 @@
                     <h5 class="fw-bold text-primary text-uppercase">What we Offer</h5>
                     <h1 class="mb-0">We Offers Different Academic Strands Track</h1>
                 </div>
-                <div class="row g-0" ">
-                    <div class="col-lg-4 wow slideInUp"
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 d-flex wow slideInUp "
                         data-wow-delay="0.6s">
-                        <div class="bg-light rounded ">
+                        <div class="bg-white rounded shadow position-relative"
+                        style="z-index: 1;">
                             <div class="border-bottom py-4 px-5 mb-4">
                                 <h4 class="text-primary mb-1">HUMSS</h4>
                                 <small class="text-uppercase">Humanities and Social Sciences</small>
@@ -396,7 +390,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 wow slideInUp"
+                    <div class="col-lg-6 col-md-12 d-flex wow slideInUp"
                         data-wow-delay="0.3s">
                         <div class="bg-white rounded shadow position-relative"
                             style="z-index: 1;">
@@ -1034,7 +1028,9 @@
                                 src=""
                                 style="width: 90px; height: 110px;">
                             <div class="ps-4">
-                                <h4 class="text-primary mb-1"style="margin-top: 25px">Charisma B. Pino</h4>
+                                <h4 class="text-primary mb-1"style="
+                        margin-top:
+                        25px">Charisma B. Pino</h4>
                                 <small class="text-uppercase">Teacher II</small>
                             </div>
                         </div>
@@ -1384,7 +1380,8 @@
                 <div class="row g-5">
                     <div class="col-lg-4 wow slideInUp"
                         data-wow-delay="0.3s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-item bg-light rounded overflow-hidden bg-white rounded shadow position-relative"
+                        style="z-index: 1;">
                             <div class="blog-img position-relative overflow-hidden">
                                 <img class="img-fluid"
                                     src=""
@@ -1413,7 +1410,8 @@
                     </div>
                     <div class="col-lg-4 wow slideInUp"
                         data-wow-delay="0.6s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-item bg-light rounded overflow-hidden bg-white rounded shadow position-relative"
+                        style="z-index: 1;">
                             <div class="blog-img position-relative overflow-hidden">
                                 <img class="img-fluid"
                                     src=""
@@ -1442,7 +1440,8 @@
                     </div>
                     <div class="col-lg-4 wow slideInUp"
                         data-wow-delay="0.9s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-item bg-light rounded overflow-hidden bg-white rounded shadow position-relative"
+                        style="z-index: 1;">
                             <div class="blog-img position-relative overflow-hidden">
                                 <img class="img-fluid"
                                     src=""

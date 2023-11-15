@@ -473,7 +473,11 @@ h6,
     background-size: cover;
     height: 70vh;
 }
-
+.bg-header1 {
+    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../images/academic.jpg) center center no-repeat;
+    background-size: cover;
+    height: 70vh;
+}
 .link-animated a {
     transition: .5s;
 }
@@ -523,4 +527,7 @@ h6,
     display: flex;
     flex-wrap: wrap;
  }
+
+
+
 
