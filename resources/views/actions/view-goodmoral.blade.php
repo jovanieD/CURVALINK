@@ -85,107 +85,91 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="form-line jf-required" data-type="control_email" id="id_8"><label
+                            <li class="form-line " data-type="control_email" id="id_8"><label
                                     class="form-label form-label-top form-label-auto" aria-hidden="false"> ID Number:<span
                                         class="form-required">*</span> </label>
-                                <div id="cid_8" class="form-input-wide jf-required" data-layout="half"> <input
-                                        type="text" name="idnumber"
-                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                <div id="cid_8" class="form-input-wide " data-layout="half"> <input
+                                        type="text" name="idnumber" value="{{ $data['idnumber'] }}" readonly=""
                                         class="form-textbox validate[required, Email]" style="width:310px" size="310"
-                                        required="" value="" /> </div>
+                                         value="" /> </div>
                             </li>
-                            <li class="form-line jf-required" data-type="control_fullname" id="id_9"><label
+                            <li class="form-line " data-type="control_fullname" id="id_9"><label
                                     class="form-label form-label-top form-label-extended form-label-auto" id="label_9"
                                     for="first_9" aria-hidden="false"> Name<span class="form-required">*</span> </label>
-                                <div id="cid_9" class="form-input-wide jf-required" data-layout="full">
+                                <div id="cid_9" class="form-input-wide " data-layout="full">
                                     <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container"
                                             style="vertical-align:top" data-input-type="first"><input type="text"
-                                                id="first_9" name="firstname" class="form-textbox validate[required]"
-                                                required="" value="" /><label class="form-sub-label" for="first_9"
+                                                id="first_9" value="{{ $data['firstname'] }}" readonly=""
+                                                class="form-textbox validate[required]" 
+                                                value="" /><label class="form-sub-label" for="first_9"
                                                 style="min-height:13px" aria-hidden="false">First
                                                 Name</label></span><span class="form-sub-label-container"
                                             style="vertical-align:top" data-input-type="middle"><input type="text"
-                                                name="middlename" class="form-textbox" size="10"
-                                                aria-labelledby="label_9 sublabel_9_middle" required="" /><label
+                                                name="middlename" value="{{ $data['middlename'] }}" readonly=""
+                                                class="form-textbox" size="10"
+                                                aria-labelledby="label_9 sublabel_9_middle"  /><label
                                                 class="form-sub-label" for="middle_9" id="sublabel_9_middle"
                                                 style="min-height:13px" aria-hidden="false">Middle
                                                 Name</label></span><span class="form-sub-label-container"
                                             style="vertical-align:top" data-input-type="last"><input type="text"
-                                                name="lastname" class="form-textbox validate[required]" size="15"
-                                                aria-labelledby="label_9 sublabel_9_last" required=""
+                                                name="lastname" value="{{ $data['lastname'] }}" readonly=""
+                                                class="form-textbox validate[required]" size="15"
+                                                aria-labelledby="label_9 sublabel_9_last" 
                                                 value="" /><label class="form-sub-label" for="last_9"
                                                 id="sublabel_9_last" style="min-height:13px" aria-hidden="false">Last
                                                 Name</label></span></div>
                                 </div>
                             </li>
-                            <li class="form-line jf-required" data-type="control_radio" id="id_11"><label
-                                    class="form-label form-label-top form-label-auto" id="label_11" for="input_11"
-                                    aria-hidden="false"> Purpose :<span class="form-required">*</span> </label>
-                                <div id="cid_11" class="form-input-wide jf-required" data-layout="full">
-                                    <div class="form-single-column" role="group" aria-labelledby="label_11"
-                                        data-component="radio"><span class="form-radio-item" style="clear:left"><span
-                                                class="dragger-item"></span><input type="radio"
-                                                aria-describedby="label_11" class="form-radio validate[required]"
-                                                id="input_11_0" name="purpose" value="Transfer" required="" /><label
-                                                for="input_11_0">Transfer</label></span><span class="form-radio-item"
-                                            style="clear:left"><span class="dragger-item"></span><input type="radio"
-                                                aria-describedby="label_11" class="form-radio validate[required]"
-                                                id="input_11_1" name="purpose" value="Scholarship"
-                                                required="" /><label id="label_input_11_1"
-                                                for="input_11_1">Scholarship</label></span><span class="form-radio-item"d
-                                            style="clear:left"><span class="dragger-item"></span><input type="radio"
-                                                aria-describedby="label_11" class="form-radio validate[required]"
-                                                id="input_11_2" name="purpose" value="Employment"
-                                                required="" /><label id="label_input_11_2"
-                                                for="input_11_2">Employment</label></span><span class="form-radio-item"
-                                            style="clear:left"><span class="dragger-item"></span><input type="radio"
-                                                aria-describedby="label_11" class="form-radio validate[required]"
-                                                id="input_11_3" name="purpose" value="" required="" /><label
-                                                id="label_input_11_3" for="input_11_3">Others</label></span></div>
-
-                                    <input type="text" id="otherInput" name="purpose" placeholder="Enter other value"
-                                        disabled>
-
-                                </div>
+                            <li class="form-line " data-type="control_email" id="id_8"><label
+                                    class="form-label form-label-top form-label-auto" aria-hidden="false"> Purpose<span
+                                        class="form-required">*</span> </label>
+                                <div id="cid_8" class="form-input-wide " data-layout="half"> <input
+                                        type="text" name="idnumber" value="{{ $data['purpose'] }}" readonly=""
+                                        class="form-textbox validate[required, Email]" style="width:310px" size="310"
+                                         value="" /> </div>
                             </li>
-                            <li class="form-line jf-required" data-type="control_fullname" id="id_17"><label
+                            </li>
+                            <li class="form-line " data-type="control_fullname" id="id_17"><label
                                     class="form-label form-label-top form-label-auto" id="label_17" for="first_17"
                                     aria-hidden="false"> Requestor's Information<span class="form-required">*</span>
                                 </label>
-                                <div id="cid_17" class="form-input-wide jf-required" data-layout="full">
+                                <div id="cid_17" class="form-input-wide " data-layout="full">
                                     <div data-wrapper-react="true"><span class="form-sub-label-container"
                                             style="vertical-align:top" data-input-type="first"><input type="text"
                                                 id="first_17" name="requestorfirstname"
+                                                value="{{ $data['requestorfirstname'] }}" readonly=""
                                                 class="form-textbox validate[required]" data-defaultvalue=""
                                                 size="10" data-component="first"
-                                                aria-labelledby="label_17 sublabel_17_first" required=""
+                                                aria-labelledby="label_17 sublabel_17_first" 
                                                 value="" /><label class="form-sub-label" for="first_17"
                                                 id="sublabel_17_first" style="min-height:13px" aria-hidden="false">First
                                                 Name</label></span><span class="form-sub-label-container"
                                             style="vertical-align:top" data-input-type="last"><input type="text"
                                                 id="last_17" name="requestorlastname"
+                                                value="{{ $data['requestorlastname'] }}" readonly=""
                                                 class="form-textbox validate[required]" data-defaultvalue=""
                                                 size="15" data-component="last"
-                                                aria-labelledby="label_17 sublabel_17_last" required=""
+                                                aria-labelledby="label_17 sublabel_17_last" 
                                                 value="" /><label class="form-sub-label" for="last_17"
                                                 id="sublabel_17_last" style="min-height:13px" aria-hidden="false">Last
                                                 Name</label></span></div>
                                 </div>
                             </li>
-                            <li class="form-line jf-required" data-type="control_address" id="id_16"
+                            <li class="form-line " data-type="control_address" id="id_16"
                                 data-compound-hint=",,,,Please Select,,Please Select,"><label
                                     class="form-label form-label-top form-label-auto" id="label_16"
                                     for="input_16_addr_line1" aria-hidden="false"> <span class="form-required">*</span>
                                 </label>
-                                <div id="cid_16" class="form-input-wide jf-required" data-layout="full">
+                                <div id="cid_16" class="form-input-wide " data-layout="full">
                                     <div summary="" class="form-address-table jsTest-addressField">
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-street-line jsTest-address-lineField"><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
                                                         type="text" id="input_16_addr_line1" name="requestorsaddress"
+                                                        value="{{ $data['requestorsaddress'] }}" readonly=""
                                                         class="form-textbox validate[required] form-address-line"
                                                         data-defaultvalue="" data-component="address_line_1"
-                                                        aria-labelledby="label_16 sublabel_16_addr_line1" required=""
+                                                        aria-labelledby="label_16 sublabel_16_addr_line1" 
                                                         value="" /><label class="form-sub-label"
                                                         for="input_16_addr_line1" id="sublabel_16_addr_line1"
                                                         style="min-height:13px" aria-hidden="false">
@@ -194,18 +178,20 @@
                                                 class="form-address-line form-address-city-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
                                                         type="text" id="input_16_city" name="requestorscity"
+                                                        value="{{ $data['requestorscity'] }}" readonly=""
                                                         class="form-textbox validate[required] form-address-city"
                                                         data-defaultvalue="" data-component="city"
-                                                        aria-labelledby="label_16 sublabel_16_city" required=""
+                                                        aria-labelledby="label_16 sublabel_16_city" 
                                                         value="" /><label class="form-sub-label"
                                                         for="input_16_city" id="sublabel_16_city" style="min-height:13px"
                                                         aria-hidden="false">City</label></span></span><span
                                                 class="form-address-line form-address-state-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
                                                         type="text" id="input_16_state" name="requestorsprovince"
+                                                        value="{{ $data['requestorsprovince'] }}" readonly=""
                                                         class="form-textbox validate[required] form-address-state"
                                                         data-defaultvalue="" data-component="state"
-                                                        aria-labelledby="label_16 sublabel_16_state" required=""
+                                                        aria-labelledby="label_16 sublabel_16_state" 
                                                         value="" /><label class="form-sub-label"
                                                         for="input_16_state" id="sublabel_16_state"
                                                         style="min-height:13px" aria-hidden="false">
@@ -217,10 +203,13 @@
                             <li class="form-line" data-type="control_button" id="id_2">
                                 <div id="cid_2" class="form-input-wide" data-layout="full">
                                     <div data-align="auto"
-                                        class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button
-                                            id="input_2" type="submit"
-                                            class="form-submit-button form-submit-button-yellow-300 submit-button jf-form-buttons jsTest-submitField"
-                                            data-component="button" data-content="">Submit</button></div>
+                                        class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><a
+                                            href="/dashboard">
+                                            <button type="button" class="btn btn-primary m-1">
+                                                <i class="fa-solid fa-arrow-left fa-xl m-1" style="color: #a5c5fd;"></i>
+                                                <span class=" fs-4">Back</span>
+                                            </button>
+                                        </a></div>
                                 </div>
                             </li>
                             <li style="display:none">Should be Empty: <input type="text" name="website"

@@ -14,12 +14,17 @@ class Teacher extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
 
-    protected $guard = "admin";
+    protected $guard = "teacher";
 
     protected $fillable = [
         'name',
         'email',
         'password',
+        'profile_image',
+        'address',
+        'municipality',
+        'province',
+        'phonenumber',
     ];
 
     protected $hidden = [

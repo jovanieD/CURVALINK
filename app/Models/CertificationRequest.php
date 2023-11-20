@@ -25,9 +25,8 @@ class CertificationRequest extends Model
         'document',
     ];
 
-    public function requestor()
-{
-    return $this->belongsTo(User::class, 'requestor_id');
-}
+    public function certificationRequest(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
 }

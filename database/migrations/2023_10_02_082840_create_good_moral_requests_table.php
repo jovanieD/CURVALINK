@@ -13,8 +13,19 @@ return new class extends Migration
     {
         Schema::create('good_moral_requests', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('idnumber');
+            $table->string('firstname');
+            $table->string('middlename')->nullable();
+            $table->string('lastname');
+            $table->string('purpose');
+            $table->string('requestorfirstname');
+            $table->string('requestorlastname');
+            $table->string('requestorsaddress');
+            $table->string('requestorscity');
+            $table->string('requestorsprovince');
             $table->string('status')->default('Pending');
-            $table->string('document')->default('Good Moral');
+            $table->string('document')->default('Good_Moral');
             $table->timestamps();
         });
     }

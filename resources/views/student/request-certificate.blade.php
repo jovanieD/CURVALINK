@@ -264,7 +264,7 @@
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-zip-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
-                                                        type="text" id="input_4_postal" name="postal"
+                                                        type="text" id="input_4_postal" name="postal" maxlength="4"
                                                         class="form-textbox validate[required] form-address-postal"
                                                         data-defaultvalue="" autoComplete="section-input_4 postal-code"
                                                         value="" data-component="zip"
@@ -285,7 +285,7 @@
                                             <div class="alert alert-danger">Invalid mobile number</div>
                                         @enderror
                                         <input type="tel" id="input_5_full" name="phonenumber"
-                                            data-type="mask-number" maxlength="13"
+                                            data-type="mask-number" maxlength="11"
                                             class="mask-phone-number form-textbox validate[required, Fill Mask]"
                                             data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px"
                                             data-masked="true" value="" placeholder="0000-000-0000"

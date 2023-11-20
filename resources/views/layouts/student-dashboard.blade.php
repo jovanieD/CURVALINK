@@ -85,7 +85,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="" class="menu-link">
+                                    <a href="/request/form137" class="menu-link">
                                         <div data-i18n="Connections">Form 137</div>
                                     </a>
                                 </li>
@@ -129,7 +129,7 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="/settings" class="menu-link">
+                                    <a href="/profile" class="menu-link">
                                         <div>My Profile</div>
                                     </a>
                                 </li>
@@ -175,7 +175,7 @@
                                             data-bs-toggle="dropdown">
                                             <div class="avatar avatar-online">
                                                 <img src="{{Auth::user()->profile_image}}" alt
-                                                    class="w-px-40 h-auto rounded-circle" />
+                                                style="border-radius: 25px; height: 40px; width: 40px;" />
                                             </div>
                                         </a>
                                         <!-- Dropdown Menu Items -->
@@ -222,7 +222,14 @@
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="/profile">
+                                                    <i class="fa fa-user m-2 text-warning"></i>
+                                                    <span class="align-middle">My Profile</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="/settings">
                                                     <i class="fa fa-cog m-2 text-warning"></i>
                                                     <span class="align-middle">Settings</span>
                                                 </a>

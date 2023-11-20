@@ -21,6 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_image',
+        'address',
+        'municipality',
+        'province',
+        'phonenumber',
     ];
 
     /**
@@ -43,13 +48,18 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function goodMorals()
+    public function goodMoralRequests()
     {
-        return $this->hasMany(GoodMoral::class);
+        return $this->hasMany(GoodMoralRequest::class, 'user_id');
     }
 
     public function certificationRequests()
-{
-    return $this->hasMany(CertificationRequest::class, 'requestor_id');
-}
+    {
+        return $this->hasMany(CertificationRequest::class, 'user_id');
+    }
+
+    public function form137Requests()
+    {
+        return $this->hasMany(Form137Request::class, 'user_id');
+    }
 }

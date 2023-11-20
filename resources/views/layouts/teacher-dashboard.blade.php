@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
-    <link rel="icon" href="{{asset('images/curva_logo.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/curva_logo.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link
@@ -44,7 +44,7 @@
                     <div class="app-brand demo">
                         <a href="/teacher" class="app-brand-link">
                             <img src="../images/curva_logo.png" alt class="w-px-40 h-auto rounded-circle" />
-                            <span class="demo menu-text fw-bolder ms-2">Curva NHS</span>
+                            <span class="demo fw-bolder text-warning">Curva NHS</span>
                         </a>
 
                         <a href="javascript:void(0);"
@@ -151,7 +151,7 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="ui-accordion.html" class="menu-link">
+                                    <a href="/teacher/profile" class="menu-link">
                                         <div>My Profile</div>
                                     </a>
                                 </li>
@@ -196,8 +196,8 @@
                                         <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                             data-bs-toggle="dropdown">
                                             <div class="avatar avatar-online">
-                                                <img src="../assets/img/avatars/1.png" alt
-                                                    class="w-px-40 h-auto rounded-circle" />
+                                                <img src="{{ Auth::user()->profile_image }}" alt
+                                                    style="border-radius: 25px; height: 40px; width: 40px;" />
                                             </div>
                                         </a>
                                         <!-- Dropdown Menu Items -->
@@ -208,8 +208,9 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{asset('images/panda.jpg')}}" alt class="rounded-circle"
-                                                                    style="width: 60px" />
+                                                                <img src="{{ Auth::user()->profile_image }}" alt
+                                                                    class="rounded-circle"
+                                                                    style="width: 40px; height:40px; " />
                                                             </div>
                                                         </div>
                                                         <div class="flex-grow-1">
@@ -225,15 +226,9 @@
                                                 <div class="dropdown-divider"></div>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="/teacher">
                                                     <i class="fa fa-home m-2 text-warning"></i>
                                                     <span class="align-middle">Homepage</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fa fa-tasks m-2 text-warning"></i>
-                                                    <span class="align-middle">View Request</span>
                                                 </a>
                                             </li>
 
@@ -246,6 +241,27 @@
 
                                             <li>
                                                 <a class="dropdown-item" href="#">
+                                                    <i class="fa fa-tasks m-2 text-warning"></i>
+                                                    <span class="align-middle">Post Update</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <i class="fa fa-calendar m-2 text-warning"></i>
+                                                    <span class="align-middle">Schedule</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="/teacher/profile">
+                                                    <i class="fa fa-user m-2 text-warning"></i>
+                                                    <span class="align-middle">My Profile</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="/teacher/settings">
                                                     <i class="fa fa-cog m-2 text-warning"></i>
                                                     <span class="align-middle">Settings</span>
                                                 </a>
@@ -298,7 +314,7 @@
 
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-        
+
     </body>
 
 </html>

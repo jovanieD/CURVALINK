@@ -19,10 +19,11 @@ return new class extends Migration
                 $table->string('address');
                 $table->string('municipality');
                 $table->string('province')->nullable();
-                $table->string('postal'); // Assuming postal code format is valid as a string
-                $table->string('phonenumber'); // Assuming phone number format is valid as a string
+                $table->string('postal'); 
+                $table->string('phonenumber'); 
                 $table->string('email');
                 $table->string('purpose');
+                $table->string('remarks')->nullable();
                 $table->string('status')->default('Pending');
                 $table->string('document')->default('Certificate');
                 $table->timestamps();

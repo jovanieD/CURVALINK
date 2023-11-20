@@ -195,21 +195,21 @@
                                     aria-hidden="false"> Full Name </label>
                                 <div id="cid_3" class="form-input-wide jf-" data-layout="full">
                                     <div data-wrapper-react="true"><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="first"><input type="text"
-                                                id="first_3" name="firstname" class="form-textbox validate[]"
-                                                autoComplete="section-input_3 given-name" size="10"
-                                                data-component="first" value="{{ $data['firstname'] }}"
+                                            style="vertical-align:top" data-input-type="first"><input readonly=""
+                                                type="text" id="first_3" name="firstname"
+                                                class="form-textbox validate[]" autoComplete="section-input_3 given-name"
+                                                size="10" data-component="first" value="{{ $data[0]['firstname'] }}"
                                                 aria-labelledby="label_3 sublabel_3_first" /><label class="form-sub-label"
                                                 for="first_3" id="sublabel_3_first" style="min-height:13px"
                                                 aria-hidden="false">First
                                                 Name</label></span><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="last"><input type="text"
-                                                value="{{ $data['lastname'] }}" id="last_3" name="lastname"
-                                                class="form-textbox validate[]" autoComplete="section-input_3 family-name"
-                                                size="15" placeholder="" data-component="last"
-                                                aria-labelledby="label_3 sublabel_3_last" /><label class="form-sub-label"
-                                                for="last_3" id="sublabel_3_last" style="min-height:13px"
-                                                aria-hidden="false">Last
+                                            style="vertical-align:top" data-input-type="last"><input readonly=""
+                                                type="text" value="{{ $data[0]['lastname'] }}" id="last_3"
+                                                name="lastname" class="form-textbox validate[]"
+                                                autoComplete="section-input_3 family-name" size="15" placeholder=""
+                                                data-component="last" aria-labelledby="label_3 sublabel_3_last" /><label
+                                                class="form-sub-label" for="last_3" id="sublabel_3_last"
+                                                style="min-height:13px" aria-hidden="false">Last
                                                 Name</label></span></div>
                                 </div>
                             </li>
@@ -221,7 +221,7 @@
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-street-line jsTest-address-lineField"><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
-                                                        value="{{ $data['address'] }}" type="text"
+                                                        readonly="" value="{{ $data[0]['address'] }}" type="text"
                                                         id="input_4_addr_line1" name="address"
                                                         class="form-textbox validate[] form-address-line"
                                                         autoComplete="section-input_4 address-line1"
@@ -234,8 +234,8 @@
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-city-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
-                                                        value="{{ $data['municipality'] }}" type="text"
-                                                        id="input_4_city" name="municipality"
+                                                        readonly="" value="{{ $data[0]['municipality'] }}"
+                                                        type="text" id="input_4_city" name="municipality"
                                                         class="form-textbox validate[] form-address-city"
                                                         autoComplete="section-input_4 address-level2"
                                                         data-component="city"
@@ -245,8 +245,9 @@
                                                         aria-hidden="false">Municipality</label></span></span><span
                                                 class="form-address-line form-address-state-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
-                                                        value="{{ $data['province'] }}" type="text" id="input_4_state"
-                                                        name="province" class="form-textbox validate[] form-address-state"
+                                                        readonly="" value="{{ $data[0]['province'] }}" type="text"
+                                                        id="input_4_state" name="province"
+                                                        class="form-textbox validate[] form-address-state"
                                                         autoComplete="section-input_4 address-level1"
                                                         aria-labelledby="label_4 sublabel_4_state" /><label
                                                         class="form-sub-label" for="input_4_state" id="sublabel_4_state"
@@ -255,8 +256,9 @@
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-zip-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
-                                                        value="{{ $data['postal'] }}" type="text" id="input_4_postal"
-                                                        name="postal" class="form-textbox validate[] form-address-postal"
+                                                        readonly="" value="{{ $data[0]['postal'] }}" type="text"
+                                                        id="input_4_postal" name="postal"
+                                                        class="form-textbox validate[] form-address-postal"
                                                         autoComplete="section-input_4 postal-code" data-component="zip"
                                                         aria-labelledby="label_4 sublabel_4_postal" pattern="[0-9]{1,7}"
                                                         maxlength="7" /><label class="form-sub-label"
@@ -270,9 +272,10 @@
                                 id="id_5"><label class="form-label form-label-top form-label-auto" id="label_5"
                                     for="input_5_full"> Phone Number </label>
                                 <div id="cid_5" class="form-input-wide jf-" data-layout="half"> <span
-                                        class="form-sub-label-container" style="vertical-align:top"><input type="tel"
-                                            value="{{ $data['phonenumber'] }}" id="input_5_full" name="phonenumber"
-                                            maxlength="13" class="mask-phone-number form-textbox validate[, Fill Mask]"
+                                        class="form-sub-label-container" style="vertical-align:top"> <input
+                                            readonly="" type="tel" value="{{ $data[0]['phonenumber'] }}"
+                                            id="input_5_full" name="phonenumber" maxlength="13"
+                                            class="mask-phone-number form-textbox validate[, Fill Mask]"
                                             autoComplete="section-input_5 tel" style="width:310px" data-masked="true"
                                             aria-labelledby="label_5" /></span>
                                 </div>
@@ -282,20 +285,21 @@
                                     for="input_6" aria-hidden="false"> E-mail
                                 </label>
                                 <div id="cid_6" class="form-input-wide jf-" data-layout="half"> <span
-                                        class="form-sub-label-container" style="vertical-align:top"><input type="email"
-                                            id="input_6" name="email" class="form-textbox validate[, Email]"
-                                            style="width:310px" size="310" value="{{ $data['email'] }}"
-                                            data-component="email" aria-labelledby="label_6 sublabel_input_6" /><label
-                                            class="form-sub-label" for="input_6" id="sublabel_input_6"
-                                            style="min-height:13px" aria-hidden="false">example@example.com</label></span>
+                                        class="form-sub-label-container" style="vertical-align:top"><input readonly=""
+                                            type="email" id="input_6" name="email"
+                                            class="form-textbox validate[, Email]" style="width:310px" size="310"
+                                            value="{{ $data[0]['email'] }}" data-component="email"
+                                            aria-labelledby="label_6 sublabel_input_6" /><label class="form-sub-label"
+                                            for="input_6" id="sublabel_input_6" style="min-height:13px"
+                                            aria-hidden="false">example@example.com</label></span>
                                 </div>
                             </li>
                             <li class="form-line jf-" data-type="control_textarea" id="id_32"><label
                                     class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
                                     aria-hidden="false"> Purpose </label>
                                 <div id="cid_32" class="form-input-wide jf-" data-layout="full">
-                                    <textarea id="input_32" minlength="150" maxlength="500" class="form-textarea validate[]" name="purpose"
-                                        style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['purpose'] }}</textarea>
+                                    <textarea readonly="" id="input_32" minlength="150" maxlength="500" class="form-textarea validate[]" name="purpose"
+                                        style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data[0]['purpose'] }}</textarea>
                                 </div>
                             </li>
                             <li class="form-line" data-type="control_button" id="id_25">
@@ -310,7 +314,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li style="display:none">Should be Empty: <input type="text" name="website" /></li>
+
                         </ul>
                     </div>
                 </form>

@@ -4,12 +4,15 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\GoodMoralController;
-use App\Http\Controllers\Form137Controller;
+
+use App\Http\Controllers\GoodMoralRequestController;
+use App\Http\Controllers\Form137RequestController;
 use App\Http\Controllers\CertificationRequestController;
+
 use App\Http\Controllers\StudentDashboardController;
+use App\Http\Controllers\TeacherDashboardController;
 
-
+use App\Http\Controllers\AccountController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
@@ -59,22 +62,34 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/getrequest/{id}', [StudentDashboardController::class,'getRequest']);
 
-    Route::get('/viewrequest/{id}', [StudentDashboardController::class,'viewRequest']);
+    Route::post('/viewrequest/{id}', [StudentDashboardController::class,'viewRequest']);
 
     Route::delete('/deleterequest/{id}', [StudentDashboardController::class,'deleteRequest']);
 
+    Route::get('/editProfile', [AccountController::class,'editProfile']);
 
-    Route::get('/request/certificate', function () {
-        return view('student.request-certificate');
-    });
+    Route::post('/updateProfile', [StudentDashboardController::class,'updateProfile']);
 
-    Route::get('/request/goodmoral', function () {
-        return view('student.request-goodmoral');
-    });
+    Route::post('/updatePassword', [StudentDashboardController::class,'updatePassword']);
+
+    Route::get('/deleteUser', [StudentDashboardController::class,'deleteUser']);
+
+// request
+
+    Route::get('/request/certificate', [CertificationRequestController::class,'showCertificateForm']);
 
     Route::post('/request/certificate', [CertificationRequestController::class,'createNewCertificationRequest']);
 
     // Route::post('/edit-certificate', [StudentDashboardController::class,'editCertificate'])->name('edit-certificate');
+
+    Route::get('/request/form137', [CertificationRequestController::class,'showForm137Form']);
+
+    Route::post('/request/form137', [CertificationRequestController::class,'createNewCertificationRequest']);
+
+    Route::get('/request/goodmoral', [GoodMoralRequestController::class,'showFormGoodMoral']);
+
+    Route::post('/request/goodmoral', [GoodMoralRequestController::class,'createNewGoodMoralRequest']);
+
 
     Route::get('/schedule/certificate', [CertificationRequestController::class,'showStudentRequestCertification']);
 
@@ -83,6 +98,13 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/schedule/goodmoral', [GoodMoralController::class,'showScheduleForGoodMoral']);
     Route::get('/events', [GoodMoralController::class, 'getEvents']);
 
+    Route::get('/settings', function () {
+        return view('student.settings');
+    });
+
+    Route::get('/profile', function () {
+        return view('student.profile');
+    });
 
 
     // Route::get('', [ ::class, '']);
@@ -95,6 +117,25 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 
 Route::group(['middleware' => 'auth:teacher'], function () {
+
+    Route::get('/teacher/dashboard', [TeacherDashboardController::class,'showTeacherDashboard']);
+
+    Route::get('/teacher/profile', [TeacherDashboardController::class,'showProfile']);
+
+    Route::get('/teacher/editprofile', [TeacherDashboardController::class,'editProfile']);
+
+    Route::post('/teacher/updateprofile', [TeacherDashboardController::class,'updateProfile']);
+
+    Route::get('/teacher/settings', [TeacherDashboardController::class,'settings']);
+
+    Route::post('/teacher/updatepassword', [TeacherDashboardController::class,'updatePassword']);
+
+    Route::post('/teacher/deleteUser', [TeacherDashboardController::class,'deleteUser']);
+
+
+
+
+
 
     Route::get('/schedules/goodmoral', [GoodMoralController::class,'index']);
     Route::get('/events', [GoodMoralController::class, 'getEvents']);
@@ -110,14 +151,12 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::get('/teacher', function () {
         return view('teacher.home-teacher');
     });
-    Route::get('/teacher/dashboard', function () {
-        return view('teacher.dashboard');
-    });
+    // Route::get('/teacher/dashboard', function () {
+    //     return view('teacher.dashboard');
+    // });
 
     Route::post('/teacher/logout', [TeacherController::class,'logout']);
-    Route::get('/teacher/settings', function () {
-        return view('teacher.account.settings');
-    });
+
 
 
 

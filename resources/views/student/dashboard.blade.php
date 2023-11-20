@@ -98,7 +98,7 @@
                                                                 @if ($request['type'] == 'Certificate')
                                                                     <i class="fa-solid fa-scroll m-2" style="color: #f8e40d;"></i>
                                                                     <strong>Certificate</strong>
-                                                                @elseif($request['type'] == 'Good Moral')
+                                                                @elseif($request['type'] == 'Good_Moral')
                                                                     <i class="fa-solid fa-medal fa-xl"
                                                                         style="color: #fcff3d;"></i>
                                                                     <strong>Good Moral</strong>
@@ -127,11 +127,14 @@
                                                             @endif
                                                         </td>
                                                         <td class="text-center text-wrap" style="max-width: 10%">
-                                                            <p>asdasdfasdf asdfas</p>
+                                                            {{-- <p>Somthing</p> --}}
                                                         </td>
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center">
-                                                                <form method="get"action="/viewrequest/{{ $request['id'] }}">
+                                                                <form method="post"action="/viewrequest/{{ $request['id'] }}">
+                                                                    @csrf
+                                                                    <input type="hidden" value="{{ $request['id'] }}" name="id">
+                                                                    <input type="hidden" value="{{ $request['type'] }}" name="type">
                                                                     <button type="submit" class="btn btn-info m-1">
                                                                         <i class="fas fa-eye" data-bs-toggle="tooltip"
                                                                             data-bs-placement="top" title="View"></i>

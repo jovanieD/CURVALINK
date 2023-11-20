@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('form137_requests', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('status')->default('Pending');
             $table->string('document')->default('Form 137');
             $table->timestamps();

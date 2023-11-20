@@ -10,6 +10,12 @@ use App\Models\Form137Request;
 
 
 use Mail;
+use App\Models\User;
+use Auth;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 
 class StudentDashboardController extends Controller
@@ -94,10 +100,13 @@ class StudentDashboardController extends Controller
 }
 
     public function showStudentDashboard(){
+        $user = Auth::user();
 
-        $certificationRequests = CertificationRequest::select('id' , 'document', 'created_at', 'status')->get();
-        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'created_at', 'status')->get();
-        $form137Requests = Form137Request::select('id', 'document', 'created_at', 'status')->get();
+        // Assuming the user has a relationship with document requests
+        $certificationRequests = $user->certificationRequests()->select('id', 'document', 'created_at', 'status')->get();
+        $goodMoralRequests = $user->goodMoralRequests()->select('id', 'document', 'created_at', 'status')->get();
+        $form137Requests = $user->form137Requests()->select('id', 'document', 'created_at', 'status')->get();
+    
     
         $documentCounts = [
             'Pending' => 0,
@@ -120,7 +129,7 @@ class StudentDashboardController extends Controller
     
         foreach($goodMoralRequests as $request){
             $documentRequested[] = [
-                'type' => 'Good Moral',
+                'type' => 'Good_Moral',
                 'created_at' => $request->created_at,
                 'status' => $request->status,
                 'id' => $request->id
@@ -168,10 +177,32 @@ class StudentDashboardController extends Controller
         // return $request;
     }
 
-    public function viewRequest(Request $request) {
-        $request = $request->id;
-        $data = CertificationRequest::find($request);
-        return view('actions.view-request')->with('data',  $data);
+    public function viewRequest(Request $request)
+    {
+        try {
+            $id = $request->input('id');
+            $type = $request->input('type');
+
+            switch ($type) {
+                case 'Certificate':
+                    $data = CertificationRequest::find($id);
+                    return view('actions.view-certificate')->with('data',  $data);
+                case 'Good_Moral':
+                    $requestModel = GoodMoralRequest::find($id);
+                    return view('actions.view-goodmoral')->with('data', $requestModel);
+                case 'form_137':
+                    $requestModel = Form137Request::find($request);
+                    break;
+                default:
+                    abort(404); 
+            }
+            
+            // Redirect to another page based on the document type
+            return redirect("/view{$type}/{$id}");
+        } catch (\Exception $e) {
+            // Handle exceptions (e.g., document not found)
+            abort(404);
+        }
     }
 
     public function deleteRequest(Request $request) {
@@ -205,6 +236,103 @@ class StudentDashboardController extends Controller
             // 'goodMoralRequestCount' => $goodMoralRequestCount,
             // 'form137RequestCount' => $form137RequestCount
         // ]);
+
+
+
+    public function updateProfile(Request $request)
+        {
+            try {
+                $user = User::find(Auth::user()->id);
+
+                if (!$user) {
+                    return response()->json(['error' => 'User not found'], 404);
+                }
+
+                $name = $request->input('name');
+                $email = $request->input('email');
+                $phonenumber = $request->input('phonenumber');
+                $address = $request->input('address');
+                $municipality = $request->input('municipality');
+                $province = $request->input('province');
+                $imageName = $user->profile_image; // Initialize with the current image name
+
+                if ($request->hasFile('profile_picture')) {
+                    $profilePicture = $request->file('profile_picture');
+
+                    // Ensure that the file is an image
+                    if ($profilePicture->isValid() ) {
+                        $image = $profilePicture->hashName();
+                        $imageName = '/storage/images/' . $image;
+
+                        $profilePicture->storeAs('public/images', $image);
+                    } else {
+                        return redirect('/profile')->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
+                    }
+                }
+
+                $user->update([
+                    'name' => $name,
+                    'email' => $email,
+                    'phonenumber' => $phonenumber,
+                    'address' => $address,
+                    'municipality' => $municipality,
+                    'province' => $province,
+                    'profile_image' => $imageName,
+                ]);
+
+                return redirect('/profile')->with('success', 'Profile information updated successfully');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'An error occurred while updating the profile: ' . $e->getMessage());
+            }
+        }
+
+        public function updatePassword(Request $request)
+        {
+            try {
+                $request->validate([
+                    'current' => 'required',
+                    'new' => [
+                        'required',
+                        'min:8',
+   
+                    ],
+                ]);
+        
+                $user = Auth::user();
+        
+                if (!Hash::check($request->input('current'), $user->password)) {
+                    throw ValidationException::withMessages(['current' => 'The current password is incorrect.']);
+                }
+        
+                $user->update([
+                    'password' => bcrypt($request->input('new')),
+                ]);
+        
+                return redirect()->back()->with('success', 'Password updated successfully!');
+            } catch (ValidationException $validationException) {
+                return redirect()->back()->withErrors($validationException->errors())->withInput();
+            } catch (\Exception $exception) {
+                return redirect()->back()->with('error', $exception->getmessage());
+            }
+        }
+
+
+        public function deleteUser()
+        {
+            $user = Auth::user();
+        
+            // Logout the user
+            Auth::logout();
+        
+            // Clear session cookies
+            Session::flush();
+            Session::regenerate();
+        
+            // Delete the user
+            $user->delete();
+        
+            return redirect('/')->with('success', 'User and related records deleted successfully.');
+        }
+
+
 }
-
-

@@ -1,6 +1,6 @@
-@extends('layouts.student-dashboard')
+@extends('layouts.teacher-dashboard')
 
-@section('student')
+@section('teacher')
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
@@ -56,7 +56,7 @@
                             <div class="card mb-4">
                                 <h5 class="card-header">Change Password</h5>
 
-                                <form action="/updatePassword" method="POST" id="updatePasswordForm">
+                                <form action="/teacher/updatepassword" method="POST" id="updatePasswordForm">
                                     @csrf
                                     <div class="card-body">
                                         <div class="row">
@@ -166,7 +166,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a href="/deleteUser"><button type="" class="btn btn-primary">Yes</button></a>
+                        <a href="/teacher/deleteUser"><button type="" class="btn btn-primary">Yes</button></a>
                     </div>
                 </div>
             </div>

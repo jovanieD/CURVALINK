@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('page.guest')
+    @include('page.homeForStudent')
 @endsection

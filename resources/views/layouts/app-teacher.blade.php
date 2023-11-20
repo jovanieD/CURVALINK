@@ -37,7 +37,7 @@
 
         <!-- Page Content -->
         <main class="py-4">
-            @yield('content')
+            @yield('teacher')
         </main>
 
         <!-- Footer -->
