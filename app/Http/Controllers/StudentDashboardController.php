@@ -103,9 +103,9 @@ class StudentDashboardController extends Controller
         $user = Auth::user();
 
         // Assuming the user has a relationship with document requests
-        $certificationRequests = $user->certificationRequests()->select('id', 'document', 'created_at', 'status')->get();
-        $goodMoralRequests = $user->goodMoralRequests()->select('id', 'document', 'created_at', 'status')->get();
-        $form137Requests = $user->form137Requests()->select('id', 'document', 'created_at', 'status')->get();
+        $certificationRequests = $user->certificationRequests()->select('id', 'document', 'remarks', 'created_at', 'status')->get();
+        $goodMoralRequests = $user->goodMoralRequests()->select('id', 'document', 'remarks', 'created_at', 'status')->get();
+        $form137Requests = $user->form137Requests()->select('id', 'document', 'remarks', 'created_at', 'status')->get();
     
     
         $documentCounts = [
@@ -120,6 +120,7 @@ class StudentDashboardController extends Controller
         foreach($certificationRequests as $request){
             $documentRequested[] = [
                 'type' => 'Certificate',
+                'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
                 'id' => $request->id
@@ -130,6 +131,7 @@ class StudentDashboardController extends Controller
         foreach($goodMoralRequests as $request){
             $documentRequested[] = [
                 'type' => 'Good_Moral',
+                'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
                 'id' => $request->id
@@ -140,6 +142,7 @@ class StudentDashboardController extends Controller
         foreach($form137Requests as $request){
             $documentRequested[] = [
                 'type' => 'Form137',
+                'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
                 'id' => $request->id
@@ -170,12 +173,32 @@ class StudentDashboardController extends Controller
     }
     
 
-    public function getRequest(Request $request) {
-        $request = $request->id;
-        $data = CertificationRequest::find($request);
-        return view('actions.edit-request')->with('data',  $data);
-        // return $request;
+    public function getRequest(Request $request)
+    {
+        try {
+            $id = $request->input('id');
+            $type = $request->input('type');
+
+            switch ($type) {
+                case 'Certificate':
+                    $data = CertificationRequest::find($id);
+                    return view('actions.edit-certificate')->with('data', $data);
+                case 'Good_Moral':
+                    $data = GoodMoralRequest::find($id);
+                    return view('actions.edit-goodmoral')->with('data', $data);
+                case 'Form137':
+                    $data = Form137Request::find($id);
+                    return view('actions.edit-form137')->with('data', $data);
+                default:
+                    abort(404);
+            }
+
+        } catch (\Exception $e) {
+            // Handle exceptions (e.g., document not found)
+            abort(404);
+        }
     }
+
 
     public function viewRequest(Request $request)
     {
@@ -190,15 +213,13 @@ class StudentDashboardController extends Controller
                 case 'Good_Moral':
                     $requestModel = GoodMoralRequest::find($id);
                     return view('actions.view-goodmoral')->with('data', $requestModel);
-                case 'form_137':
-                    $requestModel = Form137Request::find($request);
-                    break;
+                case 'Form137':
+                    $requestModel = Form137Request::find($id);
+                    return view('actions.view-form137')->with('data', $requestModel);
                 default:
                     abort(404); 
             }
             
-            // Redirect to another page based on the document type
-            return redirect("/view{$type}/{$id}");
         } catch (\Exception $e) {
             // Handle exceptions (e.g., document not found)
             abort(404);

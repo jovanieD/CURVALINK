@@ -4,7 +4,9 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <div class="content-wrapper">
+
                 <div class="container mt-5">
+                    {{-- For Search --}}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group mb-3">
@@ -24,12 +26,12 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <div id="calendar" class="w-100 h-100 "></div>
+                            <div id="calendar" style="width: 100%;height:100vh"></div>
 
                         </div>
                     </div>
                 </div>
-
+                </body>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -45,9 +47,9 @@
                     var events = [];
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         headerToolbar: {
-                            left: 'prev,next today',
+                            left: '',
                             center: 'title',
-                            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                            right: 'prev,next'
                         },
                         initialView: 'dayGridMonth',
                         timeZone: 'UTC',
@@ -58,24 +60,12 @@
                         eventContent: function(info) {
                             var eventTitle = info.event.title;
                             var eventElement = document.createElement('div');
-                            eventElement.innerHTML = `
-                <div class="row">
-                    <div class="col col-lg-2">
-                    3 of 3
-                    </div>
-                    <div class="col">
-                     ${eventTitle}
-                    </div>
-
-                </div>
-                <div class="bg-warning text-wrap text-capitalize" role="alert">
-                    <span class="cursor-pointer bg-warning text-light rounded">❌</span>
-                   
-                </div>`;
+                            eventElement.innerHTML = '<span style="cursor: pointer;">❌</span> ' + eventTitle;
 
                             eventElement.querySelector('span').addEventListener('click', function() {
                                 if (confirm("Are you sure you want to delete this event?")) {
                                     var eventId = info.event.id;
+
                                     $.ajax({
                                         method: 'DELETE',
                                         url: '/schedule/' + eventId,
@@ -117,6 +107,15 @@
                                     console.error('Error moving event:', error);
                                 }
                             });
+                        },
+
+                        eventClick: function(info) {
+                            // Display event details in the modal
+                            $('#eventTitle').text('Title: ' + info.event.title);
+                            $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
+                            $('#eventEnd').text('End: ' + (info.event.end ? info.event.end.toLocaleString() : ''));
+
+                            $('#eventModal').modal('show');
                         },
 
                         // Event Resizing
@@ -171,7 +170,7 @@
                                 title: event.title,
                                 start: event.start ? event.start.toISOString() : null,
                                 end: event.end ? event.end.toISOString() : null,
-                                color: event.backgroundColor,
+                                // color: event.backgroundColor,
                             };
                         });
 
@@ -196,6 +195,26 @@
                         downloadLink.click();
                     })
                 </script>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Display event details here -->
+                    <p id="eventTitle"></p>
+                    <p id="eventStart"></p>
+                    <p id="eventEnd"></p>
+                </div>
             </div>
         </div>
     </div>

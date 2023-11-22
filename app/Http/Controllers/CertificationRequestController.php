@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Validation\ValidationException;
+
 use App\Models\CertificationRequest;
 use App\Models\GoodMoralRequest;
 use Auth;
 
 class CertificationRequestController extends Controller
 {
-    public function showStudentRequestCertification()
-    {
-        return view('student.schedule-certificate');
-    }
+
 
     public function showCertificateForm(){
         return view('student.request-certificate');
@@ -49,10 +48,51 @@ class CertificationRequestController extends Controller
     
     }
 
-    public function showForm137Form(){
-        return view('student.request-form137');
-    }
-    
 
+        public function updateCertificationRequest(Request $request, $id)
+        {
+            try {
+                // Validation rules
+                $validationRules = [
+                    'firstname' => 'required|string|max:32',
+                    'lastname' => 'required|string|max:32',
+                    'address' => 'required|string|max:64',
+                    'municipality' => 'required|string|max:32',
+                    'province' => 'required|string|max:32',
+                    'postal' => 'required|string|max:7|min:4',
+                    'phonenumber' => 'required|string|max:11|min:11',
+                    'email' => 'required|string|email|max:32',
+                    'purpose' => 'required|string|max:255|min:150',
+                ];
+
+                // Validate the request
+                $request->validate($validationRules);
+
+                // Find the existing record by id
+                $existingRequest = CertificationRequest::findOrFail($id);
+
+                // Update the existing record
+                $existingRequest->update([
+                    'firstname' => $request->input('firstname'),
+                    'lastname' => $request->input('lastname'),
+                    'address' => $request->input('address'),
+                    'municipality' => $request->input('municipality'),
+                    'province' => $request->input('province'),
+                    'postal' => $request->input('postal'),
+                    'phonenumber' => $request->input('phonenumber'),
+                    'email' => $request->input('email'),
+                    'purpose' => $request->input('purpose'),
+                ]);
+
+                // Redirect to the dashboard or any other appropriate route
+                return redirect('/dashboard');
+            } catch (ValidationException $e) {
+                // If validation fails, redirect back with errors
+                return redirect()->back()->withErrors($e->errors())->withInput();
+            } catch (\Exception $e) {
+                // Handle other exceptions if needed
+                return redirect()->back()->withErrors([$e->getMessage()])->withInput();
+            }
+        }
     
 }

@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Form137Request::class, 'user_id');
     }
+
+    public function schedule()
+    {
+        return $this->hasMany(Schedule::class, 'user_id');
+    }
 }

@@ -91,7 +91,7 @@
                                             </thead>
                                             <tbody class="table-border-bottom-0">
                                                 @foreach ($documentRequested as $request)
-                                                    @include('modals.delete')
+                                                    @include('modals.teacherdelete')
                                                     <tr>
                                                         <td>
                                                             <strong>
@@ -133,7 +133,7 @@
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center">
                                                                 <form
-                                                                    method="get"action="/viewrequest/{{ $request['id'] }}">
+                                                                    method="get"action="/teacher/viewrequest/{{ $request['id'] }}">
                                                                     <button type="submit" class="btn btn-info m-1">
                                                                         <i class="fas fa-eye" data-bs-toggle="tooltip"
                                                                             data-bs-placement="top" title="View"></i>
@@ -141,7 +141,7 @@
                                                                 </form>
 
                                                                 <form method="get"
-                                                                    action="/getrequest/{{ $request['id'] }}">
+                                                                    action="/teacher/getrequest/{{ $request['id'] }}">
                                                                     @csrf
                                                                     <button type="submit" class="btn btn-warning m-1">
                                                                         <i class="fas fa-edit " data-bs-toggle="tooltip"
@@ -150,7 +150,7 @@
                                                                 </form>
 
                                                                 <button type="submit" class="btn btn-danger m-1"
-                                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                    data-bs-toggle="modal" data-bs-target="#deleteteacher">
                                                                     <i class="fas fa-trash" data-bs-toggle="tooltip"
                                                                         data-bs-placement="top" title="Delete"></i>
                                                                 </button>

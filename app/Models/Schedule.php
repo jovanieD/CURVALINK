@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Form137Request extends Model
+class Schedule extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'user_id',
-        'principalname',
-        'name',
-        'grade',
-        'schoolyear',
-        'adviser',
-        'requestorname',
-        'request',
-        'remarks',
+        'title',
+        'start', // Add this line
+        'end',
+        'description',
     ];
-    
 
-    public function form137Requests(){
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
 }

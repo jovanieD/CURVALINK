@@ -23,11 +23,11 @@ class CertificationRequestFactory extends Factory
             'address' => fake()->address(),
             'municipality' => fake()->city(),
             'province' => fake()->state(),
-            'postal' => fake()->postcode(),
-            'phonenumber' => fake()->phoneNumber(),
+            'postal' => "1111",
+            'phonenumber' => "09123456789",
             'email' => fake()->unique()->safeEmail(),
-            'purpose' => fake()->sentence(),
-            'status' => "Process",
+            'purpose' => fake()->text(160),
+            // 'status' => "Process",
         ];
     }
 }

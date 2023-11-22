@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Schedule;
 
 class DatabaseSeeder extends Seeder
 {
@@ -29,6 +30,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'teacher@example.com',
         ]);
 
-        \App\Models\CertificationRequest::factory(12)->create();
+        \App\Models\CertificationRequest::factory(3)->create();
+        \App\Models\GoodMoralRequest::factory(3)->create();
+        \App\Models\Form137Request::factory(3)->create();
+
+        Schedule::factory(20)->create();
     }
 }

@@ -23,6 +23,7 @@ class CertificationRequest extends Model
         'purpose',
         'status',
         'document',
+        'remarks',
     ];
 
     public function certificationRequest(){

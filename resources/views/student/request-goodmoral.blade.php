@@ -53,17 +53,6 @@
 
                     /* Injected CSS Code */
                 </style>
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <form class="jotform-form" action="/request/goodmoral" method="POST" autocomplete="on">
                     @csrf
                     <div role="main" class="form-all">
@@ -247,6 +236,7 @@
 
                         handleRadioChange();
                     </script>
+                </form>
             </div>
         </div>
     </div>

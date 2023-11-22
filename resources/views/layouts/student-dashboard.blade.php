@@ -9,7 +9,7 @@
 
     <!-- Title and Favicon -->
     <title>Curva National High School</title>
-    <link rel="icon" href="{{asset('images/curva_logo.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/curva_logo.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link
@@ -36,7 +36,7 @@
     <head>
 
     <body>
-        
+
         <div class="layout-wrapper layout-content-navbar">
             <div class="layout-container">
                 <!-- Menu -->
@@ -62,6 +62,17 @@
                             </a>
                         </li>
 
+                        <!-- Schedule -->
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Release of
+                                Documents</span>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="/schedules" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-box text-warning"></i>
+                                <div>Schedules</div>
+                            </a>
+                        </li>
 
                         <!-- Layouts -->
 
@@ -92,33 +103,7 @@
                             </ul>
                         </li>
 
-                        <!-- Schedule -->
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Release of
-                                Documents</span>
-                        </li>
-                        <li class="menu-item">
-                            <a href="javascript:void(0)" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons bx bx-box text-warning"></i>
-                                <div data-i18n="User interface">Schedules</div>
-                            </a>
-                            <ul class="menu-sub">
-                                <li class="menu-item">
-                                    <a href="/schedule/form137" class="menu-link">
-                                        <div data-i18n="Account">Form 137</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="/schedule/goodmoral" class="menu-link">
-                                        <div>Good Moralsdfdf</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="/schedule/certificate" class="menu-link">
-                                        <div>Certificate</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                         {{-- Account --}}
                         <li class="menu-header small text-uppercase"><span class="menu-header-text">Account</span>
                         </li>
@@ -174,8 +159,8 @@
                                         <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                             data-bs-toggle="dropdown">
                                             <div class="avatar avatar-online">
-                                                <img src="{{Auth::user()->profile_image}}" alt
-                                                style="border-radius: 25px; height: 40px; width: 40px;" />
+                                                <img src="{{ Auth::user()->profile_image }}" alt
+                                                    style="border-radius: 25px; height: 40px; width: 40px;" />
                                             </div>
                                         </a>
                                         <!-- Dropdown Menu Items -->
@@ -186,7 +171,9 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{Auth::user()->profile_image}}" alt class="rounded-circle" style="width: 40px; height:40px; "  />
+                                                                <img src="{{ Auth::user()->profile_image }}" alt
+                                                                    class="rounded-circle"
+                                                                    style="width: 40px; height:40px; " />
                                                             </div>
                                                         </div>
                                                         <div class="flex-grow-1">

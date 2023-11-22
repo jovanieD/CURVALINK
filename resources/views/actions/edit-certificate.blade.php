@@ -162,7 +162,8 @@
                         text-align: left;
                     }
                 </style>
-                <form action="/update/request" method="post" accept-charset="utf-8" autocomplete="on">
+                <form action="/update/cretificate/{{ $data['id'] }}" method="post" accept-charset="utf-8"
+                    autocomplete="on">
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
@@ -259,7 +260,7 @@
                                                         name="postal" class="form-textbox validate[] form-address-postal"
                                                         autoComplete="section-input_4 postal-code" data-component="zip"
                                                         aria-labelledby="label_4 sublabel_4_postal" pattern="[0-9]{1,7}"
-                                                        maxlength="7" /><label class="form-sub-label"
+                                                        maxlength="4" /><label class="form-sub-label"
                                                         for="input_4_postal" id="sublabel_4_postal"
                                                         style="min-height:13px" aria-hidden="false">Postal / Zip
                                                         Code</label></span></span></div>
@@ -298,8 +299,19 @@
                                         style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['purpose'] }}</textarea>
                                 </div>
                             </li>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <li class="form-line" data-type="control_button" id="id_25">
                                 <div id="cid_25" class="form-input-wide" data-layout="full">
+                                    <hr>
                                     <div class="d-flex justify-content-center m-4">
                                         <a href="/dashboard">
                                             <button type="button" class="btn btn-primary m-1">
@@ -311,11 +323,9 @@
                                             <i class="fa-solid fa-pen-to-square fa-xl" style="color: #686603;"></i>
                                             <span class=" fs-4">Update</span>
                                         </button>
-                                       
                                     </div>
                                 </div>
                             </li>
-                            <li style="display:none">Should be Empty: <input type="text" name="website" /></li>
                         </ul>
                     </div>
                 </form>
@@ -339,31 +349,31 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Purpose Textarea
-        var purposeTextarea = document.getElementById('input_32');
-        purposeTextarea.addEventListener('input', function() {
-            var characterCount = this.value.length;
-            var color = characterCount < 150 ? 'red' : 'green';
-            this.style.color = color;
-        });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Purpose Textarea
+            var purposeTextarea = document.getElementById('input_32');
+            purposeTextarea.addEventListener('input', function() {
+                var characterCount = this.value.length;
+                var color = characterCount < 150 ? 'red' : 'green';
+                this.style.color = color;
+            });
 
-        // Phone Number Input
-        var phoneNumberInput = document.getElementById('input_5_full');
-        phoneNumberInput.addEventListener('input', function() {
-            var characterCount = this.value.length;
-            var color = characterCount < 11 ? 'red' : 'green';
-            this.style.color = color;
-        });
+            // Phone Number Input
+            var phoneNumberInput = document.getElementById('input_5_full');
+            phoneNumberInput.addEventListener('input', function() {
+                var characterCount = this.value.length;
+                var color = characterCount < 11 ? 'red' : 'green';
+                this.style.color = color;
+            });
 
-        // Postal Code Input
-        var postalCodeInput = document.getElementById('input_4_postal');
-        postalCodeInput.addEventListener('input', function() {
-            var characterCount = this.value.length;
-            var color = characterCount < 4 ? 'red' : 'green';
-            this.style.color = color;
+            // Postal Code Input
+            var postalCodeInput = document.getElementById('input_4_postal');
+            postalCodeInput.addEventListener('input', function() {
+                var characterCount = this.value.length;
+                var color = characterCount < 4 ? 'red' : 'green';
+                this.style.color = color;
+            });
         });
-    });
-</script>
+    </script>
 @endsection

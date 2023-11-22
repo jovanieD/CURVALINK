@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('form137_requests', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('principalname');
+            $table->string('name');
+            $table->string('grade');
+            $table->string('schoolyear');
+            $table->string('adviser');
+            $table->string('requestorname');
+            $table->string('request');
+            $table->string('remarks')->nullable();
             $table->string('status')->default('Pending');
-            $table->string('document')->default('Form 137');
+            $table->string('document')->default('Your_Document_Name');
             $table->timestamps();
         });
     }

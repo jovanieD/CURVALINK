@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GoodMoralRequestController;
 use App\Http\Controllers\Form137RequestController;
 use App\Http\Controllers\CertificationRequestController;
+use App\Http\Controllers\ScheduleController;
 
 use App\Http\Controllers\StudentDashboardController;
 use App\Http\Controllers\TeacherDashboardController;
@@ -46,8 +47,7 @@ Route::get('/contact', function () {
     return view('contact.contact');
 });
 
-Route::post('/sendemail', [StudentDashboardController::class,'sendEmail']);
-
+// Route::post('/sendemail', [StudentDashboardController::class,'sendEmail']);
 
 Auth::routes();
 
@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/dashboard', [StudentDashboardController::class,'showStudentDashboard']);
 
-    Route::get('/getrequest/{id}', [StudentDashboardController::class,'getRequest']);
+    Route::post('/getrequest/{id}', [StudentDashboardController::class,'getRequest']);
 
     Route::post('/viewrequest/{id}', [StudentDashboardController::class,'viewRequest']);
 
@@ -74,29 +74,28 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/deleteUser', [StudentDashboardController::class,'deleteUser']);
 
-// request
-
-    Route::get('/request/certificate', [CertificationRequestController::class,'showCertificateForm']);
+    Route::get('/request/certificate', [CertificationRequestController::class,'showCertificateForm']);  //request
 
     Route::post('/request/certificate', [CertificationRequestController::class,'createNewCertificationRequest']);
 
-    // Route::post('/edit-certificate', [StudentDashboardController::class,'editCertificate'])->name('edit-certificate');
+    Route::post('/update/cretificate/{id}', [CertificationRequestController::class,'updateCertificationRequest']);
 
-    Route::get('/request/form137', [CertificationRequestController::class,'showForm137Form']);
+    Route::get('/request/form137', [Form137RequestController::class,'showForm137Form']);
 
-    Route::post('/request/form137', [CertificationRequestController::class,'createNewCertificationRequest']);
+    Route::post('/request/form137', [Form137RequestController::class,'createNewForm137Request']);
+
+    Route::post('/update/form137/{id}', [Form137RequestController::class,'updateForm137Request']);
 
     Route::get('/request/goodmoral', [GoodMoralRequestController::class,'showFormGoodMoral']);
 
     Route::post('/request/goodmoral', [GoodMoralRequestController::class,'createNewGoodMoralRequest']);
 
+    Route::post('/update/goodmoral/{id}', [GoodMoralRequestController::class,'updateGoodMoralRequest']);
 
-    Route::get('/schedule/certificate', [CertificationRequestController::class,'showStudentRequestCertification']);
 
-    Route::get('/schedule/form137', [Form137Controller::class,'showform137']);
+    Route::get('/events', [ScheduleController::class, 'getEvents']);
 
-    Route::get('/schedule/goodmoral', [GoodMoralController::class,'showScheduleForGoodMoral']);
-    Route::get('/events', [GoodMoralController::class, 'getEvents']);
+    Route::get('/schedules', [ScheduleController::class,'showStudentRequestCertification']);
 
     Route::get('/settings', function () {
         return view('student.settings');
@@ -133,12 +132,12 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/deleteUser', [TeacherDashboardController::class,'deleteUser']);
 
 
-
+    
 
 
 
     Route::get('/schedules/goodmoral', [GoodMoralController::class,'index']);
-    Route::get('/events', [GoodMoralController::class, 'getEvents']);
+
 
     Route::delete('/schedule/{id}', [GoodMoralController::class, 'deleteEvent']);
 

@@ -21,6 +21,7 @@ class GoodMoralRequest extends Model
         'requestorsaddress',
         'requestorscity',
         'requestorsprovince',
+        'remarks',
     ];
 
     public function goodmoralRequests(){

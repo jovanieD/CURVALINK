@@ -17,7 +17,16 @@ class Form137RequestFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => 11,
+            'principalname' => fake()->name(),
+            'name' => fake()->name(),
+            'grade' => fake()->randomElement(['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5', 'Grade 6']),
+            'schoolyear' => fake()->year(),
+            'adviser' => fake()->name(),
+            'requestorname' => fake()->name(),
+            'request' => fake()->randomElement(['First Request', 'Second Request', 'Third Request','Urgent']),
+            'remarks' => fake()->paragraph(),
         ];
     }
+    
 }

@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteteacher" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,7 +20,7 @@
             <div class=" d-flex justify-content-center mb-4">
                 <button type="button" class="btn btn-secondary m-2 fs-4" data-bs-dismiss="modal">Close</button>
 
-                <form method="post" action="/deleterequest/{{ $request['id'] }}" method="post" accept-charset="utf-8"
+                <form method="post" action="/teacher/deleterequest/{{ $request['id'] }}" method="post" accept-charset="utf-8"
                     autocomplete="on">
                     @csrf
                     @method('DELETE')

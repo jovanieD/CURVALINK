@@ -96,7 +96,8 @@
                                                         <td>
                                                             <strong>
                                                                 @if ($request['type'] == 'Certificate')
-                                                                    <i class="fa-solid fa-scroll m-2" style="color: #f8e40d;"></i>
+                                                                    <i class="fa-solid fa-scroll m-2"
+                                                                        style="color: #f8e40d;"></i>
                                                                     <strong>Certificate</strong>
                                                                 @elseif($request['type'] == 'Good_Moral')
                                                                     <i class="fa-solid fa-medal fa-xl"
@@ -126,36 +127,62 @@
                                                                     class="badge bg-success me-1">{{ $request['status'] }}</span>
                                                             @endif
                                                         </td>
-                                                        <td class="text-center text-wrap" style="max-width: 10%">
-                                                            {{-- <p>Somthing</p> --}}
+                                                        <td class="text-truncate" style="max-width: 150px;">
+                                                            {{ $request['remarks'] }}
                                                         </td>
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center">
-                                                                <form method="post"action="/viewrequest/{{ $request['id'] }}">
-                                                                    @csrf
-                                                                    <input type="hidden" value="{{ $request['id'] }}" name="id">
-                                                                    <input type="hidden" value="{{ $request['type'] }}" name="type">
-                                                                    <button type="submit" class="btn btn-info m-1">
-                                                                        <i class="fas fa-eye" data-bs-toggle="tooltip"
-                                                                            data-bs-placement="top" title="View"></i>
+                                                                @if ($request['status'] == 'Pending')
+                                                                    <form method="post"
+                                                                        action="/viewrequest/{{ $request['id'] }}">
+                                                                        @csrf
+                                                                        <input type="hidden" value="{{ $request['id'] }}"
+                                                                            name="id">
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['type'] }}" name="type">
+                                                                        <button type="submit" class="btn m-1">
+                                                                            <i class="fas fa-eye text-info"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top" title="View"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                    <form method="post"
+                                                                        action="/getrequest/{{ $request['id'] }}">
+                                                                        @csrf
+                                                                        <input type="hidden" value="{{ $request['id'] }}"
+                                                                            name="id">
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['type'] }}" name="type">
+                                                                        <button type="submit" class="btn m-1">
+                                                                            <i class="fas fa-edit text-warning"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top" title="Edit"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                    <button type="submit" class="btn m-1"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">
+                                                                        <i class="fas fa-trash text-danger"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top" title="Delete"></i>
                                                                     </button>
-                                                                </form>
-
-                                                                <form method="get"
-                                                                    action="/getrequest/{{ $request['id'] }}">
-                                                                    @csrf
-                                                                    <button type="submit" class="btn btn-warning m-1">
-                                                                        <i class="fas fa-edit " data-bs-toggle="tooltip"
-                                                                            data-bs-placement="top" title="Edit"></i>
-                                                                    </button>
-                                                                </form>
-
-                                                                <button type="submit" class="btn btn-danger m-1"
-                                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                                    <i class="fas fa-trash" data-bs-toggle="tooltip"
-                                                                        data-bs-placement="top" title="Delete"></i>
-                                                                </button>
-
+                                                                @else
+                                                                    <form
+                                                                        method="post"action="/viewrequest/{{ $request['id'] }}">
+                                                                        @csrf
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['id'] }}" name="id">
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['type'] }}"
+                                                                            name="type">
+                                                                        <button type="submit" class="btn m-1">
+                                                                            <i class="fas fa-eye text-info"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                title="View"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                @endif
                                                             </div>
 
                                                         </td>
@@ -165,16 +192,15 @@
                                         </table>
                                         <nav class=" d-flex justify-content-center m-2">
                                             <ul class="pagination">
-                                                 {{ $documentRequested->onEachSide(1)->setPath('/dashboard')->appends(request()->query())->links('pagination::bootstrap-4') }}
+                                                {{ $documentRequested->onEachSide(1)->setPath('/dashboard')->appends(request()->query())->links('pagination::bootstrap-4') }}
                                             </ul>
                                         </nav>
                                     </div>
                                 @endif
                             </div>
                         </div>
-                        
 
-                        <!--/ List oF User's Request -->
+
                         <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                             <div class="row">
                                 <div class="col-6 mb-4">
