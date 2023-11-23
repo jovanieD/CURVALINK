@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
             'name' => 'User Vanie',
@@ -25,15 +25,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
 
-        \App\Models\Teacher::factory()->create([
-            'name' => 'Teacher Vanie',
-            'email' => 'teacher@example.com',
-        ]);
+        // \App\Models\Teacher::factory()->create([
+        //     'name' => 'Teacher Vanie',
+        //     'email' => 'teacher@example.com',
+        // ]);
 
-        \App\Models\CertificationRequest::factory(3)->create();
-        \App\Models\GoodMoralRequest::factory(5)->create();
-        \App\Models\Form137Request::factory(5)->create();
+        // \App\Models\CertificationRequest::factory(3)->create();
+        // \App\Models\GoodMoralRequest::factory(5)->create();
+        // \App\Models\Form137Request::factory(5)->create();
 
-        Schedule::factory(20)->create();
+        // Schedule::factory(20)->create();
     }
 }
