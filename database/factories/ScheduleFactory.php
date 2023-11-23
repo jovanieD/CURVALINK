@@ -23,7 +23,7 @@ class ScheduleFactory extends Factory
         $endDate = date('Y-m-d', $endTimestamp);
 
         return [
-            'user_id' => 5,
+            'user_id' => 11,
             'title' => $this->faker->sentence,
             'start' => $startDate,
             'end' => $endDate,
