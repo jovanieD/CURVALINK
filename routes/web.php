@@ -127,7 +127,7 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 
     Route::post('/updaterequest/{user_id}', [TeacherDashboardController::class,'getRequest']);
 
-    Route::post('/viewrequest/{user_id}', [TeacherDashboardController::class,'viewRequest']);
+    Route::post('/view/{user_id}', [TeacherDashboardController::class,'viewRequest']);
 
 
 

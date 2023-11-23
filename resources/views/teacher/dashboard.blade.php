@@ -144,7 +144,7 @@
                                                             <div class="d-flex justify-content-center">
                                                                 @if ($request['status'] == 'Pending')
                                                                     <form method="post"
-                                                                        action="/viewrequest/{{$request['user_id']}}">
+                                                                        action="/view/{{$request['user_id']}}">
                                                                         @csrf
                                                                         <input type="hidden" value="{{ $request['id'] }}"
                                                                             name="id">
@@ -179,7 +179,7 @@
                                                                     </button> --}}
                                                                 @else
                                                                     <form
-                                                                        method="post"action="/teacher/viewrequest/{{ $request['id'] }}/{{$request['user_id']}}">
+                                                                        method="post"action="/view/{{ $request['id'] }}/{{$request['user_id']}}">
                                                                         @csrf
                                                                         <input type="hidden"
                                                                             value="{{ $request['id'] }}" name="id">

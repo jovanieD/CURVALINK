@@ -250,7 +250,7 @@ class TeacherDashboardController extends Controller
         }
     
     
-        public function viewRequest($user_id, Request $request)
+        public function viewRequest( Request $request)
         {
             try {
                 $type = $request->input('type');
