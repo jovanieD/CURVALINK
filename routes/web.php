@@ -58,6 +58,8 @@ Route::post('/Login', [LoginController::class, 'authenticate'])->name('Login');
 
 Route::group(['middleware' => 'auth:web'], function () {
 
+    Route::get('/userprofileimage', [StudentDashboardController::class,'profileImage'])->name('userprofileimage');
+
     Route::get('/dashboard', [StudentDashboardController::class,'showStudentDashboard']);
 
     Route::post('/getrequest/{id}', [StudentDashboardController::class,'getRequest']);

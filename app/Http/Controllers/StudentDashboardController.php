@@ -17,9 +17,38 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Facades\Response;
+
 
 class StudentDashboardController extends Controller
 {
+
+    public function profileImage()
+    {
+        $user = Auth::user();
+
+        // Make sure the user has a profile image set
+        if ($user && $user->profile_image) {
+            $imagePath = public_path($user->profile_image); // Assuming the image path is stored in the public directory
+
+            // Check if the file exists
+            if (file_exists($imagePath)) {
+                $headers = [
+                    'Content-Type' => 'image/jpeg', // Adjust this based on the image MIME type
+                ];
+
+                return Response::file($imagePath, $headers);
+            }
+        }
+
+        // If no valid image found, you can return a default image or a placeholder
+        $defaultImagePath = public_path(Auth::user()->profile_image);
+        $headers = [
+            'Content-Type' => 'image/jpeg', // Adjust this based on the default image MIME type
+        ];
+
+        return Response::file($defaultImagePath, $headers);
+    }
     // public function showStudentDashboard(){
 
     //     $certificationRequests = CertificationRequest::select('id' , 'document', 'created_at', 'status')->latest()->paginate(10);
