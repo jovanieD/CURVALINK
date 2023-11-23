@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
-
+use Illuminate\Support\Facades\Response;
 
 class TeacherDashboardController extends Controller
 {

@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@example.com',
         ]);
 
-        // \App\Models\Teacher::factory()->create([
-        //     'name' => 'Teacher Vanie',
-        //     'email' => 'teacher@example.com',
-        // ]);
+        \App\Models\Teacher::factory()->create([
+            'name' => 'Teacher Vanie',
+            'email' => 'teacher@example.com',
+        ]);
 
         // \App\Models\CertificationRequest::factory(3)->create();
         // \App\Models\GoodMoralRequest::factory(5)->create();
