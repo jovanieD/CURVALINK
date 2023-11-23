@@ -31,8 +31,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\CertificationRequest::factory(3)->create();
-        \App\Models\GoodMoralRequest::factory(3)->create();
-        \App\Models\Form137Request::factory(3)->create();
+        \App\Models\GoodMoralRequest::factory(5)->create();
+        \App\Models\Form137Request::factory(5)->create();
 
         Schedule::factory(20)->create();
     }

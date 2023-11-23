@@ -27,83 +27,25 @@ class StudentDashboardController extends Controller
     {
         $user = Auth::user();
 
-        // Make sure the user has a profile image set
         if ($user && $user->profile_image) {
-            $imagePath = public_path($user->profile_image); // Assuming the image path is stored in the public directory
+            $imagePath = public_path($user->profile_image); 
 
             // Check if the file exists
             if (file_exists($imagePath)) {
                 $headers = [
-                    'Content-Type' => 'image/jpeg', // Adjust this based on the image MIME type
+                    'Content-Type' => 'image/jpeg', 
                 ];
 
                 return Response::file($imagePath, $headers);
             }
         }
-
-        // If no valid image found, you can return a default image or a placeholder
         $defaultImagePath = public_path(Auth::user()->profile_image);
         $headers = [
-            'Content-Type' => 'image/jpeg', // Adjust this based on the default image MIME type
+            'Content-Type' => 'image/jpeg', 
         ];
 
         return Response::file($defaultImagePath, $headers);
     }
-    // public function showStudentDashboard(){
-
-    //     $certificationRequests = CertificationRequest::select('id' , 'document', 'created_at', 'status')->latest()->paginate(10);
-    //     $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'created_at', 'status')->latest()->paginate(10);
-    //     $form137Requests = Form137Request::select('id', 'document', 'created_at', 'status')->latest()->paginate(10);
-    
-    //     $documentCounts = [
-    //         'Pending' => 0,
-    //         'Process' => 0,
-    //         'Scheduled' => 0,
-    //         'Received' => 0,
-    //     ];
-    
-    //     $documentRequested = [];
-    
-    //     foreach($certificationRequests as $request){
-    //         $documentRequested[] = [
-    //             'type' => 'Certificate',
-    //             'created_at' => $request->created_at,
-    //             'status' => $request->status,
-    //             'id' => $request->id
-    //         ];
-    //         $documentCounts[$request->status]++;
-    //     }
-    
-    //     foreach($goodMoralRequests as $request){
-    //         $documentRequested[] = [
-    //             'type' => 'Good Moral',
-    //             'created_at' => $request->created_at,
-    //             'status' => $request->status,
-    //             'id' => $request->id
-    //         ];
-    //         $documentCounts[$request->status]++;
-    //     }
-    
-    //     foreach($form137Requests as $request){
-    //         $documentRequested[] = [
-    //             'type' => 'Form137',
-    //             'created_at' => $request->created_at,
-    //             'status' => $request->status,
-    //             'id' => $request->id
-    //         ];
-    //         $documentCounts[$request->status]++;
-    //     }
-    
-    //     // Sort the array by created_at in descending order
-    //     usort($documentRequested, function($a, $b) {
-    //         return strtotime($b['created_at']) - strtotime($a['created_at']);
-    //     });
-    
-    //     return view('student.dashboard', [
-    //         'documentRequested' => $documentRequested,
-    //         'documentCounts' => $documentCounts,
-    //     ]);
-    // }
 
     public function sendEmail(Request $request)
     {
@@ -179,15 +121,12 @@ class StudentDashboardController extends Controller
             $documentCounts[$request->status]++;
         }
     
-        // Combine all the requests into a single collection
         $allRequests = collect($documentRequested);
     
-        // Sort the array by created_at in descending order
         $sortedRequests = $allRequests->sortByDesc('created_at');
     
-        // Convert the sorted collection to a paginated collection
-        $currentPage = request()->get('page', 1); // Get the current page from the request
-        $perPage = 10; // Number of items per page
+        $currentPage = request()->get('page', 1); 
+        $perPage = 10; 
         $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
             $sortedRequests->forPage($currentPage, $perPage),
             $sortedRequests->count(),
@@ -223,7 +162,6 @@ class StudentDashboardController extends Controller
             }
 
         } catch (\Exception $e) {
-            // Handle exceptions (e.g., document not found)
             abort(404);
         }
     }
@@ -250,7 +188,6 @@ class StudentDashboardController extends Controller
             }
             
         } catch (\Exception $e) {
-            // Handle exceptions (e.g., document not found)
             abort(404);
         }
     }
@@ -261,33 +198,16 @@ class StudentDashboardController extends Controller
         $data->delete();
         return redirect('/dashboard');
     }
-    
-    
-    
 
-    // public function showStudentDashboard(){
-    //     $certificationRequests = CertificationRequest::select('created_at', 'status')->orderBy('created_at', 'desc')->get();
-        // $goodMoralRequests = GoodMoralRequest::select('created_at', 'status')->orderBy('created_at', 'desc')->get();
-        // $form137Requests = Form137Request::select('created_at', 'status')->orderBy('created_at', 'desc')->get();
-    
-        // $certificationRequestCount = CertificationRequest::count();
-        // $goodMoralRequestCount = GoodMoralRequest::count();
-        // $form137RequestCount = Form137Request::count();
-    
-        // $totalRequests = $certificationRequestCount + $goodMoralRequestCount + $form137RequestCount;
+    public function settings()
+    {
+        return view('student.settings');
+    }
 
-        // $totalRequests = $certificationRequestCount;
-    
-        // return view('student.dashboard', [
-        //     'certificationRequests' => $certificationRequests,
-            // 'goodMoralRequests' => $goodMoralRequests,
-            // 'form137Requests' => $form137Requests,
-            // 'totalRequests' => $totalRequests,
-            // 'goodMoralRequestCount' => $goodMoralRequestCount,
-            // 'form137RequestCount' => $form137RequestCount
-        // ]);
-
-
+    public function profile()
+    {
+        return view('student.profile');
+    }
 
     public function updateProfile(Request $request)
         {

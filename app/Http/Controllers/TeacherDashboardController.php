@@ -9,6 +9,7 @@ use App\Models\GoodMoralRequest;
 use App\Models\Form137Request;
 
 use Auth;
+use User;
 
 use App\Models\Teacher;
 
@@ -20,80 +21,109 @@ use Illuminate\Support\Facades\Hash;
 
 class TeacherDashboardController extends Controller
 {
-    public function showTeacherDashboard(){
 
-        $certificationRequests = CertificationRequest::select('id' , 'document', 'created_at', 'status')->get();
-        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'created_at', 'status')->get();
-        $form137Requests = Form137Request::select('id', 'document', 'created_at', 'status')->get();
-    
+    public function teacherprofileimage()
+    {
+        $user = Auth::user();
+
+        if ($user && $user->profile_image) {
+            $imagePath = public_path($user->profile_image); 
+
+            // Check if the file exists
+            if (file_exists($imagePath)) {
+                $headers = [
+                    'Content-Type' => 'image/jpeg', 
+                ];
+
+                return Response::file($imagePath, $headers);
+            }
+        }
+        $defaultImagePath = public_path(Auth::user()->profile_image);
+        $headers = [
+            'Content-Type' => 'image/jpeg', 
+        ];
+
+        return Response::file($defaultImagePath, $headers);
+    }
+ 
+    public function showTeacherDashboard()
+    {
+        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'user_id')->get();
+        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'user_id')->get();
+        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'user_id')->get();
+
         $documentCounts = [
             'Pending' => 0,
             'Process' => 0,
             'Scheduled' => 0,
             'Received' => 0,
         ];
-    
+
         $documentRequested = [];
-    
-        foreach($certificationRequests as $request){
+
+        foreach ($certificationRequests as $request) {
             $documentRequested[] = [
                 'type' => 'Certificate',
+                'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
-                'id' => $request->id
+                'id' => $request->id,
+                'user_id' => $request->user_id,
             ];
             $documentCounts[$request->status]++;
         }
-    
-        foreach($goodMoralRequests as $request){
+
+        foreach ($goodMoralRequests as $request) {
             $documentRequested[] = [
-                'type' => 'Good Moral',
+                'type' => 'Good_Moral',
+                'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
-                'id' => $request->id
+                'id' => $request->id,
+                'user_id' => $request->user_id,
             ];
             $documentCounts[$request->status]++;
         }
-    
-        foreach($form137Requests as $request){
+
+        foreach ($form137Requests as $request) {
             $documentRequested[] = [
                 'type' => 'Form137',
+                'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
-                'id' => $request->id
+                'id' => $request->id,
+                'user_id' => $request->user_id,
             ];
             $documentCounts[$request->status]++;
         }
-    
-        // Combine all the requests into a single collection
+
         $allRequests = collect($documentRequested);
-    
-        // Sort the array by created_at in descending order
+
         $sortedRequests = $allRequests->sortByDesc('created_at');
-    
-        // Convert the sorted collection to a paginated collection
-        $currentPage = request()->get('page', 1); // Get the current page from the request
-        $perPage = 10; // Number of items per page
+
+        $currentPage = request()->get('page', 1); 
+        $perPage = 10; 
         $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
             $sortedRequests->forPage($currentPage, $perPage),
             $sortedRequests->count(),
             $perPage,
             $currentPage
         );
-    
+
         return view('teacher.dashboard', [
             'documentRequested' => $paginatedRequests,
             'documentCounts' => $documentCounts,
         ]);
     }
 
-    public function showProfile(){
-        return view('teacher.profile');
-    }
 
-    public function editProfile(){
-        return view('teacher.updateProfile');
-    }
+        public function showProfile(){
+            return view('teacher.profile');
+        }
+
+        public function editProfile(){
+            return view('teacher.updateProfile');
+        }
 
     public function updateProfile(Request $request)
     {
@@ -193,5 +223,57 @@ class TeacherDashboardController extends Controller
         
             return redirect('/')->with('success', 'User and related records deleted successfully.');
         }
+
+        public function getRequest(Request $request)
+        {
+            try {
+                $id = $request->input('id');
+                $type = $request->input('type');
+    
+                switch ($type) {
+                    case 'Certificate':
+                        $data = CertificationRequest::find($id);
+                        return view('teacher.actions.edit-certificate')->with('data', $data);
+                    case 'Good_Moral':
+                        $data = GoodMoralRequest::find($id);
+                        return view('teacher.actions.edit-goodmoral')->with('data', $data);
+                    case 'Form137':
+                        $data = Form137Request::find($id);
+                        return view('teacher.actions.edit-form137')->with('data', $data);
+                    default:
+                        abort(404);
+                }
+    
+            } catch (\Exception $e) {
+                abort(404);
+            }
+        }
+    
+    
+        public function viewRequest($user_id, Request $request)
+        {
+            try {
+                $type = $request->input('type');
+                $id = $request->input('id');
+        
+                switch ($type) {
+                    case 'Certificate':
+                        $data = CertificationRequest::find($id);
+                        return view('teacher.actions.view-certificate')->with('data',  $data);
+                    case 'Good_Moral':
+                        $requestModel = GoodMoralRequest::find($id);
+                        return view('teacher.actions.view-goodmoral')->with('data', $requestModel);
+                    case 'Form137':
+                        $requestModel = Form137Request::find($id);
+                        return view('teacher.actions.view-form137')->with('data', $requestModel);
+                    default:
+                        abort(404); 
+                }
+        
+            } catch (\Exception $e) {
+                abort(404);
+            }
+        }
+        
     
 }

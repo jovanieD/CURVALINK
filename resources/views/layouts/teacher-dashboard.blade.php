@@ -15,9 +15,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
@@ -196,7 +196,7 @@
                                         <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                             data-bs-toggle="dropdown">
                                             <div class="avatar avatar-online">
-                                                <img src="{{ Auth::user()->profile_image }}" alt
+                                                <img src="{{route('teacherprofileimage') }}" alt
                                                     style="border-radius: 25px; height: 40px; width: 40px;" />
                                             </div>
                                         </a>
@@ -208,7 +208,7 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{ Auth::user()->profile_image }}" alt
+                                                                <img src="{{route('teacherprofileimage') }}" alt
                                                                     class="rounded-circle"
                                                                     style="width: 40px; height:40px; " />
                                                             </div>

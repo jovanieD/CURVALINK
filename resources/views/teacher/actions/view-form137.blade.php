@@ -1,6 +1,6 @@
-@extends('layouts.student-dashboard')
+@extends('layouts.teacher-dashboard')
 
-@section('student')
+@section('teacher')
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <div class="content-wrapper">

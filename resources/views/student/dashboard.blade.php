@@ -67,16 +67,7 @@
                         <!-- List of Request  -->
                         <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                             <div class="card">
-                                @if (empty($documentRequested))
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-auto text-center">
-                                            <p class="mb-3 text-warning fs-4 fw-bold"
-                                                style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 1; ">
-                                                Empty</p>
-                                            <img src="/images/svg/empty.svg" class="w-75 max-img p-5" alt="">
-                                        </div>
-                                    </div>
-                                @else
+                                @if ($documentRequested->count() > 0)
                                     <h5 class="card-header">All Documents</h5>
                                     <div class="table-responsive text-nowrap">
                                         <table class="table fs-5 table-bordered table-striped">
@@ -97,14 +88,15 @@
                                                             <strong>
                                                                 @if ($request['type'] == 'Certificate')
                                                                     <i class="fa-solid fa-scroll m-2"
-                                                                        style="color: #f8e40d;"></i>
+                                                                        style="color: #fde906;"></i>
                                                                     <strong>Certificate</strong>
                                                                 @elseif($request['type'] == 'Good_Moral')
                                                                     <i class="fa-solid fa-medal fa-xl"
                                                                         style="color: #fcff3d;"></i>
                                                                     <strong>Good Moral</strong>
                                                                 @elseif($request['type'] == 'Form137')
-                                                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i>
+                                                                    <i class="fa-solid fa-file-circle-check fa-xl"
+                                                                        style="color: #bec11a;"></i>
                                                                     <strong>Form 137</strong>
                                                                 @endif
                                                             </strong>
@@ -195,6 +187,16 @@
                                                 {{ $documentRequested->onEachSide(1)->setPath('/dashboard')->appends(request()->query())->links('pagination::bootstrap-4') }}
                                             </ul>
                                         </nav>
+                                    </div>
+                                @else
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-auto text-center">
+                                            <p class="mb-3 text-warning fs-4 fw-bold"
+                                                style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+                                                Empty
+                                            </p>
+                                            <img src="/images/svg/empty.svg" class="w-75 max-img p-5" alt="">
+                                        </div>
                                     </div>
                                 @endif
                             </div>

@@ -94,30 +94,19 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::post('/update/goodmoral/{id}', [GoodMoralRequestController::class,'updateGoodMoralRequest']);
 
-
     Route::get('/events', [ScheduleController::class, 'getEvents']);
 
     Route::get('/schedules', [ScheduleController::class,'showStudentRequestCertification']);
 
-    Route::get('/settings', function () {
-        return view('student.settings');
-    });
+    Route::get('/settings', [StudentDashboardController::class,'settings']);
 
-    Route::get('/profile', function () {
-        return view('student.profile');
-    });
-
-
-    // Route::get('', [ ::class, '']);
+    Route::get('/profile', [StudentDashboardController::class,'profile']);
 
 });
 
-
-
-
-
-
 Route::group(['middleware' => 'auth:teacher'], function () {
+
+    Route::get('/teacherprofileimage', [TeacherDashboardController::class,'teacherprofileimage'])->name('teacherprofileimage');
 
     Route::get('/teacher/dashboard', [TeacherDashboardController::class,'showTeacherDashboard']);
 
@@ -134,7 +123,11 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/deleteUser', [TeacherDashboardController::class,'deleteUser']);
 
 
-    
+
+
+    Route::post('/updaterequest/{user_id}', [TeacherDashboardController::class,'getRequest']);
+
+    Route::post('/viewrequest/{user_id}', [TeacherDashboardController::class,'viewRequest']);
 
 
 

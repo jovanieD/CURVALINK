@@ -17,7 +17,7 @@ class CertificationRequestFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 11,
+            'user_id' => fake()->numberBetween(1, 11),
             'firstname' => fake()->name(),
             'lastname' => fake()->name(),
             'address' => fake()->address(),
