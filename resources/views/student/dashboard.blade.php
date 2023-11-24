@@ -14,9 +14,7 @@
                                             <h5 class="card-title text-primary fs-3">Welcome to CuravaLink Portal
                                                 {{ Auth::user()->name }}! 🎉</h5>
                                             <p class="mb-4">
-                                                You have done <span class="fw-bold">72%</span> more sales today. Check your
-                                                new badge in
-                                                your profile.
+                                                Explore your achievements on your profile!"
                                             </p>
                                         </div>
                                     </div>
