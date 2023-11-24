@@ -44,12 +44,10 @@
         <x-footer></x-footer>
     </div>
 
-    <!-- JavaScript Dependencies -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
-    <!-- Custom JavaScript -->
     <script src="{{ asset('js/auth/login.js') }}"></script>
     <script src="{{ asset('js/home/waypoints.min.js') }}"></script>
     <script src="{{ asset('js/home/counterup.min.js') }}"></script>
@@ -57,7 +55,6 @@
     <script src="{{ asset('js/nav-highlight.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
-    <!-- Initialize WOW.js -->
     <script>
         new WOW().init();
     </script>

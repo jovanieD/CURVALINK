@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Response;
 class TeacherDashboardController extends Controller
 {
 
+    public function showhome(){
+            return view('teacher.home-teacher');
+    }
+
     public function teacherprofileimage()
     {
         $user = Auth::user();
@@ -273,6 +277,11 @@ class TeacherDashboardController extends Controller
             } catch (\Exception $e) {
                 abort(404);
             }
+        }
+
+
+        public function showschedule(){
+            return view('teacher.schedule');
         }
         
     

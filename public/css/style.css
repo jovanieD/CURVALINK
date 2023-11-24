@@ -86,9 +86,9 @@ h6,
     border-radius: 50px;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
     box-shadow: inset 0 0 0 0 var(--primary);
-}
+} */
 
 .btn-secondary:hover {
     box-shadow: inset 0 0 0 0 var(--secondary);
@@ -471,7 +471,7 @@ h6,
 .bg-header {
     background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../images/aboutus.png) center center no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 50vh;
 }
 
 .link-animated a {

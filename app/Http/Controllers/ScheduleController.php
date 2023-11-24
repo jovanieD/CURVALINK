@@ -19,13 +19,19 @@ class ScheduleController extends Controller
 
     public function getEvents()
     {
-        // $schedules = Schedule::all();
-        // return $schedules;
         $user = Auth::user();
 
         $certificationRequests = $user->schedule()->get();
         return $certificationRequests;
     }
+
+    public function getallschedule()
+    {
+        $schedules = Schedule::all();
+        return $schedules;
+
+    }
+
 
    
 

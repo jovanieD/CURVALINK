@@ -25,16 +25,8 @@
                     <a href="detail.html" class="dropdown-item">Events</a>
                 </div>
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Requisition</a>
-                <div class="dropdown-menu m-0">
-                    <a href="team.html" class="dropdown-item">Certification</a>
-                    <a href="feature.html" class="dropdown-item">Good Moral</a>
-                    <a href="price.html" class="dropdown-item">Form 138</a>
-                    <a href="quote.html" class="dropdown-item">Request Status</a>
-                </div>
-            </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="/teacher/dashboard" class="nav-item nav-link">Requests</a>
+            <a href="/contact" class="nav-item nav-link">Contact</a>
             @guest
                 @if (Route::has('login'))
                     <a class="btn-grad btn-primary " style="text-decoration: none;"
@@ -83,7 +75,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/teacher/schedule">
                                 <i class="fa fa-calendar m-2 text-warning"></i>
                                 <span class="align-middle">Schedule</span>
                             </a>
@@ -97,13 +89,13 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/teacher/profile">
                                 <i class="fa fa-user m-2 text-warning"></i>
                                 <span class="align-middle">My Profile</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/teacher/settings">
                                 <i class="fa fa-cog m-2 text-warning"></i>
                                 <span class="align-middle">Settings</span>
                             </a>

@@ -62,6 +62,18 @@
                             </a>
                         </li>
 
+                        <!-- Schedule -->
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Release of
+                            Documents</span>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/teacher/schedules" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-box text-warning"></i>
+                            <div>Schedules</div>
+                        </a>
+                    </li>
+
                         <!-- Layouts -->
 
                         <li class="menu-header small text-uppercase">
@@ -86,34 +98,6 @@
                                 <li class="menu-item">
                                     <a href="" class="menu-link">
                                         <div data-i18n="Connections">Document 3</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Schedule -->
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">Release of
-                                Documents</span>
-                        </li>
-                        <li class="menu-item">
-                            <a href="javascript:void(0)" class="menu-link menu-toggle">
-                                <i class="menu-icon tf-icons bx bx-box text-warning"></i>
-                                <div data-i18n="User interface">Schedules</div>
-                            </a>
-                            <ul class="menu-sub">
-                                <li class="menu-item">
-                                    <a href="/schedules/form137" class="menu-link">
-                                        <div data-i18n="Alerts">Form 137</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="/schedules/goodmoral" class="menu-link">
-                                        <div data-i18n="Account">Good Moral</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="/schedules/Certificates" class="menu-link">
-                                        <div data-i18n="Account">Certification</div>
                                     </a>
                                 </li>
                             </ul>
@@ -240,14 +224,14 @@
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="/teacher/post">
                                                     <i class="fa fa-tasks m-2 text-warning"></i>
                                                     <span class="align-middle">Post Update</span>
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item" href="#">
+                                                <a class="dropdown-item" href="/teacher/schedules">
                                                     <i class="fa fa-calendar m-2 text-warning"></i>
                                                     <span class="align-middle">Schedule</span>
                                                 </a>

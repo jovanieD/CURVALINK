@@ -28,11 +28,11 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Requisition</a>
                 <div class="dropdown-menu m-0">
-                    <a href="team.html" class="dropdown-item">Certification</a>
-                    <a href="feature.html" class="dropdown-item">Good Moral</a>
-                    <a href="price.html" class="dropdown-item">Form 138</a>
-                    <a href="quote.html" class="dropdown-item">Request Status</a>
+                    <a href="{{ route('redirect.to.certificate') }}" class="dropdown-item">Certification</a>
+                    <a href="{{ route('redirect.to.goodmoral') }}" class="dropdown-item">Good Moral</a>
+                    <a href="{{ route('redirect.to.form') }}" class="dropdown-item">Form 138</a>
                 </div>
+                
             </div>
             <a href="/contact" class="nav-item nav-link">Contact</a>
             @guest

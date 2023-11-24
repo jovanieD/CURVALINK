@@ -10,6 +10,8 @@ use App\Http\Controllers\Form137RequestController;
 use App\Http\Controllers\CertificationRequestController;
 use App\Http\Controllers\ScheduleController;
 
+use App\Http\Controllers\GuestUsersController;
+
 use App\Http\Controllers\StudentDashboardController;
 use App\Http\Controllers\TeacherDashboardController;
 
@@ -20,41 +22,32 @@ use App\Http\Controllers\Auth\TeacherController;
 use App\Http\Controllers\Auth\RegisterController;
 
 
+Route::get('/', [GuestUsersController::class,'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/about', [GuestUsersController::class,'showabout']);
 
-// Route::get('/', [HomeController::class,'welcomecheck']);
+Route::get('/offers', [GuestUsersController::class,'showoffers']);
 
-Route::get('/about', function () {
-    return view('about.about');
-});
+Route::get('/announcement', [GuestUsersController::class,'showannouncement']);
 
-Route::get('/offers', function () {
-    return view('offer.offer');
-});
+Route::get('/event', [GuestUsersController::class,'showevent']);
 
-Route::get('/announcement', function () {
-    return view('announcement.announcement');
-});
+Route::get('/contact', [GuestUsersController::class,'showcontact']);
 
-Route::get('/event', function () {
-    return view('event.event');
-});
+Route::get('/redirect-to-certificate', [GuestUsersController::class,'getcertificate'])->name('redirect.to.certificate');
 
-Route::get('/contact', function () {
-    return view('contact.contact');
-});
+Route::get('/redirect-to-goodmoral', [GuestUsersController::class,'getgoodmoral'])->name('redirect.to.goodmoral');
+
+Route::get('/redirect-to-form', [GuestUsersController::class,'getform'])->name('redirect.to.form');
+
 
 // Route::post('/sendemail', [StudentDashboardController::class,'sendEmail']);
 
 Auth::routes();
 
 Route::get('/Login', [LoginController::class, 'show'])->name('Login');
+
 Route::post('/Login', [LoginController::class, 'authenticate'])->name('Login');
-
-
 
 Route::group(['middleware' => 'auth:web'], function () {
 
@@ -106,6 +99,8 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 Route::group(['middleware' => 'auth:teacher'], function () {
 
+    Route::get('/teacher', [TeacherDashboardController::class,'showhome']);
+
     Route::get('/teacherprofileimage', [TeacherDashboardController::class,'teacherprofileimage'])->name('teacherprofileimage');
 
     Route::get('/teacher/dashboard', [TeacherDashboardController::class,'showTeacherDashboard']);
@@ -121,6 +116,13 @@ Route::group(['middleware' => 'auth:teacher'], function () {
     Route::post('/teacher/updatepassword', [TeacherDashboardController::class,'updatePassword']);
 
     Route::post('/teacher/deleteUser', [TeacherDashboardController::class,'deleteUser']);
+
+    Route::get('/teacher/schedules', [TeacherDashboardController::class,'showschedule']);
+
+    Route::get('/allschedules', [ScheduleController::class, 'getallschedule']); //all sched
+
+
+
 
 
 
@@ -142,19 +144,8 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 
     Route::get('/events/search', [GoodMoralController::class, 'search']);
 
-    Route::get('/teacher', function () {
-        return view('teacher.home-teacher');
-    });
-    // Route::get('/teacher/dashboard', function () {
-    //     return view('teacher.dashboard');
-    // });
-
     Route::post('/teacher/logout', [TeacherController::class,'logout']);
 
-
-
-
-    // Route::get('', [ ::class, '']);
 
 });
 
