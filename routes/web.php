@@ -97,7 +97,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 });
 
-Route::group(['middleware' => 'auth:teacher'], function () {
+Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::get('/teacher', [TeacherDashboardController::class,'showhome']);
 
@@ -121,7 +121,7 @@ Route::group(['middleware' => 'auth:teacher'], function () {
 
     Route::get('/allschedules', [ScheduleController::class, 'getallschedule']); //all sched
 
-
+    Route::get('/teacher/createappoinment', [ScheduleController::class, 'createappoinment']);
 
 
 

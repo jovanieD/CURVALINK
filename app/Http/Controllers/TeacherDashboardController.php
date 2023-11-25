@@ -33,7 +33,6 @@ class TeacherDashboardController extends Controller
         if ($user && $user->profile_image) {
             $imagePath = public_path($user->profile_image); 
 
-            // Check if the file exists
             if (file_exists($imagePath)) {
                 $headers = [
                     'Content-Type' => 'image/jpeg', 

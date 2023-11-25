@@ -17,23 +17,25 @@
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="card-body">
-                                        <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                            <img src="{{route('userprofileimage') }}" alt="user-avatar"
-                                                style="border-radius: 200px; height: 300px; width: 300px;" />
-                                            <div class="button-wrapper">
-                                                @if (session('error'))
-                                                    <div class="alert alert-danger" role="alert">
-                                                        {{ session('error') }}
-                                                    </div>
-                                                @endif
-                                                <label for="formFileLg" class="form-label">Change Profile</label>
-                                                <input class="form-control form-control-lg" name="profile_picture"
-                                                    type="file" accept="image/*" />
-                                                {{-- <button type="button"
-                                                    class="btn btn-outline-secondary account-image-reset mb-4">
-                                                    <i class="bx bx-reset d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Reset</span>
-                                                </button> --}}
+                                        <div class="row">
+                                            <div class="col">
+                                                <img src="{{ route('teacherprofileimage') }}" alt="user-avatar"
+                                                    style="border-radius: 200px; height: 300px; width: 300px;" class="mb-3 mb-sm-0" />
+                                            </div>
+                                            <div class="col mt-4">
+                                                <div class="button-wrapper">
+                                                    @if (session('error'))
+                                                        <div class="alert alert-danger" role="alert">
+                                                            {{ session('error') }}
+                                                        </div>
+                                                    @endif
+                                                    <label for="formFileLg" class="form-label">Change Profile</label>
+                                                    <input class="form-control form-control-lg w-50" name="profile_picture" type="file" accept="image/*" />
+                                                    {{-- <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+                                                        <i class="bx bx-reset d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Reset</span>
+                                                    </button> --}}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

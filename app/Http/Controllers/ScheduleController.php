@@ -33,6 +33,14 @@ class ScheduleController extends Controller
     }
 
 
+    public function createappoinment(){
+        return view('teacher.actions.createappointment');
+    }
+
+
+
+
+
    
 
     public function search(Request $request)
