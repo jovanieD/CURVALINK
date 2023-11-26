@@ -19,10 +19,17 @@ class Form137Request extends Model
         'requestorname',
         'request',
         'remarks',
+        'status',
+        'releasedate',
     ];
     
 
     public function form137Requests(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function schedules()
+    {
+        return $this->morphMany(Schedule::class, 'schedulable');
     }
 }

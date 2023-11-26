@@ -51,18 +51,17 @@
                     /* Injected CSS Code */
                 </style>
 
-                <form class="jotform-form" action="/update/form137/{{$data['id']}}" method="post" name="form_232878061551055"
-                    id="232878061551055" accept-charset="utf-8" autocomplete="on">
+                <form class="jotform-form" action="/form137request/{{ $data['id'] }}/update" method="post"
+                    name="form_232878061551055" id="232878061551055" accept-charset="utf-8" autocomplete="on">
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
                             <li class="form-line" data-type="control_image" id="id_3">
                                 <div id="cid_3" class="form-input-wide" data-layout="full">
                                     <div style="text-align:center"><img alt="Image-3" loading="lazy" class="form-image"
-                                            style="border:0"
-                                            src="https://www.jotform.com/uploads/Dasian/form_files/header.652c906c3bab83.64799975.png"
-                                            height="176px" width="659px" data-component="image" role="presentation"
-                                            tabindex="-1" /></div>
+                                            style="border:0" src="{{ asset('images/header.png') }}" tabindex="0"
+                                            height="176px" width="659px" data-component="image" role="presentation" />
+                                    </div>
                                 </div>
                             </li>
                             <li class="form-line" data-type="control_divider" id="id_4">
@@ -78,8 +77,9 @@
                                         <p><span style="color:#000000;background-color:transparent">THE PRINCIPAL / SCHOOL
                                                 REGISTRAR</span><br /> <span data-type="textbox"
                                                 data-grouptype="control_textbox" class="FITB-inptCont"
-                                                data-blot-id="shorttext-1"><input type="text" value="{{ $data['principalname'] }}" class="form-textbox "
-                                                    name="principalname" id="18_shorttext-1" required /></span></p>
+                                                data-blot-id="shorttext-1"><input type="text"
+                                                    value="{{ $data['principalname'] }}" class="form-textbox "
+                                                    name="principalname" id="18_shorttext-1" required="" /></span></p>
                                     </div>
                                 </div>
                             </li>
@@ -99,31 +99,33 @@
                                 </label>
                                 <div id="cid_13" class="form-input-wide jf-required" data-layout="full">
                                     <div data-wrapper-react="true" class="extended"><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="prefix"><input type="text" value="{{ $data['name'] }}"
-                                                id="prefix_13" name="name" class="form-textbox" data-defaultvalue=""
-                                                size="4" data-component="prefix"
-                                                aria-labelledby="label_13 sublabel_13_prefix" required=""
-                                                value="" /><label class="form-sub-label" for="prefix_13"
-                                                id="sublabel_13_prefix" style="min-height:13px" aria-hidden="false">Name
+                                            style="vertical-align:top" data-input-type="prefix"><input type="text"
+                                                value="{{ $data['name'] }}" id="prefix_13" name="name"
+                                                class="form-textbox" data-defaultvalue="" size="4"
+                                                data-component="prefix" aria-labelledby="label_13 sublabel_13_prefix"
+                                                required="" value="" /><label class="form-sub-label"
+                                                for="prefix_13" id="sublabel_13_prefix" style="min-height:13px"
+                                                aria-hidden="false">Name
                                                 of Student/s</label></span><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="first"><input type="text" value="{{ $data['grade'] }}"
-                                                id="first_13" name="grade" class="form-textbox validate[required]"
-                                                data-defaultvalue="" size="10" data-component="first"
+                                            style="vertical-align:top" data-input-type="first"><input type="text"
+                                                value="{{ $data['grade'] }}" id="first_13" name="grade"
+                                                class="form-textbox validate[required]" data-defaultvalue=""
+                                                size="10" data-component="first"
                                                 aria-labelledby="label_13 sublabel_13_first" required=""
                                                 value="" /><label class="form-sub-label" for="first_13"
                                                 id="sublabel_13_first" style="min-height:13px" aria-hidden="false">Grade
                                                 &amp; Section</label></span><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="middle"><input type="text" value="{{ $data['schoolyear'] }}"
-                                                id="middle_13" name="schoolyear" class="form-textbox"
-                                                data-defaultvalue="" size="10" data-component="middle"
-                                                aria-labelledby="label_13 sublabel_13_middle" required=""
-                                                value="" /><label class="form-sub-label" for="middle_13"
-                                                id="sublabel_13_middle" style="min-height:13px"
+                                            style="vertical-align:top" data-input-type="middle"><input type="text"
+                                                value="{{ $data['schoolyear'] }}" id="middle_13" name="schoolyear"
+                                                class="form-textbox" data-defaultvalue="" size="10"
+                                                data-component="middle" aria-labelledby="label_13 sublabel_13_middle"
+                                                required="" value="" /><label class="form-sub-label"
+                                                for="middle_13" id="sublabel_13_middle" style="min-height:13px"
                                                 aria-hidden="false">School Year</label></span><span
                                             class="form-sub-label-container" style="vertical-align:top"
-                                            data-input-type="last"><input type="text" id="last_13" name="adviser" value="{{ $data['adviser'] }}"
-                                                class="form-textbox validate[required]" data-defaultvalue=""
-                                                size="15" data-component="last"
+                                            data-input-type="last"><input type="text" id="last_13" name="adviser"
+                                                value="{{ $data['adviser'] }}" class="form-textbox validate[required]"
+                                                data-defaultvalue="" size="15" data-component="last"
                                                 aria-labelledby="label_13 sublabel_13_last" required=""
                                                 value="" /><label class="form-sub-label" for="last_13"
                                                 id="sublabel_13_last" style="min-height:13px"
@@ -143,7 +145,8 @@
                                     <div id="FITB_17" class="FITB formRender">
                                         <p>Very truly yours,<br /> <span data-type="textbox"
                                                 data-grouptype="control_textbox" class="FITB-inptCont"
-                                                data-blot-id="shorttext-1"><input type="text" value="{{ $data['requestorname'] }}"
+                                                data-blot-id="shorttext-1"><input type="text"
+                                                    value="{{ $data['requestorname'] }}"
                                                     class="form-textbox  validate[required]" name="requestorname"
                                                     id="17_shorttext-1" required /><label for="17_shorttext-1">Full
                                                     Name</label><span class="form-required">*</span></span></p>
@@ -158,45 +161,98 @@
                                         data-component="radio"><span class="form-radio-item" style="clear:left"><span
                                                 class="dragger-item"></span><input type="radio"
                                                 aria-describedby="label_23" class="form-radio validate[required]"
-                                                id="input_23_0" name="request" value="First Request"
-                                                required=" " {{ $data['request'] == 'First Request' ? 'checked' : '' }} /><label id="label_input_23_0" for="input_23_0">First
+                                                id="input_23_0" name="request" value="First Request" required=" "
+                                                {{ $data['request'] == 'First Request' ? 'checked' : '' }} /><label
+                                                id="label_input_23_0" for="input_23_0">First
                                                 Request</label></span><span class="form-radio-item"
                                             style="clear:left"><span class="dragger-item"></span><input type="radio"
                                                 aria-describedby="label_23" class="form-radio validate[required]"
-                                                id="input_23_1" name="request" value="Second Request"
-                                                required="" {{ $data['request'] == 'Second Request' ? 'checked' : 'tru' }} /><label id="label_input_23_1" for="input_23_1">Second
+                                                id="input_23_1" name="request" value="Second Request" required=""
+                                                {{ $data['request'] == 'Second Request' ? 'checked' : 'tru' }} /><label
+                                                id="label_input_23_1" for="input_23_1">Second
                                                 Request</label></span><span class="form-radio-item"
                                             style="clear:left"><span class="dragger-item"></span><input type="radio"
                                                 aria-describedby="label_23" class="form-radio validate[required]"
-                                                id="input_23_2" name="request" value="Third Request"
-                                                required=" " {{ $data['request'] == 'Third Request' ? 'checked' : '' }}/><label id="label_input_23_2" for="input_23_2">Third
+                                                id="input_23_2" name="request" value="Third Request" required=" "
+                                                {{ $data['request'] == 'Third Request' ? 'checked' : '' }} /><label
+                                                id="label_input_23_2" for="input_23_2">Third
                                                 Request</label></span><span class="form-radio-item"
                                             style="clear:left"><span class="dragger-item"></span><input type="radio"
                                                 aria-describedby="label_23" class="form-radio validate[required]"
-                                                id="input_23_3" name="request" value="Urgent" required=" " {{ $data['request'] == 'Urgent' ? 'checked' : '' }} /><label
+                                                id="input_23_3" name="request" value="Urgent" required=" "
+                                                {{ $data['request'] == 'Urgent' ? 'checked' : '' }} /><label
                                                 id="label_input_23_3" for="input_23_3">Urgent</label></span></div>
                                 </div>
                             </li>
+                            <li class="form-line jf-" data-type="control_textarea" id="id_32"><label
+                                    class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
+                                    aria-hidden="false"> Remarks </label>
+                                <div id="cid_32" class="form-input-wide jf-" data-layout="full">
+                                    <textarea id="input_32" minlength="150" maxlength="500" class="form-textarea validate[]" name="remarks"
+                                        style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
+                                </div>
+                            </li>
 
-                            <li class="form-line" data-type="control_button" id="id_2">
-                                <div id="cid_2" class="form-input-wide" data-layout="full">
+                            <li class="form-line jf-required" data-type="control_dropdown" id="id_9">
+                                <label class="form-label form-label-left form-label-auto" id="label_9" for="input_9"
+                                    aria-hidden="false"> Change Status<span class="form-required">*</span> </label>
+                                <div id="cid_9" class="form-input jf-required" data-layout="half">
+                                    <select class="form-dropdown validate[required]" id="input_9" name="status"
+                                        style="width:310px" data-component="dropdown" required=""
+                                        aria-label="Type a question">
+                                        <option value="" {{ $data['status'] == '' ? 'selected' : '' }}>Please Select
+                                        </option>
+                                        <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
+                                            Pending</option>
+                                        <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
+                                            Process</option>
+                                        <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
+                                            Decline</option>
+                                        <option value="Scheduled" {{ $data['status'] == 'Scheduled' ? 'selected' : '' }}>
+                                            Scheduled</option>
+                                    </select>
+                                </div>
+                            </li>
+
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <li class="form-line" data-type="control_button" id="id_25">
+                                <div id="cid_25" class="form-input-wide" data-layout="full">
                                     <hr>
                                     <div class="d-flex justify-content-center m-4">
-                                        <a href="/dashboard">
-                                            <button type="button" class="btn btn-primary m-1">
-                                                <i class="fa-solid fa-arrow-left fa-xl m-1" style="color: #a5c5fd;"></i>
-                                                <span class=" fs-4">Back</span>
+                                        <a href="/teacher/dashboard">
+                                            <button type="button" class="btn btn-success m-1 text-white"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back">
+                                                <i class="fa-solid fa-arrow-left fa-xl m-1"></i>
+                                                <span class=" fs-4"></span>
                                             </button>
                                         </a>
                                         <button type="submit" class="btn btn-warning m-1" data-bs-toggle="modal">
-                                            <i class="fa-solid fa-pen-to-square fa-xl" style="color: #686603;"></i>
+                                            <i class="fa-solid fa-pen-to-square fa-xl"></i>
                                             <span class=" fs-4">Update</span>
                                         </button>
+                                        {{-- @if ($data['status'] !== 'Schedule' && $data['status'] !== 'Decline') --}}
+                                        <a href="/requestor/{{ $data['user_id'] }}">
+                                            <button type="button" class="btn btn-success m-1 text-white"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Next">
+                                                <i class="fa-solid fa-arrow-right fa-xl m-1"></i>
+                                                <span class=" fs-4"></span>
+                                            </button>
+                                        </a>
+
+                                        {{-- @endif --}}
                                     </div>
+
                                 </div>
                             </li>
-                            <li style="display:none">Should be Empty: <input type="text" name="website"
-                                    value="" /></li>
                         </ul>
                     </div>
                 </form>

@@ -60,9 +60,9 @@
                                 <div id="cid_3" class="form-input-wide" data-layout="full">
                                     <div style="text-align:center"><img alt="Image-3" loading="lazy" class="form-image"
                                             style="border:0"
-                                            src="https://www.jotform.com/uploads/Dasian/form_files/header.652c906c3bab83.64799975.png"
-                                            height="176px" width="659px" data-component="image" role="presentation"
-                                            tabindex="-1" /></div>
+                                            src="{{asset('images/header.png')}}"
+                                            tabindex="0" height="176px" width="659px" data-component="image"
+                                            role="presentation" /></div>
                                 </div>
                             </li>
                             <li class="form-line" data-type="control_divider" id="id_4">

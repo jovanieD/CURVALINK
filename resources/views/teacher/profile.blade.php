@@ -24,7 +24,7 @@
                                     <div class="card-body text-center">
                                         <img src="{{route('teacherprofileimage') }}" alt="avatar"
                                             style="border-radius: 200px; height: 300px; width: 300px;">
-                                        <h5 class="my-3">{{ Auth::user()->name }}</h5>
+                                        <h5 class="my-3">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h5>
                                         <p class="text-muted mb-1">Student</p>
                                         <p class="text-muted mb-4">{{ Auth::user()->address }}</p>
                                         <div class="d-flex justify-content-center mb-2">
@@ -40,10 +40,28 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <p class="mb-0">Full Name</p>
+                                                <p class="mb-0">First Name</p>
                                             </div>
                                             <div class="col-sm-9">
-                                                <p class="text-muted mb-0">{{ Auth::user()->name }}</p>
+                                                <p class="text-muted mb-0">{{ Auth::user()->firstname }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Middle Name</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->middlename }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Last Name</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->lastname }}</p>
                                             </div>
                                         </div>
                                         <hr>

@@ -83,8 +83,9 @@ class StudentDashboardController extends Controller
             'Pending' => 0,
             'Process' => 0,
             'Scheduled' => 0,
-            'Received' => 0,
+            'Decline' => 0,
         ];
+
     
         $documentRequested = [];
     
@@ -218,7 +219,9 @@ class StudentDashboardController extends Controller
                     return response()->json(['error' => 'User not found'], 404);
                 }
 
-                $name = $request->input('name');
+                $middlename = $request->input('middlename');
+                $firstname = $request->input('firstname');
+                $lastname = $request->input('lastname');
                 $email = $request->input('email');
                 $phonenumber = $request->input('phonenumber');
                 $address = $request->input('address');
@@ -241,7 +244,9 @@ class StudentDashboardController extends Controller
                 }
 
                 $user->update([
-                    'name' => $name,
+                    'first' => $firstname,
+                    'middlename' => $middlename,
+                    'lastname' => $lastname,
                     'email' => $email,
                     'phonenumber' => $phonenumber,
                     'address' => $address,

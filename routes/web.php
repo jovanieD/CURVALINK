@@ -117,17 +117,30 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::post('/teacher/deleteUser', [TeacherDashboardController::class,'deleteUser']);
 
-    Route::get('/teacher/schedules', [TeacherDashboardController::class,'showschedule']);
+    Route::get('/teacher/schedules', [TeacherDashboardController::class,'showschedule']); //start for sched
 
-    Route::get('/allschedules', [ScheduleController::class, 'getallschedule']); //all sched
+    Route::get('/allschedules', [ScheduleController::class, 'getallschedule']); 
 
-    Route::get('/teacher/createappoinment', [ScheduleController::class, 'createappoinment']);
+    Route::get('/showavailablerequests', [ScheduleController::class, 'showAllAvailableRequest']); 
+
+    Route::get('/search-requests', [ScheduleController::class, 'searchRequests'])->name('searchRequests');
+
+    Route::post('/createappoinment/{user_id}', [ScheduleController::class, 'createappoinment']);
+
+    Route::post('/postappoinment', [ScheduleController::class, 'postappoinment']);
+
+    Route::post('/certificaterequest/{id}/update', [CertificationRequestController::class,'updateCertification']); //dashboard  view -update
+
+    Route::post('/goodmoralrequest/{id}/update', [GoodMoralRequestController::class,'updateGoodMoral']);
+    
+    Route::post('/form137request/{id}/update', [Form137RequestController::class,'updateForm137']);
+
+    Route::get('/requestor/{userid}', [CertificationRequestController::class,'getRequestorProfile']);
 
 
+    
 
-
-
-    Route::post('/updaterequest/{user_id}', [TeacherDashboardController::class,'getRequest']);
+    Route::post('/editrequest/{user_id}', [TeacherDashboardController::class,'getRequest']);
 
     Route::post('/view/{user_id}', [TeacherDashboardController::class,'viewRequest']);
 

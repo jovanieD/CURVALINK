@@ -5,72 +5,31 @@
         <div class="layout-container">
             <div class="content-wrapper">
                 <div class="container-xxl flex-grow-1 container-p-y">
+
                     <div class="row">
-                        <div class="col mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                                                class="rounded" />
-                                        </div>
-                                    </div>
-                                    <h1 class="card-title mb-2">{{ $documentCounts['Pending'] }}</h3>
-                                        <span class="fw-semibold d-block mb-1">Pending Request</span>
-
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-start align-items-center mb-3">
+                                <div class="btn-group" role="group" aria-label="Calendar Actions">
+                                    <a href="/teacher/schedules">
+                                        <button class="btn m-2">
+                                            <i class="fa-solid fa-arrow-left fa-xl m-1 bg-warning"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                                                class="rounded" />
-                                        </div>
+                        <div class="col-md-6">
+                            <form method="GET" action="{{ route('searchRequests') }}">
+                                @csrf
+                                <div class="input-group mb-3 h-25">
+                                    <input type="text" id="searchInput"  name="requestor" class="form-control" placeholder="Search events">
+                                    <div class="input-group-append">
+                                        <button id="searchButton" class="btn btn-primary">Search</button>
                                     </div>
-                                    <h1 class="card-title mb-2">{{ $documentCounts['Process'] }}</h1>
-                                    <!-- Label below the count -->
-                                    <span class="fw-semibold d-block mb-1">In Process</span>
                                 </div>
-                            </div>
-
+                            </form>
                         </div>
-
-                        <div class="col mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                                                class="rounded" />
-                                        </div>
-                                    </div>
-                                    <h1 class="card-title mb-2">{{ $documentCounts['Scheduled'] }}</h3>
-                                        <span class="fw-semibold d-block mb-1">Scheduled</span>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title d-flex align-items-start justify-content-between">
-                                        <div class="avatar flex-shrink-0">
-                                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                                                class="rounded" />
-                                        </div>
-                                    </div>
-                                    <h1 class="card-title mb-2">{{ $documentCounts['Decline'] }}</h3>
-                                        <span class="fw-semibold d-block mb-1">Decline</span>
-
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="row">
@@ -148,32 +107,17 @@
                                                         </td>
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center">
-                                                                @if ($request['status'] == 'Pending')
                                                                     <form method="post"
-                                                                        action="/view/{{ $request['user_id'] }}">
+                                                                        action="/createappoinment/{{ $request['id'] }}">
                                                                         @csrf
                                                                         <input type="hidden" value="{{ $request['id'] }}"
                                                                             name="id">
                                                                         <input type="hidden"
                                                                             value="{{ $request['type'] }}" name="type">
                                                                         <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-eye text-info"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top" title="View"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                    <form method="post"
-                                                                        action="/editrequest/{{ $request['user_id'] }}">
-                                                                        @csrf
-                                                                        <input type="hidden" value="{{ $request['id'] }}"
-                                                                            name="id">
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['type'] }}" name="type">
-                                                                        <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-edit text-warning"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top"
-                                                                                title="Update"></i>
+                                                                            <i class="fa-regular fa-calendar-plus fs-4 text-success"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top" title="Schedule"></i>
                                                                         </button>
                                                                     </form>
                                                                     {{-- <button type="submit" class="btn m-1"
@@ -183,39 +127,6 @@
                                                                             data-bs-toggle="tooltip"
                                                                             data-bs-placement="top" title="Delete"></i>
                                                                     </button> --}}
-                                                                @else
-                                                                    <form
-                                                                        method="post"action="/view/{{ $request['user_id'] }}">
-                                                                        @csrf
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['id'] }}" name="id">
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['type'] }}"
-                                                                            name="type">
-                                                                        <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-eye text-info"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top"
-                                                                                title="View"></i>
-                                                                        </button>
-                                                                    </form>
-
-                                                                    <form method="post"
-                                                                        action="/editrequest/{{ $request['user_id'] }}">
-                                                                        @csrf
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['id'] }}" name="id">
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['type'] }}"
-                                                                            name="type">
-                                                                        <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-edit text-warning"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top"
-                                                                                title="Update"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                @endif
                                                             </div>
 
                                                         </td>

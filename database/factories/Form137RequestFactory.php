@@ -26,6 +26,7 @@ class Form137RequestFactory extends Factory
             'requestorname' => fake()->name(),
             'request' => fake()->randomElement(['First Request', 'Second Request', 'Third Request','Urgent']),
             'remarks' => fake()->paragraph(),
+            'status' => "Process",
         ];
     }
     

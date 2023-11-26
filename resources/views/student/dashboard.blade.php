@@ -12,7 +12,7 @@
                                     <div class="col-sm-7">
                                         <div class="card-body">
                                             <h5 class="card-title text-primary fs-3">Welcome to CuravaLink Portal
-                                                {{ Auth::user()->name }}! 🎉</h5>
+                                                {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}! 🎉</h5>
                                             <p class="mb-4">
                                                 Explore your achievements on your profile!"
                                             </p>
@@ -108,13 +108,13 @@
                                                                     class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Process')
                                                                 <span
-                                                                    class="badge bg-danger me-1">{{ $request['status'] }}</span>
+                                                                    class="badge bg-success me-1">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Scheduled')
                                                                 <span
                                                                     class="badge bg-primary me-1">{{ $request['status'] }}</span>
-                                                            @elseif($request['status'] == 'Received')
+                                                            @elseif($request['status'] == 'Decline')
                                                                 <span
-                                                                    class="badge bg-success me-1">{{ $request['status'] }}</span>
+                                                                    class="badge bg-danger me-1">{{ $request['status'] }}</span>
                                                             @endif
                                                         </td>
                                                         <td class="text-truncate" style="max-width: 150px;">
@@ -226,8 +226,8 @@
                                                         alt="chart success" class="rounded" />
                                                 </div>
                                             </div>
-                                            <h1 class="card-title mb-2">{{ $documentCounts['Received'] }}</h3>
-                                                <span class="fw-semibold d-block mb-1">Received Document</span>
+                                            <h1 class="card-title mb-2">{{ $documentCounts['Decline'] }}</h3>
+                                                <span class="fw-semibold d-block mb-1">Decline</span>
                                         </div>
                                     </div>
                                 </div>

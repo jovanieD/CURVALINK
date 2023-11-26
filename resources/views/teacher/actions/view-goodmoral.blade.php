@@ -72,7 +72,7 @@
                                 <div id="cid_4" class="form-input-wide" data-layout="full">
                                     <div style="text-align:center"><img alt="Image-4" loading="lazy" class="form-image"
                                             style="border:0"
-                                            src="https://www.jotform.com/uploads/Dasian/form_files/header.655ab28defafd5.11446063.png"
+                                            src="{{asset('images/header.png')}}"
                                             tabindex="0" height="176px" width="659px" data-component="image"
                                             role="presentation" /></div>
                                 </div>
@@ -212,7 +212,7 @@
                                 <div id="cid_2" class="form-input-wide" data-layout="full">
                                     <div data-align="auto"
                                         class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><a
-                                            href="/dashboard">
+                                            href="/teacher/dashboard">
                                             <button type="button" class="btn btn-primary m-1">
                                                 <i class="fa-solid fa-arrow-left fa-xl m-1" style="color: #a5c5fd;"></i>
                                                 <span class=" fs-4">Back</span>

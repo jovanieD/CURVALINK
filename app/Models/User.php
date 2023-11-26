@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'middlename',
+        'lastname',
         'email',
         'password',
         'profile_image',
@@ -26,6 +28,9 @@ class User extends Authenticatable
         'municipality',
         'province',
         'phonenumber',
+        'gender',
+        'gradelevel',
+        'idnumber',
     ];
 
     /**
@@ -63,8 +68,8 @@ class User extends Authenticatable
         return $this->hasMany(Form137Request::class, 'user_id');
     }
 
-    public function schedule()
+    public function schedules()
     {
-        return $this->hasMany(Schedule::class, 'user_id');
+        return $this->hasManyThrough(Schedule::class, 'user_id', Document::class, 'document_id');
     }
 }

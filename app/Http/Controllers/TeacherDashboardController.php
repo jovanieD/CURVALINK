@@ -51,15 +51,15 @@ class TeacherDashboardController extends Controller
  
     public function showTeacherDashboard()
     {
-        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'user_id')->get();
-        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'user_id')->get();
-        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'user_id')->get();
+        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->get();
+        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->get();
+        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->get();
 
         $documentCounts = [
             'Pending' => 0,
             'Process' => 0,
             'Scheduled' => 0,
-            'Received' => 0,
+            'Decline' => 0,
         ];
 
         $documentRequested = [];
@@ -67,6 +67,7 @@ class TeacherDashboardController extends Controller
         foreach ($certificationRequests as $request) {
             $documentRequested[] = [
                 'type' => 'Certificate',
+                'releasedate' => $request->releasedate,
                 'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
@@ -79,6 +80,7 @@ class TeacherDashboardController extends Controller
         foreach ($goodMoralRequests as $request) {
             $documentRequested[] = [
                 'type' => 'Good_Moral',
+                'releasedate' => $request->releasedate,
                 'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
@@ -91,6 +93,7 @@ class TeacherDashboardController extends Controller
         foreach ($form137Requests as $request) {
             $documentRequested[] = [
                 'type' => 'Form137',
+                'releasedate' => $request->releasedate,
                 'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
@@ -137,7 +140,9 @@ class TeacherDashboardController extends Controller
                 return response()->json(['error' => 'User not found'], 404);
             }
 
-            $name = $request->input('name');
+            $middlename = $request->input('middlename');
+            $firstname = $request->input('firstname');
+            $lastname = $request->input('lastname');
             $email = $request->input('email');
             $phonenumber = $request->input('phonenumber');
             $address = $request->input('address');
@@ -160,7 +165,9 @@ class TeacherDashboardController extends Controller
             }
 
             $user->update([
-                'name' => $name,
+                'first' => $firstname,
+                'middlename' => $middlename,
+                'lastname' => $lastname,
                 'email' => $email,
                 'phonenumber' => $phonenumber,
                 'address' => $address,

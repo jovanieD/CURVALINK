@@ -166,30 +166,15 @@
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
-                            <li class="form-line form-line-column form-col-1" data-type="control_image" id="id_21">
-                                <div id="cid_21" class="form-input-wide" data-layout="full"> <img class="form-image"
-                                        style="border:0"
-                                        src="https://www.jotform.com/uploads/Dasian/form_files/Screenshot%202023-10-02%20084604.651a12fe46a4f8.12743394.png"
-                                        tabindex="0" height="106px" width="420px" data-component="image" /> </div>
-                            </li>
-                            <li class="form-line form-line-column form-col-2" data-type="control_text" id="id_18">
-                                <div id="cid_18" class="form-input-wide" data-layout="full">
-                                    <div id="text_18" class="form-html" data-component="text" tabindex="0">
-                                        <div style="line-height: 18px; text-align: right; padding-top: 24px;">
-                                            <div style="font-size: 12pt;"><strong>Curava National High School</strong></div>
-                                            <div style="font-size: 10pt;">42R2+224, Medellin, Cebu 6012</div>
-                                            <div style="line-height: 14px;">
-                                                <div style="font-size: 8pt;"><a href="mailto:curvanationalhighschool@gmail"
-                                                        rel="nofollow">curvanationalhighschool@gmail</a>.com
-                                                </div>
-                                                <div style="font-size: 8pt;">curvalink.online</div>
-                                                <div style="font-size: 8pt;"> </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <li class="form-line" data-type="control_image" id="id_3">
+                                <div id="cid_3" class="form-input-wide" data-layout="full">
+                                    <div style="text-align:center"><img alt="Image-3" loading="lazy" class="form-image"
+                                            style="border:0"
+                                            src="{{asset('images/header.png')}}"
+                                            tabindex="0" height="176px" width="659px" data-component="image"
+                                            role="presentation" /></div>
                                 </div>
                             </li>
-
                             <li class="form-line jf-" data-type="control_fullname" id="id_3"><label
                                     class="form-label form-label-top form-label-auto" id="label_3" for="first_3"
                                     aria-hidden="false"> Full Name </label>

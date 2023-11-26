@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('adviser');
             $table->string('requestorname');
             $table->string('request');
+            $table->string('releasedate')->nullable();
             $table->string('remarks')->nullable();
             $table->string('status')->default('Pending');
-            $table->string('document')->default('Your_Document_Name');
+            $table->string('document')->default('Form137');
             $table->timestamps();
         });
     }

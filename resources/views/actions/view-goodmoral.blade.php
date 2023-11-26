@@ -68,11 +68,11 @@
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
-                            <li class="form-line" data-type="control_image" id="id_4">
-                                <div id="cid_4" class="form-input-wide" data-layout="full">
-                                    <div style="text-align:center"><img alt="Image-4" loading="lazy" class="form-image"
+                            <li class="form-line" data-type="control_image" id="id_3">
+                                <div id="cid_3" class="form-input-wide" data-layout="full">
+                                    <div style="text-align:center"><img alt="Image-3" loading="lazy" class="form-image"
                                             style="border:0"
-                                            src="https://www.jotform.com/uploads/Dasian/form_files/header.655ab28defafd5.11446063.png"
+                                            src="{{asset('images/header.png')}}"
                                             tabindex="0" height="176px" width="659px" data-component="image"
                                             role="presentation" /></div>
                                 </div>

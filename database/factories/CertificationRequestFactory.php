@@ -27,7 +27,7 @@ class CertificationRequestFactory extends Factory
             'phonenumber' => "09123456789",
             'email' => fake()->unique()->safeEmail(),
             'purpose' => fake()->text(160),
-            // 'status' => "Process",
+            'status' => "Process",
         ];
     }
 }

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('requestorsaddress');
             $table->string('requestorscity');
             $table->string('requestorsprovince');
+            $table->string('releasedate')->nullable();
             $table->string('remarks')->nullable();
             $table->string('status')->default('Pending');
             $table->string('document')->default('Good_Moral');

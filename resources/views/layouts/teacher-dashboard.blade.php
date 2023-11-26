@@ -22,6 +22,8 @@
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+
     <!-- Core CSS -->
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
@@ -173,7 +175,7 @@
                             <ul class="navbar-nav flex-row align-items-center ms-auto">
                                 <!-- Place this tag where you want the button to render. -->
 
-                                <h5 class="m-2"> {{ Auth::user()->name }}</h3>
+                                <h5 class="m-2"> {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h3>
 
                                     <!-- User -->
                                     <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -199,7 +201,7 @@
                                                         </div>
                                                         <div class="flex-grow-1">
                                                             <span class="fw-semibold d-block">
-                                                                {{ Auth::user()->name }}</span>
+                                                                {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
                                                             <small class="text-muted">Teacher</small>
                                                         </div>
                                                     </div>
@@ -298,6 +300,8 @@
 
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     </body>
 

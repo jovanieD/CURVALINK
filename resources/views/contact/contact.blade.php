@@ -75,7 +75,7 @@
                                 <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message" name="message"></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                <a href="mailto:jovaniedasian@gmail.com"><button class="btn btn-primary w-100 py-3" type="button">Send Message</button></a>
                             </div>
                         </div>
                     </form>

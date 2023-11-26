@@ -22,9 +22,16 @@ class GoodMoralRequest extends Model
         'requestorscity',
         'requestorsprovince',
         'remarks',
+        'status',
+        'releasedate',
     ];
 
     public function goodmoralRequests(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function schedules()
+    {
+        return $this->morphMany(Schedule::class, 'schedulable');
     }
 }

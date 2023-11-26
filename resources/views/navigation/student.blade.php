@@ -43,7 +43,7 @@
                 <div class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                         <span class="m-2">
                             <img style="border-radius: 25px; height: 30px; width: 30px;"
                                 src="{{route('userprofileimage') }}" type="image/jpeg" alt="">
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <span class="fw-semibold d-block"> {{ Auth::user()->name }}</span>
+                                        <span class="fw-semibold d-block">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
                                         <small class="text-muted">Student</small>
                                     </div>
                                 </div>

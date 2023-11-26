@@ -6,7 +6,6 @@
             <div class="content-wrapper">
 
                 <div class="container mt-5">
-                    {{-- For Search --}}
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group mb-3">
@@ -16,13 +15,17 @@
                                 </div>
                             </div>
                         </div>
-
+                    
                         <div class="col-md-6">
-                            <div class="btn-group mb-3" role="group" aria-label="Calendar Actions">
-                                <button id="exportButton" class="btn btn-success">Export Calendar</button>
+                            <div class="d-flex justify-content-end align-items-center mb-3">
+                                <div class="btn-group" role="group" aria-label="Calendar Actions">
+                                    <button id="exportButton" class="btn btn-success m-2">Export Calendar</button>
+                                </div>
+                                <a href="/showavailablerequests"><button id="addScheduleButton" class="btn btn-info m-2">+ Add Schedule</button></a>
                             </div>
                         </div>
                     </div>
+                    
 
                     <div class="card">
                         <div class="card-body">
@@ -56,11 +59,10 @@
                         events: '/allschedules',
                         editable: true,
 
-                        // Deleting The Event
                         eventContent: function(info) {
-                            var eventTitle = info.event.title;
+                            var eventDocument = info.event.document;
                             var eventElement = document.createElement('div');
-                            eventElement.innerHTML = '<span style="cursor: pointer;">❌</span> ' + eventTitle;
+                            eventElement.innerHTML = '<span style="cursor: pointer;">❌</span> ' + eventDocument;
 
                             eventElement.querySelector('span').addEventListener('click', function() {
                                 if (confirm("Are you sure you want to delete this event?")) {
@@ -109,35 +111,35 @@
                             });
                         },
 
-                        eventClick: function(info) {
-                            // Display event details in the modal
-                            $('#eventTitle').text('Title: ' + info.event.title);
-                            $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
-                            $('#eventEnd').text('End: ' + (info.event.end ? info.event.end.toLocaleString() : ''));
+                        // eventClick: function(info) {
+                        //     // Display event details in the modal
+                        //     $('#eventTitle').text('Title: ' + info.event.title);
+                        //     $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
+                        //     $('#eventEnd').text('End: ' + (info.event.end ? info.event.end.toLocaleString() : ''));
 
-                            $('#eventModal').modal('show');
-                        },
+                        //     $('#eventModal').modal('show');
+                        // },
 
                         // Event Resizing
-                        eventResize: function(info) {
-                            var eventId = info.event.id;
-                            var newEndDate = info.event.end;
-                            var newEndDateUTC = newEndDate.toISOString().slice(0, 10);
+                        // eventResize: function(info) {
+                        //     var eventId = info.event.id;
+                        //     var newEndDate = info.event.end;
+                        //     var newEndDateUTC = newEndDate.toISOString().slice(0, 10);
 
-                            $.ajax({
-                                method: 'PUT',
-                                url: `/schedule/${eventId}/resize`,
-                                data: {
-                                    end_date: newEndDateUTC
-                                },
-                                success: function() {
-                                    console.log('Event resized successfully.');
-                                },
-                                error: function(error) {
-                                    console.error('Error resizing event:', error);
-                                }
-                            });
-                        },
+                        //     $.ajax({
+                        //         method: 'PUT',
+                        //         url: `/schedule/${eventId}/resize`,
+                        //         data: {
+                        //             end_date: newEndDateUTC
+                        //         },
+                        //         success: function() {
+                        //             console.log('Event resized successfully.');
+                        //         },
+                        //         error: function(error) {
+                        //             console.error('Error resizing event:', error);
+                        //         }
+                        //     });
+                        // },
                     });
 
                     calendar.render();

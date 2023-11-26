@@ -24,11 +24,10 @@ class ScheduleFactory extends Factory
 
         return [
             'user_id' => 11,
-            'title' => $this->faker->sentence,
+            'document' => $this->faker->sentence,
             'start' => $startDate,
             'end' => $endDate,
-            'color' => '#' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT), // Generate random hex color
-            'description' => $this->faker->paragraph,
+            'remarks' => $this->faker->paragraph,
         ];
     }
 }

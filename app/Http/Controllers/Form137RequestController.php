@@ -59,13 +59,13 @@ class Form137RequestController extends Controller
             try {
                 // Validation rules
                 $validationRules = [
-                    'principalname' => 'required|string|max:255',
-                    'name' => 'required|string|max:255',
-                    'grade' => 'required|string|max:255',
-                    'schoolyear' => 'required|string|max:255',
-                    'adviser' => 'required|string|max:255',
-                    'requestorname' => 'required|string|max:255',
-                    'request' => 'required|string|max:255',
+                    'principalname' => 'required|string|max:32',
+                    'name' => 'required|string|max:64',
+                    'grade' => 'required|string|max:32',
+                    'schoolyear' => 'required|string|max:32',
+                    'adviser' => 'required|string|max:32',
+                    'requestorname' => 'required|string|max:32',
+                    'request' => 'required|string|max:32',
                 ];
 
                 // Validate the request
@@ -83,10 +83,57 @@ class Form137RequestController extends Controller
                     'adviser' => $request->input('adviser'),
                     'requestorname' => $request->input('requestorname'),
                     'request' => $request->input('request'),
+                    
                 ]);
 
                 // Redirect to the dashboard or any other appropriate route
-                return redirect('dashboard');
+                return redirect('/dashboard');
+            } catch (ValidationException $e) {
+                // If validation fails, redirect back with errors
+                return redirect()->back()->withErrors($e->errors())->withInput();
+            } catch (\Exception $e) {
+                // Handle other exceptions if needed
+                return redirect()->back()->withErrors([$e->getMessage()])->withInput();
+            }
+        }
+
+        public function updateForm137(Request $request, $id)
+        {
+            try {
+                // Validation rules
+                $validationRules = [
+                    'principalname' => 'required|string|max:32',
+                    'name' => 'required|string|max:64',
+                    'grade' => 'required|string|max:32',
+                    'schoolyear' => 'required|string|max:32',
+                    'adviser' => 'required|string|max:32',
+                    'requestorname' => 'required|string|max:32',
+                    'request' => 'required|string|max:32',
+                    'status' => 'required|string|max:32',
+                    'status' => 'required|string|max:32',
+                ];
+
+                // Validate the request
+                $request->validate($validationRules);
+
+                // Find the existing record by id
+                $existingRequest = Form137Request::findOrFail($id);
+
+                // Update the existing record
+                $existingRequest->update([
+                    'principalname' => $request->input('principalname'),
+                    'name' => $request->input('name'),
+                    'grade' => $request->input('grade'),
+                    'schoolyear' => $request->input('schoolyear'),
+                    'adviser' => $request->input('adviser'),
+                    'requestorname' => $request->input('requestorname'),
+                    'request' => $request->input('request'),
+                    'remarks' => $request->input('remarks'),
+                    'status' => $request->input('status'),
+                ]);
+
+                // Redirect to the dashboard or any other appropriate route
+                return redirect('/teacher/dashboard');
             } catch (ValidationException $e) {
                 // If validation fails, redirect back with errors
                 return redirect()->back()->withErrors($e->errors())->withInput();

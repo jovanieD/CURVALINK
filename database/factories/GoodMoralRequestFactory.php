@@ -28,6 +28,7 @@ class GoodMoralRequestFactory extends Factory
             'requestorsaddress' => fake()->address(),
             'requestorscity' => fake()->city(),
             'requestorsprovince' => fake()->state(),
+            'status' => "Process",
         ];
     }
     

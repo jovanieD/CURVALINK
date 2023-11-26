@@ -11,14 +11,22 @@ class Schedule extends Model
 
     protected $fillable = [
         'user_id',
-        'title',
-        'start', // Add this line
-        'end',
-        'description',
+        'schedulable_type',
+        'schedulable_id',
+        'document',
+        'startdate', 
+        'enddate',
+        'remarks',
     ];
+
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function schedulable()
+    {
+        return $this->morphTo();
     }
 }

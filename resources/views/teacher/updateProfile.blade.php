@@ -43,9 +43,19 @@
 
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
-                                                <label for="firstName" class="form-label">Full Name</label>
-                                                <input class="form-control" type="text" id="firstName" name="name"
-                                                    value="{{ Auth::user()->name }}" required />
+                                                <label for="firstName" class="form-label">First Name</label>
+                                                <input class="form-control" type="text" id="firstName" name="firstname"
+                                                    value="{{ Auth::user()->firstname }}" required />
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="firstName" class="form-label">Middle Name</label>
+                                                <input class="form-control" type="text" id="firstName" name="middlename"
+                                                    value="{{ Auth::user()->middlename }}" required />
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="firstName" class="form-label">Last Name</label>
+                                                <input class="form-control" type="text" id="firstName" name="lastname"
+                                                    value="{{ Auth::user()->lastname }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="email" class="form-label">E-mail</label>

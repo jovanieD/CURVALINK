@@ -23,6 +23,7 @@ return new class extends Migration
                 $table->string('phonenumber'); 
                 $table->string('email');
                 $table->string('purpose');
+                $table->string('releasedate')->nullable();
                 $table->string('remarks')->nullable();
                 $table->string('status')->default('Pending');
                 $table->string('document')->default('Certificate');

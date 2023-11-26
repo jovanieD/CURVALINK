@@ -19,8 +19,9 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col">
-                                                <img src="{{ route('teacherprofileimage') }}" alt="user-avatar"
-                                                    style="border-radius: 200px; height: 300px; width: 300px;" class="mb-3 mb-sm-0" />
+                                                <img src="{{ route('userprofileimage') }}" alt="user-avatar"
+                                                    style="border-radius: 200px; height: 300px; width: 300px;"
+                                                    class="mb-3 mb-sm-0" />
                                             </div>
                                             <div class="col mt-4">
                                                 <div class="button-wrapper">
@@ -30,11 +31,12 @@
                                                         </div>
                                                     @endif
                                                     <label for="formFileLg" class="form-label">Change Profile</label>
-                                                    <input class="form-control form-control-lg w-50" name="profile_picture" type="file" accept="image/*" />
+                                                    <input class="form-control form-control-lg w-50" name="profile_picture"
+                                                        type="file" accept="image/*" />
                                                     {{-- <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-                                                        <i class="bx bx-reset d-block d-sm-none"></i>
-                                                        <span class="d-none d-sm-block">Reset</span>
-                                                    </button> --}}
+                                                                <i class="bx bx-reset d-block d-sm-none"></i>
+                                                                <span class="d-none d-sm-block">Reset</span>
+                                                            </button> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -43,9 +45,19 @@
 
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
-                                                <label for="firstName" class="form-label">Full Name</label>
-                                                <input class="form-control" type="text" id="firstName" name="name"
-                                                    value="{{ Auth::user()->name }}" required />
+                                                <label for="firstName" class="form-label">First Name</label>
+                                                <input class="form-control" type="text" id="firstName" name="firstname"
+                                                    value="{{ Auth::user()->firstname }}" required />
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="firstName" class="form-label">Middle Name</label>
+                                                <input class="form-control" type="text" id="firstName" name="middlename"
+                                                    value="{{ Auth::user()->middlename }}" required />
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label for="firstName" class="form-label">Last Name</label>
+                                                <input class="form-control" type="text" id="firstName" name="lastname"
+                                                    value="{{ Auth::user()->lastname }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="email" class="form-label">E-mail</label>
@@ -56,8 +68,7 @@
                                                 <label class="form-label" for="phoneNumber">Phone Number</label>
                                                 <div class="input-group input-group-merge">
                                                     <input type="text" id="phoneNumber" name="phonenumber"
-                                                        class="form-control"
-                                                        value="{{ Auth::user()->phonenumber }}" />
+                                                        class="form-control" value="{{ Auth::user()->phonenumber }}" />
                                                 </div>
                                             </div>
                                             <div class="mb-3 col-md-6">

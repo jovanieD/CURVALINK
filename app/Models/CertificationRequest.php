@@ -24,10 +24,17 @@ class CertificationRequest extends Model
         'status',
         'document',
         'remarks',
+        'status',
+        'releasedate',
     ];
 
     public function certificationRequest(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function schedules()
+    {
+        return $this->morphMany(Schedule::class, 'schedulable');
     }
 
 }

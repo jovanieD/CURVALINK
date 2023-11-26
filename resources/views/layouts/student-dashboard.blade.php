@@ -152,7 +152,7 @@
                             <ul class="navbar-nav flex-row align-items-center ms-auto">
                                 <!-- Place this tag where you want the button to render. -->
 
-                                <h5 class="m-2"> {{ Auth::user()->name }}</h3>
+                                <h5 class="m-2">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h3>
 
                                     <!-- User -->
                                     <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -178,7 +178,7 @@
                                                         </div>
                                                         <div class="flex-grow-1">
                                                             <span class="fw-semibold d-block">
-                                                                {{ Auth::user()->name }}</span>
+                                                                {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
                                                             <small class="text-muted">Student</small>
                                                         </div>
                                                     </div>

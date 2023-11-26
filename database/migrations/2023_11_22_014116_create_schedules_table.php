@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('title');
-            $table->date('start');
-            $table->date('end');
-            $table->text('description')->nullable();
+            $table->morphs('schedulable');
+            $table->string('document');
+            $table->date('startdate');
+            $table->date('enddate');
+            $table->text('remarks')->nullable();
             $table->string('color')->nullable();
             $table->timestamps();
         });
