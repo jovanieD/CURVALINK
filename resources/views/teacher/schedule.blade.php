@@ -15,17 +15,18 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                         <div class="col-md-6">
                             <div class="d-flex justify-content-end align-items-center mb-3">
                                 <div class="btn-group" role="group" aria-label="Calendar Actions">
                                     <button id="exportButton" class="btn btn-success m-2">Export Calendar</button>
                                 </div>
-                                <a href="/showavailablerequests"><button id="addScheduleButton" class="btn btn-info m-2">+ Add Schedule</button></a>
+                                <a href="/showavailablerequests"><button id="addScheduleButton" class="btn btn-info m-2">+
+                                        Add Schedule</button></a>
                             </div>
                         </div>
                     </div>
-                    
+
 
                     <div class="card">
                         <div class="card-body">
@@ -35,6 +36,7 @@
                     </div>
                 </div>
                 </body>
+                
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -45,7 +47,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-
+                
                     var calendarEl = document.getElementById('calendar');
                     var events = [];
                     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -56,147 +58,61 @@
                         },
                         initialView: 'dayGridMonth',
                         timeZone: 'UTC',
-                        events: '/allschedules',
-                        editable: true,
-
-                        eventContent: function(info) {
-                            var eventDocument = info.event.document;
-                            var eventElement = document.createElement('div');
-                            eventElement.innerHTML = '<span style="cursor: pointer;">❌</span> ' + eventDocument;
-
-                            eventElement.querySelector('span').addEventListener('click', function() {
-                                if (confirm("Are you sure you want to delete this event?")) {
-                                    var eventId = info.event.id;
-
-                                    $.ajax({
-                                        method: 'DELETE',
-                                        url: '/schedule/' + eventId,
-                                        success: function(response) {
-                                            console.log('Event deleted successfully.');
-                                            calendar.refetchEvents(); // Refresh events after deletion
-                                        },
-                                        error: function(error) {
-                                            console.error('Error deleting event:', error);
-                                        }
-                                    });
-                                }
-                            });
-                            return {
-                                domNodes: [eventElement]
-                            };
-                        },
-
-                        // Drag And Drop
-
-                        eventDrop: function(info) {
-                            var eventId = info.event.id;
-                            var newStartDate = info.event.start;
-                            var newEndDate = info.event.end || newStartDate;
-                            var newStartDateUTC = newStartDate.toISOString().slice(0, 10);
-                            var newEndDateUTC = newEndDate.toISOString().slice(0, 10);
-
-                            $.ajax({
-                                method: 'PUT',
-                                url: `/schedule/${eventId}`,
-                                data: {
-                                    start_date: newStartDateUTC,
-                                    end_date: newEndDateUTC,
-                                },
-                                success: function() {
-                                    console.log('Event moved successfully.');
-                                },
-                                error: function(error) {
-                                    console.error('Error moving event:', error);
-                                }
-                            });
-                        },
-
-                        // eventClick: function(info) {
-                        //     // Display event details in the modal
-                        //     $('#eventTitle').text('Title: ' + info.event.title);
-                        //     $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
-                        //     $('#eventEnd').text('End: ' + (info.event.end ? info.event.end.toLocaleString() : ''));
-
-                        //     $('#eventModal').modal('show');
-                        // },
-
-                        // Event Resizing
-                        // eventResize: function(info) {
-                        //     var eventId = info.event.id;
-                        //     var newEndDate = info.event.end;
-                        //     var newEndDateUTC = newEndDate.toISOString().slice(0, 10);
-
-                        //     $.ajax({
-                        //         method: 'PUT',
-                        //         url: `/schedule/${eventId}/resize`,
-                        //         data: {
-                        //             end_date: newEndDateUTC
-                        //         },
-                        //         success: function() {
-                        //             console.log('Event resized successfully.');
-                        //         },
-                        //         error: function(error) {
-                        //             console.error('Error resizing event:', error);
-                        //         }
-                        //     });
-                        // },
-                    });
-
-                    calendar.render();
-
-                    document.getElementById('searchButton').addEventListener('click', function() {
-                        var searchKeywords = document.getElementById('searchInput').value.toLowerCase();
-                        filterAndDisplayEvents(searchKeywords);
-                    });
-
-
-                    function filterAndDisplayEvents(searchKeywords) {
-                        $.ajax({
+                        events: {
+                            url: '/allschedules',
                             method: 'GET',
-                            url: `/events/search?title=${searchKeywords}`,
-                            success: function(response) {
-                                calendar.removeAllEvents();
-                                calendar.addEventSource(response);
-                            },
-                            error: function(error) {
-                                console.error('Error searching events:', error);
+                            success: function (data) {
+                                var formattedEvents = data.map(function (event) {
+                                    return {
+                                        id: event.id,
+                                        title: event.document,
+                                        start: event.startdate,
+                                        end: event.enddate,
+                                        color: event.color,
+                                        editable: true,
+                                        event: event
+                                    };
+                                });
+                
+                                calendar.addEventSource(formattedEvents);
                             }
-                        });
-                    }
-
-
-                    // Exporting Function
-                    document.getElementById('exportButton').addEventListener('click', function() {
-                        var events = calendar.getEvents().map(function(event) {
-                            return {
-                                title: event.title,
-                                start: event.start ? event.start.toISOString() : null,
-                                end: event.end ? event.end.toISOString() : null,
-                                // color: event.backgroundColor,
-                            };
-                        });
-
-                        var wb = XLSX.utils.book_new();
-
-                        var ws = XLSX.utils.json_to_sheet(events);
-
-                        XLSX.utils.book_append_sheet(wb, ws, 'Events');
-
-                        var arrayBuffer = XLSX.write(wb, {
-                            bookType: 'xlsx',
-                            type: 'array'
-                        });
-
-                        var blob = new Blob([arrayBuffer], {
-                            type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                        });
-
-                        var downloadLink = document.createElement('a');
-                        downloadLink.href = URL.createObjectURL(blob);
-                        downloadLink.download = 'events.xlsx';
-                        downloadLink.click();
-                    })
+                        },
+                        editable: true,
+                        eventClick: function (info) {
+                            // Open the modal and display event details
+                            $('#eventModalLabel').text(info.event.title);
+                            $('#eventTitle').text('Title: ' + info.event.title);
+                            $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
+                            $('#eventEnd').text('End: ' + info.event.end.toLocaleString());
+                            $('#eventModal').modal('show');
+                        },
+                        eventDrop: function (info) {
+                            // Handle event drop
+                            var newStartDate = info.event.start.toISOString();
+                            var newEndDate = info.event.end.toISOString();
+                
+                            // Call the update event function in your controller via AJAX
+                            $.ajax({
+                                url: '/updateEvent/' + info.event.id,
+                                method: 'PUT',
+                                data: {
+                                    startdate: newStartDate,
+                                    enddate: newEndDate
+                                    // Add other fields as needed for update
+                                },
+                                success: function (response) {
+                                    console.log('Event updated successfully:', response);
+                                },
+                                error: function (error) {
+                                    console.error('Error updating event:', error);
+                                }
+                            });
+                        }
+                    });
+                
+                    calendar.render();
                 </script>
+                
 
 
             </div>

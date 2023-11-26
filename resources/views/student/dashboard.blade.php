@@ -74,6 +74,7 @@
                                                     <th class="text-center fw-bold">Document</th>
                                                     <th class="text-center fw-bold">Request Date</th>
                                                     <th class="text-center fw-bold">Status</th>
+                                                    <th class="text-center fw-bold">Release Date</th>
                                                     <th class="text-center fw-bold">Remark</th>
                                                     <th class="text-center fw-bold">Actions</th>
                                                 </tr>
@@ -115,6 +116,11 @@
                                                             @elseif($request['status'] == 'Decline')
                                                                 <span
                                                                     class="badge bg-danger me-1">{{ $request['status'] }}</span>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            @if ($request['releasedate'] !== null)
+                                                                {{ \Carbon\Carbon::parse($request['releasedate'])->format('F j, Y') }}
                                                             @endif
                                                         </td>
                                                         <td class="text-truncate" style="max-width: 150px;">

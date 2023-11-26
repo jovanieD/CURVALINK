@@ -129,6 +129,8 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::post('/postappoinment', [ScheduleController::class, 'postappoinment']);
 
+    Route::put('/updateEvent/{eventId}', [ScheduleController::class, 'updateEvent']);
+
     Route::post('/certificaterequest/{id}/update', [CertificationRequestController::class,'updateCertification']); //dashboard  view -update
 
     Route::post('/goodmoralrequest/{id}/update', [GoodMoralRequestController::class,'updateGoodMoral']);

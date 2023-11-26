@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Carbon;
 
 
+
 class ScheduleController extends Controller
 {
     //
@@ -34,11 +35,17 @@ class ScheduleController extends Controller
 
     public function getEvents()
     {
-        $user = Auth::user();
-
-        $certificationRequests = $user->schedule()->get();
-        return $certificationRequests;
+        if (Auth::check()) {
+            $user = Auth::user();
+    
+            $schedules = Schedule::where('user_id', $user->id)->get();
+    
+            return $schedules;
+        } else {
+            return response()->json(['error' => 'User not authenticated.'], 401);
+        }
     }
+    
 
     public function getallschedule()
     {
@@ -97,7 +104,6 @@ class ScheduleController extends Controller
                 'remarks' => $request->input('remarks'),
             ]);
     
-            // Associate the schedule with the document based on the document type
             switch ($request->input('document')) {
                 case 'Certificate':
                     $documentModel = CertificationRequest::findOrFail($request->input('document_id'));
@@ -113,8 +119,13 @@ class ScheduleController extends Controller
             }
     
             $documentModel->schedules()->save($schedule);
+
+            $documentModel->update([
+                'status' => 'Scheduled',
+                'releasedate' => $startDate,
+            ]);
     
-            return $schedule;
+            return redirect('/teacher/schedules');
         } catch (\Exception $e) {
             // Handle the exception (e.g., log it, return an error response, etc.)
             return response()->json(['error' => $e->getMessage()], 500);
@@ -196,6 +207,25 @@ class ScheduleController extends Controller
             'documentCounts' => $documentCounts,
         ]);
     }
+
+    public function updateEvent(Request $request, $eventId)
+    {
+        $schedule = Schedule::findOrFail($eventId);
+
+        $schedule->update([
+            'startdate' => $request->input('startdate'),
+            'enddate' => $request->input('enddate'),
+            // Update other fields as needed
+        ]);
+
+        return response()->json(['message' => 'Event updated successfully']);
+    }
+
+
+
+
+
+
    
 
     public function searchRequests(Request $request)

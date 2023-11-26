@@ -74,9 +74,9 @@ class StudentDashboardController extends Controller
         $user = Auth::user();
 
         // Assuming the user has a relationship with document requests
-        $certificationRequests = $user->certificationRequests()->select('id', 'document', 'remarks', 'created_at', 'status')->get();
-        $goodMoralRequests = $user->goodMoralRequests()->select('id', 'document', 'remarks', 'created_at', 'status')->get();
-        $form137Requests = $user->form137Requests()->select('id', 'document', 'remarks', 'created_at', 'status')->get();
+        $certificationRequests = $user->certificationRequests()->select('id', 'document', 'releasedate', 'remarks', 'created_at', 'status')->get();
+        $goodMoralRequests = $user->goodMoralRequests()->select('id', 'document', 'remarks', 'releasedate', 'created_at', 'status')->get();
+        $form137Requests = $user->form137Requests()->select('id', 'document', 'remarks', 'releasedate', 'created_at', 'status')->get();
     
     
         $documentCounts = [
@@ -92,6 +92,7 @@ class StudentDashboardController extends Controller
         foreach($certificationRequests as $request){
             $documentRequested[] = [
                 'type' => 'Certificate',
+                'releasedate' => $request->releasedate,
                 'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
@@ -103,6 +104,7 @@ class StudentDashboardController extends Controller
         foreach($goodMoralRequests as $request){
             $documentRequested[] = [
                 'type' => 'Good_Moral',
+                'releasedate' => $request->releasedate,
                 'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
@@ -114,6 +116,7 @@ class StudentDashboardController extends Controller
         foreach($form137Requests as $request){
             $documentRequested[] = [
                 'type' => 'Form137',
+                'releasedate' => $request->releasedate,
                 'remarks' => $request->remarks,
                 'created_at' => $request->created_at,
                 'status' => $request->status,
