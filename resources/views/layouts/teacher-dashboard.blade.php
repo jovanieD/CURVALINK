@@ -78,7 +78,7 @@
 
                         <!-- Layouts -->
 
-                        <li class="menu-header small text-uppercase">
+                        {{-- <li class="menu-header small text-uppercase">
                             <span class="menu-header-text">Documents</span>
                         </li>
                         <li class="menu-item">
@@ -103,7 +103,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         {{-- Updates --}}
                         <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
