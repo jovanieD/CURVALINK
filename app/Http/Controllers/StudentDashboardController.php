@@ -23,15 +23,29 @@ use Illuminate\Support\Facades\Response;
 class StudentDashboardController extends Controller
 {
 
-    // public function profileImage()
-    // {
-    //     $defaultImagePath = public_path(Auth::user()->profile_image);
-    //     $headers = [
-    //         'Content-Type' => 'image/jpeg', 
-    //     ];
+    public function profileImage()
+    {
+        $user = Auth::user();
 
-    //     return Response::file($defaultImagePath, $headers);
-    // }
+        if ($user && $user->profile_image) {
+            $imagePath = public_path($user->profile_image); 
+
+            if (file_exists($imagePath)) {
+                $headers = [
+                    'Content-Type' => 'image/jpeg', 
+                ];
+
+                return Response::file($imagePath, $headers);
+            }
+        }
+        $defaultImagePath = public_path(Auth::user()->profile_image);
+        $headers = [
+            'Content-Type' => 'image/jpeg', 
+        ];
+
+        return Response::file($defaultImagePath, $headers);
+    }
+ 
 
     public function sendEmail(Request $request)
     {
