@@ -194,7 +194,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="">
+                                                <a class="dropdown-item" href="/schedules">
                                                     <i class="fa fa-tasks m-2 text-warning"></i>
                                                     <span class="align-middle">View Schedule</span>
                                                 </a>
