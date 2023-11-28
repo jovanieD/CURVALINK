@@ -246,8 +246,8 @@
                                         Process</option>
                                     <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
                                         Decline</option>
-                                    <option value="Scheduled" {{ $data['status'] == 'Scheduled' ? 'selected' : '' }}>
-                                        Scheduled</option>
+                                    {{-- <option value="Scheduled" {{ $data['status'] == 'Scheduled' ? 'selected' : '' }}>
+                                        Scheduled</option> --}}
                                 </select>
                             </div>
                         </li>

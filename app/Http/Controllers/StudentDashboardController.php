@@ -23,29 +23,15 @@ use Illuminate\Support\Facades\Response;
 class StudentDashboardController extends Controller
 {
 
-    public function profileImage()
-    {
-        $user = Auth::user();
+    // public function profileImage()
+    // {
+    //     $defaultImagePath = public_path(Auth::user()->profile_image);
+    //     $headers = [
+    //         'Content-Type' => 'image/jpeg', 
+    //     ];
 
-        if ($user && $user->profile_image) {
-            $imagePath = public_path($user->profile_image); 
-
-            // Check if the file exists
-            if (file_exists($imagePath)) {
-                $headers = [
-                    'Content-Type' => 'image/jpeg', 
-                ];
-
-                return Response::file($imagePath, $headers);
-            }
-        }
-        $defaultImagePath = public_path(Auth::user()->profile_image);
-        $headers = [
-            'Content-Type' => 'image/jpeg', 
-        ];
-
-        return Response::file($defaultImagePath, $headers);
-    }
+    //     return Response::file($defaultImagePath, $headers);
+    // }
 
     public function sendEmail(Request $request)
     {
@@ -279,7 +265,8 @@ class StudentDashboardController extends Controller
                 $user = Auth::user();
         
                 if (!Hash::check($request->input('current'), $user->password)) {
-                    throw ValidationException::withMessages(['current' => 'The current password is incorrect.']);
+                    $errors = ['current' => 'The current password is incorrect.'];
+                    return redirect()->back()->withErrors($errors);
                 }
         
                 $user->update([

@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('admin')
-
     <body class="antialiased">
         <div class="container-fluid position-relative p-0 ">
 
@@ -14,7 +13,7 @@
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
                                 <h1 class="display-1 text-white mb-md-4 animated zoomIn">Martin M. Salimbangon Natioanl High
                                     School</h1>
-                                <a href=""
+                                <a href="/admin/contact"
                                     class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                             </div>
                         </div>

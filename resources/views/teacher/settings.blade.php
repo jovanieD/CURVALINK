@@ -1,6 +1,6 @@
-@extends('layouts.teacher-dashboard')
+@extends('layouts.admin-dashboard')
 
-@section('teacher')
+@section('admin')
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
@@ -19,7 +19,7 @@
                                         <div class="mb-3 col-md-6">
                                             <label for="firstName" class="form-label">Full Name</label>
                                             <input disabled class="form-control" type="text" id="firstName"
-                                                name="name" value="{{ Auth::user()->name }}" required />
+                                                name="name" value="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}" required />
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="email" class="form-label">E-mail</label>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a href="/teacher/deleteUser"><button type="" class="btn btn-primary">Yes</button></a>
+                        <a href="/teacher/deleteUser/{{Auth::user()->id}}"><button type="" class="btn btn-primary">Yes</button></a>
                     </div>
                 </div>
             </div>

@@ -57,8 +57,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+            <div class="row ">
+                {{-- <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                     <form action = "/sendemail" method="post">
                         @csrf
                         <div class="row g-3">
@@ -79,9 +79,9 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> --}}
                 
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
+                <div class="col " data-wow-delay="0.6s">
                     <iframe class="position-relative rounded w-100 h-100"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d813.1433131024538!2d124.00330341578973!3d11.138035294612882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a86fdf4e9db2a3%3A0x518c821721b2d469!2sCurva%2C%20Medellin%2C%20Cebu!5e1!3m2!1sen!2sph!4v1699496500417!5m2!1sen!2sph"
                         frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"

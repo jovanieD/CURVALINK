@@ -52,7 +52,7 @@
                               <h3 class="text-light mb-0">Quick Links</h3>
                           </div>
                           <div class="link-animated d-flex flex-column justify-content-start">
-                              <a class="text-light mb-2" href="#"><i
+                              <a class="text-light mb-2" href="/"><i
                                       class="bi bi-arrow-right text-primary me-2"></i>Home</a>
                               <a class="text-light mb-2" href="/about"><i
                                       class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
@@ -65,11 +65,11 @@
                               <h3 class="text-light mb-0">Request Links</h3>
                           </div>
                           <div class="link-animated d-flex flex-column justify-content-start">
-                              <a class="text-light mb-2" href="#"><i
+                              <a class="text-light mb-2" href="/request/goodmoral"><i
                                       class="bi bi-arrow-right text-primary me-2"></i>Good Moral</a>
-                              <a class="text-light mb-2" href="#"><i
+                              <a class="text-light mb-2" href="/request/certificate"><i
                                       class="bi bi-arrow-right text-primary me-2"></i>Certificate</a>
-                              <a class="text-light mb-2" href="#"><i
+                              <a class="text-light mb-2" href="/request/form137"><i
                                       class="bi bi-arrow-right text-primary me-2"></i>Form 137</a>
                           </div>
                       </div>

@@ -134,6 +134,7 @@ class CertificationRequestController extends Controller
                     'purpose' => $request->input('purpose'),
                     'remarks' => $request->input('remarks'),
                     'status' => $request->input('status'),
+                    'releasedate' => '',
                 ]);
 
                 // Redirect to the dashboard or any other appropriate route
@@ -154,5 +155,56 @@ class CertificationRequestController extends Controller
                 'requestor' => $requestor,
         ]);
     }
+
+    public function adminUpdateCertification(Request $request, $id)
+        {
+            try {
+                // Validation rules
+                $validationRules = [
+                    'firstname' => 'required|string|max:32',
+                    'lastname' => 'required|string|max:32',
+                    'address' => 'required|string|max:64',
+                    'municipality' => 'required|string|max:32',
+                    'province' => 'required|string|max:32',
+                    'postal' => 'required|string|max:7|min:4',
+                    'phonenumber' => 'required|string|max:11|min:11',
+                    'email' => 'required|string|email|max:32',
+                    'purpose' => 'required|string|max:255|min:150',
+                    'status' => 'required|string|max:32',
+                ];
+
+                // Validate the request
+                $request->validate($validationRules);
+
+                // Find the existing record by id
+                $existingRequest = CertificationRequest::findOrFail($id);
+
+                // Update the existing record
+                $existingRequest->update([
+                    'firstname' => $request->input('firstname'),
+                    'lastname' => $request->input('lastname'),
+                    'address' => $request->input('address'),
+                    'municipality' => $request->input('municipality'),
+                    'province' => $request->input('province'),
+                    'postal' => $request->input('postal'),
+                    'phonenumber' => $request->input('phonenumber'),
+                    'email' => $request->input('email'),
+                    'purpose' => $request->input('purpose'),
+                    'remarks' => $request->input('remarks'),
+                    'status' => $request->input('status'),
+                    'releasedate' => '',
+                ]);
+
+                // Redirect to the dashboard or any other appropriate route
+                return redirect('/admin/dashboard');
+            } catch (ValidationException $e) {
+                // If validation fails, redirect back with errors
+                return redirect()->back()->withErrors($e->errors())->withInput();
+            } catch (\Exception $e) {
+                // Handle other exceptions if needed
+                return redirect()->back()->withErrors([$e->getMessage()])->withInput();
+            }
+        }
+
     
 }

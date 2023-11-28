@@ -12,6 +12,7 @@ use Auth;
 use User;
 
 use App\Models\Teacher;
+use App\Models\Schedule;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
@@ -197,7 +198,8 @@ class TeacherDashboardController extends Controller
             $user = Auth::user();
     
             if (!Hash::check($request->input('current'), $user->password)) {
-                throw ValidationException::withMessages(['current' => 'The current password is incorrect.']);
+                $errors = ['current' => 'The current password is incorrect.'];
+                return redirect()->back()->withErrors($errors);
             }
     
             $user->update([

@@ -119,9 +119,7 @@
                                                             @endif
                                                         </td>
                                                         <td>
-                                                            @if ($request['releasedate'] !== null)
-                                                                {{ \Carbon\Carbon::parse($request['releasedate'])->format('F j, Y') }}
-                                                            @endif
+                                                            {{ $request['releasedate'] ? \Carbon\Carbon::parse($request['releasedate'])->format('F j, Y') : '' }}
                                                         </td>
                                                         <td class="text-truncate" style="max-width: 150px;">
                                                             {{ $request['remarks'] }}

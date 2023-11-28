@@ -27,58 +27,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div id="calendar" style="width: 100%;height:100vh"></div>
-
                         </div>
                     </div>
                 </div>
-                </body>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-
-             
-                <script>
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-                
-                    var calendarEl = document.getElementById('calendar');
-                    var events = [];
-                    var calendar = new FullCalendar.Calendar(calendarEl, {
-                        headerToolbar: {
-                            left: '',
-                            center: 'title',
-                            right: 'prev,next'
-                        },
-                        initialView: 'dayGridMonth',
-                        timeZone: 'UTC',
-                        events: {
-                            url: '/events',
-                            method: 'GET',
-                            success: function (data) {
-                                var formattedEvents = data.map(function (event) {
-                                    return {
-                                        id: event.id,
-                                        title: event.document,
-                                        start: event.startdate, // Assuming the date format is 'YYYY-MM-DD'
-                                        end: event.enddate,     // Assuming the date format is 'YYYY-MM-DD'
-                                        color: event.color,      // You can set the color if available in your data
-                                        editable: true,          // Set to true if you want to allow editing
-                                        event: event              // Store the full event data for reference
-                                    };
-                                });
-                
-                                calendar.addEventSource(formattedEvents);
-                            }
-                        },
-                        editable: true
-                    });
-                
-                    calendar.render();
-                </script>
-                
             </div>
         </div>
     </div>
@@ -100,4 +51,92 @@
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var calendarEl = document.getElementById('calendar');
+        var events = [];
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            headerToolbar: {
+                left: '',
+                center: 'title',
+                right: 'prev,next'
+            },
+            initialView: 'dayGridMonth',
+            timeZone: 'UTC',
+            events: {
+                url: '/events',
+                method: 'GET',
+                success: function(data) {
+                    var formattedEvents = data.map(function(event) {
+                        return {
+                            id: event.id,
+                            title: event.document,
+                            start: event.startdate,
+                            end: event.enddate,
+                            color: event.color,
+                            editable: true,
+                            event: event
+                        };
+                    });
+
+                    calendar.addEventSource(formattedEvents);
+                }
+            },
+            editable: true,
+            eventClick: function(info) {
+                // Open the modal and display event details
+                $('#eventModalLabel').text(info.event.title);
+                $('#eventTitle').text('Title: ' + info.event.title);
+                $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
+                $('#eventEnd').text('End: ' + info.event.end.toLocaleString());
+                $('#eventModal').modal('show');
+            }
+        });
+
+        calendar.render();
+    </script>
+
+    <script>
+        document.getElementById('exportButton').addEventListener('click', function() {
+            var events = calendar.getEvents().map(function(event) {
+                return {
+                    document: event.title,
+                    start: event.start ? event.start.toISOString() : null,
+                    end: event.end ? event.end.toISOString() : null,
+                    color: event.backgroundColor,
+                };
+            });
+
+            var wb = XLSX.utils.book_new();
+
+            var ws = XLSX.utils.json_to_sheet(events);
+
+            XLSX.utils.book_append_sheet(wb, ws, 'Events');
+
+            var arrayBuffer = XLSX.write(wb, {
+                bookType: 'xlsx',
+                type: 'array'
+            });
+
+            var blob = new Blob([arrayBuffer], {
+                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            });
+
+            var downloadLink = document.createElement('a');
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = 'events.xlsx';
+            downloadLink.click();
+        })
+    </script>
 @endsection

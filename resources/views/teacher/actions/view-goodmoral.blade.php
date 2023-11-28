@@ -204,7 +204,7 @@
                                     class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
                                     aria-hidden="false"> Remarks </label>
                                 <div id="cid_32" class="form-input-wide jf-" data-layout="full">
-                                    <textarea readonly="" id="input_32" minlength="150" maxlength="500" class="form-textarea validate[]"
+                                    <textarea readonly="" id="input_32"  maxlength="500" class="form-textarea validate[]"
                                         name="purpose" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
                                 </div>
                             </li>

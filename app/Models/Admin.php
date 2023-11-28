@@ -19,6 +19,11 @@ class Admin extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_image',
+        'address',
+        'municipality',
+        'province',
+        'phonenumber',
     ];
 
     protected $hidden = [

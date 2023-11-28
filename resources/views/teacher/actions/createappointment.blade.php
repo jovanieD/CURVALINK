@@ -97,10 +97,10 @@
                             </li>
                             <li class="form-line" data-type="control_datetime" id="id_4"><label
                                     class="form-label form-label-left form-label-auto" id="label_4" for="lite_mode_4"
-                                    aria-hidden="false"> End Date </label>
+                                    aria-hidden="false"> End Date<span class="form-required">*</span> </label>
                                 <div id="cid4" class="form-input" data-layout="half">
                                     <div id="cid_8" data-layout="half" class="date" data-provide="datepicker"> 
-                                        <input type="text" class="form-control" name="enddate" placeholder="Select a date" autocomplete="off">
+                                        <input type="text" class="form-control" name="enddate" placeholder="Select a date" autocomplete="off" required="">
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>

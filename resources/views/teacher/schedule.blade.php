@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 </body>
-                
+
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -47,7 +47,7 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-                
+
                     var calendarEl = document.getElementById('calendar');
                     var events = [];
                     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -61,8 +61,8 @@
                         events: {
                             url: '/allschedules',
                             method: 'GET',
-                            success: function (data) {
-                                var formattedEvents = data.map(function (event) {
+                            success: function(data) {
+                                var formattedEvents = data.map(function(event) {
                                     return {
                                         id: event.id,
                                         title: event.document,
@@ -73,24 +73,27 @@
                                         event: event
                                     };
                                 });
-                
+
                                 calendar.addEventSource(formattedEvents);
                             }
                         },
                         editable: true,
-                        eventClick: function (info) {
+                        eventClick: function(info) {
+
                             // Open the modal and display event details
                             $('#eventModalLabel').text(info.event.title);
                             $('#eventTitle').text('Title: ' + info.event.title);
                             $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
                             $('#eventEnd').text('End: ' + info.event.end.toLocaleString());
                             $('#eventModal').modal('show');
+
                         },
-                        eventDrop: function (info) {
+                        
+                        eventDrop: function(info) {
                             // Handle event drop
                             var newStartDate = info.event.start.toISOString();
                             var newEndDate = info.event.end.toISOString();
-                
+
                             // Call the update event function in your controller via AJAX
                             $.ajax({
                                 url: '/updateEvent/' + info.event.id,
@@ -100,19 +103,19 @@
                                     enddate: newEndDate
                                     // Add other fields as needed for update
                                 },
-                                success: function (response) {
+                                success: function(response) {
                                     console.log('Event updated successfully:', response);
                                 },
-                                error: function (error) {
+                                error: function(error) {
                                     console.error('Error updating event:', error);
                                 }
                             });
                         }
                     });
-                
+
                     calendar.render();
                 </script>
-                
+
 
 
             </div>

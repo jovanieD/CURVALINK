@@ -60,30 +60,30 @@
                                             <div class="mb-3 col-md-6">
                                                 <label for="email" class="form-label">E-mail</label>
                                                 <input class="form-control" type="text" id="email" name="email"
-                                                    value="{{ Auth::user()->email }}" />
+                                                    value="{{ Auth::user()->email }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label class="form-label" for="phoneNumber">Phone Number</label>
                                                 <div class="input-group input-group-merge">
                                                     <input type="text" id="phoneNumber" name="phonenumber"
                                                         class="form-control"
-                                                        value="{{ Auth::user()->phonenumber }}" />
+                                                        value="{{ Auth::user()->phonenumber }}" pattern="[0-9]+" title="Please enter only numbers" required/>
                                                 </div>
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="address" class="form-label">Address</label>
                                                 <input type="text" class="form-control" id="address" name="address"
-                                                    value="{{ Auth::user()->address }}" />
+                                                    value="{{ Auth::user()->address }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="state" class="form-label">Municipality</label>
                                                 <input class="form-control" type="text" id="state"
-                                                    name="municipality" value="{{ Auth::user()->municipality }}" />
+                                                    name="municipality" value="{{ Auth::user()->municipality }}" required/>
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="zipCode" class="form-label">Province</label>
                                                 <input type="text" class="form-control" id="zipCode" name="province"
-                                                    placeholder="{{ Auth::user()->province }}" />
+                                                    placeholder="{{ Auth::user()->province }}" required />
                                             </div>
                                         </div>
                                         <div class="mt-2">

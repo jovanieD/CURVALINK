@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use App\Models\GoodMoralRequest; 
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Schedule>
  */
@@ -22,12 +24,16 @@ class ScheduleFactory extends Factory
         $startDate = date('Y-m-d', $startTimestamp);
         $endDate = date('Y-m-d', $endTimestamp);
 
+        $goodMoral = GoodMoralRequest::factory()->create();
+
         return [
             'user_id' => 11,
             'document' => $this->faker->sentence,
-            'start' => $startDate,
-            'end' => $endDate,
+            'startdate' => $startDate,
+            'enddate' => $endDate,
             'remarks' => $this->faker->paragraph,
+            'schedulable_type' => 'App\\Models\\GoodMoralRequest', // Replace with your actual morphable model namespace
+            'schedulable_id' => $goodMoral->id,
         ];
     }
 }
