@@ -111,7 +111,7 @@ class CertificationRequestController extends Controller
                     'postal' => 'required|string|max:7|min:4',
                     'phonenumber' => 'required|string|max:11|min:11',
                     'email' => 'required|string|email|max:32',
-                    'purpose' => 'required|string|max:255|min:150',
+                    'purpose' => 'required|string',
                     'status' => 'required|string|max:32',
                 ];
 
