@@ -166,7 +166,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a href="/deleteUser/{{Auth:user()->id}}"><button type="" class="btn btn-primary">Yes</button></a>
+                        <a href="/deleteUser/{{ Auth::user()->id }}"><button type="" class="btn btn-primary">Yes</button></a>
                     </div>
                 </div>
             </div>
