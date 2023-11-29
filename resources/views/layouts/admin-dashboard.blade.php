@@ -82,7 +82,7 @@
 
 
                         {{-- Updates --}}
-                        <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
+                        {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -101,7 +101,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <li class="menu-header small text-uppercase">
                             <span class="menu-header-text"></span>
