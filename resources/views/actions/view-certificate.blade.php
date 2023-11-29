@@ -259,7 +259,7 @@
                                 <div id="cid_5" class="form-input-wide jf-" data-layout="half"> <span
                                         class="form-sub-label-container" style="vertical-align:top"> <input
                                             readonly="" type="tel" value="{{ $data['phonenumber'] }}"
-                                            id="input_5_full" name="phonenumber" maxlength="13"
+                                            id="input_5_full" name="phonenumber" maxlength="11"
                                             class="mask-phone-number form-textbox validate[, Fill Mask]"
                                             autoComplete="section-input_5 tel" style="width:310px" data-masked="true"
                                             aria-labelledby="label_5" /></span>

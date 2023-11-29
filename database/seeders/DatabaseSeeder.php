@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(20)->create();
+
+        \App\Models\Teacher::factory(20)->create();
 
         \App\Models\User::factory()->create([
             'firstname' => 'User',
@@ -30,9 +32,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'teacher@example.com',
         ]);
 
-        // \App\Models\CertificationRequest::factory(3)->create();
-        // \App\Models\GoodMoralRequest::factory(3)->create();
-        // \App\Models\Form137Request::factory(3)->create();
+        \App\Models\CertificationRequest::factory(3)->create();
+        \App\Models\GoodMoralRequest::factory(3)->create();
+        \App\Models\Form137Request::factory(3)->create();
 
         // Schedule::factory(20)->create();
     }

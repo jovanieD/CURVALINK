@@ -25,7 +25,7 @@
                                         <img src="{{route('teacherprofileimage') }}" alt="avatar"
                                             style="border-radius: 200px; height: 300px; width: 300px;">
                                         <h5 class="my-3">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h5>
-                                        <p class="text-muted mb-1">Student</p>
+                                        <p class="text-muted mb-1">Teacher</p>
                                         <p class="text-muted mb-4">{{ Auth::user()->address }}</p>
                                         <div class="d-flex justify-content-center mb-2">
                                             <a href="/teacher/editprofile">

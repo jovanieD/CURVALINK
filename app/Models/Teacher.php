@@ -17,14 +17,19 @@ class Teacher extends Authenticatable
     protected $guard = "teacher";
 
     protected $fillable = [
-        'name',
+        'firstname',
+        'middlename',
+        'lastname',
         'email',
         'password',
         'profile_image',
+        'subject_handle',
+        'grade_level',
         'address',
         'municipality',
         'province',
         'phonenumber',
+        'gender',
     ];
 
     protected $hidden = [

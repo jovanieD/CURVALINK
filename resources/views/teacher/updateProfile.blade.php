@@ -88,8 +88,10 @@
                                         </div>
                                         <div class="mt-2">
                                             <button type="submit" class="btn btn-warning me-2">Save changes</button>
+                                            <a href="/teacher/profile" class=" text-white">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">Cancel</button>
+                                                data-bs-target="">Cancel</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </form>

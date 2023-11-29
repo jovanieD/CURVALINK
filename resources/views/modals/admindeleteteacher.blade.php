@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="admindelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,20 +11,20 @@
                         <i class="fa-solid fa-circle-exclamation" style="color: #ff2200; font-size:10em;"></i>
                     </div>
                     <div class="card-body text-wrap">
-                        <h5 class="card-title">Delete request</h5>
-                        <p class=" fs-2">Are you sure to delete your {{ $request['type'] }} request?</p>
+                        <h5 class="card-title">Delete Teacher</h5>
+                        <p class=" fs-2">Are you sure to delete this Teacher?</p>
                     </div>
                 </div>
 
             </div>
             <div class=" d-flex justify-content-center mb-4">
-                <button type="button" class="btn btn-secondary m-2 fs-4" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary m-2 " data-bs-dismiss="modal">Close</button>
 
-                <form method="post" action="/deleterequest/{{ $request['id'] }}" method="post" accept-charset="utf-8"
+                <form method="post" action="/admin_deleteTeacher/{{$teacherData['id'] }}" method="post" accept-charset="utf-8"
                     autocomplete="on">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-warning m-2 fs-4">Yes</button>
+                    <button type="submit" class="btn btn-warning m-2">Yes</button>
                 </form>
             </div>
         </div>

@@ -8,7 +8,7 @@
 
                 <div class="card text-center">
                     <div class="card-header h-auto">
-                        <i class="bi bi-exclamation m-3" style="color: #ff2200; font-size:10em;"></i>
+                        <i class="fa-solid fa-circle-exclamation" style="color: #ff2200; font-size:10em;"></i>
                     </div>
                     <div class="card-body text-wrap">
                         <h5 class="card-title">Delete request</h5>

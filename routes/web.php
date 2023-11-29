@@ -230,16 +230,45 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::post('/admin_editrequest/{user_id}', [AdminDashboardController::class,'getRequest']);
 
-
     Route::get('/all_Teachers', [ManageTeachersController::class,'showAllTeacher']);
 
-    Route::get('/all_Users', [ManageUsersController::class,'showAllUsers']);
+
+
+    Route::get('/all_Users', [ManageUsersController::class,'showAllUsers'])->name('adminviewalluser');
+
+    Route::get('/view_User/{id}', [ManageUsersController::class,'showUser']);
+
+    Route::get('/edit_User/{id}', [ManageUsersController::class,'updateUser']);
+
+    Route::post('/admin_updateUser/{id}', [ManageUsersController::class,'adminUpdateUser']);
+
+    Route::delete('/admin_deleteUser/{id}', [ManageUsersController::class,'delete']);
+
+    Route::get('/searchUser', [ManageUsersController::class,'search'])->name('searchUsers');
+
+    Route::get('/admin_add_user', [ManageUsersController::class,'showadduser']);
+
+    Route::post('/admin_create_user', [ManageUsersController::class,'createUser']);
 
 
 
+    Route::get('/all_Teachers', [ManageTeachersController::class,'showAllTeachers']);
+
+    Route::get('/view_teacher/{id}', [ManageTeachersController::class,'showTeacher']);
+
+    Route::get('/edit_teacher/{id}', [ManageTeachersController::class,'updateTeacher']);
+
+    Route::post('/admin_updateTeacher/{id}', [ManageTeachersController::class,'adminUpdateTeacher']);
+
+    Route::delete('/admin_deleteTeacher/{id}', [ManageTeachersController::class,'delete']);
 
 
 
+    Route::get('/searchTeaches', [ManageTeachersController::class,'search'])->name('searchTeachers');
+
+    Route::get('/admin_add_teacher', [ManageTeachersController::class,'showaddteacher']);
+
+    Route::post('/admin_create_teacher', [ManageTeachersController::class,'createTeacher']);
 
 
 

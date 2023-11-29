@@ -43,18 +43,18 @@
 
                                         <div class="row">
                                             <div class="mb-3 col-md-6">
-                                                <label for="firstName" class="form-label">First Name</label>
-                                                <input class="form-control" type="text" id="firstName" name="firstname"
+                                                <label for="firstname" class="form-label">First Name</label>
+                                                <input class="form-control" type="text" id="firstname" name="firstname"
                                                     value="{{ Auth::user()->firstname }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
-                                                <label for="firstName" class="form-label">Middle Name</label>
-                                                <input class="form-control" type="text" id="firstName" name="middlename"
+                                                <label for="middlename" class="form-label">Middle Name</label>
+                                                <input class="form-control" type="text" id="middlename" name="middlename"
                                                     value="{{ Auth::user()->middlename }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
-                                                <label for="firstName" class="form-label">Last Name</label>
-                                                <input class="form-control" type="text" id="firstName" name="lastname"
+                                                <label for="lastname" class="form-label">Last Name</label>
+                                                <input class="form-control" type="text" id="lastname" name="lastname"
                                                     value="{{ Auth::user()->lastname }}" required />
                                             </div>
                                             <div class="mb-3 col-md-6">
@@ -88,8 +88,10 @@
                                         </div>
                                         <div class="mt-2">
                                             <button type="submit" class="btn btn-warning me-2">Save changes</button>
+                                            <a href="/admin/profile" class=" text-white">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal">Cancel</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </form>
