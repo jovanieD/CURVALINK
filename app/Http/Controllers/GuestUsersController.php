@@ -37,7 +37,11 @@ class GuestUsersController extends Controller
 
 
     public function  index(){
-        return view('welcome');
+
+        $latestEvents = Event::latest()->take(3)->get();
+
+
+        return view('welcome', compact('latestEvents'));
     }
 
     public function  showabout(){

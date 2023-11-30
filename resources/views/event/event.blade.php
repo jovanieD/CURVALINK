@@ -22,14 +22,14 @@
                             <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
                                 <div class="blog-item bg-light rounded overflow-hidden">
                                     <div class="blog-img position-relative overflow-hidden">
-                                        <img class="img-fluid w-100" src="{{ $event->imageurl }}" alt="">
+                                        <img class="w-100 img-fluid" style="height: 250px" src="{{ $event->imageurl }}" alt="">
                                     </div>
                                     <div class="p-4">
                                         <div class="d-flex mb-3">
                                             <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $event->start_datetime }}</small>
                                         </div>
                                         <h4 class="mb-3">{{ $event->title }}</h4>
-                                        <p class="text-truncate" style="max-width: 150px;">{{ $event->description }}</p>
+                                        <p class="text-truncate" style="max-width: 300px;">{{ $event->description }}</p>
                                         <a style="cursor: pointer;" class="text-uppercase read-more-link"
                                             data-bs-toggle="modal" data-bs-target="#eventmodal"
                                             data-event-title="{{ $event->title }}"

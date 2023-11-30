@@ -420,7 +420,7 @@
                                 <h5 class="mb-2">Call to ask any question</h5>
                                 <h4 class="text-primary mb-0">09759736671</h4>
                             </div>
-                        
+
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -444,7 +444,7 @@
                                             <option value="3">Certificate of Enrollment</option>
                                         </select>
                                     </div>
-                                    
+
                                     <div class="col-12">
                                         <button class="btn btn-dark w-100 py-3" type="submit">Request</button>
                                     </div>
@@ -1074,78 +1074,32 @@
                     <h1 class="mb-0">Articles from Our Blog Post</h1>
                 </div>
                 <div class="row g-5">
-                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
-                            <div class="blog-img position-relative overflow-hidden">
-                                <img class="img-fluid" src="" alt="">
-                                <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                    href="">Web Design</a>
-                            </div>
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="far fa-user text-primary me-2"></i>Curva
-                                        NHS</small>
-                                    <small><i class="far fa-calendar-alt text-primary me-2"></i>12 Oct.,
-                                        2023</small>
+                    @foreach ($latestEvents as $event)
+                        <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                            <div class="blog-item bg-light rounded overflow-hidden">
+
+                                <div class="p-4">
+                                    <div class="d-flex mb-3">
+                                        <small class="me-3">
+                                            <i class="fa fa-map-marker text-primary me-2"></i>
+                                            {{ $event->location }}
+                                        </small>
+                                        <small>
+                                            <i class="far fa-calendar-alt text-primary me-2"></i>
+                                            {{ $event->created_at }}
+                                        </small>
+                                    </div>
+                                    <h4 class="mb-3">{{ $event->title }}</h4>
+                                    <img class="w-100 img-fluid" style="height: 190px" type="image/jpg"
+                                        src="{{ $event->imageurl }}" alt="Image">
+                                    <p>{{ $event->description }}</p>
+                                    <a class="text-uppercase" href="">Read More <i
+                                            class="bi bi-arrow-right"></i></a>
                                 </div>
-                                <h4 class="mb-3">Trio Teachers Offer free lugaw to the Curvanians</h4>
-                                <img class="w-100 img-fluid" style="height: 190px" type="image/jpg"
-                                    src="{{ url('images/freelugaw.jpg') }}" alt="Image">
-                                <p>The teachers of Curva National High School, Mr Reynaldo Villegas, Mrs. Elisa
-                                    Amores and Mrs. Nelgen Demapitan served delicious lugaw and champorado to the
-                                    fellow Curvanians who arrived early in the school...</p>
-                                <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
-                            <div class="blog-img position-relative overflow-hidden">
-                                <img class="img-fluid" src="" alt="">
-                                <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                    href="">Web Design</a>
-                            </div>
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="far fa-user text-primary me-2"></i>Cruva
-                                        NHS</small>
-                                    <small><i class="far fa-calendar-alt text-primary me-2"></i>10 Oct.,
-                                        2023</small>
-                                </div>
-                                <h4 class="mb-3">Cruva NHS Teachers receive new table for Table Tennis</h4>
-                                <img class="w-100 img-fluid" style="height: 190px" type="image/jpg"
-                                    src="{{ url('images/donation.jpg') }}" alt="Image">
-                                <p>The teachers of Curva National High School received equipment for Table Tennis
-                                    from the generous donor Mr. Guillermo Cabucos Jr. in preparation for the
-                                    upcoming Intramurals and MSAA 2023.</p>
-                                <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
-                            <div class="blog-img position-relative overflow-hidden">
-                                <img class="img-fluid" src="" alt="">
-                                <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
-                                    href="">Web Design</a>
-                            </div>
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="far fa-user text-primary me-2"></i>Curva
-                                        NHS</small>
-                                    <small><i class="far fa-calendar-alt text-primary me-2"></i>05 Oct.,
-                                        2023</small>
-                                </div>
-                                <h4 class="mb-3">Curva NHS celebrates World's Teahcers Day</h4>
-                                <img class="w-100 img-fluid" style="height: 190px" type="image/jpg"
-                                    src="{{ url('images/teachersday.jpg') }}" alt="Image">
-                                <p>The SSLG of Curva National High School together with the rest of the Curvanians
-                                    celebrated and prepared a funny and amazing program for the teachers in
-                                    celebration of the World Teacher's Day.</p>
-                                <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
