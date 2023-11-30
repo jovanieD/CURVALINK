@@ -383,13 +383,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Purpose Textarea
-            var purposeTextarea = document.getElementById('input_32');
-            purposeTextarea.addEventListener('input', function() {
-                var characterCount = this.value.length;
-                var color = characterCount < 150 ? 'red' : 'green';
-                this.style.color = color;
-            });
 
             // Phone Number Input
             var phoneNumberInput = document.getElementById('input_5_full');
