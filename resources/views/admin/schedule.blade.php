@@ -52,7 +52,7 @@
                     var events = [];
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         headerToolbar: {
-                            left: '',
+                            left: 'dayGridMonth,timeGridWeek,timeGridDay',
                             center: 'title',
                             right: 'prev,next'
                         },
