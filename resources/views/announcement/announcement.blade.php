@@ -16,93 +16,87 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-8">
-                    <!-- Blog Detail Start -->
+                    @foreach ($latestAnnouncement as $event)
                     <div class="mb-5">
-                        <img class="img-fluid w-100 rounded mb-5" src="img/blog-1.jpg" alt="">
-                        <h1 class="mb-4">Diam dolor est labore duo ipsum clita sed et lorem tempor duo</h1>
-                        <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut
-                            magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet
-                            amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at
-                            sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et
-                            aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren
-                            sit stet no diam kasd vero.</p>
-                        <p>Voluptua est takimata stet invidunt sed rebum nonumy stet, clita aliquyam dolores
-                            vero stet consetetur elitr takimata rebum sanctus. Sit sed accusam stet sit
-                            nonumy kasd diam dolores, sanctus lorem kasd duo dolor dolor vero sit et. Labore
-                            ipsum duo sanctus amet eos et. Consetetur no sed et aliquyam ipsum justo et,
-                            clita lorem sit vero amet amet est dolor elitr, stet et no diam sit. Dolor erat
-                            justo dolore sit invidunt.</p>
-                        <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor
-                            invidunt at est sanctus sanctus. Clita dolores sit kasd diam takimata justo diam
-                            lorem sed. Magna amet sed rebum eos. Clita no magna no dolor erat diam tempor
-                            rebum consetetur, sanctus labore sed nonumy diam lorem amet eirmod. No at tempor
-                            sea diam kasd, takimata ea nonumy elitr sadipscing gubergren erat. Gubergren at
-                            lorem invidunt sadipscing rebum sit amet ut ut, voluptua diam dolores at
-                            sadipscing stet. Clita dolor amet dolor ipsum vero ea ea eos.</p>
-                        <p>Voluptua est takimata stet invidunt sed rebum nonumy stet, clita aliquyam dolores
-                            vero stet consetetur elitr takimata rebum sanctus. Sit sed accusam stet sit
-                            nonumy kasd diam dolores, sanctus lorem kasd duo dolor dolor vero sit et. Labore
-                            ipsum duo sanctus amet eos et. Consetetur no sed et aliquyam ipsum justo et,
-                            clita lorem sit vero amet amet est dolor elitr, stet et no diam sit. Dolor erat
-                            justo dolore sit invidunt.</p>
+                        <img class="img-fluid w-100 rounded mb-5" src="{{ $event->imageurl}}" alt="">
+                        <h1 class="mb-4">{{ $event->title }}</h1>
+                        <p>
+                            {{ $event->description }}
+                        </p>
                     </div>
 
-                </div>
-    
-                <!-- Sidebar Start -->
-                <div class="col-lg-4">
-                    <!-- Search Form Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3" placeholder="Keyword">
-                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    @endforeach
+
+
+
+                    <div class="modal fade" style="max-width: 100vw;" id="announcementmodal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="modal-event-image" class="mb-3"></div>
+                                        <p id="modal-event-start-datetime"></p>
+                                        <p id="modal-event-description"></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Search Form End -->
-    
-                    <!-- Recent Post Start -->
+                    
+
+                </div>
+                <div class="col-lg-4">
+                    <form method="GET" action="{{ route('searchAnnouncement') }}" class="form-inline">
+                        <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                            <div class="input-group">
+                                <input type="text" class="form-control p-3" name="name" placeholder="Keyword">
+                                <button type="submit" class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Recent Post</h3>
+                            <h3 class="mb-0">Recent Events</h3>
                         </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
-                            </a>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog-2.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
-                            </a>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog-3.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
-                            </a>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
-                            </a>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog-2.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
-                            </a>
-                        </div>
-                        <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="img/blog-3.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Recent Post End -->
-    
-                    <!-- Image Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                        @foreach ($paginatedAnnouncement as $event)
+                            <div class="d-flex rounded overflow-hidden mb-3">
+                                <img class="img-fluid" src="{{ $event->imageurl}}"
+                                    style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                                <a href="" class="h5 tiitle_link fw-semi-bold d-flex align-items-center bg-light px-3 mb-0"
+                                data-bs-toggle="modal" data-bs-target="#announcementmodal"
+                                data-event-title="{{ $event->title }}"
+                                data-event-description="{{ $event->description }}"
+                                data-event-image="{{ $event->imageurl }}" >
+                                    {{ $event->title }}
+                                </a>
+                            </div>
+                        @endforeach
+                        <nav class="d-flex justify-content-center m-2">
+                            <ul class="pagination">
+                                {{ $paginatedAnnouncement->onEachSide(1)->setPath('/announcement')->appends(request()->query())->links('pagination::bootstrap-4') }}
+                            </ul>
+                        </nav>
                     </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            $('.tiitle_link').on('click', function() {
+                var title = $(this).data('event-title');
+                var description = $(this).data('event-description');
+                var image = $(this).data('event-image');
+                var startDatetime = $(this).data('event-start-datetime');
+
+                $('#exampleModalLabel').text(title);
+                $('#modal-event-image').html('<img class="img-fluid w-100" src="' + image + '" alt="">');
+                $('#modal-event-description').text(description);
+            });
+        });
+    </script>
 @endsection

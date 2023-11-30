@@ -35,7 +35,11 @@ Route::get('/offers', [GuestUsersController::class,'showoffers']);
 
 Route::get('/announcement', [GuestUsersController::class,'showannouncement']);
 
+Route::get('/searchAnnouncement', [GuestUsersController::class,'searchAnnouncement'])->name('searchAnnouncement');
+
 Route::get('/event', [GuestUsersController::class,'showevent']);
+
+Route::get('/searchevent', [GuestUsersController::class,'searchEvent'])->name('searchEvent');
 
 Route::get('/contact', [GuestUsersController::class,'showcontact']);
 
@@ -100,7 +104,6 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::get('/settings', [StudentDashboardController::class,'settings']);
 
     Route::get('/profile', [StudentDashboardController::class,'profile']);
-
 });
 
 Route::group(['middleware' => 'auth:teacher'], function (){
@@ -159,9 +162,7 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::post('/view/{user_id}', [TeacherDashboardController::class,'viewRequest']);
 
-
-
-    Route::get('/schedules/goodmoral', [GoodMoralController::class,'index']);
+    Route::get('/schedules/goodmoral', [GoodMoralController::class,'index']);   // not yey
 
     Route::delete('/schedule/{id}', [GoodMoralController::class, 'deleteEvent']);
 
@@ -172,8 +173,6 @@ Route::group(['middleware' => 'auth:teacher'], function (){
     Route::get('/events/search', [GoodMoralController::class, 'search']);
 
     Route::post('/teacher/logout', [TeacherController::class,'logout']);
-
-
 });
 
 
@@ -230,9 +229,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::post('/admin_editrequest/{user_id}', [AdminDashboardController::class,'getRequest']);
 
-    Route::get('/all_Teachers', [ManageTeachersController::class,'showAllTeacher']);
-
-
+    Route::get('/all_Teachers', [ManageTeachersController::class,'showAllTeacher']);  //start manage userss
 
     Route::get('/all_Users', [ManageUsersController::class,'showAllUsers'])->name('adminviewalluser');
 
@@ -250,8 +247,6 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::post('/admin_create_user', [ManageUsersController::class,'createUser']);
 
-
-
     Route::get('/all_Teachers', [ManageTeachersController::class,'showAllTeachers']);
 
     Route::get('/view_teacher/{id}', [ManageTeachersController::class,'showTeacher']);
@@ -261,8 +256,6 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::post('/admin_updateTeacher/{id}', [ManageTeachersController::class,'adminUpdateTeacher']);
 
     Route::delete('/admin_deleteTeacher/{id}', [ManageTeachersController::class,'delete']);
-
-
 
     Route::get('/searchTeaches', [ManageTeachersController::class,'search'])->name('searchTeachers');
 
@@ -279,22 +272,12 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
 
 
-    // Route::get('/showavailablerequests', [ScheduleController::class, 'showAllAvailableRequest']); 
+
 
     // Route::get('/search-requests', [ScheduleController::class, 'searchRequests'])->name('searchRequests');
 
-
     // Route::put('/updateEvent/{eventId}', [ScheduleController::class, 'updateEvent']);
 
-
-
-    // Route::get('/admin', function () {
-    //     return view('admin.home-admin');
-    // });
-
-    // Route::get('/admin/dashboard', function () {
-    //     return view('admin.dashboard');
-    // });
 
     // Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
     // Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');

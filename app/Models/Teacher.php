@@ -36,4 +36,14 @@ class Teacher extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function announcements()
+    {
+        return $this->hasMany(Announcement::class);
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }
