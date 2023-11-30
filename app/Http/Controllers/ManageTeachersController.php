@@ -19,39 +19,39 @@ class ManageTeachersController extends Controller
 {
     public function showAllTeachers()
     {
-        $userRequests = Teacher::select(
-            'id',
-            'firstname',
-            'rank',
-            'lastname',
-            'phonenumber',
-            'subject_handle',
-            'grade_level',
-            'gender',
-            'email',
-            'address'
-        )->get();
-
-        $allRequests = collect($userRequests);
-
-        $sortedRequests = $allRequests->sortByDesc('created_at');
-
-        $currentPage = request()->get('page', 1);
-        $perPage = 10;
-
-        $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
-            $sortedRequests->forPage($currentPage, $perPage),
-            $sortedRequests->count(),
-            $perPage,
-            $currentPage
-        );
-
-        // Use withQueryString to include existing query parameters in pagination links
-        $paginatedRequests = $paginatedRequests->withQueryString();
-
-        return view('admin.allteachers', [
-            'teacher' => $paginatedRequests,
-        ]);
+        {
+            $userRequests = Teacher::select(
+                'id',
+                'firstname',
+                'rank',
+                'lastname',
+                'phonenumber',
+                'subject_handle',
+                'grade_level',
+                'gender',
+                'email',
+                'address',
+                'created_at'
+            )->get();
+    
+            $allRequests = collect($userRequests);
+    
+            $sortedRequests = $allRequests->sortByDesc('created_at');
+    
+            $currentPage = request()->get('page', 1);
+            $perPage = 10;
+    
+            $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
+                $sortedRequests->forPage($currentPage, $perPage),
+                $sortedRequests->count(),
+                $perPage,
+                $currentPage
+            );
+    
+            return view('admin.allteachers', [
+                'teacher' => $paginatedRequests,
+            ]);
+        }
     }
 
     public function showTeacher($id)
@@ -163,9 +163,18 @@ class ManageTeachersController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'email' => 'required',
+                'email' => 'required|email',
                 'firstname' => 'required',
                 'lastname' => 'required',
+                'rank' => 'nullable',
+                'subject_handle' => 'nullable',
+                'grade_level' => 'nullable',
+                'middlename' => 'nullable',
+                'gender' => 'nullable',
+                'phonenumber' => 'nullable',
+                'address' => 'nullable',
+                'municipality' => 'nullable',
+                'province' => 'nullable',
             ]);
 
             $rank = $request->input('rank');
@@ -205,10 +214,10 @@ class ManageTeachersController extends Controller
             return redirect('/all_Teachers');
         } catch (\Exception $e) {
             DB::rollBack();
-            // Log the error or handle it as needed
             return redirect()->back()->with('error', 'Teacher creation failed. Please try again.');
         }
     }
+
 
 
 }

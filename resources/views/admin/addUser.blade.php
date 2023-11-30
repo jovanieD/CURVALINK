@@ -8,16 +8,20 @@
                 <div class="container-xxl flex-grow-1 container-p-y">
 
                     <div class="card mb-4">
-                        <form action="/admin_create_teacher" method="post">
+                        <form action="{{ route('admin_create_user') }}" method="post">
                             @csrf
                             <h5 class="card-header">User's Details</h5>
+                            @if (session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
                             <div class="card-body">
                                 <div class="d-flex align-items-start align-items-sm-center gap-4">
                                     <div class="button-wrapper">
                                         <label for="idnumber" class="form-label">ID Number :</label>
                                         <input class="form-control" type="text" id="idnumber" name="idnumber"
-                                            value=""
-                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
+                                            value="" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
                                     </div>
                                 </div>
                             </div>
@@ -26,9 +30,10 @@
 
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
-                                        <label for="firstname" class="form-label">First Name<span class=" text-danger">*</span></label>
+                                        <label for="firstname" class="form-label">First Name<span
+                                                class=" text-danger">*</span></label>
                                         <input class="form-control" type="text" id="firstname" name="firstname"
-                                            value="" required/>
+                                            value="" required />
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="middlename" class="form-label">Middle Name</label>
@@ -36,14 +41,16 @@
                                             value="" />
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label for="lastname" class="form-label">Last Name <span class=" text-danger">*</span></label>
+                                        <label for="lastname" class="form-label">Last Name <span
+                                                class=" text-danger">*</span></label>
                                         <input class="form-control" type="text" name="lastname" id="lastname"
-                                            value="" required/>
+                                            value="" required />
                                     </div>
                                     <div class="mb-3 col-md-6">
-                                        <label for="email" class="form-label">E-mail<span class=" text-danger">*</span></label>
+                                        <label for="email" class="form-label">E-mail<span
+                                                class=" text-danger">*</span></label>
                                         <input class="form-control" type="email" id="email" name="email"
-                                            value="" placeholder="" required/>
+                                            value="" placeholder="" required />
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="gender" class="form-label">Gender</label>
@@ -54,9 +61,16 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="gradelevel" class="form-label">Grade Level</label>
-                                        <input class="form-control" type="text" name="gradelevel" id="gradelevel"
-                                            value="" />
+                                        <select class="form-select" name="gradelevel" id="gradelevel">
+                                            <option value="7">Grade 7</option>
+                                            <option value="8">Grade 8</option>
+                                            <option value="9">Grade 9</option>
+                                            <option value="10">Grade 10</option>
+                                            <option value="11">Grade 11</option>
+                                            <option value="12">Grade 12</option>
+                                        </select>
                                     </div>
+                                    
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label" for="phoneNumber">Phone Number</label>
                                         <div class="input-group input-group-merge">

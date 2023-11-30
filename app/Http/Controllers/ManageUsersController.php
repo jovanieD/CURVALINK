@@ -10,6 +10,9 @@ use App\Models\Form137Request;
 
 use Auth;
 
+use Illuminate\Database\QueryException;
+use Illuminate\Validation\ValidationException;
+
 use App\Models\User;
 use App\Models\Teacher;
 use App\Models\Schedule;
@@ -17,7 +20,6 @@ use App\Models\Schedule;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
 
 use Illuminate\Support\Facades\Response;
@@ -26,7 +28,6 @@ class ManageUsersController extends Controller
 {
     public function showAllUsers()
     {
-        // Assuming you have a UserRequests model or similar for user requests
         $userRequests = User::select(
             'id',
             'idnumber',
@@ -36,30 +37,31 @@ class ManageUsersController extends Controller
             'gender',
             'phonenumber',
             'email',
-            'address'
+            'address',
+            'created_at'
         )->get();
-
+    
         $allRequests = collect($userRequests);
-
+    
         $sortedRequests = $allRequests->sortByDesc('created_at');
-
+    
         $currentPage = request()->get('page', 1);
         $perPage = 10;
-
+    
         $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
             $sortedRequests->forPage($currentPage, $perPage),
             $sortedRequests->count(),
             $perPage,
             $currentPage
         );
-
-        // Use withQueryString to include existing query parameters in pagination links
+    
         $paginatedRequests = $paginatedRequests->withQueryString();
-
+    
         return view('admin.allusers', [
             'user' => $paginatedRequests,
         ]);
     }
+    
 
     public function showUser($id)
     {
@@ -170,29 +172,37 @@ class ManageUsersController extends Controller
                 'email' => 'required',
                 'firstname' => 'required',
                 'lastname' => 'required',
+                'idnumber' => 'nullable', 
+                'middlename' => 'nullable',
+                'gender' => 'nullable',
+                'gradelevel' => 'nullable',
+                'phonenumber' => 'nullable',
+                'address' => 'nullable',
+                'municipality' => 'nullable',
+                'province' => 'nullable',
             ]);
-
+        
             $idnumber = $request->input('idnumber');
-            $gradelevel = $request->input('gradelevel');
             $firstname = $request->input('firstname');
+            $middlename = $request->input('middlename');
             $lastname = $request->input('lastname');
             $email = $request->input('email');
             $gender = $request->input('gender');
+            $gradelevel = $request->input('gradelevel');
             $phonenumber = $request->input('phonenumber');
             $address = $request->input('address');
             $municipality = $request->input('municipality');
             $province = $request->input('province');
-
-            DB::beginTransaction();
-
+        
             User::updateOrCreate(
-                ['email' => $email], // Assuming email is unique
                 [
+                    'email' => $email,
                     'idnumber' => $idnumber,
-                    'gradelevel' => $gradelevel,
                     'firstname' => $firstname,
+                    'middlename' => $middlename,
                     'lastname' => $lastname,
                     'gender' => $gender,
+                    'gradelevel' => $gradelevel,
                     'phonenumber' => $phonenumber,
                     'address' => $address,
                     'municipality' => $municipality,
@@ -201,14 +211,23 @@ class ManageUsersController extends Controller
                     'profile_image' => '/images/avatar.png',
                 ]
             );
-
+        
             DB::commit();
-
+        
             return redirect('/all_Users');
-        } catch (\Exception $e) {
+        } catch (ValidationException $e) {
+            // Handle validation errors
+            return redirect('/admin_add_user')->with('error', 'Validation failed. Please check your input and try again.');
+        } catch (QueryException $e) {
+            // Handle database query errors
             DB::rollBack();
-            return redirect()->back()->with('error', 'User creation failed. Please try again.');
+            return redirect('/admin_add_user')->with('error', 'User creation failed. Please try again.');
+        } catch (\Exception $e) {
+            // Handle other general exceptions
+            DB::rollBack();
+            return redirect('/admin_add_user')->with('error', 'An unexpected error occurred. Please try again.');
         }
+        
     }
 
 }

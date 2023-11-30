@@ -9,6 +9,15 @@
 
                     <div class="card mb-4">
                         <h5 class="card-header">Teacher's Details</h5>
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form id="" action="/admin_create_teacher" method="post">
                             @csrf
                             <div class="card-body">
@@ -20,9 +29,15 @@
                                     </div>
 
                                     <div class="button-wrapper">
-                                        <label for="grade_level" class="form-label">Grade level handle :</label>
-                                        <input class="form-control" type="grade_level" id="grade_level" name="grade_level"
-                                            value="" />
+                                        <label for="grade_level" class="form-label">Grade Level Handle:</label>
+                                        <select class="form-select" id="grade_level" name="grade_level">
+                                            <option value="Grade 7">Grade 7</option>
+                                            <option value="Grade 8">Grade 8</option>
+                                            <option value="Grade 9">Grade 9</option>
+                                            <option value="Grade 10">Grade 10</option>
+                                            <option value="Grade 11">Grade 11</option>
+                                            <option value="Grade 12">Grade 12</option>
+                                        </select>
                                     </div>
 
                                     <div class="button-wrapper">
@@ -107,16 +122,6 @@
                                         <i class="fa-solid fa-folder-plus me-2"></i>
                                         Create </button>
                                 </div>
-
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
 
 
 

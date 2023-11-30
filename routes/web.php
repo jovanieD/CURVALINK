@@ -245,7 +245,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::get('/admin_add_user', [ManageUsersController::class,'showadduser']);
 
-    Route::post('/admin_create_user', [ManageUsersController::class,'createUser']);
+    Route::post('/admin_create_user', [ManageUsersController::class,'createUser'])->name('admin_create_user');
 
     Route::get('/all_Teachers', [ManageTeachersController::class,'showAllTeachers']);
 

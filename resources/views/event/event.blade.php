@@ -26,8 +26,7 @@
                                     </div>
                                     <div class="p-4">
                                         <div class="d-flex mb-3">
-                                            <small><i
-                                                    class="far fa-calendar-alt text-primary me-2"></i>{{ $event->start_datetime }}</small>
+                                            <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $event->start_datetime }}</small>
                                         </div>
                                         <h4 class="mb-3">{{ $event->title }}</h4>
                                         <p class="text-truncate" style="max-width: 150px;">{{ $event->description }}</p>
@@ -62,7 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col-lg-4">
                     <form method="GET" action="{{ route('searchEvent') }}" class="form-inline">

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('idnumber')->nullable();
             $table->string('gender')->nullable();
             $table->string('gradelevel')->nullable(); 
-            $table->string('address')->default('none');
+            $table->string('address')->nullable(); 
             $table->string("municipality")->nullable();
             $table->string("province")->nullable();
             $table->string("postal")->nullable();
