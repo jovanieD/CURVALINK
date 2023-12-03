@@ -1090,11 +1090,17 @@
                                         </small>
                                     </div>
                                     <h4 class="mb-3">{{ $event->title }}</h4>
-                                    <img class="w-100 img-fluid" style="height: 190px" type="image/jpg"
+                                    <img class="w-100 img-fluid mb-4" style="height: 190px" type="image/jpg"
                                         src="{{ $event->imageurl }}" alt="Image">
-                                    <p>{{ $event->description }}</p>
-                                    <a class="text-uppercase" href="">Read More <i
-                                            class="bi bi-arrow-right"></i></a>
+                                    <p class=" text-truncate" >{{ $event->description }}</p>
+                                    <a class="text-uppercase readmore-link" style="cursor: pointer;"
+                                    data-bs-toggle="modal" data-bs-target="#homemodal"
+                                            data-event-title="{{ $event->title }}"
+                                            data-event-description="{{ $event->description }}"
+                                            data-event-image="{{ $event->imageurl }}"
+                                            data-event-start-datetime="{{ $event->start_datetime }}">
+                                        Read More 
+                                        <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1103,5 +1109,37 @@
                 </div>
             </div>
         </div>
-        <!-- Blog Start -->
+
+        <div class="modal fade" style="max-width: 100vw;" id="homemodal" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-event-image" class="mb-3"></div>
+                        <p id="modal-event-start-datetime"></p>
+                        <p id="modal-event-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                $('.readmore-link').on('click', function() {
+                    var title = $(this).data('event-title');
+                    var description = $(this).data('event-description');
+                    var image = $(this).data('event-image');
+                    var startDatetime = $(this).data('event-start-datetime');
+    
+                    $('#exampleModalLabel').text(title);
+                    $('#modal-event-image').html('<img class="img-fluid w-100" src="' + image + '" alt="">');
+                    $('#modal-event-start-datetime').text(startDatetime);
+                    $('#modal-event-description').text(description);
+                });
+            });
+        </script>
     @endsection
