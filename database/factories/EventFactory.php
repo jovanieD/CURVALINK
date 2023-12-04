@@ -17,11 +17,11 @@ class EventFactory extends Factory
     public function definition(): array
     {
         return [
-            'teacher_id' => fake()->numberBetween(1, 11),
+            'teacher_id' => '21',
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
-            'start_datetime' => now(),
-            'end_datetime' => now(),
+            'event_date' => now(),
+            'imageurl' => '/images/events.png',
             'location' => fake()->city(),   
         ];
     }

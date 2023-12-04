@@ -17,7 +17,7 @@ class AnnouncementFactory extends Factory
     public function definition(): array
     {
         return [
-            'teacher_id' => fake()->numberBetween(1, 11),
+            'teacher_id' => '21',
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(), 
         ];

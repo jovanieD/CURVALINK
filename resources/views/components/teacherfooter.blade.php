@@ -58,6 +58,9 @@
                                     class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                             <a class="text-light mb-2" href="/teacher/offers"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Offers</a>
+                                    <a class="text-light mb-2" href="/teacher/contacts"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contacts</a>
+                            
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -69,8 +72,10 @@
                                     class="bi bi-arrow-right text-primary me-2"></i>Requests</a>
                             <a class="text-light mb-2" href="/teacher/schedules"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Schedule</a>
-                            <a class="text-light mb-2" href="/teacher/postannouncement"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Post Updates</a>
+                            <a class="text-light mb-2" href="/teacher/all_announcements"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Announcements</a>
+                                    <a class="text-light mb-2" href="/teacher/all_events"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Events</a>
                         </div>
                     </div>
                 </div>

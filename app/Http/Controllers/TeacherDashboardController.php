@@ -18,13 +18,18 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\Event;
+
 use Illuminate\Support\Facades\Response;
 
 class TeacherDashboardController extends Controller
 {
 
     public function showhome(){
-            return view('teacher.home-teacher');
+        $latestEvents = Event::latest()->take(3)->get();
+
+
+        return view('teacher.home.home', compact('latestEvents'));
     }
 
     public function teacherprofileimage()

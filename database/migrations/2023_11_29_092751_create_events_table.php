@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('imageurl')->default('/images/events.png');
             $table->text('description');
-            $table->dateTime('start_datetime');
-            $table->dateTime('end_datetime');
+            $table->dateTime('event_date');
             $table->string('location');
             $table->timestamps();
         });

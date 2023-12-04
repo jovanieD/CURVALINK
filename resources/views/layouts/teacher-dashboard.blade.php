@@ -115,12 +115,12 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="ui-accordion.html" class="menu-link">
+                                    <a href="/teacher/all_announcements" class="menu-link">
                                         <div>Announcement</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="ui-alerts.html" class="menu-link">
+                                    <a href="/teacher/all_events" class="menu-link">
                                         <div data-i18n="Alerts">Events</div>
                                     </a>
                                 </li>

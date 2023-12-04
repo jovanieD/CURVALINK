@@ -26,6 +26,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
 use App\Http\Controllers\Auth\RegisterController;
 
+use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\EventController;
+
 
 Route::get('/', [GuestUsersController::class,'index']);
 
@@ -108,17 +111,23 @@ Route::group(['middleware' => 'auth:web'], function () {
 
 Route::group(['middleware' => 'auth:teacher'], function (){
 
-    Route::get('/teacher/about', [TeacherHomePageController::class,'showabout']);
-
-    Route::get('/teacher/offers', [TeacherHomePageController::class,'showoffers']);
-
-    Route::get('/teacher/announcement', [TeacherHomePageController::class,'showannouncments']);
-
-    Route::get('/teacher/events', [TeacherHomePageController::class,'showevents']);
-
-    Route::get('/teacher/contact', [TeacherHomePageController::class,'showcontact']);  //end of the homepage
-
     Route::get('/teacher', [TeacherDashboardController::class,'showhome']);
+
+    Route::get('/teacher_about', [TeacherHomePageController::class,'showabout']);
+
+    Route::get('/teacher_offers', [TeacherHomePageController::class,'showoffers']);
+
+    Route::get('/teacher_all_announcements', [TeacherHomePageController::class,'showannouncments']); 
+
+    Route::get('/teacherannouncementsearch', [TeacherHomePageController::class,'teacherannouncementsearch'])->name('teacherannouncementsearch');
+
+    Route::get('/teacher_all_events', [TeacherHomePageController::class,'showevents']);
+
+    Route::get('/teachereventssearch', [TeacherHomePageController::class,'teachereventssearch'])->name('teachereventssearch');
+
+
+
+    Route::get('/teacher_contact', [TeacherHomePageController::class,'showcontact']);  //end of the homepage
 
     Route::get('/teacherprofileimage', [TeacherDashboardController::class,'teacherprofileimage'])->name('teacherprofileimage');
 
@@ -173,6 +182,37 @@ Route::group(['middleware' => 'auth:teacher'], function (){
     Route::get('/events/search', [GoodMoralController::class, 'search']);
 
     Route::post('/teacher/logout', [TeacherController::class,'logout']);
+
+
+
+    Route::get('/teacher/all_announcements', [AnnouncementController::class, 'show']);
+
+    Route::post('/teacher_deleteannouncement/{id}', [AnnouncementController::class, 'deleteAnnouncement']);
+
+    Route::get('/searchAnnouncement', [AnnouncementController::class, 'searchAnnouncement'])->name('searchAnnouncement');
+
+    Route::get('/teacher/add_announcement', [AnnouncementController::class, 'addAnnouncement']);
+
+    Route::post('/post_announcement', [AnnouncementController::class, 'postAnnouncement']);
+
+    Route::get('/update_announcement/{id}', [AnnouncementController::class, 'editAnnouncement']);
+
+    Route::put('/updateAnnouncement/{id}', [AnnouncementController::class, 'updateAnnouncement'])->name('updateAnnouncement');
+
+    Route::get('/teacher/all_events', [EventController::class, 'show']);
+
+    Route::get('/eventSearch', [EventController::class, 'eventSearch'])->name('eventSearch');
+
+    Route::post('/teacher_deleteevent/{id}', [EventController::class, 'deleteEvent']);
+
+    Route::get('/teacher/add_event', [EventController::class, 'addEvent']);
+
+    Route::post('/post_event', [EventController::class, 'postEvent'])->name('eventpost');
+
+    Route::get('/update_event/{id}', [EventController::class, 'editEvent']);
+
+    Route::put('/update_event/{id}', [EventController::class, 'updateEvent'])->name('update_event');
+
 });
 
 

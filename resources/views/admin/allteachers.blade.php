@@ -15,7 +15,6 @@
                                 <i class="fa-solid fa-arrows-rotate  fa-xl m-1 "></i></a>
                             <a href="/admin_add_teacher"><button id="addScheduleButton" class="btn btn-info m-2">+
                                     Add Teacher</button></a>
-
                         </div>
 
                         <div class="col-md-6">
@@ -86,7 +85,7 @@
                                                         <a class="dropdown-item" href="javascript:void(0);">
                                                             <i class="fas fa-trash text-danger me-3"></i>
                                                             <button type="button" data-bs-toggle="modal"
-                                                                data-bs-target="#admindelete"
+                                                                data-bs-target="#admindelete{{$teacherData->id}}"
                                                                 style="border: none; background-color: transparent; color: inherit;">
                                                                 Delete
                                                             </button>

@@ -22,11 +22,13 @@
                             <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
                                 <div class="blog-item bg-light rounded overflow-hidden">
                                     <div class="blog-img position-relative overflow-hidden">
-                                        <img class="w-100 img-fluid" style="height: 250px" src="{{ $event->imageurl }}" alt="">
+                                        <img class="w-100 img-fluid" style="height: 250px" src="{{ $event->imageurl }}"
+                                            alt="">
                                     </div>
                                     <div class="p-4">
                                         <div class="d-flex mb-3">
-                                            <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $event->start_datetime }}</small>
+                                            <small><i
+                                                    class="far fa-calendar-alt text-primary me-2"></i>{{ $event->event_date }}</small>
                                         </div>
                                         <h4 class="mb-3">{{ $event->title }}</h4>
                                         <p class="text-truncate" style="max-width: 300px;">{{ $event->description }}</p>
@@ -35,7 +37,7 @@
                                             data-event-title="{{ $event->title }}"
                                             data-event-description="{{ $event->description }}"
                                             data-event-image="{{ $event->imageurl }}"
-                                            data-event-start-datetime="{{ $event->start_datetime }}">
+                                            data-event-start-datetime="{{ $event->event_date }}">
                                             Read More <i class="bi bi-arrow-right"></i>
                                         </a>
                                     </div>
@@ -60,7 +62,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -81,6 +83,10 @@
                         </div>
                         @foreach ($paginatedEvents->skip(4) as $event)
                             <div class="d-flex rounded overflow-hidden mb-3">
+                                @php
+                                    $start = \Carbon\Carbon::parse($event['event_date'])->format('H:i, F j,');
+                                @endphp
+
                                 <img class="img-fluid" src="{{ $event->imageurl }}"
                                     style="width: 100px; height: 100px; object-fit: cover;" alt="">
                                 <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0"
@@ -88,7 +94,7 @@
                                     data-event-title="{{ $event->title }}"
                                     data-event-description="{{ $event->description }}"
                                     data-event-image="{{ $event->imageurl }}"
-                                    data-event-start-datetime="{{ $event->start_datetime }}">
+                                    data-event-start-datetime= {{$start}}>
                                     {{ $event->title }}
                                 </a>
                             </div>

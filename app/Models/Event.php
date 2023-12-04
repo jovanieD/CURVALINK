@@ -13,9 +13,8 @@ class Event extends Model
         'teacher_id',
         'title',
         'description',
-        'image_url',
-        'start_datetime', 
-        'end_datetime', 
+        'imageurl',
+        'event_date', 
         'location',
     ];
 
