@@ -419,7 +419,7 @@
                 </div>
                 <div class="col-lg-5">
 
-                    <img class="h-75" src="/images/svg/requestdocs.svg" alt="">
+                    <img class="h-75 w-100" src="/images/svg/requestdocs.svg" alt="">
 
                 </div>
             </div>
