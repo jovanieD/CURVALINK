@@ -1,6 +1,6 @@
-@extends('layouts.teacher-dashboard')
+@extends('layouts.admin-dashboard')
 
-@section('teacher')
+@section('admin')
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
@@ -10,10 +10,10 @@
                 <div class="container mt-4">
                     <div class="row mb-2">
                         <div class="col-md-6">
-                            <a href="/teacher/all_events" class=" m-4">
+                            <a href="/admin/all_events" class=" m-4">
                                 <i class="fa-solid fa-arrow-left fa-xl m-1 bg-warning"></i>
                             </a>
-                            <a href="/teacher/add_event">
+                            <a href="/admin/add_event">
                                 <i class="fa-solid fa-arrows-rotate  fa-xl m-1 "></i></a>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             </script>
                         @endif
 
-                        <form action="/post_event" method="post" enctype="multipart/form-data">
+                        <form action="/adminpost_event" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-4">

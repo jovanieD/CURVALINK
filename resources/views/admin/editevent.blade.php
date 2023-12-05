@@ -1,6 +1,6 @@
-@extends('layouts.teacher-dashboard')
+@extends('layouts.admin-dashboard')
 
-@section('teacher')
+@section('admin')
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
 
@@ -10,10 +10,10 @@
                 <div class="container mt-4">
                     <div class="row mb-2">
                         <div class="col-md-6">
-                            <a href="/teacher/all_events" class=" m-4">
+                            <a href="/admin/all_events" class=" m-4">
                                 <i class="fa-solid fa-arrow-left fa-xl m-1 bg-warning"></i>
                             </a>
-                            <a href="/teacher/add_event">
+                            <a href="/admin/add_event">
                                 <i class="fa-solid fa-arrows-rotate  fa-xl m-1 "></i></a>
                         </div>
                     </div>
@@ -37,8 +37,10 @@
                             </script>
                         @endif
 
-                        <form action="/post_event" method="post" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('adminupdateEvent', $events->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
+
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="card mb-4">
@@ -46,7 +48,7 @@
 
                                             <div>
                                                 <div class="mb-4 d-flex justify-content-center">
-                                                    <img id="selectedImage" src="/images/events.png"
+                                                    <img id="selectedImage" src="{{$events->imageurl}}"
                                                         alt="example placeholder" class="w-100" />
                                                 </div>
                                                 <div class="d-flex justify-content-center">
@@ -73,7 +75,7 @@
                                                     <p class="mb-0 font-weight-bold h5">Title <span class=" text-danger">*</span></p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input required type="text" name="title" id=""
+                                                    <input required type="text" name="title" id="" value="{{$events->title}}"
                                                         class="form-control text-capitalize">
                                                 </div>
                                             </div>
@@ -84,7 +86,7 @@
                                                     <p class="mb-0 font-weight-bold h5">Location <span class=" text-danger">*</span></p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input required type="text" name="location" id=""
+                                                    <input required type="text" name="location" id="" value="{{$events->location}}"
                                                         class="form-control text-capitalize">
                                                 </div>
                                             </div>
@@ -94,7 +96,7 @@
                                                     <p class="mb-0 font-weight-bold h5">Event Date <span class=" text-danger">*</span></p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input required  type="date" name="event_date" id=""
+                                                    <input required  type="date" name="event_date" id="" value="{{ \Carbon\Carbon::parse($events->event_date)->format('Y-m-d') }}"
                                                         class="form-control text-capitalize">
                                                 </div>
                                             </div>
@@ -105,7 +107,7 @@
                                                     <p class="mb-0 font-weight-bold h5">Description <span class=" text-danger">*</span></p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <textarea name="description" id="" class="form-control " style="height: 150px; border-color: #dddddd;"></textarea>
+                                                    <textarea name="description" id="" class="form-control " style="height: 150px; border-color: #dddddd;">{{$events->description}}</textarea>
                                                 </div>
                                             </div>
                                             <hr>
@@ -113,7 +115,7 @@
 
                                             <div class="row justify-content-center">
                                                 <div class="col-sm-6 text-center">
-                                                    <button type="submit" class="btn btn-warning">Post Event</button>
+                                                    <button type="submit" class="btn btn-warning">Update Event</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,9 +125,6 @@
                             </div>
 
                         </form>
-
-
-
                     </div>
                 </section>
 

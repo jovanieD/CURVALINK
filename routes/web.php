@@ -215,17 +215,18 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 });
 
 Route::group(['middleware' => 'auth:admin'], function () {
+
     Route::get('/admin', [AdminHomePageController::class,'showhome']);
 
-    Route::get('/admin-about', [AdminHomePageController::class,'showabout']); //
+    Route::get('/admin_about', [AdminHomePageController::class,'showabout']); //
 
-    Route::get('/admin-offers', [AdminHomePageController::class,'showoffers']); //
+    Route::get('/admin_offers', [AdminHomePageController::class,'showoffers']); //
 
-    Route::get('/admin-announcement', [AdminHomePageController::class,'showannouncments']); //
+    Route::get('/admin_announcement', [AdminHomePageController::class,'showannouncments']); //
 
-    Route::get('/admin-events', [AdminHomePageController::class,'showevents']); //
+    Route::get('/admin_events', [AdminHomePageController::class,'showevents']); //
 
-    Route::get('/admin-contact', [AdminHomePageController::class,'showcontact']); 
+    Route::get('/admin_contact', [AdminHomePageController::class,'showcontact']); 
 
     Route::get('/adminprofileimage', [AdminDashboardController::class,'adminprofileimage'])->name('adminprofileimage');
 
@@ -331,7 +332,18 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::post('/admin_deleteannouncement/{id}', [AnnouncementController::class, 'admindeleteAnnouncement']);
 
+    Route::get('/admin/all_events', [EventController::class, 'adminshow']);
 
+    Route::get('/admineventSearch', [EventController::class, 'admineventSearch'])->name('admineventSearch');
 
-    
+    Route::get('/admin/add_event', [EventController::class, 'adminaddEvent']);
+
+    Route::post('/adminpost_event', [EventController::class, 'adminpostEvent'])->name('adminpost_event');
+
+    Route::post('/admin_deleteevent/{id}', [EventController::class, 'admindeleteEvent']);
+
+    Route::get('/adminupdate_event/{id}', [EventController::class, 'admineditEvent']);
+
+    Route::put('/adminupdateEvent/{id}', [EventController::class, 'adminupdateEvent'])->name('adminupdateEvent');
+
 });

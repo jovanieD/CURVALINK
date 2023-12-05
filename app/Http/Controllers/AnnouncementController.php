@@ -221,7 +221,7 @@ class AnnouncementController extends Controller
 
         $userRequests = Announcement::with('teacher')
             ->where('title', 'like', '%' . $title . '%')
-            ->select('id', 'teacher_id', 'imageurl', 'title', 'description', 'created_at')
+            ->select('id', 'teacher_id', 'admin_id', 'imageurl', 'title', 'description', 'created_at')
             ->orderByDesc('created_at') 
             ->paginate(10); 
 

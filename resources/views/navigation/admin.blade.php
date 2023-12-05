@@ -16,17 +16,17 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
             <a href="/admin" class="nav-item nav-link">Home</a>
-            <a href="/admin-about" class="nav-item nav-link">About</a>
-            <a href="/admin-offers" class="nav-item nav-link">Offers</a>
+            <a href="/admin_about" class="nav-item nav-link">About</a>
+            <a href="/admin_offers" class="nav-item nav-link">Offers</a>
             <div class="nav-item dropdown">
                 <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Updates</a>
                 <div class="dropdown-menu m-0">
-                    <a href="/admin-annoncement" class="dropdown-item">Announcements</a>
-                    <a href="/admin-events" class="dropdown-item">Events</a>
+                    <a href="/admin/all_announcements" class="dropdown-item">Announcements</a>
+                    <a href="/admin/all_events" class="dropdown-item">Events</a>
                 </div>
             </div>
             <a href="/admin/dashboard" class="nav-item nav-link">Requests</a>
-            <a href="/admin/contact" class="nav-item nav-link">Contact</a>
+            <a href="/admin_contact" class="nav-item nav-link">Contact</a>
             @guest
                 @if (Route::has('login'))
                     <a class="btn-grad btn-primary " style="text-decoration: none;"

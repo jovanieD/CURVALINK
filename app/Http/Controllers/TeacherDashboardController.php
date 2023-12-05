@@ -28,7 +28,6 @@ class TeacherDashboardController extends Controller
     public function showhome(){
         $latestEvents = Event::latest()->take(3)->get();
 
-
         return view('teacher.home.home', compact('latestEvents'));
     }
 
