@@ -16,10 +16,14 @@ return new class extends Migration
            $table->string('firstname')->nullable();
            $table->string('middlename')->nullable();
            $table->string('lastname')->nullable();
+           $table->string('rank')->nullable();
+           $table->string('gender')->nullable();
+           $table->string('subject_handle')->nullable();
+           $table->string('grade_level')->nullable();
            $table->string('email')->unique();
            $table->timestamp('email_verified_at')->nullable();
            $table->string('password');
-           $table->string('address')->default('none');
+           $table->string('address')->nullable();
            $table->string("municipality")->nullable();
            $table->string("province")->nullable();
            $table->string("postal")->nullable();

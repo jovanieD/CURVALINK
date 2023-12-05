@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('teacher_id');
+            $table->unsignedBigInteger('teacher_id')->nullable();
+            $table->unsignedBigInteger('admin_id')->nullable();
             $table->string('title');
             $table->string('imageurl')->default('/images/announcement.png');
             $table->text('description');

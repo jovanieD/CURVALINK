@@ -11,6 +11,7 @@ class Event extends Model
 
     protected $fillable = [
         'teacher_id',
+        'admin_id',
         'title',
         'description',
         'imageurl',
@@ -22,5 +23,10 @@ class Event extends Model
     public function teacher()
     {
         return $this->belongsTo(Teacher::class);
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
     }
 }

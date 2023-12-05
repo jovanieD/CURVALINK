@@ -21,6 +21,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ManageTeachersController;
 use App\Http\Controllers\ManageUsersController;
+use App\Http\Controllers\ManageAdminsController;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\TeacherController;
@@ -125,8 +126,6 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::get('/teachereventssearch', [TeacherHomePageController::class,'teachereventssearch'])->name('teachereventssearch');
 
-
-
     Route::get('/teacher_contact', [TeacherHomePageController::class,'showcontact']);  //end of the homepage
 
     Route::get('/teacherprofileimage', [TeacherDashboardController::class,'teacherprofileimage'])->name('teacherprofileimage');
@@ -183,9 +182,7 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::post('/teacher/logout', [TeacherController::class,'logout']);
 
-
-
-    Route::get('/teacher/all_announcements', [AnnouncementController::class, 'show']);
+    Route::get('/teacher/all_announcements', [AnnouncementController::class, 'show']); //announcement
 
     Route::post('/teacher_deleteannouncement/{id}', [AnnouncementController::class, 'deleteAnnouncement']);
 
@@ -198,6 +195,9 @@ Route::group(['middleware' => 'auth:teacher'], function (){
     Route::get('/update_announcement/{id}', [AnnouncementController::class, 'editAnnouncement']);
 
     Route::put('/updateAnnouncement/{id}', [AnnouncementController::class, 'updateAnnouncement'])->name('updateAnnouncement');
+
+
+
 
     Route::get('/teacher/all_events', [EventController::class, 'show']);
 
@@ -212,9 +212,7 @@ Route::group(['middleware' => 'auth:teacher'], function (){
     Route::get('/update_event/{id}', [EventController::class, 'editEvent']);
 
     Route::put('/update_event/{id}', [EventController::class, 'updateEvent'])->name('update_event');
-
 });
-
 
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/admin', [AdminHomePageController::class,'showhome']);
@@ -303,32 +301,37 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::post('/admin_create_teacher', [ManageTeachersController::class,'createTeacher']);
 
+    Route::get('/all_Admins', [ManageAdminsController::class,'showAllAdmins']);
+
+    Route::get('/searchAdmin', [ManageAdminsController::class,'search'])->name('searchAdmin');
+
+    Route::get('/admin_add_admin', [ManageAdminsController::class,'showaddteacher']);
+
+    Route::post('/admin_create_admin', [ManageAdminsController::class,'createAdmin']);
+
+    Route::get('/view_admin/{id}', [ManageAdminsController::class,'showOnlyAdmin']);
+
+    Route::get('/edit_admin/{id}', [ManageAdminsController::class,'updateAdmin']);
+
+    Route::post('/admin_updateAdmin/{id}', [ManageAdminsController::class,'adminUpdateAdmin']);
+
+    Route::delete('/admin_deleteAdmin/{id}', [ManageAdminsController::class,'delete']);
+
+    Route::get('/admin/all_announcements', [AnnouncementController::class, 'adminshow']); 
+
+    Route::get('/adminsearchAnnouncement', [AnnouncementController::class, 'adminsearchAnnouncement'])->name('adminsearchAnnouncement');
+
+    Route::get('/admin/add_announcement', [AnnouncementController::class, 'adminaddAnnouncement']);
+
+    Route::post('/admin_post_announcement', [AnnouncementController::class, 'adminpostAnnouncement']); 
+
+    Route::get('/admin_update_announcement/{id}', [AnnouncementController::class, 'admineditAnnouncement']);
+
+    Route::put('/adminupdateAnnouncement/{id}', [AnnouncementController::class, 'adminupdateAnnouncement'])->name('adminupdateAnnouncement');
+
+    Route::post('/admin_deleteannouncement/{id}', [AnnouncementController::class, 'admindeleteAnnouncement']);
 
 
 
-
-
-
-
-
-
-
-
-    // Route::get('/search-requests', [ScheduleController::class, 'searchRequests'])->name('searchRequests');
-
-    // Route::put('/updateEvent/{eventId}', [ScheduleController::class, 'updateEvent']);
-
-
-    // Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
-    // Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');
-
-    // Route::get('/teacher/register',[RegisterController::class,'showTeacherRegisterForm'])->name('teacher.register-view');
-    // Route::post('/teacher/register',[RegisterController::class,'createTeacher'])->name('teacher.register');
+    
 });
-
-
-// Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
-// Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');
-
-// Route::get('/teacher/register',[RegisterController::class,'showTeacherRegisterForm'])->name('teacher.register-view');
-// Route::post('/teacher/register',[RegisterController::class,'createTeacher'])->name('teacher.register');

@@ -128,14 +128,14 @@
                         </div>
                     </div>
 
+
                     <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
-                        <div class=" rounded d-flex align-items-center justify-content-center mb-3"
-                            style="width: 60px; height: 60px; background-color:#ffc107;">
-                            <img style="width: 100px; height: 100px;"src="/images/svg/email.svg" alt="">
+                        <div class=" d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px; background-color:#ffc107;">
+                            <img style="width: 100px; height: 100px; "src="/images/svg/email.svg" alt="">
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Contact us through our Email</h5>
-                            <h6 class="text-primary mb-0 fs-5">curvanationalhighschool@gmail.com</h6>
+                        <div class="ps-4" style="text-wrap: wrap; max-width: 70%">
+                            <h5 class="mb-2" style="text-wrap: wrap;">Contact us through our Email</h5>
+                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">curvanationalhighschool@gmail.com</h4>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                                 opportunities than lower-performing schools.
                             </p>
                         </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.3s">
                             <div class=" rounded d-flex align-items-center justify-content-center mb-3"
                                 style="width: 60px; height: 60px; background-color:#ffc107;">
                                 <img style="width: 100px; height: 100px;"src="/images/svg/award.svg" alt="">
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
+                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.5s" style="min-height: 350px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" type="image/jpg"
                             src="{{ url('images/makalikasan.jpg') }}" alt="Image" data-wow-delay="0.1s"
@@ -209,7 +209,7 @@
                                 other educators to plan teaching methods.
                             </p>
                         </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
                             <div class=" rounded d-flex align-items-center justify-content-center mb-3"
                                 style="width: 60px; height: 60px; background-color:#ffc107;">
                                 <img style="width: 70px; height: 70px;"src="/images/svg/support.svg" alt="">
@@ -257,7 +257,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.6s">
+                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.4s">
                     <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
                         style="z-index: 1;">
 
@@ -274,7 +274,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.9s">
+                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.5s">
                     <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
                         style="z-index: 1;">
                         <div class="service-icon">
@@ -290,7 +290,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow zoomIn" data-wow-delay="0.3s">
+                <div class="col-lg-6 wow zoomIn" style="height: auto" data-wow-delay="0.3s">
                     <div class="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
                         style="z-index: 1;">
                         <div class="service-icon">
@@ -321,7 +321,7 @@
                 <h1 class="mb-0">We Offers Different Academic Strands Track</h1>
             </div>
             <div class="row g-0">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.2s">
                     <div class="bg-light rounded">
                         <div class="border-bottom py-4 px-5 mb-4">
                             <h4 class="text-primary mb-1">ABM</h4>
@@ -361,7 +361,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.5s">
                     <div class="bg-light rounded">
                         <div class="border-bottom py-4 px-5 mb-4">
                             <h4 class="text-primary mb-1">GAS</h4>
@@ -406,14 +406,14 @@
                     <p class="mb-4">If you need to request a document feel free to send us a request and fill
                         in your information in the form for our basis. You can request this following document:
                         Form 137, Good Moral and Certificate of Enrollment.</p>
-                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.2s">
                         <div class=" rounded d-flex align-items-center justify-content-center mb-3"
                             style="width: 60px; height: 60px; background-color:#ffc107;">
                             <img style="width: 100px; height: 100px;"src="/images/svg/email.svg" alt="">
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Contact us through our Email</h5>
-                            <h6 class="text-primary mb-0 fs-5">curvanationalhighschool@gmail.com</h6>
+                        <div class="ps-4" style="text-wrap: wrap; max-width: 70%">
+                            <h5 class="mb-2" style="text-wrap: wrap;">Contact us through our Email</h5>
+                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">curvanationalhighschool@gmail.com</h4>
                         </div>
                     </div>
                 </div>

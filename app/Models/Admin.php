@@ -16,18 +16,34 @@ class Admin extends Authenticatable
     protected $guard = "admin";
 
     protected $fillable = [
-        'name',
+        'firstname',
+        'middlename',
+        'lastname',
         'email',
         'password',
         'profile_image',
+        'subject_handle',
+        'grade_level',
         'address',
         'municipality',
         'province',
+        'rank',
         'phonenumber',
+        'gender',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
+
+    public function announcements()
+    {
+        return $this->hasMany(Announcement::class);
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }

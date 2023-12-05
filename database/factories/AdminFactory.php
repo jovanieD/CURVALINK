@@ -20,6 +20,10 @@ class AdminFactory extends Factory
         return [
             'firstname' => fake()->firstNameMale(),
             'lastname' => fake()->lastName(),
+            'gender'=> 'Male',
+            'rank' => fake()->randomElement(['Teacher I', 'Teacher II', 'Teacher III']),
+            'subject_handle' => fake()->word(),
+            'grade_level' => fake()->randomElement(['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5', 'Grade 6']),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => '$2y$10$zu/uskLIl.VKZnFluiBDWO82cAM8gBM/FcGjlEu6eHvcUxb9GATYW', // P@$$word

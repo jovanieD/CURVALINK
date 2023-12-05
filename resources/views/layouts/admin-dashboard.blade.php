@@ -77,12 +77,8 @@
                             </a>
                         </li>
 
-                        <!-- Layouts -->
-
-
-
                         {{-- Updates --}}
-                        {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -91,20 +87,19 @@
                             </a>
                             <ul class="menu-sub">
                                 <li class="menu-item">
-                                    <a href="ui-accordion.html" class="menu-link">
-                                        <div>Announcement</div>
+                                    <a href="/admin/all_announcements" class="menu-link">
+                                        <div>Announcements</div>
                                     </a>
                                 </li>
-                                <li class="menu-item">
+                                <li class="/admin/all_events">
                                     <a href="ui-alerts.html" class="menu-link">
                                         <div data-i18n="Alerts">Events</div>
                                     </a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
 
-                        <li class="menu-header small text-uppercase">
-                            <span class="menu-header-text"></span>
+                        <li class="menu-header small text-uppercase"><span class="menu-header-text">MANAGES CURVALINK</span>
                         </li>
                         <li class="menu-item">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -113,13 +108,18 @@
                             </a>
                             <ul class="menu-sub ">
                                 <li class="menu-item">
-                                    <a href="/all_Teachers" class="menu-link">
-                                        <div data-i18n="Account">Teachers</div>
+                                    <a href="/all_Admins" class="menu-link">
+                                        <div data-i18n="Notifications">Admins</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="/all_Users" class="menu-link">
                                         <div data-i18n="Notifications">Students</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/all_Teachers" class="menu-link">
+                                        <div data-i18n="Account">Teachers</div>
                                     </a>
                                 </li>
                             </ul>

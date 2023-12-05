@@ -115,7 +115,7 @@ class ManageUsersController extends Controller
 
             return redirect('/all_Users')->with('success', 'Profile information updated successfully');
         } catch (\Exception $e) {
-            // return redirect('/all_Users')with('error', 'An error occurred while updating the profile: ' );
+            return redirect('/all_Users')->with('error', 'An error occurred while updating the profile' );
         }
     }
 

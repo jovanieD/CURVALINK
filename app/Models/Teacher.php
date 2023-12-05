@@ -20,6 +20,7 @@ class Teacher extends Authenticatable
         'firstname',
         'middlename',
         'lastname',
+        'rank',
         'email',
         'password',
         'profile_image',

@@ -11,6 +11,7 @@ class Announcement extends Model
 
     protected $fillable = [
         'teacher_id', 
+        'admin_id', 
         'title',
         'imageurl',
         'description',
@@ -19,5 +20,10 @@ class Announcement extends Model
     public function teacher()
     {
         return $this->belongsTo(Teacher::class);
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
     }
 }
