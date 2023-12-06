@@ -38,11 +38,11 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
-        \App\Models\Announcement::factory(20)->create();
+        // \App\Models\Announcement::factory(20)->create();
 
-        \App\Models\CertificationRequest::factory(3)->create();
-        \App\Models\GoodMoralRequest::factory(3)->create();
-        \App\Models\Form137Request::factory(3)->create();
+        // \App\Models\CertificationRequest::factory(3)->create();
+        // \App\Models\GoodMoralRequest::factory(3)->create();
+        // \App\Models\Form137Request::factory(3)->create();
 
         // Schedule::factory(20)->create();
     }
