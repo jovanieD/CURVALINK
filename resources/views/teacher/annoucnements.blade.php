@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <form method="GET" action="{{ route('searchAnnouncement') }}" class="form-inline">
+                            <form method="GET" action="{{ route('teachersearchAnnouncement') }}" class="form-inline">
                                 @csrf
                                 <div class="input-group mb-3">
                                     <input type="text" id="searchInput" name="name" class="form-control" placeholder="Search by Title">

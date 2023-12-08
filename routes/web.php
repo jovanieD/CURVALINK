@@ -37,7 +37,7 @@ Route::get('/about', [GuestUsersController::class,'showabout']);
 
 Route::get('/offers', [GuestUsersController::class,'showoffers']);
 
-Route::get('/announcement', [GuestUsersController::class,'showannouncement']);
+Route::get('/announcements', [GuestUsersController::class,'showannouncement']);
 
 Route::get('/searchAnnouncement', [GuestUsersController::class,'searchAnnouncement'])->name('searchAnnouncement');
 
@@ -186,7 +186,7 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::post('/teacher_deleteannouncement/{id}', [AnnouncementController::class, 'deleteAnnouncement']);
 
-    Route::get('/searchAnnouncement', [AnnouncementController::class, 'searchAnnouncement'])->name('searchAnnouncement');
+    Route::get('/teachersearchAnnouncement', [AnnouncementController::class, 'searchAnnouncement'])->name('teachersearchAnnouncement');
 
     Route::get('/teacher/add_announcement', [AnnouncementController::class, 'addAnnouncement']);
 

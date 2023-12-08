@@ -21,7 +21,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Updates</a>
                 <div class="dropdown-menu m-0">
-                    <a href="/announcement" class="dropdown-item">Announcements</a>
+                    <a href="/announcements" class="dropdown-item">Announcements</a>
                     <a href="/event" class="dropdown-item">Events</a>
                 </div>
             </div>

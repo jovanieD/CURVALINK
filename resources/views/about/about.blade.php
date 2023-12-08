@@ -939,8 +939,4 @@
         </div>
     </div>
 
-    {{-- ACHIEVEMENTS END --}}
 @endsection
-apps-fileview.texmex_20231109.01_p2
-about.blade.php
-Displaying about.blade.php.
