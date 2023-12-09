@@ -212,9 +212,6 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::put('/updateAnnouncement/{id}', [AnnouncementController::class, 'updateAnnouncement'])->name('updateAnnouncement');
 
-
-
-
     Route::get('/teacher/all_events', [EventController::class, 'show']);
 
     Route::get('/eventSearch', [EventController::class, 'eventSearch'])->name('eventSearch');

@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\RedirectResponse;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CreateAccount;
+
 use Illuminate\Support\Facades\Response;
 
 class ManageUsersController extends Controller
@@ -211,6 +214,8 @@ class ManageUsersController extends Controller
                     'profile_image' => '/images/avatar.png',
                 ]
             );
+
+            Mail::to($email)->send(new CreateAccount( $email, $password ));
         
             DB::commit();
         
