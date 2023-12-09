@@ -167,6 +167,18 @@ class ManageUsersController extends Controller
         return view('admin.addUser');
     }
 
+    private function generateUniquePassword($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $password = '';
+    
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $password .= $characters[$index];
+        }
+    
+        return $password;
+    }
+
 
     public function createUser(Request $request)
     {
@@ -184,6 +196,8 @@ class ManageUsersController extends Controller
                 'municipality' => 'nullable',
                 'province' => 'nullable',
             ]);
+
+            $password = $this->generateUniquePassword();
         
             $idnumber = $request->input('idnumber');
             $firstname = $request->input('firstname');
@@ -210,7 +224,7 @@ class ManageUsersController extends Controller
                     'address' => $address,
                     'municipality' => $municipality,
                     'province' => $province,
-                    'password' => '$2y$10$zu/uskLIl.VKZnFluiBDWO82cAM8gBM/FcGjlEu6eHvcUxb9GATYW', // P@$$word
+                    'password' => $password,
                     'profile_image' => '/images/avatar.png',
                 ]
             );
