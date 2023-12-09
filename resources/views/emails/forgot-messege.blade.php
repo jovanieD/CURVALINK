@@ -55,6 +55,8 @@
                                     <td>
                                         <h2><span style="font-weight: bold;">Email :  </span> {{$email}}</h2>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
                                         <h2><span style="font-weight: bold;">Password :  </span> {{$password}}</h2>
                                     </td>
