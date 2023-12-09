@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
+use App\Models\Teacher;
+use App\Models\User;
 
 use App\Models\Announcement;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ForgotEmail;
 
 class GuestUsersController extends Controller
 {
@@ -142,4 +148,57 @@ class GuestUsersController extends Controller
     public function  showcontact(){
         return view('contact.contact');
     }
+
+    public function showforgot(){
+        return view('auth.forgotpassword');
+    }
+
+    private function generateUniquePassword($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $password = '';
+    
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $password .= $characters[$index];
+        }
+    
+        return $password;
+    }
+
+    public function forgotpassword(Request $request){
+        try {
+            $email = $request->input('email');
+    
+            $teacher = Teacher::where('email', $email)->first();
+            $user = User::where('email', $email)->first();
+    
+            if ($teacher || $user) {
+
+                $password = $this->generateUniquePassword();
+
+                if ($teacher) {
+                    $teacher->update(['password' => Hash::make($password)]);
+                } else {
+                    $user->update(['password' => Hash::make($password)]);
+                }
+    
+                Mail::to($email)->send(new ForgotEmail( $email, $password ));
+                $responseMessage = 'Password reset email sent. Please check your email.';
+                $responseType = 'alert-success';
+            } else {
+                $responseMessage = 'This email does not belong to any users.';
+                $responseType = 'alert-danger';
+            }
+        } catch (\Exception $e) {
+            $responseMessage = 'An error occurred while processing your request.';
+            $responseType = 'alert-danger';
+        }
+    
+        if ($responseType === 'alert-success') {
+            return redirect()->route('forgot_password')->with('success', $responseMessage);
+        } else {
+            return redirect()->route('forgot_password')->with('error', $responseMessage);
+        }
+    }
+    
 }

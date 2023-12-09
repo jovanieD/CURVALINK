@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="mt-2">
                                             <button type="submit" class="btn btn-warning me-2">Save changes</button>
-                                            <a href="/student/profile" class=" text-white">
+                                            <a href="/profile" class=" text-white">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="">Cancel</button>
                                             </a>

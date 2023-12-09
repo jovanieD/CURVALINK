@@ -30,6 +30,16 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\EventController;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ForgotEmail;
+
+
+// Route::get('/forgot_password', function () {
+//     return view('auth.passwords.forgotpassword');
+
+//     // Mail::to('jovanie.dasian@student.passerellesnumeriques.org')->send(new ForgotEmail());
+
+// });
 
 Route::get('/', [GuestUsersController::class,'index']);
 
@@ -52,6 +62,12 @@ Route::get('/redirect-to-certificate', [GuestUsersController::class,'getcertific
 Route::get('/redirect-to-goodmoral', [GuestUsersController::class,'getgoodmoral'])->name('redirect.to.goodmoral');
 
 Route::get('/redirect-to-form', [GuestUsersController::class,'getform'])->name('redirect.to.form');
+
+
+Route::get('/forgot_password', [GuestUsersController::class,'showforgot'])->name('forgot_password');
+
+Route::post('/forgot_password', [GuestUsersController::class,'forgotpassword']);
+
 
 
 // Route::post('/sendemail', [StudentDashboardController::class,'sendEmail']);
