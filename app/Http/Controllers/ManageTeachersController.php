@@ -159,6 +159,18 @@ class ManageTeachersController extends Controller
         return view('admin.addTeacher');
     }
 
+    private function generateUniquePassword($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $password = '';
+    
+        for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $password .= $characters[$index];
+        }
+    
+        return $password;
+    }
+
     public function createTeacher(Request $request)
     {
         try {
@@ -192,6 +204,8 @@ class ManageTeachersController extends Controller
 
             DB::beginTransaction();
 
+            $password = $this->generateUniquePassword();
+
             Teacher::create([
                 'rank' => $rank,
                 'subject_handle' => $subject_handle,
@@ -205,9 +219,11 @@ class ManageTeachersController extends Controller
                 'address' => $address,
                 'municipality' => $municipality,
                 'province' => $province,
-                'password' => '$2y$10$zu/uskLIl.VKZnFluiBDWO82cAM8gBM/FcGjlEu6eHvcUxb9GATYW', // P@$$word
+                'password' => $password,
                 'profile_image' => '/images/avatar.png',
             ]);
+
+            Mail::to($email)->send(new CreateAccount( $email, $password ));
 
             DB::commit();
 
