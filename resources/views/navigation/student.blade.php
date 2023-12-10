@@ -46,7 +46,7 @@
                         {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                         <span class="m-2">
                             <img style="border-radius: 25px; height: 30px; width: 30px;"
-                                src="{{Auth::user()->profile_image}}" type="image/jpeg" alt="">
+                                src="{{route('userprofileimage') }}" type="image/jpeg" alt="">
                         </span>
                     </a>
 
@@ -58,7 +58,7 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 me-3">
                                         <div class="avatar avatar-online">
-                                            <img src="{{Auth::user()->profile_image }}" alt class="rounded-circle"
+                                            <img src="{{route('userprofileimage') }}" alt class="rounded-circle"
                                                 style="width: 60px; height:60px;" type="image/jpeg" />
                                         </div>
                                     </div>

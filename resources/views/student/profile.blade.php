@@ -15,14 +15,14 @@
                             <script>
                               setTimeout(function() {
                                   location.reload();
-                              }, 4000); // 5000 milliseconds (5 seconds)
+                              }, 4000); 
                           </script>
                         @endif
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="card mb-4">
                                     <div class="card-body text-center">
-                                        <img src="{{$profile_image}}" alt="avatar"
+                                        <img src="{{route('userprofileimage') }}" alt="avatar"
                                             style="border-radius: 200px; height: 300px; width: 300px;">
                                         <h5 class="my-3">{{ $firstname }} {{ $lastname }}</h5>
                                         <p class="text-muted mb-1">Student</p>
