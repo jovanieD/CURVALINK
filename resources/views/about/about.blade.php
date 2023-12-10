@@ -68,6 +68,117 @@
     </div>
     {{-- <!-- About End --> --}}
 
+    {{-- VISION AND MISSION START --}}
+
+
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 ">
+
+            <div class="section-title position-relative pb-3 mb-5">
+                <h5 class="fw-bold text-primary text-uppercase">VISION AND MISSION</h5>
+            </div>
+
+            <div class="row mb-5">
+                <!-- Vision Card -->
+                <div class="col-md mb-3">
+                    <div class="card shadow mb-3 h-100">
+                        <div class="row g-0 d-flex align-items-center">
+                            <div class="col-md-4">
+                                <img class="card-img card-img-left h-100" src="/images/svg/mission.svg" alt="Card image" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h1 class="mb-3">Vision</h1>
+                                    <h5 class="card-title">
+                                        We dream of Filipinos who passionately love their country and
+                                        whose competencies and values enable them to realize their full potential and
+                                        contribute meaningfully to building the nation.
+                                    </h5>
+                                    <h5 class="card-title">
+                                        As a learner-centered public institution, the Department of Education continuously
+                                        improves itself to better service its stakeholders.
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="col-md mb-3">
+                    <div class="card shadow mb-3 h-100">
+                        <div class="row g-0 d-flex align-items-center">
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h1 class="mb-3">Mission</h1>
+                                    <h5 class="card-title">
+                                        To protect and promote the right of every Filipino to quality, equitable,
+                                        culture-based, and complete basic education where;
+                                    </h5>
+                                    <h5 class="card-title">
+                                        Students learn in a child-friendly, gender-sensitive, safe, and motivating
+                                        environment
+                                        Teachers facilitate learning and constantly nurture every learner
+                                        Administrators and staff, as stewards of the institution ensure an enabling and
+                                        supportive environment for effective learning to happen
+                                        Family, community and other stakeholders are actively engaged and share
+                                        responsibility for developing lifelong learners.
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img class="card-img card-img-right h-100" src="/images/svg/vission.svg" alt="Card image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- VISION AND MISSION END --}}
+
+    {{-- CURVA HYMN START --}}
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Martin M. Salimbangon National High School</h5>
+                <h1 class="mb-0">HYMN</h1>
+            </div>
+
+            <div class="row justify-content-md-center">
+                <div class="col-lg-8 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center  h-auto bg-white rounded shadow position-relative"
+                        style="z-index: 1;">
+                        <h1 class="mb-3"> <br> Curva Hymn</h1>
+                        <p class="m-0 text-center" style="max-width: 200px">I: <br>
+                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
+                            From Barangay Curva of Medellin,
+                            Grows a school that will never go,
+                            Education is the name it uphold,
+                            The future of her children she molds.
+                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
+                            <br> Chorus: <br>
+                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
+                            As children you nurtured us, <br>
+                            Our love and strength will continue, <br>
+                            Though our road to life will soon be long, <br>
+                            We live the portals of this song. <br>
+                            <br>
+                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
+                            (Repeat chorus 2x)
+                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
+                            <br><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- CURVA HYMN END --}}
+
+    {{-- <!-- ORGANIZATIONAL CHART End --> --}}
+
     <div class="container-fluid py-5 wow fadeInUp " data-wow-delay="0.1s">
         <div class="container">
 
@@ -103,7 +214,7 @@
         </div>
     </div>
 
-    {{-- <!-- ORGANIZATIONAL CHART End --> --}}
+
 
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -116,8 +227,8 @@
 
                 <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.3s">
                     <div class="card shadow-sm">
-                        <img class="card-img-top" type="image/jpg" src="{{ url('images/winefreda.jpg') }}" alt="Image"
-                            data-wow-delay="0.9s" alt="Card image cap">
+                        <img class="card-img-top" type="image/jpg" src="{{ url('images/winefreda.jpg') }}"
+                            alt="Image" data-wow-delay="0.9s" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Winefreda S. Ursal</h5>
                             <p class="card-text">Math Teacher</p>
@@ -496,116 +607,6 @@
         </div>
     </div>
 
-    {{-- VISION AND MISSION START --}}
-
-
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 ">
-
-            <div class="section-title position-relative pb-3 mb-5">
-                <h5 class="fw-bold text-primary text-uppercase">VISION AND MISSION</h5>
-            </div>
-
-            <div class="row mb-5">
-                <!-- Vision Card -->
-                <div class="col-md mb-3">
-                    <div class="card shadow mb-3 h-100">
-                        <div class="row g-0 d-flex align-items-center">
-                            <div class="col-md-4">
-                                <img class="card-img card-img-left h-100" src="/images/svg/mission.svg"
-                                    alt="Card image" />
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body text-center">
-                                    <h1 class="mb-3">Vision</h1>
-                                    <h5 class="card-title">
-                                        We dream of Filipinos who passionately love their country and
-                                        whose competencies and values enable them to realize their full potential and
-                                        contribute meaningfully to building the nation.
-                                    </h5>
-                                    <h5 class="card-title">
-                                        As a learner-centered public institution, the Department of Education continuously
-                                        improves itself to better service its stakeholders.
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mission Card -->
-                <div class="col-md mb-3">
-                    <div class="card shadow mb-3 h-100">
-                        <div class="row g-0 d-flex align-items-center">
-                            <div class="col-md-8">
-                                <div class="card-body text-center">
-                                    <h1 class="mb-3">Mission</h1>
-                                    <h5 class="card-title">
-                                        To protect and promote the right of every Filipino to quality, equitable,
-                                        culture-based, and complete basic education where;
-                                    </h5>
-                                    <h5 class="card-title">
-                                        Students learn in a child-friendly, gender-sensitive, safe, and motivating
-                                        environment
-                                        Teachers facilitate learning and constantly nurture every learner
-                                        Administrators and staff, as stewards of the institution ensure an enabling and
-                                        supportive environment for effective learning to happen
-                                        Family, community and other stakeholders are actively engaged and share
-                                        responsibility for developing lifelong learners.
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img class="card-img card-img-right h-100" src="/images/svg/vission.svg"
-                                    alt="Card image" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- VISION AND MISSION END --}}
-
-    {{-- CURVA HYMN START --}}
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Martin M. Salimbangon National High School</h5>
-                <h1 class="mb-0">HYMN</h1>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-lg-8 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center  h-auto bg-white rounded shadow position-relative"
-                        style="z-index: 1;">
-                        <h1 class="mb-3"> <br> Curva Hymn</h1>
-                        <p class="m-0 text-center" style="max-width: 200px">I: <br>
-                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
-                            From Barangay Curva of Medellin,
-                            Grows a school that will never go,
-                            Education is the name it uphold,
-                            The future of her children she molds.
-                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
-                            <br> Chorus: <br>
-                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
-                            As children you nurtured us, <br>
-                            Our love and strength will continue, <br>
-                            Though our road to life will soon be long, <br>
-                            We live the portals of this song. <br>
-                            <br>
-                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
-                            (Repeat chorus 2x)
-                            <i class="fa fa-music bouncing-icon" style="color: #ffc107" aria-hidden="true"></i>
-                            <br><br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- CURVA HYMN END --}}
 
     {{-- ACHIEVEMENTS START --}}
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -645,14 +646,20 @@
     </div>
 
     <style>
-
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateY(0);
             }
+
             40% {
                 transform: translateY(-30px);
             }
+
             60% {
                 transform: translateY(-15px);
             }
