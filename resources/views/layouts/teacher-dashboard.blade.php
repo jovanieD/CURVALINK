@@ -226,7 +226,7 @@
                                             </li>
 
                                             <li>
-                                                <a class="dropdown-item" href="/teacher/post">
+                                                <a class="dropdown-item" href="/teacher/add_announcement">
                                                     <i class="fa fa-tasks m-2 text-warning"></i>
                                                     <span class="align-middle">Post Update</span>
                                                 </a>
