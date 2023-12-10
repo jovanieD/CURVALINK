@@ -47,7 +47,7 @@
                                             <div class="mb-3 col-md-6">
                                                 <label for="idnumber" class="form-label">ID Number :</label>
                                                 <input class="form-control" type="text" id="idnumber" name="idnumber"
-                                                    value="" oninput="this.value = this.value.replace(/[^0-9]/g, '');"  required />
+                                                value="{{ Auth::user()->idnumber }}" oninput="this.value = this.value.replace(/[^0-9]/g, '');"  required />
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="firstName" class="form-label">First Name</label>
@@ -115,7 +115,7 @@
                                             <div class="mb-3 col-md-6">
                                                 <label for="zipCode" class="form-label">Province</label>
                                                 <input type="text" class="form-control" id="zipCode"
-                                                    name="province" placeholder="{{ Auth::user()->province }}"
+                                                    name="province" value="{{ Auth::user()->province }}"
                                                     required />
                                             </div>
                                         </div>

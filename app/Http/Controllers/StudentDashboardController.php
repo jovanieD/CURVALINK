@@ -267,12 +267,12 @@ class StudentDashboardController extends Controller
 
                 if ($request->hasFile('profile_picture')) {
                     $profilePicture = $request->file('profile_picture');
-
-                    if ($profilePicture->isValid() ) {
-                        $image = $profilePicture->hashName();
-                        $imageName = '/storage/images/' . $image;
-
-                        $profilePicture->storeAs('public/images', $image);
+                
+                    if ($profilePicture->isValid()) {
+                        $imageName = $profilePicture->hashName();
+                        
+                        $profilePicture->move(public_path('profiles'), $imageName);
+                
                     } else {
                         return redirect('/profile')->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
                     }
