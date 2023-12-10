@@ -210,7 +210,36 @@ class StudentDashboardController extends Controller
 
     public function profile()
     {
-        return view('student.profile');
+        $user = Auth::user();
+
+        $firstname = $user->firstname;
+        $middlename = $user->middlename;
+        $lastname = $user->lastname;
+        $email = $user->email;
+        $idnumber = $user->idnumber;
+        $gender = $user->gender;
+        $gradelevel = $user->gradelevel;
+        $address = $user->address;
+        $municipality = $user->municipality;
+        $province = $user->province;
+        $phonenumber = $user->phonenumber;
+        $profile_image = $user->profile_image;
+    
+        // Pass the information to the view
+        return view('student.profile', compact(
+            'firstname',
+            'middlename',
+            'lastname',
+            'email',
+            'idnumber',
+            'gender',
+            'gradelevel',
+            'address',
+            'municipality',
+            'province',
+            'phonenumber',
+            'profile_image'
+        ));
     }
 
     public function updateProfile(Request $request)
@@ -221,21 +250,23 @@ class StudentDashboardController extends Controller
                 if (!$user) {
                     return response()->json(['error' => 'User not found'], 404);
                 }
-
+                
+                $idnumber = $request->input('idnumber');
                 $middlename = $request->input('middlename');
                 $firstname = $request->input('firstname');
                 $lastname = $request->input('lastname');
+                $gender = $request->input('gender');
+                $gradelevel = $request->input('gradelevel');
                 $email = $request->input('email');
                 $phonenumber = $request->input('phonenumber');
                 $address = $request->input('address');
                 $municipality = $request->input('municipality');
                 $province = $request->input('province');
-                $imageName = $user->profile_image; // Initialize with the current image name
+                $imageName = $user->profile_image; 
 
                 if ($request->hasFile('profile_picture')) {
                     $profilePicture = $request->file('profile_picture');
 
-                    // Ensure that the file is an image
                     if ($profilePicture->isValid() ) {
                         $image = $profilePicture->hashName();
                         $imageName = '/storage/images/' . $image;
@@ -249,7 +280,10 @@ class StudentDashboardController extends Controller
                 $user->update([
                     'first' => $firstname,
                     'middlename' => $middlename,
+                    'idnumber' => $idnumber,
                     'lastname' => $lastname,
+                    'gender' => $gender,
+                    'gradelevel' => $gradelevel,
                     'email' => $email,
                     'phonenumber' => $phonenumber,
                     'address' => $address,

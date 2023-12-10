@@ -91,6 +91,8 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::delete('/deleterequest/{id}', [StudentDashboardController::class,'deleteRequest']);
 
+    Route::get('/profile', [StudentDashboardController::class,'profile']);
+
     Route::get('/editProfile', [AccountController::class,'editProfile']);
 
     Route::post('/updateProfile', [StudentDashboardController::class,'updateProfile']);
@@ -123,7 +125,6 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::get('/settings', [StudentDashboardController::class,'settings']);
 
-    Route::get('/profile', [StudentDashboardController::class,'profile']);
 });
 
 Route::group(['middleware' => 'auth:teacher'], function (){

@@ -57,8 +57,24 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="gradelevel" class="form-label">Grade Level</label>
-                                        <input class="form-control" type="text" name="gradelevel" id="gradelevel"
-                                            value="{{ $user->lastname }}" />
+                                        <select class="form-control" id="gradelevel" name="gradelevel">
+                                            <option value="" selected disabled>Please select</option>
+                                            <option value="Grade 6" {{ $user->gradelevel == 'Grade 6' ? 'selected' : '' }}>
+                                                Grade 6</option>
+                                            <option value="Grade 7" {{ $user->gradelevel == 'Grade 7' ? 'selected' : '' }}>
+                                                Grade 7</option>
+                                            <option value="Grade 8" {{ $user->gradelevel == 'Grade 8' ? 'selected' : '' }}>
+                                                Grade 8</option>
+                                            <option value="Grade 9" {{ $user->gradelevel == 'Grade 9' ? 'selected' : '' }}>
+                                                Grade 9</option>
+                                            <option value="Grade 10"
+                                                {{ $user->gradelevel == 'Grade 10' ? 'selected' : '' }}>Grade 10</option>
+                                            <option value="Grade 11"
+                                                {{ $user->gradelevel == 'Grade 11' ? 'selected' : '' }}>Grade 11</option>
+                                            <option value="Grade 12"
+                                                {{ $user->gradelevel == 'Grade 12' ? 'selected' : '' }}>Grade 12</option>
+                                        </select>
+
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label" for="phoneNumber">Phone Number</label>

@@ -312,7 +312,7 @@
                                     aria-hidden="false"> Purpose<span class="form-required">*</span> </label>
 
                                 @error('purpose')
-                                    <div class="alert alert-danger">Purpose should be minumun of 150 characters</div>
+                                    <div class="alert alert-danger">Please specify what is the purpose for this request</div>
                                 @enderror
                                 <div id="cid_32" class="form-input-wide jf-required" data-layout="full">
                                     <textarea id="input_32" class="form-textarea validate[required]" name="purpose" style="width:648px;height:163px"
@@ -357,12 +357,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Purpose Textarea
-            var purposeTextarea = document.getElementById('input_32');
-            purposeTextarea.addEventListener('input', function() {
-                var characterCount = this.value.length;
-                var color = characterCount < 150 ? 'red' : 'green';
-                this.style.color = color;
-            });
+            // var purposeTextarea = document.getElementById('input_32');
+            // purposeTextarea.addEventListener('input', function() {
+            //     var characterCount = this.value.length;
+            //     var color = characterCount < 150 ? 'red' : 'green';
+            //     this.style.color = color;
+            // });
 
             // Phone Number Input
             var phoneNumberInput = document.getElementById('input_5_full');
