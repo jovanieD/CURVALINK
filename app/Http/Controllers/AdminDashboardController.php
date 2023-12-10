@@ -201,6 +201,7 @@ class AdminDashboardController extends Controller
                 return response()->json(['error' => 'User not found'], 404);
             }
 
+            $middlename = $request->input('middlename');
             $firstname = $request->input('firstname');
             $lastname = $request->input('lastname');
             $gender = $request->input('gender');

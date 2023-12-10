@@ -68,8 +68,8 @@
                                                 <label for="gender" class="form-label">Gender</label>
                                                 <select class="form-control" id="gender" name="gender">
                                                     <option value="" selected disabled>Please select</option>
-                                                    <option value="male" {{ Auth::user()->gender === 'male' ? 'selected' : '' }}>Male</option>
-                                                    <option value="female" {{ Auth::user()->gender === 'female' ? 'selected' : '' }}>Female</option>
+                                                    <option value="male" {{ Auth::user()->gender === 'Male' ? 'selected' : '' }}>Male</option>
+                                                    <option value="female" {{ Auth::user()->gender === 'Female' ? 'selected' : '' }}>Female</option>
                                                 </select>
                                             </div>
                                             <div class="mb-3 col-md-6">

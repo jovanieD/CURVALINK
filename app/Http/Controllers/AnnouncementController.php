@@ -65,10 +65,10 @@ class AnnouncementController extends Controller
                 $profilePicture = $request->file('imageurl');
             
                 if ($profilePicture->isValid()) {
-                    $image = $profilePicture->hashName();
-                    $imageName = '/storage/images/' . $image;
-            
-                    $profilePicture->storeAs('public/images', $image);
+                  
+                    $imageName = '/announcements/' . $profilePicture->hashName();
+                    $profilePicture->move(public_path('announcements'), $imageName);
+
                 } else {
                     return redirect()->back()->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
                 }
@@ -154,10 +154,8 @@ class AnnouncementController extends Controller
                 $profilePicture = $request->file('imageurl');
 
                 if ($profilePicture->isValid()) {
-                    $image = $profilePicture->hashName();
-                    $imageName = '/storage/images/' . $image;
-
-                    $profilePicture->storeAs('public/images', $image);
+                     $imageName = '/announcements/' . $profilePicture->hashName();
+                    $profilePicture->move(public_path('announcements'), $imageName);
                 } else {
                     return redirect()->back()->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
                 }

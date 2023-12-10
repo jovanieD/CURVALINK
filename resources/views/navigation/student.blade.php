@@ -22,7 +22,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Updates</a>
                 <div class="dropdown-menu m-0">
                     <a href="/announcements" class="dropdown-item">Announcements</a>
-                    <a href="/event" class="dropdown-item">Events</a>
+                    <a href="/events" class="dropdown-item">Events</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
@@ -34,7 +34,7 @@
                 </div>
                 
             </div>
-            <a href="/contact" class="nav-item nav-link">Contact</a>
+            <a href="/contacts" class="nav-item nav-link">Contact</a>
             @guest
                 @if (Route::has('login'))
                     <a class="btn-grad btn-primary " style="text-decoration: none;" href="{{ route('login') }}">Log In</a>

@@ -8,10 +8,10 @@
             <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                 <h1 class="display-4 animated zoomIn text-white"
                     style="margin-top: 20px">About Us</h1>
-                <a href=""
+                <a href="/"
                     class="h5 text-white">Home</a>
                 <i class="far fa-circle text-white px-2"></i>
-                <a href=""
+                <a href="/about"
                     class="h5 text-white">About</a>
             </div>
         </div>
@@ -50,21 +50,16 @@
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Sugbusog 3rd Placer</h5>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-4 wow fadeIn"
-                        data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class=" d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px; background-color:#ffc107;">
+                            <img style="width: 100px; height: 100px; "src="/images/svg/email.svg" alt="">
                         </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Contact us through our Email</h5>
-                            <h4 class="text-primary mb-0"
-                                style="font-size: 20px">curvanationalhighschool@gmail.com</h4>
+                        <div class="ps-4" style="text-wrap: wrap; max-width: 70%">
+                            <h5 class="mb-2" style="text-wrap: wrap;">Contact us through our Email</h5>
+                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">curvanationalhighschool@gmail.com</h4>
                         </div>
                     </div>
-                    <a href="quote.html"
-                        class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
-                        data-wow-delay="0.9s">Request</a>
+
                 </div>
                 <div class="col-lg-5"
                     style="min-height: 500px;">

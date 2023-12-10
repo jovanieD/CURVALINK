@@ -75,7 +75,7 @@
             initialView: 'dayGridMonth',
             timeZone: 'UTC',
             events: {
-                url: '/events',
+                url: '/schedules',
                 method: 'GET',
                 success: function(data) {
                     var formattedEvents = data.map(function(event) {

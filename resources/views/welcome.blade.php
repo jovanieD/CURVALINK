@@ -129,7 +129,7 @@
                     </div>
 
 
-                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.4s">
                         <div class=" d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px; background-color:#ffc107;">
                             <img style="width: 100px; height: 100px; "src="/images/svg/email.svg" alt="">
                         </div>

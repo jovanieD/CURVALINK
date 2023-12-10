@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             
         // ]);
 
-        // \App\Models\Announcement::factory(20)->create();
+        \App\Models\Announcement::factory(20)->create();
 
         // \App\Models\CertificationRequest::factory(3)->create();
         // \App\Models\GoodMoralRequest::factory(3)->create();

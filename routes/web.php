@@ -51,11 +51,11 @@ Route::get('/announcements', [GuestUsersController::class,'showannouncement']);
 
 Route::get('/searchAnnouncement', [GuestUsersController::class,'searchAnnouncement'])->name('searchAnnouncement');
 
-Route::get('/event', [GuestUsersController::class,'showevent']);
+Route::get('/events', [GuestUsersController::class,'showevent']);
 
 Route::get('/searchevent', [GuestUsersController::class,'searchEvent'])->name('searchEvent');
 
-Route::get('/contact', [GuestUsersController::class,'showcontact']);
+Route::get('/contacts', [GuestUsersController::class,'showcontact']);
 
 Route::get('/redirect-to-certificate', [GuestUsersController::class,'getcertificate'])->name('redirect.to.certificate');
 
@@ -119,7 +119,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::post('/update/goodmoral/{id}', [GoodMoralRequestController::class,'updateGoodMoralRequest']);
 
-    Route::get('/events', [ScheduleController::class, 'getEvents']);
+    Route::get('/schedules', [ScheduleController::class, 'getEvents']);
 
     Route::get('/schedules', [ScheduleController::class,'showStudentRequestCertification']);
 

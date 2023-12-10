@@ -7,10 +7,10 @@
             <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                 <h1 class="display-4 animated zoomIn text-white"
                     style="margin-top: 20px">Contact Us</h1>
-                <a href=""
+                <a href="/"
                     class="h5 text-white">Home</a>
                 <i class="far fa-circle text-white px-2"></i>
-                <a href=""
+                <a href="/contacts"
                     class="h5 text-white">Contact</a>
             </div>
         </div>
