@@ -26,11 +26,11 @@ class AdminHomePageController extends Controller
     }
 
     public function showabout(){
-
+        return view('admin.home.about');
     }
 
     public function showoffers(){
-
+        return view('admin.home.offers');
     }
 
     public function showannouncment(){
