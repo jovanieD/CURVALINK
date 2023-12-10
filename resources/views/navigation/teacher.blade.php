@@ -39,7 +39,7 @@
                         {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                         <span class="m-2">
                             <img style="border-radius: 25px; height: 30px; width: 30px;"
-                                src="{{route('teacherprofileimage') }}" alt="">
+                            src="{{Auth::user()->profile_image}}" type="image/jpeg" alt="">
                         </span>
                     </a>
 
