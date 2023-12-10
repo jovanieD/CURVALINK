@@ -22,7 +22,7 @@
                             <div class="col-lg-4">
                                 <div class="card mb-4">
                                     <div class="card-body text-center">
-                                        <img src="{{route('userprofileimage') }}" alt="avatar"
+                                        <img src="{{$profile_image}}" alt="avatar"
                                             style="border-radius: 200px; height: 300px; width: 300px;">
                                         <h5 class="my-3">{{ $firstname }} {{ $lastname }}</h5>
                                         <p class="text-muted mb-1">Student</p>

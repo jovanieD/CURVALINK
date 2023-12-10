@@ -58,7 +58,7 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 me-3">
                                         <div class="avatar avatar-online">
-                                            <img src="{{route('userprofileimage') }}" alt class="rounded-circle"
+                                            <img src="{{Auth::user()->profile_image}}" alt class="rounded-circle"
                                                 style="width: 60px; height:60px;" type="image/jpeg" />
                                         </div>
                                     </div>

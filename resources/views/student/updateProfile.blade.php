@@ -19,7 +19,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col">
-                                                <img src="{{ route('userprofileimage') }}" alt="user-avatar"
+                                                <img src="{{Auth::user()->profile_image}}" alt="user-avatar"
                                                     style="border-radius: 200px; height: 300px; width: 300px;"
                                                     class="mb-3 mb-sm-0" id="selectedImage" />
                                             </div>
