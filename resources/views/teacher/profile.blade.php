@@ -22,7 +22,7 @@
                             <div class="col-lg-4">
                                 <div class="card mb-4">
                                     <div class="card-body text-center">
-                                        <img src="{{route('teacherprofileimage') }}" alt="avatar"
+                                        <img src="{{Auth::user()->profile_image}}" alt="avatar"
                                             style="border-radius: 200px; height: 300px; width: 300px;">
                                         <h5 class="my-3">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h5>
                                         <p class="text-muted mb-1">Teacher</p>
@@ -65,6 +65,43 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Gender</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->gender }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Ranking</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->rank }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Subject Handle</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->subject_handle }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <p class="mb-0">Grade Level</p>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p class="text-muted mb-0">{{ Auth::user()->grade_level }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <p class="mb-0">Email</p>

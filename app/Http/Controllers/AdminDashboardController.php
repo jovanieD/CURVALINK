@@ -201,34 +201,42 @@ class AdminDashboardController extends Controller
                 return response()->json(['error' => 'User not found'], 404);
             }
 
-            $middlename = $request->input('middlename');
             $firstname = $request->input('firstname');
             $lastname = $request->input('lastname');
+            $gender = $request->input('gender');
+            $rank = $request->input('rank');
+            $subject_handle = $request->input('subject_handle');
+            $grade_level = $request->input('grade_level');
             $email = $request->input('email');
             $phonenumber = $request->input('phonenumber');
             $address = $request->input('address');
             $municipality = $request->input('municipality');
             $province = $request->input('province');
-            $imageName = $user->profile_image; // Initialize with the current image name
+            $imageName = $user->profile_image; 
 
             if ($request->hasFile('profile_picture')) {
                 $profilePicture = $request->file('profile_picture');
-
-                // Ensure that the file is an image
-                if ($profilePicture->isValid() ) {
-                    $image = $profilePicture->hashName();
-                    $imageName = '/storage/images/' . $image;
-
-                    $profilePicture->storeAs('public/images', $image);
+            
+                if ($profilePicture->isValid()) {
+                    if ($imageName && file_exists(public_path('admins/' . $imageName))) {
+                        unlink(public_path('admins/' . $imageName));
+                    }
+            
+                    $imageName = '/admins/' . $profilePicture->hashName();
+                    $profilePicture->move(public_path('admins'), $imageName);
                 } else {
                     return redirect('/admin/profile')->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
                 }
             }
 
             $user->update([
-                'first' => $firstname,
+                'firstname' => $firstname,
                 'middlename' => $middlename,
                 'lastname' => $lastname,
+                'gender' => $gender,
+                'rank' => $rank,
+                'subject_handle' => $subject_handle,
+                'grade_level' => $grade_level,
                 'email' => $email,
                 'phonenumber' => $phonenumber,
                 'address' => $address,

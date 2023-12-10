@@ -88,7 +88,7 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="zipCode" class="form-label">Province</label>
                                         <input type="text" class="form-control" id="zipCode" name="zipCode"
-                                            placeholder="" value="{{ $Teacher->province }}" />
+                                            value="" value="{{ $Teacher->province }}" />
                                     </div>
 
                                 </div>

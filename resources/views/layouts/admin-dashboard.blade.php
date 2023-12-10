@@ -180,7 +180,7 @@
                                         <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                             data-bs-toggle="dropdown">
                                             <div class="avatar avatar-online">
-                                                <img src="{{ route('adminprofileimage') }}" alt
+                                                <img src="{{Auth::user()->profile_image}}" alt
                                                     style="border-radius: 25px; height: 40px; width: 40px;" />
                                             </div>
                                         </a>
@@ -192,7 +192,7 @@
                                                     <div class="d-flex">
                                                         <div class="flex-shrink-0 me-3">
                                                             <div class="avatar avatar-online">
-                                                                <img src="{{ route('adminprofileimage') }}" alt
+                                                                <img src="{{Auth::user()->profile_image}}" alt
                                                                     class="rounded-circle"
                                                                     style="width: 40px; height:40px; " />
                                                             </div>
