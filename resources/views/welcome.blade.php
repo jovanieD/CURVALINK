@@ -130,12 +130,14 @@
 
 
                     <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.4s">
-                        <div class=" d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px; background-color:#ffc107;">
+                        <div class=" d-flex align-items-center justify-content-center rounded"
+                            style="width: 60px; height: 60px; background-color:#ffc107;">
                             <img style="width: 100px; height: 100px; "src="/images/svg/email.svg" alt="">
                         </div>
                         <div class="ps-4" style="text-wrap: wrap; max-width: 70%">
                             <h5 class="mb-2" style="text-wrap: wrap;">Contact us through our Email</h5>
-                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">curvanationalhighschool@gmail.com</h4>
+                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">
+                                curvanationalhighschool@gmail.com</h4>
                         </div>
                     </div>
                 </div>
@@ -413,7 +415,8 @@
                         </div>
                         <div class="ps-4" style="text-wrap: wrap; max-width: 70%">
                             <h5 class="mb-2" style="text-wrap: wrap;">Contact us through our Email</h5>
-                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">curvanationalhighschool@gmail.com</h4>
+                            <h4 class="text-primary mb-0 text-truncate" style="text-wrap: wrap;">
+                                curvanationalhighschool@gmail.com</h4>
                         </div>
                     </div>
                 </div>
@@ -1046,37 +1049,34 @@
             <div class="row g-5">
                 @foreach ($latestEvents as $event)
                     <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
-
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3">
-                                        <i class="fa fa-map-marker text-primary me-2"></i>
-                                        {{ $event->location }}
-                                    </small>
-                                    <small>
-                                        <i class="far fa-calendar-alt text-primary me-2"></i>
-                                        {{ $event->created_at }}
-                                    </small>
-                                </div>
-                                <h4 class="mb-3">{{ $event->title }}</h4>
-                                <img class="w-100 img-fluid mb-4" style="height: 190px" type="image/jpg"
-                                    src="{{ $event->imageurl }}" alt="Image">
-                                <p class=" text-truncate">{{ $event->description }}</p>
-                                <a class="text-uppercase readmore-link" style="cursor: pointer;" data-bs-toggle="modal"
-                                    data-bs-target="#homemodal" data-event-title="{{ $event->title }}"
-                                    data-event-description="{{ $event->description }}"
-                                    data-event-image="{{ $event->imageurl }}"
-                                    data-event-start-datetime="{{ $event->start_datetime }}">
-                                    Read More
-                                    <i class="bi bi-arrow-right"></i></a>
-                            </div>
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="w-100 img-fluid mb-4" style="height: 190px" type="image/jpg"
+                                src="{{ $event->imageurl }}" alt="Image">
                         </div>
-                    </div>
-                @endforeach
+
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i
+                                        class="fa fa-map-marker text-primary me-2"></i>{{ $event->location }}</small>
+                                <small><i
+                                        class="far fa-calendar-alt text-primary me-2"></i>{{ $event->created_at }}</small>
+                            </div>
+                            <h4 class="mb-3">{{ $event->title }}</h4>
+                            <p class=" text-truncate">{{ $event->description }}</p>
+                            <a class="text-uppercase readmore-link" style="cursor: pointer;" data-bs-toggle="modal"
+                                data-bs-target="#homemodal" data-event-title="{{ $event->title }}"
+                                data-event-description="{{ $event->description }}"
+                                data-event-image="{{ $event->imageurl }}"
+                                data-event-start-datetime="{{ $event->start_datetime }}">
+                                Read More
+                                <i class="bi bi-arrow-right"></i></a>
+                        </div>
 
             </div>
+            @endforeach
+
         </div>
+    </div>
     </div>
 
     <div class="modal fade" style="max-width: 100vw;" id="homemodal" tabindex="-1" aria-labelledby="exampleModalLabel"
