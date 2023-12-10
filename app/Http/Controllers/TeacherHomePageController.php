@@ -15,7 +15,7 @@ class TeacherHomePageController extends Controller
     }
 
     public function showoffers(){
-
+        return view('teacher.home.offers');
     }
 
     public function showannouncments(){

@@ -111,7 +111,6 @@ class EventController extends Controller
                     $imageName = '/events/' . $profilePicture->hashName();
                     $profilePicture->move(public_path('events'), $imageName);
             
-                    $profilePicture->storeAs('public/images', $image);
                 } else {
                     return redirect()->back()->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
                 }
@@ -260,10 +259,8 @@ class EventController extends Controller
                 $profilePicture = $request->file('imageurl');
             
                 if ($profilePicture->isValid()) {
-                    $image = $profilePicture->hashName();
-                    $imageName = '/storage/images/' . $image;
-            
-                    $profilePicture->storeAs('public/images', $image);
+                    $imageName = '/events/' . $profilePicture->hashName();
+                    $profilePicture->move(public_path('events'), $imageName);
                 } else {
                     return redirect()->back()->with('error', 'Invalid profile picture file. Only JPG files are allowed.');
                 }
@@ -333,15 +330,8 @@ class EventController extends Controller
                 $profilePicture = $request->file('imageurl');
     
                 if ($profilePicture->isValid()) {
-                    $image = $profilePicture->hashName();
-                    $imageName = '/storage/images/' . $image;
-    
-                    $profilePicture->storeAs('public/images', $image);
-    
-                    // Delete the old image if it exists
-                    if ($event->imageurl && Storage::exists('public/images/' . basename($event->imageurl))) {
-                        Storage::delete('public/images/' . basename($event->imageurl));
-                    }
+                    $imageName = '/events/' . $profilePicture->hashName();
+                    $profilePicture->move(public_path('events'), $imageName);
     
                     $event->imageurl = $imageName;
                 } else {

@@ -1,6 +1,25 @@
 @extends('layouts.app-teacher')
 
 @section('teacher')
+    <div class="container-fluid bg-primary py-5 bg-header">
+        <div class="row py-5">
+            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-4 animated zoomIn text-white"
+                    style="margin-top: 20px">Offers</h1>
+                <a href="/teacher"
+                    class="h5 text-white">Home</a>
+                <i class="far fa-circle text-white px-2"></i>
+                <a href="/teacher_offers"
+                    class="h5 text-white">Offers</a>
+            </div>
+        </div>
+    </div>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-3">
 
 
-@endsection
+
+  </div>
+
+    @endsection

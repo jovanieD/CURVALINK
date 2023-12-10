@@ -47,7 +47,7 @@ Route::get('/about', [GuestUsersController::class,'showabout']);
 
 Route::get('/offers', [GuestUsersController::class,'showoffers']);
 
-Route::get('/announcements', [GuestUsersController::class,'showannouncement']);
+Route::get('/all_announcements', [GuestUsersController::class,'showannouncement']);
 
 Route::get('/searchAnnouncement', [GuestUsersController::class,'searchAnnouncement'])->name('searchAnnouncement');
 
