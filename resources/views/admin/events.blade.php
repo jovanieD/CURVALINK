@@ -79,7 +79,7 @@
                                                     No Teacher or Admin
                                                 @endif
                                             </td>
-                                            <td> <img style="max-width: 100px;" src="{{ $event['imageurl'] }}"
+                                            <td> <img style="max-width: 100px;" src="{{ Storage::url($event['imageurl']) }}"
                                                     alt=""></td>
                                             <td class=" text-wrap text-capitalize" style="max-width: 200px">
                                                 {{ $event['title'] }}</td>

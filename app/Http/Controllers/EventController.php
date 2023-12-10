@@ -268,7 +268,7 @@ class EventController extends Controller
             
                 if ($profilePicture->isValid()) {
                     $image = $profilePicture->hashName();
-                    $imageName = '/storage/images/' . $image;
+                    $imageName = 'images/' . $image;
             
                     $profilePicture->storeAs('public/images', $image);
                 } else {
