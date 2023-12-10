@@ -28,20 +28,21 @@ class AdminDashboardController extends Controller
     {
         $user = Auth::user();
 
-        if ($user && $user->profile_image) {
-            $imagePath = public_path($user->profile_image); 
+        if ($user && strpos($user->profile_image, '/storage') !== false) {
+            $imagePath = public_path($user->profile_image);
 
             if (file_exists($imagePath)) {
                 $headers = [
-                    'Content-Type' => 'image/jpeg', 
+                    'Content-Type' => 'image/jpeg',
                 ];
 
                 return Response::file($imagePath, $headers);
             }
         }
+
         $defaultImagePath = public_path(Auth::user()->profile_image);
         $headers = [
-            'Content-Type' => 'image/jpeg', 
+            'Content-Type' => 'image/jpeg',
         ];
 
         return Response::file($defaultImagePath, $headers);
