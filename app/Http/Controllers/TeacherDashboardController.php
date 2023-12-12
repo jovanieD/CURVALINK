@@ -65,6 +65,7 @@ class TeacherDashboardController extends Controller
             'Process' => 0,
             'Scheduled' => 0,
             'Decline' => 0,
+            'Done' => 0,
         ];
 
         $documentRequested = [];

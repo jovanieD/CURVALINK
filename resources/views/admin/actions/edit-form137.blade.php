@@ -188,7 +188,7 @@
                                     class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
                                     aria-hidden="false"> Remarks </label>
                                 <div id="cid_32" class="form-input-wide jf-" data-layout="full">
-                                    <textarea id="input_32"  maxlength="500" class="form-textarea validate[]" name="remarks"
+                                    <textarea id="input_32" maxlength="500" class="form-textarea validate[]" name="remarks"
                                         style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
                                 </div>
                             </li>
@@ -200,16 +200,18 @@
                                     <select class="form-dropdown validate[required]" id="input_9" name="status"
                                         style="width:310px" data-component="dropdown" required=""
                                         aria-label="Type a question">
-                                        <option value="" {{ $data['status'] == '' ? 'selected' : '' }}>Please Select
-                                        </option>
-                                        <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
-                                            Pending</option>
-                                        <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
-                                            Process</option>
-                                        <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
-                                            Decline</option>
-                                        {{-- <option value="Scheduled" {{ $data['status'] == 'Scheduled' ? 'selected' : '' }}>
-                                            Scheduled</option> --}}
+                                        @if ($data['status'] === 'Scheduled')
+                                            <option disabled value="" selected>Please Select</option>
+                                            <option value="Done">Done</option>
+                                        @else
+                                            <option disabled value="" selected>Please Select</option>
+                                            <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
+                                                Pending</option>
+                                            <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
+                                                Process</option>
+                                            <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
+                                                Decline</option>
+                                        @endif
                                     </select>
                                 </div>
                             </li>

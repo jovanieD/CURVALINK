@@ -162,7 +162,21 @@
                         text-align: left;
                     }
                 </style>
-                <form action="/certificaterequest/{{ $data['id'] }}/update" method="post" accept-charset="utf-8" autocomplete="on">
+
+                @if ($errors->any())
+                    <div class="d-flex justify-content-center">
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+
+                <form action="/certificaterequest/{{ $data['id'] }}/update" method="post" accept-charset="utf-8"
+                    autocomplete="on">
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
@@ -180,8 +194,8 @@
                                     aria-hidden="false"> Full Name </label>
                                 <div id="cid_3" class="form-input-wide jf-required " data-layout="full">
                                     <div data-wrapper-react="true"><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="first"><input readonly=""  required=""
-                                                type="text" id="first_3" name="firstname"
+                                            style="vertical-align:top" data-input-type="first"><input readonly=""
+                                                required="" type="text" id="first_3" name="firstname"
                                                 class="form-textbox validate[]" autoComplete="section-input_3 given-name"
                                                 size="10" data-component="first" value="{{ $data['firstname'] }}"
                                                 aria-labelledby="label_3 sublabel_3_first" /><label class="form-sub-label"
@@ -189,7 +203,7 @@
                                                 aria-hidden="false">First
                                                 Name<span class="form-required">*</span></label></span><span
                                             class="form-sub-label-container" style="vertical-align:top"
-                                            data-input-type="last"><input readonly=""  required="" type="text"
+                                            data-input-type="last"><input readonly="" required="" type="text"
                                                 value="{{ $data['lastname'] }}" id="last_3" name="lastname"
                                                 class="form-textbox validate[]" autoComplete="section-input_3 family-name"
                                                 size="15" placeholder="" data-component="last"
@@ -207,9 +221,9 @@
                                     <div summary="" class="form-address-table jsTest-addressField">
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-street-line jsTest-address-lineField"><span
-                                                    class="form-sub-label-container" style="vertical-align:top"><input readonly="" 
-                                                        required="" value="{{ $data['address'] }}" type="text"
-                                                        id="input_4_addr_line1" name="address"
+                                                    class="form-sub-label-container" style="vertical-align:top"><input
+                                                        readonly="" required="" value="{{ $data['address'] }}"
+                                                        type="text" id="input_4_addr_line1" name="address"
                                                         class="form-textbox validate[] form-address-line"
                                                         autoComplete="section-input_4 address-line1"
                                                         data-component="address_line_1"
@@ -221,9 +235,9 @@
                                         </div>
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-city-line jsTest-address-lineField "><span
-                                                    class="form-sub-label-container" style="vertical-align:top"><input readonly="" 
-                                                        required="" value="{{ $data['municipality'] }}" type="text"
-                                                        id="input_4_city" name="municipality"
+                                                    class="form-sub-label-container" style="vertical-align:top"><input
+                                                        readonly="" required="" value="{{ $data['municipality'] }}"
+                                                        type="text" id="input_4_city" name="municipality"
                                                         class="form-textbox validate[] form-address-city"
                                                         autoComplete="section-input_4 address-level2"
                                                         data-component="city"
@@ -232,9 +246,9 @@
                                                         style="min-height:13px" aria-hidden="false">Municipality<span
                                                             class="form-required">*</span></label></span></span><span
                                                 class="form-address-line form-address-state-line jsTest-address-lineField "><span
-                                                    class="form-sub-label-container" style="vertical-align:top"><input readonly="" 
-                                                        required="" value="{{ $data['province'] }}" type="text"
-                                                        id="input_4_state" name="province"
+                                                    class="form-sub-label-container" style="vertical-align:top"><input
+                                                        readonly="" required="" value="{{ $data['province'] }}"
+                                                        type="text" id="input_4_state" name="province"
                                                         class="form-textbox validate[] form-address-state"
                                                         autoComplete="section-input_4 address-level1"
                                                         aria-labelledby="label_4 sublabel_4_state" /><label
@@ -244,9 +258,9 @@
                                         </div>
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-zip-line jsTest-address-lineField "><span
-                                                    class="form-sub-label-container" style="vertical-align:top"><input readonly="" 
-                                                        required="" value="{{ $data['postal'] }}" type="text"
-                                                        id="input_4_postal" name="postal"
+                                                    class="form-sub-label-container" style="vertical-align:top"><input
+                                                        readonly="" required="" value="{{ $data['postal'] }}"
+                                                        type="text" id="input_4_postal" name="postal"
                                                         class="form-textbox validate[] form-address-postal"
                                                         autoComplete="section-input_4 postal-code" data-component="zip"
                                                         aria-labelledby="label_4 sublabel_4_postal" pattern="[0-9]{1,7}"
@@ -262,9 +276,9 @@
                                 id="id_5"><label class="form-label form-label-top form-label-auto" id="label_5"
                                     for="input_5_full"> Phone Number <span class="form-required">*</span> </label>
                                 <div id="cid_5" class="form-input-wide jf-required " data-layout="half"> <span
-                                        class="form-sub-label-container" style="vertical-align:top"><input readonly=""  required=""
-                                            type="tel" value="{{ $data['phonenumber'] }}" id="input_5_full"
-                                            name="phonenumber" maxlength="13"
+                                        class="form-sub-label-container" style="vertical-align:top"><input readonly=""
+                                            required="" type="tel" value="{{ $data['phonenumber'] }}"
+                                            id="input_5_full" name="phonenumber" maxlength="13"
                                             class="mask-phone-number form-textbox validate[, Fill Mask]"
                                             autoComplete="section-input_5 tel" style="width:310px" data-masked="true"
                                             aria-labelledby="label_5" /></span>
@@ -275,8 +289,8 @@
                                     for="input_6" aria-hidden="false"> E-mail<span class="form-required">*</span>
                                 </label>
                                 <div id="cid_6" class="form-input-wide jf-required " data-layout="half"> <span
-                                        class="form-sub-label-container" style="vertical-align:top"><input readonly=""  required=""
-                                            type="email" id="input_6" name="email"
+                                        class="form-sub-label-container" style="vertical-align:top"><input readonly=""
+                                            required="" type="email" id="input_6" name="email"
                                             class="form-textbox validate[, Email]" style="width:310px" size="310"
                                             value="{{ $data['email'] }}" data-component="email"
                                             aria-labelledby="label_6 sublabel_input_6" /><label class="form-sub-label"
@@ -288,7 +302,7 @@
                                     class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
                                     aria-hidden="false"> Purpose <span class="form-required">*</span> </label>
                                 <div id="cid_32" class="form-input-wide jf-required " data-layout="full">
-                                    <textarea id="input_32"  maxlength="500" class="form-textarea validate[]" name="purpose"
+                                    <textarea id="input_32" maxlength="500" class="form-textarea validate[]" name="purpose"
                                         style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['purpose'] }}</textarea>
                                 </div>
                             </li>
@@ -296,8 +310,8 @@
                                     class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
                                     aria-hidden="false"> Remarks </label>
                                 <div id="cid_32" class="form-input-wide" data-layout="full">
-                                    <textarea id="input_32" maxlength="500" class="form-textarea" name="remarks"
-                                        style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
+                                    <textarea id="input_32" maxlength="500" class="form-textarea" name="remarks" style="width:648px;height:163px"
+                                        data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
                                 </div>
                             </li>
                             <li class="form-line jf-required" data-type="control_dropdown" id="id_9">
@@ -307,16 +321,19 @@
                                     <select class="form-dropdown validate[required]" id="input_9" name="status"
                                         style="width:310px" data-component="dropdown" required=""
                                         aria-label="Type a question">
-                                        <option value="" {{ $data['status'] == '' ? 'selected' : '' }}>Please Select
-                                        </option>
-                                        <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
-                                            Pending</option>
-                                        <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
-                                            Process</option>
-                                        <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
-                                            Decline</option>
-                                        {{-- <option value="Scheduled" {{ $data['status'] == 'Scheduled' ? 'selected' : '' }}>
-                                            Scheduled</option> --}}
+                                        @if ($data['status'] === 'Scheduled')
+                                            <option disabled value="" selected>Please Select</option>
+                                            <option value="Done">Done</option>
+                                        @else
+                                            <option disabled value="" selected>Please Select</option>
+                                            <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
+                                                Pending</option>
+                                            <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
+                                                Process</option>
+                                            <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
+                                                Decline</option>
+                                        @endif
+
                                     </select>
                                 </div>
                             </li>
@@ -336,7 +353,8 @@
                                     <hr>
                                     <div class="d-flex justify-content-center m-4">
                                         <a href="/teacher/dashboard">
-                                            <button type="button" class="btn btn-success m-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back">
+                                            <button type="button" class="btn btn-success m-1 text-white"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back">
                                                 <i class="fa-solid fa-arrow-left fa-xl m-1"></i>
                                                 <span class=" fs-4"></span>
                                             </button>
@@ -346,16 +364,17 @@
                                             <span class=" fs-4">Update</span>
                                         </button>
                                         {{-- @if ($data['status'] !== 'Schedule' && $data['status'] !== 'Decline') --}}
-                                        <a href="/requestor/{{$data['user_id']}}">
-                                            <button type="button" class="btn btn-success m-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Next">
+                                        <a href="/requestor/{{ $data['user_id'] }}">
+                                            <button type="button" class="btn btn-success m-1 text-white"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Next">
                                                 <i class="fa-solid fa-arrow-right fa-xl m-1"></i>
                                                 <span class=" fs-4"></span>
                                             </button>
                                         </a>
-                                        
+
                                         {{-- @endif --}}
                                     </div>
-                                    
+
                                 </div>
                             </li>
                         </ul>

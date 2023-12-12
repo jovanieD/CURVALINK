@@ -127,6 +127,9 @@
                                                             @if ($request['status'] == 'Pending')
                                                                 <span
                                                                     class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Done')
+                                                                <span class="badge me-1"
+                                                                    style="background-color:#F875AA;">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Process')
                                                                 <span
                                                                     class="badge bg-success me-1">{{ $request['status'] }}</span>
@@ -146,34 +149,33 @@
                                                         </td>
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center">
-                                                                    <form method="post"
-                                                                        action="/admin_view/{{ $request['user_id'] }}">
-                                                                        @csrf
-                                                                        <input type="hidden" value="{{ $request['id'] }}"
-                                                                            name="id">
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['type'] }}" name="type">
-                                                                        <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-eye text-info"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top" title="View"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                    <form method="post"
-                                                                        action="/admin_editrequest/{{ $request['user_id'] }}">
-                                                                        @csrf
-                                                                        <input type="hidden" value="{{ $request['id'] }}"
-                                                                            name="id">
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['type'] }}" name="type">
-                                                                        <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-edit text-warning"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top"
-                                                                                title="Update"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                    {{-- <button type="submit" class="btn m-1"
+                                                                <form method="post"
+                                                                    action="/admin_view/{{ $request['user_id'] }}">
+                                                                    @csrf
+                                                                    <input type="hidden" value="{{ $request['id'] }}"
+                                                                        name="id">
+                                                                    <input type="hidden" value="{{ $request['type'] }}"
+                                                                        name="type">
+                                                                    <button type="submit" class="btn m-1">
+                                                                        <i class="fas fa-eye text-info"
+                                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                            title="View"></i>
+                                                                    </button>
+                                                                </form>
+                                                                <form method="post"
+                                                                    action="/admin_editrequest/{{ $request['user_id'] }}">
+                                                                    @csrf
+                                                                    <input type="hidden" value="{{ $request['id'] }}"
+                                                                        name="id">
+                                                                    <input type="hidden" value="{{ $request['type'] }}"
+                                                                        name="type">
+                                                                    <button type="submit" class="btn m-1">
+                                                                        <i class="fas fa-edit text-warning"
+                                                                            data-bs-toggle="tooltip"
+                                                                            data-bs-placement="top" title="Update"></i>
+                                                                    </button>
+                                                                </form>
+                                                                {{-- <button type="submit" class="btn m-1"
                                                                         data-bs-toggle="modal"
                                                                         data-bs-target="#teacherdelete">
                                                                         <i class="fas fa-trash text-danger"

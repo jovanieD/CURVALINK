@@ -127,6 +127,9 @@
                                                             @if ($request['status'] == 'Pending')
                                                                 <span
                                                                     class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Done')
+                                                                <span class="badge me-1"
+                                                                    style="background-color:#F875AA;">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Process')
                                                                 <span
                                                                     class="badge bg-success me-1">{{ $request['status'] }}</span>
@@ -181,6 +184,7 @@
                                                                             data-bs-toggle="tooltip"
                                                                             data-bs-placement="top" title="Delete"></i>
                                                                     </button> --}}
+                                                                @elseif ($request['status'] == 'Done')
                                                                 @else
                                                                     <form
                                                                         method="post"action="/view/{{ $request['user_id'] }}">

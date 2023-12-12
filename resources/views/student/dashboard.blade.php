@@ -107,6 +107,9 @@
                                                             @if ($request['status'] == 'Pending')
                                                                 <span
                                                                     class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
+                                                            @elseif($request['status'] == 'Done')
+                                                                <span
+                                                                    class="badge me-1" style="background-color:#F875AA;">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Process')
                                                                 <span
                                                                     class="badge bg-success me-1">{{ $request['status'] }}</span>

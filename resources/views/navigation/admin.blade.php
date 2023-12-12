@@ -75,7 +75,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="/admin/schedule">
+                            <a class="dropdown-item" href="/admin/schedules">
                                 <i class="fa fa-calendar m-2 text-warning"></i>
                                 <span class="align-middle">Schedule</span>
                             </a>

@@ -53,7 +53,8 @@
 
                     /* Injected CSS Code */
                 </style>
-                <form class="jotform-form" action="/admin_goodmoralrequest/{{ $data['id'] }}/update" method="POST" autocomplete="on">
+                <form class="jotform-form" action="/admin_goodmoralrequest/{{ $data['id'] }}/update" method="POST"
+                    autocomplete="on">
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
@@ -222,73 +223,77 @@
                                     </div>
                                 </div>
                             </li>
-                            
+
                             <li class="form-line " data-type="control_textarea" id="id_32"><label
-                                class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
-                                aria-hidden="false"> Remarks </label>
-                            <div id="cid_32" class="form-input-wide " data-layout="full">
-                                <textarea id="input_32" maxlength="500" class="form-textarea" name="remarks"
-                                    style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
-                            </div>
-                        </li>
-                        <li class="form-line jf-required" data-type="control_dropdown" id="id_9">
-                            <label class="form-label form-label-left form-label-auto" id="label_9" for="input_9"
-                                aria-hidden="false"> Change Status<span class="form-required">*</span> </label>
-                            <div id="cid_9" class="form-input jf-required" data-layout="half">
-                                <select class="form-dropdown validate[required]" id="input_9" name="status"
-                                    style="width:310px" data-component="dropdown" required=""
-                                    aria-label="Type a question">
-                                    <option value="" {{ $data['status'] == '' ? 'selected' : '' }}>Please Select
-                                    </option>
-                                    <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
-                                        Pending</option>
-                                    <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
-                                        Process</option>
-                                    <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
-                                        Decline</option>
-                                    {{-- <option value="Scheduled" {{ $data['status'] == 'Scheduled' ? 'selected' : '' }}>
-                                        Scheduled</option> --}}
-                                </select>
-                            </div>
-                        </li>
-
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <li class="form-line" data-type="control_button" id="id_25">
-                            <div id="cid_25" class="form-input-wide" data-layout="full">
-                                <hr>
-                                <div class="d-flex justify-content-center m-4">
-                                    <a href="/admin/dashboard">
-                                        <button type="button" class="btn btn-success m-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back">
-                                            <i class="fa-solid fa-arrow-left fa-xl m-1"></i>
-                                            <span class=" fs-4"></span>
-                                        </button>
-                                    </a>
-                                    <button type="submit" class="btn btn-warning m-1" data-bs-toggle="modal">
-                                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
-                                        <span class=" fs-4">Update</span>
-                                    </button>
-                                    {{-- @if ($data['status'] !== 'Schedule' && $data['status'] !== 'Decline') --}}
-                                    <a href="/admin_requestor/{{$data['user_id']}}">
-                                        <button type="button" class="btn btn-success m-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Next">
-                                            <i class="fa-solid fa-arrow-right fa-xl m-1"></i>
-                                            <span class=" fs-4"></span>
-                                        </button>
-                                    </a>
-                                    
-                                    {{-- @endif --}}
+                                    class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
+                                    aria-hidden="false"> Remarks </label>
+                                <div id="cid_32" class="form-input-wide " data-layout="full">
+                                    <textarea id="input_32" maxlength="500" class="form-textarea" name="remarks" style="width:648px;height:163px"
+                                        data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
                                 </div>
-                                
-                            </div>
-                        </li>
+                            </li>
+                            <li class="form-line jf-required" data-type="control_dropdown" id="id_9">
+                                <label class="form-label form-label-left form-label-auto" id="label_9" for="input_9"
+                                    aria-hidden="false"> Change Status<span class="form-required">*</span> </label>
+                                <div id="cid_9" class="form-input jf-required" data-layout="half">
+                                    <select class="form-dropdown validate[required]" id="input_9" name="status"
+                                        style="width:310px" data-component="dropdown" required=""
+                                        aria-label="Type a question">
+                                        @if ($data['status'] === 'Scheduled')
+                                            <option disabled value="" selected>Please Select</option>
+                                            <option value="Done">Done</option>
+                                        @else
+                                            <option disabled value="" selected>Please Select</option>
+                                            <option value="Pending" {{ $data['status'] == 'Pending' ? 'selected' : '' }}>
+                                                Pending</option>
+                                            <option value="Process" {{ $data['status'] == 'Process' ? 'selected' : '' }}>
+                                                Process</option>
+                                            <option value="Decline" {{ $data['status'] == 'Decline' ? 'selected' : '' }}>
+                                                Decline</option>
+                                        @endif
+                                    </select>
+                                </div>
+                            </li>
+
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <li class="form-line" data-type="control_button" id="id_25">
+                                <div id="cid_25" class="form-input-wide" data-layout="full">
+                                    <hr>
+                                    <div class="d-flex justify-content-center m-4">
+                                        <a href="/admin/dashboard">
+                                            <button type="button" class="btn btn-success m-1 text-white"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back">
+                                                <i class="fa-solid fa-arrow-left fa-xl m-1"></i>
+                                                <span class=" fs-4"></span>
+                                            </button>
+                                        </a>
+                                        <button type="submit" class="btn btn-warning m-1" data-bs-toggle="modal">
+                                            <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                                            <span class=" fs-4">Update</span>
+                                        </button>
+                                        {{-- @if ($data['status'] !== 'Schedule' && $data['status'] !== 'Decline') --}}
+                                        <a href="/admin_requestor/{{ $data['user_id'] }}">
+                                            <button type="button" class="btn btn-success m-1 text-white"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Next">
+                                                <i class="fa-solid fa-arrow-right fa-xl m-1"></i>
+                                                <span class=" fs-4"></span>
+                                            </button>
+                                        </a>
+
+                                        {{-- @endif --}}
+                                    </div>
+
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
