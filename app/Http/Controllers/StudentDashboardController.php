@@ -281,7 +281,7 @@ class StudentDashboardController extends Controller
                 }
 
                 $user->update([
-                    'first' => $firstname,
+                    'firstname' => $firstname,
                     'middlename' => $middlename,
                     'idnumber' => $idnumber,
                     'lastname' => $lastname,

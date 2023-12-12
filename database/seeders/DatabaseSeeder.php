@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\Admin::factory(20)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'firstname' => 'User',
-        //     'email' => 'user@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'firstname' => 'User',
+            'email' => 'user@example.com',
+        ]);
 
         \App\Models\Admin::factory()->create([
             'firstname' => 'CurvaLink',

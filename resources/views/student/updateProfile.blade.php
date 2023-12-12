@@ -86,11 +86,11 @@
                                                 </select>
                                                 
                                             </div>
-                                            <div class="mb-3 col-md-6">
+                                            {{-- <div class="mb-3 col-md-6">
                                                 <label for="email" class="form-label">E-mail</label>
                                                 <input class="form-control" type="text" id="email" name="email"
                                                     value="{{ Auth::user()->email }}" required />
-                                            </div>
+                                            </div> --}}
                                             <div class="mb-3 col-md-6">
                                                 <label class="form-label" for="phoneNumber">Phone Number</label>
                                                 <div class="input-group input-group-merge">
