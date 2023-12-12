@@ -265,15 +265,16 @@ class ScheduleController extends Controller
 
     public function showAllAvailableRequest()
     {
-        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
-        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
-        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
+        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])->get();
+        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])->get();
+        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])->get();
 
         $documentCounts = [
             'Pending' => 0,
             'Process' => 0,
             'Scheduled' => 0,
             'Decline' => 0,
+            'Done' => 0,
         ];
 
         $documentRequested = [];
@@ -376,15 +377,16 @@ class ScheduleController extends Controller
 
     public function addschedule()
     {
-        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
-        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
-        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
+        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])->get();
+        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])->get();
+        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])->get();
 
         $documentCounts = [
             'Pending' => 0,
             'Process' => 0,
             'Scheduled' => 0,
             'Decline' => 0,
+            'Done' => 0,
         ];
 
         $documentRequested = [];
