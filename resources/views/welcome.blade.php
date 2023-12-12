@@ -303,8 +303,7 @@
                         <div class="w-75">
                             <p class="m-0" style="text-align: center text-wrap">Demonstrates pride in being a Filipino; exercises the rights and responsibilities of a Filipino citizen 
                                 Demonstrates appropriate behavior in carrying out activities in the school,
-                                community, and
-                                country
+                                community, and country
                             </p>
                         </div>
                     </div>

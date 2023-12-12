@@ -239,7 +239,7 @@
 
             <div class="row g-5">
                 <div class="col-lg-6  wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap"
                         style="z-index: 1;">
                         <div class="service-icon">
                             <i class="fa fa-shield-alt text-white fs-2"></i>
@@ -250,7 +250,7 @@
                             <p class="m-0" style="text-align: center">Expresses one’s spiritual beliefs while
                                 respecting the spiritual
                                 beliefs of
-                                others <br>
+                                others 
                                 Shows adherence to ethical principles by upholding truth
                             </p>
                         </div>
@@ -258,7 +258,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6  wow zoomIn" data-wow-delay="0.4s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap"
                         style="z-index: 1;">
 
                         <div class="service-icon">
@@ -275,7 +275,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6  wow zoomIn" data-wow-delay="0.5s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap"
                         style="z-index: 1;">
                         <div class="service-icon">
                             <i class="fab fa-pagelines text-white fs-2"></i>
@@ -299,12 +299,9 @@
 
                         <h4 class="fw-bold text-uppercase mb-4">Makabansa</h4>
                         <div class="w-75">
-                            <p class="m-0" style="text-align: center">Demonstrates pride in being a Filipino;
-                                exercises the rights and
-                                responsibilities of a Filipino citizen <br>
+                            <p class="m-0" style="text-align: center text-wrap">Demonstrates pride in being a Filipino; exercises the rights and responsibilities of a Filipino citizen 
                                 Demonstrates appropriate behavior in carrying out activities in the school,
-                                community, and
-                                country
+                                community, and country
                             </p>
                         </div>
                     </div>
@@ -313,6 +310,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
