@@ -75,7 +75,7 @@
             initialView: 'dayGridMonth',
             timeZone: 'UTC',
             events: {
-                url: '/schedules',
+                url: '/all_schedule',
                 method: 'GET',
                 success: function(data) {
                     var formattedEvents = data.map(function(event) {
@@ -85,7 +85,7 @@
                             start: event.startdate,
                             end: event.enddate,
                             color: event.color,
-                            editable: true,
+                            editable: false,
                             event: event
                         };
                     });

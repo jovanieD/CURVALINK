@@ -9,22 +9,26 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class CreateAccount extends Mailable
+class CreatedAppointment extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public $email;
+    public $document;
 
-    public $password;
+    public $status;
     
-   public function __construct($email, $password)
+    public $release;
+    
+   public function __construct($document, $status, $release)
    {
-       $this->email = $email;
+       $this->document = $document;
 
-       $this->password = $password;
+       $this->status = $status;
+
+       $this->release = $release;
    }
 
     /**
@@ -33,7 +37,7 @@ class CreateAccount extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Created Account',
+            subject: 'Document Appointment',
         );
     }
 
@@ -43,7 +47,7 @@ class CreateAccount extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.create-account',
+            view: 'emails.created-appointment',
         );
     }
 

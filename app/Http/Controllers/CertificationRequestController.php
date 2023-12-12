@@ -84,7 +84,7 @@ class CertificationRequestController extends Controller
                     'province' => 'required|string|max:32',
                     'postal' => 'required|string|max:7|min:4',
                     'phonenumber' => 'required|string|max:11|min:11',
-                    'email' => 'required|string|email|max:32',
+                    'email' => 'required|string|email|max:64',
                     'purpose' => 'required|string|max:255',
                 ];
 
@@ -131,7 +131,7 @@ class CertificationRequestController extends Controller
                     'province' => 'required|string|max:32',
                     'postal' => 'required|string|max:7|min:4',
                     'phonenumber' => 'required|string|max:11|min:11',
-                    'email' => 'required|string|email|max:32',
+                    'email' => 'required|string|email|max:64',
                     'purpose' => 'required|string',
                     'status' => 'required|string|max:32',
                 ];
@@ -189,7 +189,7 @@ class CertificationRequestController extends Controller
                     'province' => 'required|string|max:32',
                     'postal' => 'required|string|max:7|min:4',
                     'phonenumber' => 'required|string|max:11|min:11',
-                    'email' => 'required|string|email|max:32',
+                    'email' => 'required|string|email|max:64',
                     'purpose' => 'required|string|max:255',
                     'status' => 'required|string|max:32',
                 ];

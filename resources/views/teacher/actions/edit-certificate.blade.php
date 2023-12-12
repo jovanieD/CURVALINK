@@ -296,7 +296,7 @@
                                     class="form-label form-label-top form-label-auto" id="label_32" for="input_32"
                                     aria-hidden="false"> Remarks </label>
                                 <div id="cid_32" class="form-input-wide" data-layout="full">
-                                    <textarea id="input_32" maxlength="300" class="form-textarea" name="remarks"
+                                    <textarea id="input_32" maxlength="500" class="form-textarea" name="remarks"
                                         style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_32">{{ $data['remarks'] }}</textarea>
                                 </div>
                             </li>

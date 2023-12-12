@@ -10,9 +10,9 @@ use App\Models\GoodMoralRequest;
 use App\Models\Form137Request;
 
 use Auth;
-use User;
 
 use App\Models\Teacher;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Response;
 
 use Illuminate\Support\Carbon;
 
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CreatedAppointment;
 
 class ScheduleController extends Controller
 {
@@ -110,13 +111,16 @@ class ScheduleController extends Controller
         try {
             $request->validate([
                 'user_id' => 'required',
-                'document' => 'required', // Adjust as needed
+                'document' => 'required', 
                 'document_id' => 'required',
                 'requestor' => 'required',
                 'startdate' => 'required',
                 'enddate' => 'required',
                 'remarks' => 'nullable',
             ]);
+
+            $user = User::findOrFail($request->input('user_id'));
+            $email = $user->email;
 
             $startDate = Carbon::createFromFormat('m/d/Y', $request->input('startdate'))->format('Y-m-d');
             $endDate = Carbon::createFromFormat('m/d/Y', $request->input('enddate'))->format('Y-m-d');
@@ -128,16 +132,37 @@ class ScheduleController extends Controller
                 'enddate' => $endDate,
                 'remarks' => $request->input('remarks'),
             ]);
+
+            $status = 'Scheduled';
+            $release = $startDate;
     
             switch ($request->input('document')) {
                 case 'Certificate':
                     $documentModel = CertificationRequest::findOrFail($request->input('document_id'));
+                    $document = 'Certificate';
+                    try{
+                        Mail::to($email)->send(new CreatedAppointment( $document, $status, $release));
+                    } catch (\Exception $e) {
+                        return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                    }
                     break;
                 case 'Good_Moral':
                     $documentModel = GoodMoralRequest::findOrFail($request->input('document_id'));
+                    $document = 'Good Moral';
+                    try{
+                        Mail::to($email)->send(new CreatedAppointment( $document, $status, $release));
+                    } catch (\Exception $e) {
+                        return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                    }
                     break;
                 case 'Form137':
                     $documentModel = Form137Request::findOrFail($request->input('document_id'));
+                    $document = 'Form 137';
+                    try{
+                        Mail::to($email)->send(new CreatedAppointment( $document, $status, $release));
+                    } catch (\Exception $e) {
+                        return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                    }
                     break;
                 default:
                     throw new \InvalidArgumentException('Invalid document type.');
@@ -152,7 +177,6 @@ class ScheduleController extends Controller
     
             return redirect('/teacher/schedules');
         } catch (\Exception $e) {
-            // Handle the exception (e.g., log it, return an error response, etc.)
             return response()->json(['error' => $e->getMessage()], 500);
         }
     
@@ -172,6 +196,9 @@ class ScheduleController extends Controller
                 'remarks' => 'nullable',
             ]);
 
+            $user = User::findOrFail($request->input('user_id'));
+            $email = $user->email;
+
             $startDate = Carbon::createFromFormat('m/d/Y', $request->input('startdate'))->format('Y-m-d');
             $endDate = Carbon::createFromFormat('m/d/Y', $request->input('enddate'))->format('Y-m-d');
     
@@ -183,19 +210,41 @@ class ScheduleController extends Controller
                 'remarks' => $request->input('remarks'),
             ]);
     
+            $status = 'Scheduled';
+            $release = $startDate;
+    
             switch ($request->input('document')) {
                 case 'Certificate':
                     $documentModel = CertificationRequest::findOrFail($request->input('document_id'));
+                    $document = 'Certificate';
+                    try{
+                        Mail::to($email)->send(new CreatedAppointment( $document, $status, $release));
+                    } catch (\Exception $e) {
+                        return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                    }
                     break;
                 case 'Good_Moral':
                     $documentModel = GoodMoralRequest::findOrFail($request->input('document_id'));
+                    $document = 'Good Moral';
+                    try{
+                        Mail::to($email)->send(new CreatedAppointment( $document, $status, $release));
+                    } catch (\Exception $e) {
+                        return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                    }
                     break;
                 case 'Form137':
                     $documentModel = Form137Request::findOrFail($request->input('document_id'));
+                    $document = 'Form 137';
+                    try{
+                        Mail::to($email)->send(new CreatedAppointment( $document, $status, $release));
+                    } catch (\Exception $e) {
+                        return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                    }
                     break;
                 default:
                     throw new \InvalidArgumentException('Invalid document type.');
             }
+    
     
             $documentModel->schedules()->save($schedule);
 

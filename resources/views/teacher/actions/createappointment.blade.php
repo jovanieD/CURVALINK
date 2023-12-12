@@ -32,7 +32,7 @@
                 </style>
                 <link type="text/css" rel="stylesheet"
                     href="https://cdn02.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.47995" />
-                
+
                 <style type="text/css" id="form-designer-style">
                     /* Injected CSS Code */
                     .form-label.form-label-auto {
@@ -46,7 +46,21 @@
                     /* Injected CSS Code */
                 </style>
 
-                <form class="jotform-form" action="/postappoinment" method="post" >
+                @if ($errors->any())
+                    <div class="d-flex justify-content-center">
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+
+
+
+                <form class="jotform-form" action="/postappoinment" method="post">
                     @csrf
                     <div role="main" class="form-all">
                         <ul class="form-section page-section">
@@ -65,10 +79,11 @@
                                 @if (isset($data['user_id']))
                                     <?php $user = \App\Models\User::find($data['user_id']); ?>
                                     @if ($user)
-                                        <div id="cid_8" class="form-input" data-layout="half"> <input type="text" readonly=""
-                                                id="requestor" name="requestor" data-type="input-textbox"
+                                        <div id="cid_8" class="form-input" data-layout="half"> <input type="text"
+                                                readonly="" id="requestor" name="requestor" data-type="input-textbox"
                                                 class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
-                                                data-component="textbox" aria-labelledby="requestor" value="{{ $user->firstname }} {{ $user->lastname }}" />
+                                                data-component="textbox" aria-labelledby="requestor"
+                                                value="{{ $user->firstname }} {{ $user->lastname }}" />
 
                                         </div>
                                     @endif
@@ -77,30 +92,33 @@
                             <li class="form-line" data-type="control_textbox" id="id_8"><label
                                     class="form-label form-label-left form-label-auto" id="label_8" for="input_8"
                                     aria-hidden="false"> Document </label>
-                                <div id="cid_8" class="form-input" data-layout="half"> <input type="text" readonly=""
-                                        id="input_8" name="document" data-type="input-textbox" class="form-textbox"
-                                        data-defaultvalue="" style="width:310px" size="310" data-component="textbox"
-                                        aria-labelledby="label_8" value="{{ $data['document'] }}" /> </div>
+                                <div id="cid_8" class="form-input" data-layout="half"> <input type="text"
+                                        readonly="" id="input_8" name="document" data-type="input-textbox"
+                                        class="form-textbox" data-defaultvalue="" style="width:310px" size="310"
+                                        data-component="textbox" aria-labelledby="label_8"
+                                        value="{{ $data['document'] }}" /> </div>
                             </li>
                             <li class="form-line jf-required" data-type="control_datetime" id="id_3"><label
                                     class="form-label form-label-left form-label-auto" id="label_3" for="lite_mode_3"
                                     aria-hidden="false"> Start Date<span class="form-required">*</span> </label>
-                                    <div id="cid" class="form-input" data-layout="half">
-                                        <div id="cid_8" data-layout="half" class="date" data-provide="datepicker"> 
-                                            <input type="text" class="form-control" name="startdate" placeholder="Select a date" autocomplete="off">
-                                            <div class="input-group-addon">
-                                                <span class="glyphicon glyphicon-th"></span>
-                                            </div>
+                                <div id="cid" class="form-input" data-layout="half">
+                                    <div id="cid_8" data-layout="half" class="date" data-provide="datepicker">
+                                        <input type="text" class="form-control" name="startdate"
+                                            placeholder="Select a date" autocomplete="off">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                     </div>
-                                    
+                                </div>
+
                             </li>
                             <li class="form-line" data-type="control_datetime" id="id_4"><label
                                     class="form-label form-label-left form-label-auto" id="label_4" for="lite_mode_4"
                                     aria-hidden="false"> End Date<span class="form-required">*</span> </label>
                                 <div id="cid4" class="form-input" data-layout="half">
-                                    <div id="cid_8" data-layout="half" class="date" data-provide="datepicker"> 
-                                        <input type="text" class="form-control" name="enddate" placeholder="Select a date" autocomplete="off" required="">
+                                    <div id="cid_8" data-layout="half" class="date" data-provide="datepicker">
+                                        <input type="text" class="form-control" name="enddate"
+                                            placeholder="Select a date" autocomplete="off" required="">
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
@@ -115,12 +133,13 @@
                                         data-component="textarea" required="" aria-labelledby="label_7"></textarea>
                                 </div>
                             </li>
-                            <input type="hidden" name="user_id" value="{{$data['user_id']}}">
-                            <input type="hidden" name="document_id" value="{{$data['id']}}">
+                            <input type="hidden" name="user_id" value="{{ $data['user_id'] }}">
+                            <input type="hidden" name="document_id" value="{{ $data['id'] }}">
                             <li class="form-line" data-type="control_button" id="id_2">
                                 <div id="cid_2" class="form-input-wide" data-layout="full">
                                     <div data-align="auto"
-                                        class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button type="submit"
+                                        class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button
+                                            type="submit"
                                             class="form-submit-button form-submit-button-yellow-300 submit-button jf-form-buttons jsTest-submitField"
                                             data-component="button" data-content="">Create Schedule</button></div>
                                 </div>

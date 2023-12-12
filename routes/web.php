@@ -114,7 +114,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::post('/update/goodmoral/{id}', [GoodMoralRequestController::class,'updateGoodMoralRequest']);
 
-    Route::get('/schedules', [ScheduleController::class, 'getEvents']);
+    Route::get('/all_schedule', [ScheduleController::class, 'getEvents']);
 
     Route::get('/schedules', [ScheduleController::class,'showStudentRequestCertification']);
 
