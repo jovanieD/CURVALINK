@@ -14,6 +14,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CreateAccount;
@@ -209,6 +210,8 @@ class ManageTeachersController extends Controller
 
             $password = $this->generateUniquePassword();
 
+            $hashpassword = Hash::make($password);
+
             Teacher::create([
                 'rank' => $rank,
                 'subject_handle' => $subject_handle,
@@ -222,9 +225,10 @@ class ManageTeachersController extends Controller
                 'address' => $address,
                 'municipality' => $municipality,
                 'province' => $province,
-                'password' => $password,
+                'password' => $hashpassword,
                 'profile_image' => '/images/avatar.png',
             ]);
+
 
             Mail::to($email)->send(new CreateAccount( $email, $password ));
 

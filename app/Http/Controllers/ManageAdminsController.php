@@ -13,6 +13,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CreateAccount;
@@ -124,10 +125,11 @@ class ManageAdminsController extends Controller
             $province = $request->input('province');
 
             $password = $this->generateUniquePassword();
+            
         
             Mail::to($email)->send(new CreateAccount( $email, $password ));
 
-           
+            $hashpassword = Hash::make($password);
 
             DB::beginTransaction();
 
@@ -144,7 +146,7 @@ class ManageAdminsController extends Controller
                 'address' => $address,
                 'municipality' => $municipality,
                 'province' => $province,
-                'password' => $password,
+                'password' => $hashpassword,
                 'profile_image' => '/images/avatar.png',
             ]);
 
