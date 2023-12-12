@@ -301,9 +301,7 @@
 
                         <h4 class="fw-bold text-uppercase mb-4">Makabansa</h4>
                         <div class="w-75">
-                            <p class="m-0" style="text-align: center">Demonstrates pride in being a Filipino;
-                                exercises the rights and
-                                responsibilities of a Filipino citizen <br>
+                            <p class="m-0" style="text-align: center text-wrap">Demonstrates pride in being a Filipino; exercises the rights and responsibilities of a Filipino citizen 
                                 Demonstrates appropriate behavior in carrying out activities in the school,
                                 community, and
                                 country
