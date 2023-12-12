@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Response;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CreateAccount;
+
 class ManageTeachersController extends Controller
 {
     public function showAllTeachers()

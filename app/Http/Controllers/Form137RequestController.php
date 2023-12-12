@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Form137Request;
 use Auth;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DocumentRequest;
+
 
 class Form137RequestController extends Controller
 {
@@ -19,7 +22,6 @@ class Form137RequestController extends Controller
     public function createNewForm137Request(Request $request)
         {
             try {
-                // Validation rules
                 $validationRules = [
                     'principalname' => 'required|string|max:255',
                     'name' => 'required|string|max:255',
@@ -30,10 +32,19 @@ class Form137RequestController extends Controller
                     'request' => 'required|string|max:255',
                 ];
 
-                // Validate the request
                 $request->validate($validationRules);
 
-                // Create a new Request
+                try {
+                    $useremail = Auth::user()->email;
+                    $document = 'Form 137';
+                    $status = 'Pending';
+                
+                    Mail::to($useremail)->send(new DocumentRequest($document, $status));
+                
+                } catch (\Exception $e) {
+                    return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+                }
+
                 $newRequest = Form137Request::create([
                     'user_id' => Auth::user()->id,
                     'principalname' => $request->input('principalname'),
@@ -45,7 +56,6 @@ class Form137RequestController extends Controller
                     'request' => $request->input('request'),
                 ]);
 
-                // Redirect to the dashboard or any other appropriate route
                 return redirect('dashboard');
             } catch (ValidationException $e) {
                 // If validation fails, redirect back with errors
@@ -71,10 +81,8 @@ class Form137RequestController extends Controller
                 // Validate the request
                 $request->validate($validationRules);
 
-                // Find the existing record by id
                 $existingRequest = Form137Request::findOrFail($id);
 
-                // Update the existing record
                 $existingRequest->update([
                     'principalname' => $request->input('principalname'),
                     'name' => $request->input('name'),
@@ -86,13 +94,10 @@ class Form137RequestController extends Controller
                     
                 ]);
 
-                // Redirect to the dashboard or any other appropriate route
                 return redirect('/dashboard');
             } catch (ValidationException $e) {
-                // If validation fails, redirect back with errors
                 return redirect()->back()->withErrors($e->errors())->withInput();
             } catch (\Exception $e) {
-                // Handle other exceptions if needed
                 return redirect()->back()->withErrors([$e->getMessage()])->withInput();
             }
         }

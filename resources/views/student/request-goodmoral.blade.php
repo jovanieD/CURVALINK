@@ -53,6 +53,19 @@
 
                     /* Injected CSS Code */
                 </style>
+
+                @if ($errors->any())
+                    <div class=" d-flex justify-content-center">
+                        <div class="alert alert-danger w-75">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+                
                 <form class="jotform-form" action="/request/goodmoral" method="POST" autocomplete="on">
                     @csrf
                     <div role="main" class="form-all">

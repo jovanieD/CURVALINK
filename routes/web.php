@@ -67,6 +67,8 @@ Route::post('/forgot_password', [GuestUsersController::class,'forgotpassword']);
 
 Auth::routes();
 
+Route::get('/register', [GuestUsersController::class,'tologin']);
+
 Route::get('/Login', [LoginController::class, 'show'])->name('Login');
 
 Route::post('/Login', [LoginController::class, 'authenticate'])->name('Login');

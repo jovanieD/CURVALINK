@@ -8,7 +8,7 @@
                 <div class="container-xxl flex-grow-1 container-p-y">
 
                     <div class="card mb-4">
-                        <h5 class="card-header">Teacher's Details</h5>
+                        <h5 class="card-header">Admin's Details</h5>
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -31,6 +31,8 @@
                                     <div class="button-wrapper">
                                         <label for="grade_level" class="form-label">Grade Level Handle:</label>
                                         <select class="form-select" id="grade_level" name="grade_level">
+                                            <option disabled selected>Please select</option>
+                                            <option value="Grade 6">Grade 6</option>
                                             <option value="Grade 7">Grade 7</option>
                                             <option value="Grade 8">Grade 8</option>
                                             <option value="Grade 9">Grade 9</option>
@@ -80,7 +82,8 @@
 
                                     <div class="mb-3 col-md-6">
                                         <label for="gender" class="form-label">Gender</label>
-                                        <select class="form-control" id="gender" name="gender">
+                                        <select class="form-select" id="gender" name="gender">
+                                            <option disabled selected>Please select</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -112,12 +115,12 @@
                                 </div>
 
                                 <div class="mt-2 text-white">
-                                    <button class="btn btn-primary me-2 ">
+                                    <div class="btn btn-primary me-2 ">
                                         <a href="/all_Admins" class=" text-white">
                                             <i class="fa-solid fa-arrow-left "></i>
                                             Back
                                         </a>
-                                    </button>
+                                    </div>
                                     <button type="submit" class="btn btn-warning me-2">
                                         <i class="fa-solid fa-folder-plus me-2"></i>
                                         Create </button>

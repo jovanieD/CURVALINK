@@ -43,38 +43,28 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0 35px;">
-                                        <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Your account has been created</h1>
+                                        <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Document Request</h1>
                                         <span
                                             style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                         <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                            Congratulations you have been created an account in Curvalink! We're thrilled to have you as a new member. To ensure the security of your account, we've generated a new password for you. To set your new password, update your profile.
+                                         Your document is {{$status}} at the moment.
                                         </p>
                                 </tr>
 
                                 <tr>
                                     <td>
-                                        <h2><span style="font-weight: bold;">Email :  </span> {{$email}}</h2>
+                                        <h2><span style="font-weight: bold;">Document :  </span> {{$document}}</h2>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h2><span style="font-weight: bold;">Password :  </span> {{$password}}</h2>
+                                        <h2><span style="font-weight: bold;">Status :  </span> {{$status}}</h2>
                                     </td>
                                 </tr>
-
-                                <tr>
-                                    <td>
-                                        <a href="https://curvalink.online/login"
-                                            style="background:#e2db20;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px; cursor: pointer;">Login</a>
-                                    </td>
-                                    <td style="height:40px;">&nbsp;</td>
-                                </tr>
-
-                               
                                 <tr>
                                     <td style="height:40px;">&nbsp;</td>
                                 </tr>
-                                <tr><span style="color: red;">Please note:</span> this is an automated message, so there's no need to reply</tr>
+                                <tr><span style="color: red;">Please note:</span> this is an automated email, so there's no need to reply</tr>
                                 <tr>
                                     <td style="height:40px;">&nbsp;</td>
                                 </tr>

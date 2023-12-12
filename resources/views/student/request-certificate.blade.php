@@ -164,6 +164,18 @@
 
                     /* Injected CSS Code */
                 </style>
+                @if ($errors->any())
+                    <div class=" d-flex justify-content-center">
+                        <div class="alert alert-danger w-75">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+
 
                 <form action="/request/certificate" method="post" accept-charset="utf-8" autocomplete="on">
                     @csrf
@@ -298,7 +310,7 @@
                                     for="input_6" aria-hidden="false"> E-mail<span class="form-required">*</span>
                                 </label>
                                 <div id="cid_6" class="form-input-wide jf-required" data-layout="half"> <span
-                                        class="form-sub-label-container" style="vertical-align:top"><input type="email"
+                                        class="form-sub-label-container" style="vertical-align:top"><input type="email" value="{{Auth::user()->email}}"
                                             id="input_6" name="email" class="form-textbox validate[required, Email]"
                                             data-defaultvalue="" style="width:310px" size="310" value=""
                                             placeholder="ex: email@yahoo.com" data-component="email"

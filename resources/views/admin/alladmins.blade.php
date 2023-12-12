@@ -41,7 +41,7 @@
                                 }, 4000); // 5000 milliseconds (5 seconds)
                             </script>
                         @endif
-                        <h5 class="card-header">All Teachers</h5>
+                        <h5 class="card-header">All Admins</h5>
                         <div class="table-responsive text-nowrap">
                             <table class="table">
                                 <thead>

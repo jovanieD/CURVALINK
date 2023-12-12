@@ -51,6 +51,18 @@
                     /* Injected CSS Code */
                 </style>
 
+                @if ($errors->any())
+                    <div class=" d-flex justify-content-center">
+                        <div class="alert alert-danger w-75">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
+
                 <form class="jotform-form" action="/request/form137" method="post" name="form_232878061551055"
                     id="232878061551055" accept-charset="utf-8" autocomplete="on">
                     @csrf

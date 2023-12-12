@@ -54,7 +54,8 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="gender" class="form-label">Gender</label>
-                                        <select class="form-control" id="gender" name="gender">
+                                        <select class="form-select" id="gender" name="gender">
+                                            <option selected disabled value="male">Please selecet</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -62,12 +63,14 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="gradelevel" class="form-label">Grade Level</label>
                                         <select class="form-select" name="gradelevel" id="gradelevel">
-                                            <option value="7">Grade 7</option>
-                                            <option value="8">Grade 8</option>
-                                            <option value="9">Grade 9</option>
-                                            <option value="10">Grade 10</option>
-                                            <option value="11">Grade 11</option>
-                                            <option value="12">Grade 12</option>
+                                            <option selected disabled value="male">Please selecet</option>
+                                            <option value="Grade 6">Grade 6</option>
+                                            <option value="Grade 7">Grade 7</option>
+                                            <option value="Grade 8">Grade 8</option>
+                                            <option value="Grade 9">Grade 9</option>
+                                            <option value="Grade 10">Grade 10</option>
+                                            <option value="Grade 11">Grade 11</option>
+                                            <option value="Grade 12">Grade 12</option>
                                         </select>
                                     </div>
                                     

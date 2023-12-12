@@ -12,6 +12,9 @@ use App\Models\GoodMoralRequest;
 use Auth;
 use App\Models\User;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DocumentRequest;
+
 class CertificationRequestController extends Controller
 {
 
@@ -21,32 +24,50 @@ class CertificationRequestController extends Controller
     }
 
     public function createNewCertificationRequest(Request $request){
-        $request->validate([
-            'firstname' => 'required|string|max:32',
-            'lastname' => 'required|string|max:32',
-            'address' => 'required|string|max:64',
-            'municipality' => 'required|string|max:32',
-            'province' => 'required|string|max:32',
-            'postal' => 'required|string|max:7|min:4',
-            'phonenumber' => 'required|string|max:11|min:11',
-            'email' => 'required|string|email|max:32',
-            'purpose' => 'required|string|max:255',
-        ]);
-    
-        $newRequest = CertificationRequest::create([
-            'user_id' => Auth::user()->id,
-            'firstname' => $request->input('firstname'),
-            'lastname' => $request->input('lastname'),
-            'address' => $request->input('address'),
-            'municipality' => $request->input('municipality'),
-            'province' => $request->input('province'),
-            'postal' => $request->input('postal'),
-            'phonenumber' => $request->input('phonenumber'), // Fixed typo in 'phonenumber'
-            'email' => $request->input('email'),
-            'purpose' => $request->input('purpose'),
-        ]);
+        try {
+            $request->validate([
+                'firstname' => 'required|string|max:32',
+                'lastname' => 'required|string|max:32',
+                'address' => 'required|string|max:64',
+                'municipality' => 'required|string|max:32',
+                'province' => 'required|string|max:32',
+                'postal' => 'required|string|max:7|min:4',
+                'phonenumber' => 'required|string|max:11|min:11',
+                'email' => 'required|string|email|max:64',
+                'purpose' => 'required|string|max:255',
+            ]);
+        
+            try {
+                $useremail = Auth::user()->email;
+                $document = 'Certificate';
+                $status = 'Pending';
+            
+                Mail::to($useremail)->send(new DocumentRequest($document, $status));
+            
+            } catch (\Exception $e) {
+                return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+            }
 
-        return redirect('dashboard');
+            $newRequest = CertificationRequest::create([
+                'user_id' => Auth::user()->id,
+                'firstname' => $request->input('firstname'),
+                'lastname' => $request->input('lastname'),
+                'address' => $request->input('address'),
+                'municipality' => $request->input('municipality'),
+                'province' => $request->input('province'),
+                'postal' => $request->input('postal'),
+                'phonenumber' => $request->input('phonenumber'),
+                'email' => $request->input('email'),
+                'purpose' => $request->input('purpose'),
+            ]);
+        
+            return redirect('dashboard');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return back()->withErrors($e->validator->errors())->withInput();
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => 'An error occurred.'])->withInput();
+        }
+        
     
     }
 

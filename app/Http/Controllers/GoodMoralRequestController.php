@@ -9,6 +9,9 @@ use Illuminate\Validation\ValidationException;
 use App\Models\GoodMoralRequest;
 use Auth;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\DocumentRequest;
+
 class GoodMoralRequestController extends Controller
 {
     public function showFormGoodMoral(){
@@ -17,7 +20,6 @@ class GoodMoralRequestController extends Controller
 
     public function createNewGoodMoralRequest(Request $request){
         try {
-            // Validation rules
             $validationRules = [
                 'idnumber' => 'required|string|max:255',
                 'firstname' => 'required|string|max:255',
@@ -31,10 +33,19 @@ class GoodMoralRequestController extends Controller
                 'requestorsprovince' => 'required|string|max:255',
             ];
 
-            // Validate the request
             $request->validate($validationRules);
 
-            // Create a new GoodMoralRequest
+            try {
+                $useremail = Auth::user()->email;
+                $document = 'Good Moral';
+                $status = 'Pending';
+            
+                Mail::to($useremail)->send(new DocumentRequest($document, $status));
+            
+            } catch (\Exception $e) {
+                return back()->withErrors(['error' => 'An error occurred while sending the email.'])->withInput();
+            }
+
             $newRequest = GoodMoralRequest::create([
                 'user_id' => Auth::user()->id,
                 'idnumber' => $request->input('idnumber'),

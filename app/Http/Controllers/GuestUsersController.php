@@ -17,6 +17,10 @@ use App\Mail\ForgotEmail;
 class GuestUsersController extends Controller
 {
 
+    public function tologin(){
+        return redirect('/login');
+    }
+
     public function getcertificate(){
         if (auth()->check()) {
             return redirect('/request/certificate');
