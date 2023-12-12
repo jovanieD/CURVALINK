@@ -31,10 +31,10 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$f19DohqQgLXKb9YQPgrrretVQ5.A5RY4GFu7kuovp4VmO1Vb3tFcq', //@dm1nP@$$word
         ]);
 
-        // \App\Models\Teacher::factory()->create([
-        //     'firstname' => 'Teacher',
-        //     'email' => 'teacher@example.com',
-        // ]);
+        \App\Models\Teacher::factory()->create([
+            'firstname' => 'Teacher',
+            'email' => 'teacher@example.com',
+        ]);
 
         // \App\Models\Event::factory()->create([
             
