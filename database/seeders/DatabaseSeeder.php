@@ -25,8 +25,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         \App\Models\Admin::factory()->create([
-            'firstname' => 'Admin',
-            'email' => 'admin@example.com',
+            'firstname' => 'CurvaLink',
+            'lastname' => 'Administrator',
+            'email' => 'linkcurva@gmail.com',
         ]);
 
         // \App\Models\Teacher::factory()->create([
