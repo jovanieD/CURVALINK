@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             'firstname' => 'CurvaLink',
             'lastname' => 'Administrator',
             'email' => 'linkcurva@gmail.com',
+            'password' => '$2y$10$f19DohqQgLXKb9YQPgrrretVQ5.A5RY4GFu7kuovp4VmO1Vb3tFcq', //@dm1nP@$$word
         ]);
 
         // \App\Models\Teacher::factory()->create([
