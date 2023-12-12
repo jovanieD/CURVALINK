@@ -81,7 +81,7 @@
                                                         data-bs-toggle="dropdown">
                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                     </button>
-                                                    <div class="dropdown-menu">
+                                                    <div class="dropdown-menu" style="z-index: 1000">
                                                         <a class="dropdown-item" href="/view_User/{{ $userData['id'] }}"><i
                                                                 class="fas fa-eye text-info me-3"></i>View</a>
                                                         <a class="dropdown-item" href="/edit_User/{{ $userData['id'] }}"><i
