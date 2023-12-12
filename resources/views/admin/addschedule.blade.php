@@ -20,12 +20,12 @@
                         </div>
 
                         <div class="col-md-6">
-                            <form method="GET" action="{{ route('searchRequests') }}">
+                            <form method="get" action="{{ route('admin_searchRequests') }}">
                                 @csrf
                                 <div class="input-group mb-3 h-25">
-                                    <input type="text" id="searchInput"  name="requestor" class="form-control" placeholder="Search events">
+                                    <input type="text" id="searchInput"  name="name" class="form-control" placeholder="Search events">
                                     <div class="input-group-append">
-                                        <button id="searchButton" class="btn btn-primary">Search</button>
+                                        <button id="searchButton" class="btn btn-primary" type="submit">Search</button>
                                     </div>
                                 </div>
                             </form>

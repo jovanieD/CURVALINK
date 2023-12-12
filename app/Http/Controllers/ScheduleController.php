@@ -363,16 +363,104 @@ class ScheduleController extends Controller
     }
 
 
+    public function teacherSearchAvailableRequest(Request $request)
+    {
+        $name = $request->input('name');
 
-    // public function searchRequests(Request $request)
-    // {
-    //     $searchKeywords = $request->input('requestor');
+        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')
+            ->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])
+            ->where(function ($query) use ($name) {
+                $query->where('document', 'LIKE', '%' . $name . '%');
+            })
+            ->get();
+        
+    
+        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')
+       ->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])
+       ->where(function ($query) use ($name) {
+        $query->where('document', 'LIKE', '%' . $name . '%');
+        })
+        ->get();
 
-    //     $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
-    //     $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
-    //     $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')->whereNotIn('status', ['Pending', 'Scheduled'])->get();
+        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')
+            ->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])
+            ->where(function ($query) use ($name) {
+                $query->where('document', 'LIKE', '%' . $name . '%');
+            })
+            ->get();
 
-    // }
+    
+    
+    
+        $documentCounts = [
+            'Pending' => 0,
+            'Process' => 0,
+            'Scheduled' => 0,
+            'Decline' => 0,
+            'Done' => 0,
+        ];
+    
+        $documentRequested = [];
+    
+        foreach ($certificationRequests as $request) {
+            $documentRequested[] = [
+                'type' => 'Certificate',
+                'releasedate' => $request->releasedate,
+                'remarks' => $request->remarks,
+                'created_at' => $request->created_at,
+                'status' => $request->status,
+                'id' => $request->id,
+                'user_id' => $request->user_id,
+            ];
+            $documentCounts[$request->status]++;
+        }
+    
+        foreach ($goodMoralRequests as $request) {
+            $documentRequested[] = [
+                'type' => 'Good_Moral',
+                'releasedate' => $request->releasedate,
+                'remarks' => $request->remarks,
+                'created_at' => $request->created_at,
+                'status' => $request->status,
+                'id' => $request->id,
+                'user_id' => $request->user_id,
+            ];
+            $documentCounts[$request->status]++;
+        }
+
+        foreach ($form137Requests as $request) {
+            $documentRequested[] = [
+                'type' => 'Form137',
+                'releasedate' => $request->releasedate,
+                'remarks' => $request->remarks,
+                'created_at' => $request->created_at,
+                'status' => $request->status,
+                'id' => $request->id,
+                'user_id' => $request->user_id,
+            ];
+            $documentCounts[$request->status]++;
+        }
+
+        $allRequests = collect($documentRequested);
+
+    
+        $sortedRequests = $allRequests->sortByDesc('created_at');
+    
+        $currentPage = request()->get('page', 1);
+        $perPage = 10;
+        $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
+            $sortedRequests->forPage($currentPage, $perPage),
+            $sortedRequests->count(),
+            $perPage,
+            $currentPage
+        );
+    
+        return view('teacher.addschedule', [
+            'documentRequested' => $paginatedRequests,
+            'documentCounts' => $documentCounts,
+        ]);
+    }
+    
 
 
     public function addschedule()
@@ -434,6 +522,102 @@ class ScheduleController extends Controller
 
         $sortedRequests = $allRequests->sortByDesc('created_at');
 
+        $currentPage = request()->get('page', 1);
+        $perPage = 10;
+        $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(
+            $sortedRequests->forPage($currentPage, $perPage),
+            $sortedRequests->count(),
+            $perPage,
+            $currentPage
+        );
+
+        return view('admin.addschedule', [
+            'documentRequested' => $paginatedRequests,
+            'documentCounts' => $documentCounts,
+        ]);
+    }
+
+    public function admin_searchRequests(Request $request)
+    {
+        $name = $request->input('name');
+
+        $certificationRequests = CertificationRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')
+            ->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])
+            ->where(function ($query) use ($name) {
+                $query->where('document', 'LIKE', '%' . $name . '%');
+            })
+            ->get();
+        
+    
+        $goodMoralRequests = GoodMoralRequest::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')
+       ->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])
+       ->where(function ($query) use ($name) {
+        $query->where('document', 'LIKE', '%' . $name . '%');
+        })
+        ->get();
+
+        $form137Requests = Form137Request::select('id', 'document', 'remarks', 'created_at', 'status', 'releasedate', 'user_id')
+            ->whereNotIn('status', ['Pending', 'Scheduled', 'Done', 'Decline'])
+            ->where(function ($query) use ($name) {
+                $query->where('document', 'LIKE', '%' . $name . '%');
+            })
+            ->get();
+
+    
+    
+    
+        $documentCounts = [
+            'Pending' => 0,
+            'Process' => 0,
+            'Scheduled' => 0,
+            'Decline' => 0,
+            'Done' => 0,
+        ];
+    
+        $documentRequested = [];
+    
+        foreach ($certificationRequests as $request) {
+            $documentRequested[] = [
+                'type' => 'Certificate',
+                'releasedate' => $request->releasedate,
+                'remarks' => $request->remarks,
+                'created_at' => $request->created_at,
+                'status' => $request->status,
+                'id' => $request->id,
+                'user_id' => $request->user_id,
+            ];
+            $documentCounts[$request->status]++;
+        }
+    
+        foreach ($goodMoralRequests as $request) {
+            $documentRequested[] = [
+                'type' => 'Good_Moral',
+                'releasedate' => $request->releasedate,
+                'remarks' => $request->remarks,
+                'created_at' => $request->created_at,
+                'status' => $request->status,
+                'id' => $request->id,
+                'user_id' => $request->user_id,
+            ];
+            $documentCounts[$request->status]++;
+        }
+
+        foreach ($form137Requests as $request) {
+            $documentRequested[] = [
+                'type' => 'Form137',
+                'releasedate' => $request->releasedate,
+                'remarks' => $request->remarks,
+                'created_at' => $request->created_at,
+                'status' => $request->status,
+                'id' => $request->id,
+                'user_id' => $request->user_id,
+            ];
+            $documentCounts[$request->status]++;
+        }
+
+        $allRequests = collect($documentRequested);
+        $sortedRequests = $allRequests->sortByDesc('created_at');
+    
         $currentPage = request()->get('page', 1);
         $perPage = 10;
         $paginatedRequests = new \Illuminate\Pagination\LengthAwarePaginator(

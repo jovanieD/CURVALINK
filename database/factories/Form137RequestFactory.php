@@ -17,7 +17,7 @@ class Form137RequestFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 11,
+            'user_id' => 1,
             'principalname' => fake()->name(),
             'name' => fake()->name(),
             'grade' => fake()->randomElement(['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5', 'Grade 6']),
@@ -26,7 +26,7 @@ class Form137RequestFactory extends Factory
             'requestorname' => fake()->name(),
             'request' => fake()->randomElement(['First Request', 'Second Request', 'Third Request','Urgent']),
             'remarks' => fake()->paragraph(),
-            'status' => "Pending",
+            'status' => "Process",
         ];
     }
     

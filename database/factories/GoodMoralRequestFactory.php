@@ -17,7 +17,7 @@ class GoodMoralRequestFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 11,
+            'user_id' => 1,
             'idnumber' => fake()->randomNumber(),
             'firstname' => fake()->name(),
             'middlename' => fake()->name(),
@@ -28,7 +28,7 @@ class GoodMoralRequestFactory extends Factory
             'requestorsaddress' => fake()->address(),
             'requestorscity' => fake()->city(),
             'requestorsprovince' => fake()->state(),
-            'status' => "Pending",
+            'status' => "Process",
         ];
     }
     

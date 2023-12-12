@@ -4,8 +4,12 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Models\Event;
+use App\Models\Form137Request;
+use App\Models\GoodMoralRequest;
+use App\Models\CertificationRequest;
 
 class EventSeeder extends Seeder
 {

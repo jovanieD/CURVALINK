@@ -17,7 +17,7 @@ class CertificationRequestFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1, 11),
+            'user_id' => 1,
             'firstname' => fake()->name(),
             'lastname' => fake()->name(),
             'address' => fake()->address(),
@@ -27,7 +27,7 @@ class CertificationRequestFactory extends Factory
             'phonenumber' => "09123456789",
             'email' => fake()->unique()->safeEmail(),
             'purpose' => fake()->text(160),
-            'status' => "Pending",
+            'status' => "Process",
         ];
     }
 }

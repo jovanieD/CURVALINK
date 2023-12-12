@@ -20,10 +20,10 @@
                         </div>
 
                         <div class="col-md-6">
-                            <form method="GET" action="{{ route('searchRequests') }}">
+                            <form method="GET" action="{{ route('teacherSearchAvailableRequest') }}">
                                 @csrf
                                 <div class="input-group mb-3 h-25">
-                                    <input type="text" id="searchInput"  name="requestor" class="form-control" placeholder="Search events">
+                                    <input type="text" id="searchInput"  name="name" class="form-control" placeholder="Search events">
                                     <div class="input-group-append">
                                         <button id="searchButton" class="btn btn-primary">Search</button>
                                     </div>
@@ -134,7 +134,7 @@
                                         </table>
                                         <nav class=" d-flex justify-content-center m-2">
                                             <ul class="pagination">
-                                                {{ $documentRequested->onEachSide(1)->setPath('/teacher/dashboard')->appends(request()->query())->links('pagination::bootstrap-4') }}
+                                                {{ $documentRequested->onEachSide(1)->setPath('/showavailablerequests')->appends(request()->query())->links('pagination::bootstrap-4') }}
                                             </ul>
                                         </nav>
                                     </div>

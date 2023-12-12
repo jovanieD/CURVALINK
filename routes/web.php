@@ -162,7 +162,7 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::get('/showavailablerequests', [ScheduleController::class, 'showAllAvailableRequest']); 
 
-    Route::get('/search-requests', [ScheduleController::class, 'searchRequests'])->name('searchRequests');    //not functional yet
+    Route::get('/teacherSearchAvailableRequest', [ScheduleController::class, 'teacherSearchAvailableRequest'])->name('teacherSearchAvailableRequest');  
 
     Route::post('/createappoinment/{user_id}', [ScheduleController::class, 'createappoinment']);
 
@@ -258,6 +258,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/overallschedules', [AdminDashboardController::class, 'getallschedule']); 
 
     Route::get('/admin_addschedule', [ScheduleController::class, 'addschedule']); 
+
+    Route::get('admin_searchRequests', [ScheduleController::class, 'admin_searchRequests'])->name('admin_searchRequests');
 
     Route::post('/admin_createappoinment/{user_id}', [ScheduleController::class, 'admincreateappoinment']);
 
