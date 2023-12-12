@@ -19,26 +19,26 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\Admin::factory(20)->create();
 
-        \App\Models\User::factory()->create([
-            'firstname' => 'User',
-            'email' => 'user@example.com',
-        ]);
+        // \App\Models\User::factory()->create([
+        //     'firstname' => 'User',
+        //     'email' => 'user@example.com',
+        // ]);
 
         \App\Models\Admin::factory()->create([
             'firstname' => 'Admin',
             'email' => 'admin@example.com',
         ]);
 
-        \App\Models\Teacher::factory()->create([
-            'firstname' => 'Teacher',
-            'email' => 'teacher@example.com',
-        ]);
+        // \App\Models\Teacher::factory()->create([
+        //     'firstname' => 'Teacher',
+        //     'email' => 'teacher@example.com',
+        // ]);
 
         // \App\Models\Event::factory()->create([
             
         // ]);
 
-        \App\Models\Announcement::factory(20)->create();
+        // \App\Models\Announcement::factory(20)->create();
 
         // \App\Models\CertificationRequest::factory(3)->create();
         // \App\Models\GoodMoralRequest::factory(3)->create();
