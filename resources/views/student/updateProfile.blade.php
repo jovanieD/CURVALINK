@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="gender" class="form-label">Gender</label>
-                                                <select class="form-control" id="gender" name="gender">
+                                                <select class="form-select" id="gender" name="gender">
                                                     <option value="" selected disabled>Please select</option>
                                                     <option value="male" {{ Auth::user()->gender === 'Male' ? 'selected' : '' }}>Male</option>
                                                     <option value="female" {{ Auth::user()->gender === 'Female' ? 'selected' : '' }}>Female</option>
@@ -74,7 +74,7 @@
                                             </div>
                                             <div class="mb-3 col-md-6">
                                                 <label for="gradelevel" class="form-label">Grade Level</label>
-                                                <select class="form-control" id="gradelevel" name="gradelevel">
+                                                <select class="form-select" id="gradelevel" name="gradelevel">
                                                     <option value="" selected disabled>Please select</option>
                                                     <option value="Grade 6" {{ Auth::user()->gradelevel == 'Grade 6' ? 'selected' : '' }}>Grade 6</option>
                                                     <option value="Grade 7" {{ Auth::user()->gradelevel == 'Grade 7' ? 'selected' : '' }}>Grade 7</option>
