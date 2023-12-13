@@ -45,7 +45,7 @@ Route::get('/all_announcements', [GuestUsersController::class,'showannouncement'
 
 Route::get('/searchAnnouncement', [GuestUsersController::class,'searchAnnouncement'])->name('searchAnnouncement');
 
-Route::get('/events', [GuestUsersController::class,'showevent']);
+Route::get('/all_events', [GuestUsersController::class,'showevent']);
 
 Route::get('/searchevent', [GuestUsersController::class,'searchEvent'])->name('searchEvent');
 
