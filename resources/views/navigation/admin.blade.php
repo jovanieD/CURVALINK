@@ -82,7 +82,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/admin/add_announcement">
                                 <i class="fa fa-tasks m-2 text-warning"></i>
                                 <span class="align-middle">Post Update</span>
                             </a>
