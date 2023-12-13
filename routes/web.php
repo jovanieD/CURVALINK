@@ -138,7 +138,7 @@ Route::group(['middleware' => 'auth:teacher'], function (){
 
     Route::get('/teachereventssearch', [TeacherHomePageController::class,'teachereventssearch'])->name('teachereventssearch');
 
-    Route::get('/teacher_contact', [TeacherHomePageController::class,'showcontact']);  //end of the homepage
+    Route::get('/teacher_contacts', [TeacherHomePageController::class,'showcontact']);  //end of the homepage
 
     Route::get('/teacherprofileimage', [TeacherDashboardController::class,'teacherprofileimage'])->name('teacherprofileimage');
 
