@@ -236,77 +236,61 @@
                 <h5 class="fw-bold text-primary text-uppercase">Our</h5>
                 <h1 class="mb-0">Core Values</h1>
             </div>
-
+    
             <div class="row g-5">
-                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap"
-                        style="z-index: 1;">
+                <div class="col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap h-100" style="z-index: 1;">
                         <div class="service-icon">
                             <i class="fa fa-shield-alt text-white fs-2"></i>
                         </div>
-
+    
                         <h4 class="fw-bold text-uppercase mb-4">Maka-Diyos</h4>
                         <div class="w-75">
-                            <p class="m-0" style="text-align: center">Expresses one’s spiritual beliefs while
-                                respecting the spiritual
-                                beliefs of
-                                others 
-                                Shows adherence to ethical principles by upholding truth
-                            </p>
+                            <p class="mb-5" style="text-align: center">Expresses one’s spiritual beliefs while respecting the spiritual beliefs of others Shows adherence to ethical principles by upholding truth</p>
                         </div>
-
                     </div>
                 </div>
-                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.4s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap"
-                        style="z-index: 1;">
-
+    
+                <div class="col-md-6 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap h-100" style="z-index: 1;">
                         <div class="service-icon">
                             <i class="fas fa-users text-white fs-2"></i>
                         </div>
-
+    
                         <h4 class="fw-bold text-uppercase mb-4">Maka-tao</h4>
                         <div class="w-75">
-                            <p class="m-0" style="text-align: center">Is sensitive to individual, social, and
-                                cultural differences <br>
-                                Demonstrates contributions toward solidarity
-                            </p>
+                            <p class="mb-5" style="text-align: center">Is sensitive to individual, social, and cultural differences <br> Demonstrates contributions toward solidarity</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6  wow zoomIn" data-wow-delay="0.5s">
-                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap"
-                        style="z-index: 1;">
+    
+                <div class="col-md-6 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap h-100" style="z-index: 1;">
                         <div class="service-icon">
                             <i class="fab fa-pagelines text-white fs-2"></i>
                         </div>
                         <h4 class="fw-bold text-uppercase mb-4">Makakalikasan</h4>
                         <div class="w-75">
-                            <p class="m-0" style="text-align: center">Cares for the environment and utilizes
-                                resources wisely, judiciously,
-                                and
-                                economically <br>
-                            </p>
+                            <p class="mb-5" style="text-align: center">Cares for the environment and utilizes resources
+                                wisely, judiciously, and economically</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow zoomIn" style="height: auto" data-wow-delay="0.3s">
-                    <div class="service-item  rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative"
-                        style="z-index: 1;">
+    
+                <div class="col-md-6 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center bg-white rounded shadow position-relative text-wrap h-100" style="z-index: 1;">
                         <div class="service-icon">
                             <i class="fab fa-font-awesome-flag text-white fs-2"></i>
                         </div>
 
                         <h4 class="fw-bold text-uppercase mb-4">Makabansa</h4>
                         <div class="w-75">
-                            <p class="m-0" style="text-align: center text-wrap">Demonstrates pride in being a Filipino; exercises the rights and responsibilities of a Filipino citizen 
-                                Demonstrates appropriate behavior in carrying out activities in the school,
-                                community, and country
-                            </p>
+                            <p class="mb-5" style="text-align: center">Demonstrates pride in being a Filipino;
+                                exercises the rights and responsibilities of a Filipino citizen Demonstrates appropriate
+                                behavior in carrying out activities in the school, community, and country</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
