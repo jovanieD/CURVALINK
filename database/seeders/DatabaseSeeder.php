@@ -49,3 +49,4 @@ class DatabaseSeeder extends Seeder
         // Schedule::factory(20)->create();
     }
 }
+
