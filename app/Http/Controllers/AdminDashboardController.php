@@ -162,9 +162,9 @@ class AdminDashboardController extends Controller
     
             return redirect()->back()->with('success', 'Password updated successfully!');
         } catch (ValidationException $validationException) {
-            return redirect()->back()->withErrors($validationException->errors())->withInput();
+            return redirect()->back()->with('error', 'New Password must be minimum of 8 characters');
         } catch (\Exception $exception) {
-            return redirect()->back()->withErrors( $exception->getmessage());
+            return redirect()->back()->with('error', 'Error occur upon updating new password');
         }
     }
 
