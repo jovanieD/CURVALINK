@@ -58,7 +58,7 @@
                                     class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                             <a class="text-light mb-2" href="/teacher/offers"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Offers</a>
-                                    <a class="text-light mb-2" href="/teacher/contacts"><i
+                                    <a class="text-light mb-2" href="/teacher_contacts"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Contacts</a>
                             
                         </div>
