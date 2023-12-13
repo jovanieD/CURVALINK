@@ -1,12 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0 sticky-top shadow-sm">
     <!-- Logo -->
     <a href="/" class="navbar-brand p-0">
-        <h1 class="m-0">
-            <img class="img-fluid rounded m-2" src="images/curva_logo.png" style="width: 50px; height: 50px;">
-            Curva NHS
+        <h1 class="m-0 d-flex align-items-center">
+            <img class="img-fluid rounded m-2" src="images/curva_logo.png" style="width: 50px; height: 50px;" alt="Curva NHS Logo">
+            <span id="headingname" class="d-none d-sm-block">Curva NHS</span>
         </h1>
     </a>
-
     <!-- Toggle Button for Mobile -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
