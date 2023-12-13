@@ -26,7 +26,7 @@
                 </div>
             </div>
             <a href="/admin/dashboard" class="nav-item nav-link">Requests</a>
-            <a href="/admin_contact" class="nav-item nav-link">Contact</a>
+            <a href="/admin_contacts" class="nav-item nav-link">Contact</a>
             @guest
                 @if (Route::has('login'))
                     <a class="btn-grad btn-primary " style="text-decoration: none;"

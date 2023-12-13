@@ -235,7 +235,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::get('/admin_events', [AdminHomePageController::class,'showevents']); //
 
-    Route::get('/admin_contact', [AdminHomePageController::class,'showcontact']); 
+    Route::get('/admin_contacts', [AdminHomePageController::class,'showcontact']); 
 
     Route::get('/adminprofileimage', [AdminDashboardController::class,'adminprofileimage'])->name('adminprofileimage');
 
