@@ -12,7 +12,7 @@
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Martin M. Salimbangon National High
                                 School</h1>
-                            <a href="/teacher_contact"
+                            <a href="/teacher_contacts"
                                 class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
                                 Us</a>
                         </div>
@@ -27,7 +27,7 @@
                                 Natioanl High School</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">We nurture nature; We plant future
                             </h1>
-                            <a href="/teacher_contact"
+                            <a href="/teacher_contacts"
                                 class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
                                 Us</a>
                         </div>
