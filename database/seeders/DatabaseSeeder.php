@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\Admin::factory(20)->create();
 
-        \App\Models\User::factory()->create([
-            'firstname' => 'User',
-            'email' => 'user@example.com',
-        ]);
+        // \App\Models\User::factory()->create([
+        //     'firstname' => 'User',
+        //     'email' => 'user@example.com',
+        // ]);
 
         \App\Models\Admin::factory()->create([
             'firstname' => 'CurvaLink',
@@ -31,10 +31,31 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$f19DohqQgLXKb9YQPgrrretVQ5.A5RY4GFu7kuovp4VmO1Vb3tFcq', //@dm1nP@$$word
         ]);
 
-        \App\Models\Teacher::factory()->create([
-            'firstname' => 'Teacher',
-            'email' => 'teacher@example.com',
+        \App\Models\Admin::factory()->create([
+            'firstname' => 'Shakera',
+            'lastname' => 'Tinapay',
+            'email' => 'shakera_joy.tinapay@student.passerellesnumeriques.org',
+            'password' => '$2y$10$f19DohqQgLXKb9YQPgrrretVQ5.A5RY4GFu7kuovp4VmO1Vb3tFcq', //@dm1nP@$$word
         ]);
+
+        \App\Models\Admin::factory()->create([
+            'firstname' => 'Christina',
+            'lastname' => 'Mangapuro',
+            'email' => 'christina.mangapuro@student.passerellesnumeriques.org',
+            'password' => '$2y$10$f19DohqQgLXKb9YQPgrrretVQ5.A5RY4GFu7kuovp4VmO1Vb3tFcq', //@dm1nP@$$word
+        ]);
+
+        \App\Models\Admin::factory()->create([
+            'firstname' => 'Clint Anthony',
+            'lastname' => 'Savilla',
+            'email' => 'clint_anthony.savilla@student.passerellesnumeriques.org',
+            'password' => '$2y$10$f19DohqQgLXKb9YQPgrrretVQ5.A5RY4GFu7kuovp4VmO1Vb3tFcq', //@dm1nP@$$word
+        ]);
+
+        // \App\Models\Teacher::factory()->create([
+        //     'firstname' => 'Teacher',
+        //     'email' => 'teacher@example.com',
+        // ]);
 
         // \App\Models\Event::factory()->create([
             
