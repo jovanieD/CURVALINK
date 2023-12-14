@@ -46,7 +46,7 @@
                     <div class="app-brand demo">
                         <a href="/teacher" class="app-brand-link">
                             <img src="../images/curva_logo.png" alt class="w-px-40 h-auto rounded-circle" />
-                            <span class="demo fw-bolder text-warning">Curva NHS</span>
+                            <span class="demo fw-bolder text-warning">MMNHS</span>
                         </a>
 
                         <a href="javascript:void(0);"
