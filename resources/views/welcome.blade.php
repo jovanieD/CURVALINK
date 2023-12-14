@@ -1033,7 +1033,7 @@
                 @foreach ($latestEvents as $event)
                     <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                         <div class="blog-img position-relative overflow-hidden">
-                            <img class="w-100 img-fluid mb-4" style="height: 190px" type="image/jpg"
+                            <img class="w-100 img-fluid mb-4" style="height: 230px" type="image/jpg"
                                 src="{{ $event->imageurl }}" alt="Image">
                         </div>
 

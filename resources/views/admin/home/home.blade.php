@@ -1042,7 +1042,7 @@
                                     </small>
                                 </div>
                                 <h4 class="mb-3">{{ $event->title }}</h4>
-                                <img class="w-100 img-fluid mb-4" style="height: 190px" type="image/jpg"
+                                <img class="w-100 img-fluid mb-4" style="height: 230px" type="image/jpg"
                                     src="{{ $event->imageurl }}" alt="Image">
                                 <p class=" text-truncate">{{ $event->description }}</p>
                                 <a class="text-uppercase readmore-link" style="cursor: pointer;" data-bs-toggle="modal"
