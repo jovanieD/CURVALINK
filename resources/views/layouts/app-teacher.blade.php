@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title and Favicon -->
-    <title>Curva National High School</title>
+    <title>Martin M. Salimbangon National High School</title>
     <link rel="icon" href="{{asset('images/curva_logo.png')}}" type="image/x-icon">
 
     <!-- Fonts -->
