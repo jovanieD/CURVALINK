@@ -86,7 +86,7 @@
                                 </div>
                             </li>
                             <li class="form-line " data-type="control_email" id="id_8"><label
-                                    class="form-label form-label-top form-label-auto" aria-hidden="false"> ID Number:<span
+                                    class="form-label form-label-top form-label-auto" aria-hidden="false"> LRN Number:<span
                                         class="form-required">*</span> </label>
                                 <div id="cid_8" class="form-input-wide " data-layout="half"> <input type="text"
                                         name="idnumber" value="{{ $data['idnumber'] }}" readonly=""

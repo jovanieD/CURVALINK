@@ -18,6 +18,8 @@ return new class extends Migration
                 $table->string('lastname');
                 $table->string('address');
                 $table->string('municipality');
+                $table->string('department');
+                $table->string('lastschoolyear');
                 $table->string('province')->nullable();
                 $table->string('postal'); 
                 $table->string('phonenumber'); 

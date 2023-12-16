@@ -14,13 +14,14 @@ class Form137Request extends Model
         'principalname',
         'name',
         'grade',
-        'schoolyear',
         'adviser',
         'requestorname',
         'request',
         'remarks',
         'status',
         'releasedate',
+        'department',
+        'lastschoolyear',
     ];
     
 

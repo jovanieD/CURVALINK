@@ -178,7 +178,7 @@
                                                                                 title="Update"></i>
                                                                         </button>
                                                                     </form>
-                                                                {{-- @elseif ($request['status'] == 'Process')
+                                                                    {{-- @elseif ($request['status'] == 'Process')
                                                                     <form method="post"
                                                                         action="/admin_view/{{ $request['user_id'] }}">
                                                                         @csrf
@@ -212,21 +212,6 @@
                                                                     </form>
                                                                 @else
                                                                     <form method="post"
-                                                                        action="/admin_editrequest/{{ $request['user_id'] }}">
-                                                                        @csrf
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['id'] }}" name="id">
-                                                                        <input type="hidden"
-                                                                            value="{{ $request['type'] }}"
-                                                                            name="type">
-                                                                        <button type="submit" class="btn m-1">
-                                                                            <i class="fas fa-edit text-warning"
-                                                                                data-bs-toggle="tooltip"
-                                                                                data-bs-placement="top"
-                                                                                title="Update"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                    <form method="post"
                                                                         action="/admin_view/{{ $request['user_id'] }}">
                                                                         @csrf
                                                                         <input type="hidden"
@@ -239,6 +224,21 @@
                                                                                 data-bs-toggle="tooltip"
                                                                                 data-bs-placement="top"
                                                                                 title="View"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                    <form method="post"
+                                                                        action="/admin_editrequest/{{ $request['user_id'] }}">
+                                                                        @csrf
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['id'] }}" name="id">
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['type'] }}"
+                                                                            name="type">
+                                                                        <button type="submit" class="btn m-1">
+                                                                            <i class="fas fa-edit text-warning"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top"
+                                                                                title="Update"></i>
                                                                         </button>
                                                                     </form>
                                                                 @endif

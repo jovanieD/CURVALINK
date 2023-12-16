@@ -31,6 +31,8 @@ class GoodMoralRequestController extends Controller
                 'requestorsaddress' => 'required|string|max:255',
                 'requestorscity' => 'required|string|max:255',
                 'requestorsprovince' => 'required|string|max:255',
+                'department' => 'required|string|max:255',
+                'lastschoolyear' => 'required|string|max:255',
             ];
 
             $request->validate($validationRules);
@@ -58,6 +60,8 @@ class GoodMoralRequestController extends Controller
                 'requestorsaddress' => $request->input('requestorsaddress'),
                 'requestorscity' => $request->input('requestorscity'),
                 'requestorsprovince' => $request->input('requestorsprovince'),
+                'department' => $request->input('department'),
+                'lastschoolyear' => $request->input('lastschoolyear'),
             ]);
 
             // Redirect to the dashboard
@@ -84,6 +88,8 @@ class GoodMoralRequestController extends Controller
                 'requestorsaddress' => 'required|string|max:64',
                 'requestorscity' => 'required|string|max:32',
                 'requestorsprovince' => 'required|string|max:32',
+                'department' => 'required|string|max:255',
+                'lastschoolyear' => 'required|string|max:255',
             ];
 
             // Validate the request
@@ -104,6 +110,8 @@ class GoodMoralRequestController extends Controller
                 'requestorsaddress' => $request->input('requestorsaddress'),
                 'requestorscity' => $request->input('requestorscity'),
                 'requestorsprovince' => $request->input('requestorsprovince'),
+                'department' => $request->input('department'),
+                'lastschoolyear' => $request->input('lastschoolyear'),
             ]);
 
             // Redirect to the dashboard or any other appropriate route

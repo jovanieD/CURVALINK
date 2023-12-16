@@ -7,14 +7,14 @@
 
                 <div class="container mt-5">
                     <div class="row">
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <input type="text" id="searchInput" class="form-control" placeholder="Search events">
                                 <div class="input-group-append">
                                     <button id="searchButton" class="btn btn-primary">Search</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="col-md-6">
                             <div class="d-flex justify-content-end align-items-center mb-3">

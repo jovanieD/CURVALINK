@@ -235,6 +235,45 @@
                                                 Name</label></span></div>
                                 </div>
                             </li>
+
+                            <li class="form-line jf-required" data-type="control_address" id="id_4">
+                                <div id="cid_4" class="form-input-wide jf-required" data-layout="full">
+                                    <div summary="" class="form-address-table jsTest-addressField">
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <label for="gender" class="form-label">Department</label>
+                                            <select class="form-select" id="department" name="department">
+                                                <option disabled selected>Please select</option>
+                                                <option value="Junior High School">Junior High School</option>
+                                                <option value="Senior High School">Senior High School</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <label for="schoolYear" class="form-label">Last School Year Attended</label>
+                                            <select class="form-select" id="lastschoolyear" name="lastschoolyear">
+                                                <option disabled selected>Please select</option>
+                                                <option value="2010-2011">2010-2011</option>
+                                                <option value="2011-2012">2011-2012</option>
+                                                <option value="2012-2013">2012-2013</option>
+                                                <option value="2013-2014">2013-2014</option>
+                                                <option value="2014-2015">2014-2015</option>
+                                                <option value="2015-2016">2015-2016</option>
+                                                <option value="2016-2017">2016-2017</option>
+                                                <option value="2017-2018">2017-2018</option>
+                                                <option value="2018-2019">2018-2019</option>
+                                                <option value="2019-2020">2019-2020</option>
+                                                <option value="2020-2021">2020-2021</option>
+                                                <option value="2021-2022">2021-2022</option>
+                                                <option value="2022-2023">2022-2023</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
                             <li class="form-line jf-required" data-type="control_address" id="id_4"><label
                                     class="form-label form-label-top form-label-auto" id="label_4"
                                     for="input_4_addr_line1" aria-hidden="false"> Address<span
@@ -251,8 +290,8 @@
                                                         aria-labelledby="label_4 sublabel_4_addr_line1"
                                                         required="" /><label class="form-sub-label"
                                                         for="input_4_addr_line1" id="sublabel_4_addr_line1"
-                                                        style="min-height:13px" aria-hidden="false">Street
-                                                        Address</label></span></span></div>
+                                                        style="min-height:13px"
+                                                        aria-hidden="false">Sitio</label></span></span></div>
                                         <div class="form-address-line-wrapper jsTest-address-line-wrapperField"><span
                                                 class="form-address-line form-address-city-line jsTest-address-lineField "><span
                                                     class="form-sub-label-container" style="vertical-align:top"><input
@@ -283,7 +322,7 @@
                                                         aria-labelledby="label_4 sublabel_4_postal"
                                                         required="" /><label class="form-sub-label"
                                                         for="input_4_postal" id="sublabel_4_postal"
-                                                        style="min-height:13px" aria-hidden="false">Postal / Zip
+                                                        style="min-height:13px" aria-hidden="false">Postal Code
                                                         Code</label></span></span></div>
                                     </div>
                                 </div>
@@ -310,9 +349,10 @@
                                     for="input_6" aria-hidden="false"> E-mail<span class="form-required">*</span>
                                 </label>
                                 <div id="cid_6" class="form-input-wide jf-required" data-layout="half"> <span
-                                        class="form-sub-label-container" style="vertical-align:top"><input type="email" value="{{Auth::user()->email}}"
-                                            id="input_6" name="email" class="form-textbox validate[required, Email]"
-                                            data-defaultvalue="" style="width:310px" size="310" value=""
+                                        class="form-sub-label-container" style="vertical-align:top"><input type="email"
+                                            value="{{ Auth::user()->email }}" id="input_6" name="email"
+                                            class="form-textbox validate[required, Email]" data-defaultvalue=""
+                                            style="width:310px" size="310" value=""
                                             placeholder="ex: email@yahoo.com" data-component="email"
                                             aria-labelledby="label_6 sublabel_input_6" required="" /><label
                                             class="form-sub-label" for="input_6" id="sublabel_input_6"

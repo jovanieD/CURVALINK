@@ -35,6 +35,8 @@ class CertificationRequestController extends Controller
                 'phonenumber' => 'required|string|max:11|min:11',
                 'email' => 'required|string|email|max:64',
                 'purpose' => 'required|string|max:255',
+                'department' => 'required|string|max:255',
+                'lastschoolyear' => 'required|string|max:255',
             ]);
         
             try {
@@ -59,6 +61,8 @@ class CertificationRequestController extends Controller
                 'phonenumber' => $request->input('phonenumber'),
                 'email' => $request->input('email'),
                 'purpose' => $request->input('purpose'),
+                'department' => $request->input('department'),
+                'lastschoolyear' => $request->input('lastschoolyear'),
             ]);
         
             return redirect('dashboard');
@@ -86,6 +90,8 @@ class CertificationRequestController extends Controller
                     'phonenumber' => 'required|string|max:11|min:11',
                     'email' => 'required|string|email|max:64',
                     'purpose' => 'required|string|max:255',
+                    'department' => 'required|string|max:255',
+                    'lastschoolyear' => 'required|string|max:255',
                 ];
 
                 // Validate the request
@@ -105,6 +111,8 @@ class CertificationRequestController extends Controller
                     'phonenumber' => $request->input('phonenumber'),
                     'email' => $request->input('email'),
                     'purpose' => $request->input('purpose'),
+                    'department' => $request->input('department'),
+                    'lastschoolyear' => $request->input('lastschoolyear'),
                 ]);
 
                 // Redirect to the dashboard or any other appropriate route

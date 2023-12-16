@@ -26,10 +26,12 @@ class Form137RequestController extends Controller
                     'principalname' => 'required|string|max:255',
                     'name' => 'required|string|max:255',
                     'grade' => 'required|string|max:255',
-                    'schoolyear' => 'required|string|max:255',
+                    // 'schoolyear' => 'required|string|max:255',
                     'adviser' => 'required|string|max:255',
                     'requestorname' => 'required|string|max:255',
                     'request' => 'required|string|max:255',
+                    'department' => 'required|string|max:255',
+                    'lastschoolyear' => 'required|string|max:255',
                 ];
 
                 $request->validate($validationRules);
@@ -50,10 +52,12 @@ class Form137RequestController extends Controller
                     'principalname' => $request->input('principalname'),
                     'name' => $request->input('name'),
                     'grade' => $request->input('grade'),
-                    'schoolyear' => $request->input('schoolyear'),
+                    // 'schoolyear' => $request->input('schoolyear'),
                     'adviser' => $request->input('adviser'),
                     'requestorname' => $request->input('requestorname'),
                     'request' => $request->input('request'),
+                    'department' => $request->input('department'),
+                    'lastschoolyear' => $request->input('lastschoolyear'),
                 ]);
 
                 return redirect('dashboard');
@@ -72,10 +76,12 @@ class Form137RequestController extends Controller
                     'principalname' => 'required|string|max:32',
                     'name' => 'required|string|max:64',
                     'grade' => 'required|string|max:32',
-                    'schoolyear' => 'required|string|max:32',
+                    // 'schoolyear' => 'required|string|max:32',
                     'adviser' => 'required|string|max:32',
                     'requestorname' => 'required|string|max:32',
                     'request' => 'required|string|max:32',
+                    'department' => 'required|string|max:255',
+                    'lastschoolyear' => 'required|string|max:255',
                 ];
 
                 // Validate the request
@@ -87,10 +93,12 @@ class Form137RequestController extends Controller
                     'principalname' => $request->input('principalname'),
                     'name' => $request->input('name'),
                     'grade' => $request->input('grade'),
-                    'schoolyear' => $request->input('schoolyear'),
+                    // 'schoolyear' => $request->input('schoolyear'),
                     'adviser' => $request->input('adviser'),
                     'requestorname' => $request->input('requestorname'),
                     'request' => $request->input('request'),
+                    'department' => $request->input('department'),
+                    'lastschoolyear' => $request->input('lastschoolyear'),
                     
                 ]);
 

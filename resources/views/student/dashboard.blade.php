@@ -108,8 +108,8 @@
                                                                 <span
                                                                     class="badge bg-label-warning me-1">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Done')
-                                                                <span
-                                                                    class="badge me-1" style="background-color:#F875AA;">{{ $request['status'] }}</span>
+                                                                <span class="badge me-1"
+                                                                    style="background-color:#F875AA;">{{ $request['status'] }}</span>
                                                             @elseif($request['status'] == 'Process')
                                                                 <span
                                                                     class="badge bg-success me-1">{{ $request['status'] }}</span>
@@ -129,8 +129,31 @@
                                                         </td>
                                                         <td class="text-center">
                                                             <div class="d-flex justify-content-center">
-                                                                @if ($request['status'] == 'Pending')
-                                                                    <form method="post"
+                                                                @php
+                                                                    $releaseDate = isset($request['releasedate']) ? $request['releasedate'] : null;
+
+                                                                    $scheduleTime = !empty($releaseDate) ? \Carbon\Carbon::parse($releaseDate) : null;
+
+                                                                    $currentTime = \Carbon\Carbon::now();
+                                                                @endphp
+                                                                {{-- @if  ($scheduleTime && $scheduleTime < $currentTime)
+                                                                <form method="post"
+                                                                        action="/viewrequest/{{ $request['id'] }}">
+                                                                        @csrf
+                                                                        <input type="hidden" value="{{ $request['id'] }}"
+                                                                            name="id">
+                                                                        <input type="hidden"
+                                                                            value="{{ $request['type'] }}" name="type">
+                                                                        <button type="submit" class="btn m-1">
+                                                                            <i class="fas fa-eye text-info"
+                                                                                data-bs-toggle="tooltip"
+                                                                                data-bs-placement="top" title="View"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                    Please get you document --}}
+                                                                 
+                                                                @if($request['status'] == 'Pending')
+                                                               <form method="post"
                                                                         action="/viewrequest/{{ $request['id'] }}">
                                                                         @csrf
                                                                         <input type="hidden" value="{{ $request['id'] }}"

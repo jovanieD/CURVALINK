@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('principalname');
             $table->string('name');
             $table->string('grade');
-            $table->string('schoolyear');
+            // $table->string('schoolyear');
+            $table->string('department');
+            $table->string('lastschoolyear');
             $table->string('adviser');
             $table->string('requestorname');
             $table->string('request');

@@ -199,6 +199,49 @@
                                                 Name<span class="form-required">*</span></label></span></div>
                                 </div>
                             </li>
+
+
+                            <li class="form-line jf-required" data-type="control_address" id="id_4">
+                                <div id="cid_4" class="form-input-wide jf-required" data-layout="full">
+                                    <div summary="" class="form-address-table jsTest-addressField">
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <label for="gender" class="form-label">Department</label>
+                                            <select class="form-select" id="department" name="department" required>
+                                                <option disabled>Please select</option>
+                                                <option value="Junior High School"
+                                                    {{ $data['department'] == 'Junior High School' ? 'selected' : '' }}>
+                                                    Junior High School</option>
+                                                <option value="Senior High School"
+                                                    {{ $data['department'] == 'Senior High School' ? 'selected' : '' }}>
+                                                    Senior High School</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <label for="schoolYear" class="form-label">Last School Year Attended</label>
+                                            <select class="form-select" id="lastschoolyear" name="lastschoolyear" required>
+                                                <option disabled selected>Please select</option>
+                                                <option value="2010-2011" {{ $data['lastschoolyear'] == '2010-2011' ? 'selected' : '' }}>2010-2011</option>
+                                                <option value="2011-2012" {{ $data['lastschoolyear'] == '2011-2012' ? 'selected' : '' }}>2011-2012</option>
+                                                <option value="2012-2013" {{ $data['lastschoolyear'] == '2012-2013' ? 'selected' : '' }}>2012-2013</option>
+                                                <option value="2013-2014" {{ $data['lastschoolyear'] == '2013-2014' ? 'selected' : '' }}>2013-2014</option>
+                                                <option value="2014-2015" {{ $data['lastschoolyear'] == '2014-2015' ? 'selected' : '' }}>2014-2015</option>
+                                                <option value="2015-2016" {{ $data['lastschoolyear'] == '2015-2016' ? 'selected' : '' }}>2015-2016</option>
+                                                <option value="2016-2017" {{ $data['lastschoolyear'] == '2016-2017' ? 'selected' : '' }}>2016-2017</option>
+                                                <option value="2017-2018" {{ $data['lastschoolyear'] == '2017-2018' ? 'selected' : '' }}>2017-2018</option>
+                                                <option value="2018-2019" {{ $data['lastschoolyear'] == '2018-2019' ? 'selected' : '' }}>2018-2019</option>
+                                                <option value="2019-2020" {{ $data['lastschoolyear'] == '2019-2020' ? 'selected' : '' }}>2019-2020</option>
+                                                <option value="2020-2021" {{ $data['lastschoolyear'] == '2020-2021' ? 'selected' : '' }}>2020-2021</option>
+                                                <option value="2021-2022" {{ $data['lastschoolyear'] == '2021-2022' ? 'selected' : '' }}>2021-2022</option>
+                                                <option value="2022-2023" {{ $data['lastschoolyear'] == '2022-2023' ? 'selected' : '' }}>2022-2023</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
                             <li class="form-line jf-required " data-type="control_address" id="id_4"><label
                                     class="form-label form-label-top form-label-auto" id="label_4"
                                     for="input_4_addr_line1" aria-hidden="false"> Address<span

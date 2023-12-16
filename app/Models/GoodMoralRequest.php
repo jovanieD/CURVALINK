@@ -24,6 +24,8 @@ class GoodMoralRequest extends Model
         'remarks',
         'status',
         'releasedate',
+        'department',
+        'lastschoolyear',
     ];
 
     public function goodmoralRequests(){

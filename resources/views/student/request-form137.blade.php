@@ -126,13 +126,17 @@
                                                 value="" /><label class="form-sub-label" for="first_13"
                                                 id="sublabel_13_first" style="min-height:13px" aria-hidden="false">Grade
                                                 &amp; Section</label></span><span class="form-sub-label-container"
-                                            style="vertical-align:top" data-input-type="middle"><input type="text"
+                                            style="vertical-align:top" data-input-type="middle">
+                                            
+                                            {{-- <input type="text"
                                                 id="middle_13" name="schoolyear" class="form-textbox"
                                                 data-defaultvalue="" size="10" data-component="middle"
                                                 aria-labelledby="label_13 sublabel_13_middle" required=""
                                                 value="" /><label class="form-sub-label" for="middle_13"
                                                 id="sublabel_13_middle" style="min-height:13px"
-                                                aria-hidden="false">School Year</label></span><span
+                                                aria-hidden="false">School Year</label></span> --}}
+                                                
+                                                <span
                                             class="form-sub-label-container" style="vertical-align:top"
                                             data-input-type="last"><input type="text" id="last_13" name="adviser"
                                                 class="form-textbox validate[required]" data-defaultvalue=""
@@ -143,6 +147,46 @@
                                                 aria-hidden="false">Adviser</label></span></div>
                                 </div>
                             </li>
+
+
+                            <li class="form-line jf-required" data-type="control_address" id="id_4">
+                                <div id="cid_4" class="form-input-wide jf-required" data-layout="full">
+                                    <div summary="" class="form-address-table jsTest-addressField">
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <label for="gender" class="form-label">Department</label>
+                                            <select class="form-select" id="department" name="department">
+                                                <option disabled selected>Please select</option>
+                                                <option value="Junior High School">Junior High School</option>
+                                                <option value="Senior High School">Senior High School</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                            <label for="schoolYear" class="form-label">Last School Year Attended</label>
+                                            <select class="form-select" id="lastschoolyear" name="lastschoolyear">
+                                                <option disabled selected>Please select</option>
+                                                <option value="2010-2011">2010-2011</option>
+                                                <option value="2011-2012">2011-2012</option>
+                                                <option value="2012-2013">2012-2013</option>
+                                                <option value="2013-2014">2013-2014</option>
+                                                <option value="2014-2015">2014-2015</option>
+                                                <option value="2015-2016">2015-2016</option>
+                                                <option value="2016-2017">2016-2017</option>
+                                                <option value="2017-2018">2017-2018</option>
+                                                <option value="2018-2019">2018-2019</option>
+                                                <option value="2019-2020">2019-2020</option>
+                                                <option value="2020-2021">2020-2021</option>
+                                                <option value="2021-2022">2021-2022</option>
+                                                <option value="2022-2023">2022-2023</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
                             <li class="form-line" data-type="control_text" id="id_14">
                                 <div id="cid_14" class="form-input-wide" data-layout="full">
                                     <div id="text_14" class="form-html" data-component="text" tabindex="0">

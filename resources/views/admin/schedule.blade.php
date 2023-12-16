@@ -8,12 +8,12 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="input-group mb-3">
+                            {{-- <div class="input-group mb-3">
                                 <input type="text" id="searchInput" class="form-control" placeholder="Search events">
                                 <div class="input-group-append">
                                     <button id="searchButton" class="btn btn-primary">Search</button>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="col-md-6">
@@ -85,10 +85,11 @@
                             $('#eventModalLabel').text(info.event.title);
                             $('#eventTitle').text('Title: ' + info.event.title);
                             $('#eventStart').text('Start: ' + info.event.start.toLocaleString());
-                            $('#eventEnd').text('End: ' + info.event.end.toLocaleString());
+                            // $('#eventEnd').text('End: ' + info.event.end.toLocaleString());
                             $('#eventModal').modal('show');
 
                         },
+                        
 
                         eventDrop: function(info) {
                             // Handle event drop
@@ -173,4 +174,7 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 @endsection
