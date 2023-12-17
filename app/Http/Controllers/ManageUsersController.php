@@ -210,6 +210,8 @@ class ManageUsersController extends Controller
             $address = $request->input('address');
             $municipality = $request->input('municipality');
             $province = $request->input('province');
+
+            Mail::to($email)->send(new CreateAccount( $email, $password ));
         
             User::updateOrCreate(
                 [
@@ -228,8 +230,6 @@ class ManageUsersController extends Controller
                     'profile_image' => '/images/avatar.png',
                 ]
             );
-
-            Mail::to($email)->send(new CreateAccount( $email, $password ));
         
             DB::commit();
         
