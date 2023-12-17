@@ -32,7 +32,6 @@
                                         <label for="grade_level" class="form-label">Grade Level Handle:</label>
                                         <select class="form-select" id="grade_level" name="grade_level">
                                             <option value="" selected disabled>Please select</option>
-                                            <option value="Grade 6">Grade 6</option>
                                             <option value="Grade 7">Grade 7</option>
                                             <option value="Grade 8">Grade 8</option>
                                             <option value="Grade 9">Grade 9</option>
