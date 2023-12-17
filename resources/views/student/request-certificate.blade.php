@@ -322,7 +322,7 @@
                                                         aria-labelledby="label_4 sublabel_4_postal"
                                                         required="" /><label class="form-sub-label"
                                                         for="input_4_postal" id="sublabel_4_postal"
-                                                        style="min-height:13px" aria-hidden="false">Postal Code
+                                                        style="min-height:13px" aria-hidden="false">Postal
                                                         Code</label></span></span></div>
                                     </div>
                                 </div>

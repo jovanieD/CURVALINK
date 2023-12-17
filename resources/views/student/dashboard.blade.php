@@ -11,7 +11,7 @@
                                 <div class="d-flex align-items-end row">
                                     <div class="col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary fs-3">Welcome to CuravaLink Portal
+                                            <h5 class="card-title text-primary fs-3">Welcome to CurvaLink Portal
                                                 {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}! 🎉</h5>
                                             <p class="mb-4">
                                                 Explore your achievements on your profile!"
