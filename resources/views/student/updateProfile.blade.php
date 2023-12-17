@@ -76,7 +76,6 @@
                                                 <label for="gradelevel" class="form-label">Grade Level</label>
                                                 <select class="form-select" id="gradelevel" name="gradelevel">
                                                     <option value="" selected disabled>Please select</option>
-                                                    <option value="Grade 6" {{ Auth::user()->gradelevel == 'Grade 6' ? 'selected' : '' }}>Grade 6</option>
                                                     <option value="Grade 7" {{ Auth::user()->gradelevel == 'Grade 7' ? 'selected' : '' }}>Grade 7</option>
                                                     <option value="Grade 8" {{Auth::user()->gradelevel == 'Grade 8' ? 'selected' : '' }}>Grade 8</option>
                                                     <option value="Grade 9" {{ Auth::user()->gradelevel == 'Grade 9' ? 'selected' : '' }}>Grade 9</option>

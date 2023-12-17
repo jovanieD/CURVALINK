@@ -20,7 +20,7 @@ class Form137RequestFactory extends Factory
             'user_id' => 1,
             'principalname' => fake()->name(),
             'name' => fake()->name(),
-            'grade' => fake()->randomElement(['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5', 'Grade 6']),
+            'grade' => fake()->randomElement(['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5']),
             'schoolyear' => fake()->year(),
             'adviser' => fake()->name(),
             'requestorname' => fake()->name(),
