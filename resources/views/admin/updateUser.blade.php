@@ -36,7 +36,7 @@
                                     <div class="mb-3 col-md-6">
                                         <label for="middlename" class="form-label">Middle Name</label>
                                         <input class="form-control" type="text" name="middlename" id="middlename"
-                                            value="{{ $user->lastname }}" />
+                                            value="{{ $user->middlename }}" />
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label for="lastname" class="form-label">Last Name</label>
