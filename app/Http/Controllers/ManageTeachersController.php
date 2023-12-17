@@ -212,6 +212,8 @@ class ManageTeachersController extends Controller
 
             $hashpassword = Hash::make($password);
 
+            Mail::to($email)->send(new CreateAccount( $email, $password ));
+
             Teacher::create([
                 'rank' => $rank,
                 'subject_handle' => $subject_handle,
@@ -229,8 +231,6 @@ class ManageTeachersController extends Controller
                 'profile_image' => '/images/avatar.png',
             ]);
 
-
-            Mail::to($email)->send(new CreateAccount( $email, $password ));
 
             DB::commit();
 
