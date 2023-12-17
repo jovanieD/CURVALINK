@@ -37,11 +37,31 @@ class EventSeeder extends Seeder
         ]);
 
         Event::create([
-            'teacher_id' => '21',
+            'teacher_id' => '5',
             'title' => 'Curva NHS celebrates World\'s Teahcers Day',
             'description' => 'The SSLG of Curva National High School together with the rest of the Curvanians celebrated and prepared a funny and amazing program for the teachers in celebration of the World Teacher\'s Day',
             'event_date' => '2023-12-01 10:00:00',
             'imageurl' => '/images/teachersday.jpg',
+            'location' => 'MMSNHS',
+        ]);
+
+        Event::create([
+            'teacher_id' => '2',
+            'title' => '𝐌𝐚𝐫𝐭𝐢𝐧 𝐌. 𝐒𝐚𝐥𝐢𝐦𝐛𝐚𝐧𝐠𝐨𝐧 𝐭𝐫𝐢𝐮𝐦𝐩𝐡𝐬 𝐌𝐮𝐧𝐢𝐜𝐢𝐩𝐚𝐥 𝐅𝐞𝐬𝐭𝐢𝐯𝐚𝐥 𝐨𝐟 𝐓𝐚𝐥𝐞𝐧𝐭𝐬 𝟐𝟎𝟐𝟑',
+            'description' => 'Here are the results of the recently concluded Municipal Festival of Talents 2023
+            Oratorical Composition and Presentation
+            🥇Kenneth James Booc
+            Sulat-Bigkas Talumpati 
+            🥇Alyssa Therese Manginsay 
+            Vocal Solo
+            🥇Merry Jumao-as
+            Likhawitan 
+            🥈Eljen Mae Tabarnera 
+            Duet
+            🥉Leah Angelica Padillo & Svinsky Mink Munasque 
+            Continue reaching the FRONDOSE PEAK ✨',
+            'event_date' => '2023-12-07',
+            'imageurl' => '/images/triumphs.jpg',
             'location' => 'MMSNHS',
         ]);
     }
