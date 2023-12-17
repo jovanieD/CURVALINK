@@ -76,8 +76,8 @@ class ManageAdminsController extends Controller
     }
 
 
-    public function showaddteacher(){
-        return view('admin.addadmin');
+    public function showaddadmin(){
+        return view('admin.addAdmin');
     }
 
 

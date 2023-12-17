@@ -317,7 +317,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::get('/searchAdmin', [ManageAdminsController::class,'search'])->name('searchAdmin');
 
-    Route::get('/admin_add_admin', [ManageAdminsController::class,'showaddteacher']);
+    Route::get('/admin_add_admin', [ManageAdminsController::class,'showaddadmin']);
 
     Route::post('/admin_create_admin', [ManageAdminsController::class,'createAdmin']);
 
