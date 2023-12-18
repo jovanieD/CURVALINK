@@ -17,7 +17,7 @@
                 <div class="col-lg-8">
                     @foreach ($latestAnnouncement as $event)
                         <div class="mb-5">
-                            <img class="img-fluid w-100 rounded mb-5" src="{{ $event->imageurl }}" alt="">
+                            <img class="img-fluid w-100 rounded mb-5" src="{{ $event->imageurl }}" alt="" style="max-height: 90vh; object-fit: fit;">
                             <h1 class="mb-4">{{ $event->title }}</h1>
                             <div class="d-flex mb-3">
                                 <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $event->created_at }}</small>
