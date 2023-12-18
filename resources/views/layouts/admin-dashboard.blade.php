@@ -81,7 +81,7 @@
                         <li class="menu-header small text-uppercase"><span class="menu-header-text">UPDATES</span>
                         </li>
                         <li class="menu-item">
-                            <a href="javascript:void(0)" class="menu-link menu-toggle">
+                            <a href="/admin/add_announcement" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons bx bx-box text-warning"></i>
                                 <div data-i18n="User interface">Post Updates</div>
                             </a>
